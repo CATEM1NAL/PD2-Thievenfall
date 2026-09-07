@@ -103,7 +103,7 @@ Hooks:OverrideFunction(PlayerManager, "_on_enter_shock_and_awe_event", function(
   end
 end)
 
-Hooks:PostHook(PlayerManager, "on_killshot", "CrimDusk_TrackWeaponKill", function(self, killed_unit, variant, headshot, weapon_id)
+Hooks:PostHook(PlayerManager, "on_killshot", "CrimDusk_TrackWeaponKills", function(self, killed_unit, variant, headshot, weapon_id)
   if CopDamage.is_civilian(killed_unit:base()._tweak_table) then return end
-  Global.CrimDawn.weapon_levels[weapon_id] = (Global.CrimDawn.weapon_levels[weapon_id] or 0) + 1
+  Global.CrimDusk.weapon_levels[weapon_id] = (Global.CrimDusk.weapon_levels[weapon_id] or 0) + 1
 end)
