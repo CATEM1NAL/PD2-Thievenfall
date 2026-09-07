@@ -278,7 +278,7 @@ Hooks:PostHook(UpgradesTweakData, "init", "CrimDusk_InitUpgradeTweakData", funct
   self.values.ammo_bag.quantity = { 1, 2 }
 
   self.values.first_aid_kit.quantity[1] = 3
-  self.values.first_aid_kit.downs_restore_chance = { 0.5, 1 }
+  self.values.first_aid_kit.downs_restore_chance = { 5, 10 }
 
   self.values.shape_charge.quantity = { 4, 8, 12 }
   self.definitions.shape_charge_quantity_increase_3 = deep_clone(self.definitions.shape_charge_quantity_increase_2)

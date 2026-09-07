@@ -25,9 +25,9 @@ function CrimDusk:Init()
   self.SaveFile = self.SavePath .. "thievenfall_save.txt"
   self.SettingsFile = self.SavePath .. "thievenfall_settings.txt"
   self.HoldoutData = self.SavePath .. "thievenfall_holdout.txt"
+  self.WeaponLevels = self.SavePath .. "thievenfall_kills.txt"
 
   self.SettingsData = io.load_as_json(CrimDusk.SettingsFile) or {}
-  if not self.SettingsData then self.SettingsData = {} end
   if type(self.SettingsData.greyscreen) ~= "boolean" then self.SettingsData.greyscreen = true end
 
   if Global.game_settings and Global.game_settings.difficulty then self.StartingDiff = Global.game_settings.difficulty end
@@ -110,6 +110,7 @@ function CrimDusk:Init()
 
   function self:WriteSave(FileIdent, SaveReason)
     io.save_as_json(Global.CrimDusk.data, self.SaveFile)
+    io.save_as_json(Global.CrimDusk.weapon_levels, self.WeaponLevels)
     self.Log(FileIdent, "Saved " .. self.SaveFile .. " (" .. SaveReason .. ")")
   end -- Yes, this WILL crash without a FileIdent or SaveReason. This is intentional.
 
@@ -320,8 +321,8 @@ function Global.CrimDusk:Init()
     CrimDusk:WriteSave(FileIdent, "save created")
   end
 
-  self.holdout_data = io.load_as_json(CrimDusk.HoldoutData)
-  if not self.holdout_data then self.holdout_data = {} end
+  self.holdout_data = io.load_as_json(CrimDusk.HoldoutData) or {}
+  self.weapon_levels = io.load_as_json(CrimDusk.WeaponLevels) or {}
 
   CrimDusk.Log(FileIdent, "Global initialisation completed!", true)
 end

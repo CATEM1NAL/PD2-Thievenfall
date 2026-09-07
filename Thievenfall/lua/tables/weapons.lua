@@ -58,7 +58,6 @@ Global.CrimDusk.weapons.classes = {
     akm = { dmg = "vhigh" },
     akm_gold = { dmg = "vhigh" },
     shak12 = { dmg = "vhigh", acc = 16 },
-    ching = { dmg = "vhigh", chamber = 0 },
   },
 
   shotguns = {
@@ -103,21 +102,23 @@ Global.CrimDusk.weapons.classes = {
     bessy = { dmgmult = 1, dmg = 50, ap = "none", chamber = 0 },
     m95 = { dmgmult = 100, dmg = 15, ap = "full" },
 
-    wa2000 = { dmg = "low", ap = "basic" },
-    siltstone = { dmg = "low", ap = "basic" },
-    qbu88 = { dmg = "low", ap = "basic" },
-    tti = { dmg = "low", ap = "basic" },
-    victor = { dmg = "low", ap = "basic" },
-    msr = { dmg = "low", ap = "shields" },
-    winchester1874 = { dmg = "low", ap = "shields" },
-    scout = { dmg = "low", ap = "shields" },
-    r700 = { dmg = "low", ap = "shields" },
+    wa2000 = { dmg = "low", ap = "none" },
+    siltstone = { dmg = "low", ap = "none" },
+    qbu88 = { dmg = "low", ap = "none" },
+    tti = { dmg = "low", ap = "none" },
+    victor = { dmg = "low", ap = "none" },
+    ching = { dmg = "low", ap = "none", rof = 150, chamber = 0 },
 
-    r93 = { dmg = "high", ap = "full" },
-    model70 = { dmg = "high", ap = "full" },
-    desertfox = { dmg = "high", ap = "full" },
-    mosin = { dmg = "high", ap = "full" },
-    contender = { dmg = "high", ap = "full", chamber = 0 },
+    msr = { dmg = "low", ap = "basic" },
+    winchester1874 = { dmg = "low", ap = "basic" },
+    scout = { dmg = "low", ap = "basic" },
+    r700 = { dmg = "low", ap = "basic" },
+
+    r93 = { dmg = "high", ap = "shields" },
+    model70 = { dmg = "high", ap = "shields" },
+    desertfox = { dmg = "high", ap = "shields" },
+    mosin = { dmg = "high", ap = "shields" },
+    contender = { dmg = "high", ap = "shields", chamber = 0 },
     awp = { dmg = "high", ap = "full" },
     sbl = { dmg = "high", ap = "basic" }
   },
@@ -160,7 +161,7 @@ Global.CrimDusk.weapons.classes = {
   },
 
   revolvers = {
-    deagle = { dmg = "low" },
+    deagle = { dmg = "low", mag = 9 },
     mateba = { dmg = "low", ap = "none", chamber = 0 },
     x_2006m = { dmg = "low", ap = "none", chamber = 0 },
     korth = { dmg = "low", ap = "none", chamber = 0 },

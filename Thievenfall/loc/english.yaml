@@ -104,36 +104,37 @@ bm_w_mateba_desc: "Penetrates enemies."
 bm_w_x_2006m_desc: "Penetrates enemies."
 bm_w_korth_desc: "Penetrates enemies."
 bm_w_x_korth_desc: "Penetrates enemies."
+bm_w_tti_desc: "Penetrates enemies."
+bm_w_qbu88_desc: "Penetrates enemies."
+bm_w_wa2000_desc: "Penetrates enemies."
+bm_w_siltstone_desc: "Penetrates enemies."
+bm_w_victor_desc: "Penetrates enemies."
+bm_w_ching_desc: "Penetrates enemies."
 
 # Basic AP
 bm_w_lemming_desc: "Penetrates enemies & body armor."
-bm_w_tti_desc: "Penetrates enemies & body armor."
-bm_w_qbu88_desc: "Penetrates enemies & body armor."
-bm_w_wa2000_desc: "Penetrates enemies & body armor."
-bm_w_siltstone_desc: "Penetrates enemies & body armor."
 bm_w_sbl_desc: "Penetrates enemies & body armor."
-bm_w_victor_desc: "Penetrates enemies & body armor."
 bm_w_raging_bull_desc: "Penetrates enemies & body armor."
 bm_w_x_rage_desc: "Penetrates enemies & body armor."
 bm_w_peacemaker_desc: "Penetrates enemies & body armor."
 bm_w_chinchilla_desc: "Penetrates enemies & body armor."
 bm_w_x_chinchilla_desc: "Penetrates enemies & body armor."
+bm_w_msr_desc: "Penetrates enemies & body armor."
+bm_w_r700_desc: "Penetrates enemies & body armor."
+bm_w_winchester1874_desc: "Penetrates enemies & body armor."
+bm_w_scout_desc: "Penetrates enemies & body armor."
 
 # Shield AP
-bm_w_msr_desc: "Penetrates enemies, body armor, & shields."
-bm_w_r700_desc: "Penetrates enemies, body armor, & shields."
-bm_w_winchester1874_desc: "Penetrates enemies, body armor, & shields."
 bm_w_rsh12_desc: "Penetrates enemies, body armor, & shields."
-bm_w_scout_desc: "Penetrates enemies, body armor, & shields."
+bm_w_model70_desc: "Penetrates enemies, body armor, & shields."
+bm_w_desertfox_desc: "Penetrates enemies, body armor, & shields."
+bm_w_r93_desc: "Penetrates enemies, body armor, & shields."
+bm_w_mosin_desc: "Penetrates enemies, body armor, & shields."
+bm_w_contender_desc: "Penetrates enemies, body armor, & shields."
 
 # Full AP
 bm_w_awp_desc: "Penetrates all surfaces."
-bm_w_model70_desc: "Penetrates all surfaces."
-bm_w_desertfox_desc: "Penetrates all surfaces."
-bm_w_r93_desc: "Penetrates all surfaces."
-bm_w_mosin_desc: "Penetrates all surfaces."
 bm_w_m95_desc: "Penetrates all surfaces."
-bm_w_contender_desc: "Penetrates all surfaces."
 
 # Integral suppressors
 bm_w_maxim9_desc: "Weapon is integrally suppressed."
@@ -147,7 +148,7 @@ bm_wp_uupg_o_schmidt: "Orbit Scope  x2.5  /"
 # Weapon names
 bm_w_usp: "SG Interceptor" # Starts as a Tactical, can be turned into a Match. Better to stay generic I think
 bm_w_glock_17: "Chimano 88"
-bm_w_ppk: "Gruber Kurz"
+bm_w_ppk: "Lakner GBK"
 bm_w_p226: "Signature .40"
 bm_w_colt_1911: "Crosskill Operator II" # Written on the gun
 bm_w_b92fs: "Bernetti 92" # Written on the gun
@@ -176,30 +177,37 @@ bm_w_shrew: "Crosskill Guard"
 bm_wp_pis_g26: "Chimano 26" # Written on the gun
 bm_w_hs2000: "HS Firearms LEO-40" # Written on the gun
 bm_w_glock_18c: "Chimano 18C" # Written on the gun
-bm_w_beer: "Bernetti Automatic" # Written on the gun in Italian
+bm_w_beer: "Bernetti Automatico" # Written on the gun in Italian
 bm_w_czech: "Czech Sport II" # Written on the gun
-bm_w_stech: "Igor Automatik"
+bm_w_stech: "Igor Avtomaticheskiy"
 bm_w_holt: "Holt H9"
 bm_w_pmm: "Izhma Strix"
 bm_w_welrod: "Welrod"
 bm_w_peacemaker: "Peacemaker .45"
 bm_w_mateba: "Matever 521M" # Gun is Mateba 2006M, can't find meaning of 2006M. 521 is the release date of Alesso (05/21/15)
-bm_w_deagle: "IMI Deagle .44"
+bm_w_deagle: "IMI Deagle .357"
 
+bm_w_m45: "Swedish K"
 bm_w_mp7: "SG Compact-7" # More in-line with the MP5, matches with PAYDAY 3
 bm_w_mac10: "Ingrid Mark-11"
+bm_w_vityaz: "Izhma AKS-21U"
+bm_w_cobray: "HIC Jacket's Piece"
 bm_w_mp5: "SG Compact-5"
 bm_w_m1928: "Chicago Typewriter"
-bm_w_mp9: "B&T MP9" # MP9 is clearly written on the side of the gun, no name for a fake manufacturer exists
+bm_w_fmg9: "Magdrop WASP-DS"
+bm_w_pm9: "Miyaka PM-9"
+bm_w_scorpion: "TKA Cobra" # OTWD
+bm_w_mp9: "Bergentrückung MP9" # MP9 is clearly written on the side of the gun
 bm_w_olympic: "Crosskill Para" # all AR-15s say Crosskill Tactical on them
-bm_w_baka: "Micro Uzi"
+bm_w_baka: "IMI Micro Uzi"
 bm_w_shepheard: "Signature PC9" # Based on PAYDAY 3
 bm_w_schakal: "SG AMP-45" # Gun has AMP written on it
 bm_w_erma: "MP40"
 bm_w_sr2: "Heather KP-SR2" # Gun has KP-SR2 written on it in Russian
 bm_w_akmsu: "Izhma AKMSU"
+bm_w_speen: "Pathfinder Ballerina"
 bm_w_tec9: "Blaster FT-9" # Taken from OTWD
-bm_w_p90: "Acuto Kobus 90"
+bm_w_p90: "Acuto Kobus 90" # Five Seven and P90 were developed side by side irl
 bm_w_polymer: "Kross Vertex"
 bm_w_coal: "Izhma Tatonka-2" # PP-19 Bizon-2
 bm_w_sterling: "Patchett L2A3"
@@ -209,19 +217,22 @@ bm_w_serbu: "Reinbeck Shorty"
 bm_w_m37: "GSPS Model 37"
 bm_w_rota: "Goliath SIX12"
 bm_w_basset: "Pike X12K" # Grimm is a Saiga-12K with a CBRPS Spike X1S conversion kit, according to the wiki
+bm_w_striker: "HIC Street Sweeper"
 bm_w_judge: "Tarius Public Defender" # PAYDAY 3 has markings for the manufacturer as "Swanwood"/"SwanWood". I hate this name.
 bm_w_ultima: "Izhma MP-3 Argos"
+bm_w_coach: "Reinbeck Claire 1889"
 
 bm_w_scout: "Stefan Pronghorn" # they named their version of Steyr Mannlicher "Stefan Menschenlecker". I'm NOT fucking calling it Stefan.
 bm_w_contender: "J&M Law G2" # J&M is mentioned in this game I'm gonna vomit (it says LaW on the barrel so I'm assuming that's the name of the gun)
 bm_w_victor: "Simmons Armory North Star"
 
 bm_w_amcar: "Crosskill Carbine"
-bm_w_scar: "VF Eagle Mk17" # Company taken from PAYDAY 3 / OTWD
+bm_w_scar: "UN Eagle Mk17"
 bm_w_corgi: "UN G2000"
 bm_w_shak12: "Ketchnov ASh-12" # written on the gun in Russian
 bm_w_ak74: "Izhma AK-74"
 bm_w_m4: "Crosskill Tactical" # it's what it says on the gun idk man
+bm_w_aug: "Stefan UAR"
 bm_w_groza: "Ketchnov Bull-1"
 bm_w_sub2000: "Lion LGL15" # say it with me, written on the gun
 bm_w_akm: "Izhma AK-59"
@@ -231,28 +242,30 @@ bm_w_akm_gold: "Golden AK-59"
 bm_w_tecci: "SG 416C"
 bm_w_l85a2: "Queen's Wrath"
 bm_w_m14: "Simmons Armory M308"
+bm_w_famas: "Clarion"
 bm_w_vhs: "HVH Lion's Roar"
 bm_w_asval: "Ketchnov Valkyria"
-bm_w_ak5: "Ak 5"
+bm_w_ak5: "Automatkarbin 5"
 bm_w_galil: "IMI Gecko"
 bm_w_komodo: "IMI Tavor-21" # THIS is the gun that tells us what IWI is called in-universe
 bm_w_m16: "Crosskill Maverick" # CS1.6 - CS:S 
 bm_w_contraband: "SG 417D"
-bm_w_hailstorm: "Hailstorm R-033"
+bm_w_fal: "UN Falcon"
+bm_w_hailstorm: "FTI Hailstorm R-033"
 bm_w_tkb: "Rodion TKB-59"
 bm_w_g3: "SG Gewehr 3"
-bm_w_ching: "M1 Galant"
-bm_w_hajk: "CR 805B"
+bm_w_ching: "Simmons Armory Galant"
+bm_w_hajk: "Czech 805B"
 
 bm_w_spas12: "Ferino Predator 12G" # Comes from OTWD
 bm_w_boot: "Rapture Breaker 1887" # Winchester company was originally New Haven Arms; Haven -> Heaven -> Rapture
 bm_w_r870: "Reinbeck Tactical"
 bm_w_m590: "Mosconi Tactical"
-bm_w_benelli: "Benelli Super"
+bm_w_benelli: "Giovanni Super"
 bm_w_ksg: "Lion Raven"
 bm_w_saiga: "Izhma-12"
 bm_w_m1897: "Rapture Trap 1897" # Trap Gun is written on ejection port
-bm_w_supernova: "Benelli Deimos"
+bm_w_supernova: "Giovanni Deimos"
 bm_w_huntsman: "Mosconi Classic"
 bm_w_b682: "Bernetti Joceline O/U"
 
@@ -269,8 +282,8 @@ bm_w_mg42: "MG 42"
 bm_w_hk21: "Brenner 21E"
 
 bm_w_msr: "Rattlesnake R700"
-bm_w_r700: "Rapture Model 700"
-bm_w_awp: "Arctic Impact Tactical .308"
+bm_w_r700: "Reinbeck Model 700"
+bm_w_awp: "Arctic Impact Tactical"
 bm_w_model70: "Rapture Platypus"
 bm_w_wa2000: "Lakner Lebensauger"
 bm_w_desertfox: "Crosskill Desertfox"
@@ -282,9 +295,54 @@ bm_w_siltstone: "Izhma Grom"
 bm_w_mosin: "Mosin Nagant"
 bm_w_m95: "Thanatos M95"
 
+bm_w_m134: "Vulcan M135 Arges"
+bm_w_shuno: "XL556 Microgun"
+bm_w_frankish: "Frankish Crossbow"
+bm_w_arblast: "Arbalest"
 bm_w_slap: "SG Compact 40mm"
+bm_w_m32: "Marcom Piglet MGL"
+bm_w_gre_m79: "Simmons Armory GL40"
+bm_w_china: "China Puff"
+bm_w_ms3gl: "FTI Basilisk 3GL"
 bm_w_rpg7: "RPG-7"
+bm_w_ray: "Commando M101"
 bm_w_money: "GenSec Money Thrower"
+
+# Some notes here, because there's a LOT to keep track of:
+# SG = H&K
+# Signature = SIG Sauer
+# Simmons Armory = Springfield Armory
+# Izhma = Kalashnikov Concern and subsidiaries
+# Bernetti = Beretta
+# Reinbeck = Remington
+# Mosconi = Mossberg
+# Ferino = Franchi
+# Rapture = Winchester
+# IMI = IWI
+# FTI = Metal Storm
+# Czech = CZ
+# UN = FN Herstal
+# Stefano = Steyr (hate this name)
+# J&M = S&W
+# Chimano = Glock
+# Tarius = Taurus
+# Marcom = Milkor
+# Lakner = Walther
+# Thanatos = Barrett
+# Arctic Impact = Accuracy International
+# Ketchnov = TsKIB
+# Lion = KelTec
+# Magdrop = Magpul
+# Giovanni = Benelli
+# Bergentrückung = B&T
+# HIC = Cobray
+# Crosskill = Colt but they just kinda show up in random places, so eh
+
+# Other companies are used if they show up on the gun, regardless of whether that makes real-world sense
+# (e.g. the Five Seven has Acuto written on it, despite being made by FN Herstal irl)
+
+# Categories
+menu_snp: "Precision"
 
 # Deployables
 bm_equipment_ammo_bag_desc: "Contains enough ammo to fully refill one weapon and half of another weapon. Can be upgraded with Enforcer skills."
@@ -482,7 +540,7 @@ menu_healing_damage_reduction_desc: "$lv1;Crewmates that use your doctor bags or
 menu_inspire_beta_desc: "$lv1;Shouting at crewmates increases their movement and reload speeds by ##20%## for ##10## seconds.\n\n$lv2;Shouting at downed crewmates has a ##50%## chance to revive them."
 
 menu_fak_lives: "Amphetamine"
-menu_fak_lives_desc: "$lv1;You have a ##50%## chance to restore ##1## down when using a first aid kit.\n\n$lv2;You always restore ##1## down when using a first aid kit."
+menu_fak_lives_desc: "$lv1;You restore ##5## seconds of down time when using a first aid kit.\n\n$lv2;You restore ##10## seconds of down time when using a first aid kit."
 
 menu_cable_guy: "Cable Guy"
 menu_cable_guy_desc: "$lv1;You tie up civilians ##75%## faster.\n\n$lv2;The crew gains ##0.5## damage absorption per hostage, up to ##8## hostages. This does not stack."

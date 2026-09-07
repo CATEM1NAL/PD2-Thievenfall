@@ -19,6 +19,7 @@ Hooks:PreHook(PlayerDamage, "init", "CrimDusk_InitPlayerDamage", function(self)
   self._armor_broken = false
   self._armor_break_t = managers.player:player_timer():time() + 3
   self._max_lives = 31 + managers.player:upgrade_value("player", "additional_lives", 0)
+  self._revive_health_range = tweak_data.player.damage.REVIVE_HEALTH_STEPS
   managers.environment_controller:set_last_life()
 end)
 
@@ -137,6 +138,12 @@ Hooks:OverrideFunction(PlayerDamage, "on_copr_killshot", function(self)
   self._armor_break_t = managers.player:player_timer():time() + 1
 end)
 
+--[[ TODO; Leech rework
+Plan is for Leech to grant immunity while active but also drain your health, with kills restoring health.
+This would turn Leech into another aggressive perk deck which punishes activating randomly and rewards smart use.
+All skills for the deck will also need reworking to fit around the new concept.
+]]
+
 -- Tooth & Claw regens after 3s, not 1.5s (vanilla timer is stupid).
 Hooks:OverrideFunction(PlayerDamage, "_start_regen_on_the_side", function(self, time)
   if self._regen_on_the_side_timer <= 0 and time > 0 then
@@ -144,6 +151,12 @@ Hooks:OverrideFunction(PlayerDamage, "_start_regen_on_the_side", function(self, 
     self._regen_on_the_side = true
   end
 end)
+
+-- So I don't have to copy/paste this block repeatedly
+function PlayerDamage:SetReviveRatio()
+  local ReviveHealthRatio = self._down_time / 60
+  self._revive_health_i = math.lerp(self._revive_health_range[2], self._revive_health_range[1], ReviveHealthRatio)
+end
 
 -- Gaining lives and health
 Hooks:OverrideFunction(PlayerDamage, "_regenerated", function(self, no_messiah)
@@ -190,9 +203,26 @@ Hooks:OverrideFunction(PlayerDamage, "_regenerated", function(self, no_messiah)
   self:_send_set_revives()
   self._said_hurt = false
 
-  local ReviveHealth = tweak_data.player.damage.REVIVE_HEALTH_STEPS
-  local ReviveHealthRatio = self._down_time / 60
-  self._revive_health_i = math.lerp(ReviveHealth[2], ReviveHealth[1], ReviveHealthRatio)
+  self:SetReviveRatio()
+end)
+
+-- FAK healing
+Hooks:OverrideFunction(PlayerDamage, "band_aid_health", function(self)
+  if managers.platform:presence() == "Playing" and (self:arrested() or self:need_revive()) then return end
+  self:change_health(self:_max_health() * self._healing_reduction)
+  self._said_hurt = false
+
+  -- TODO; Amphetamine skill should apply to the FAK itself, that way teammates benefit from the effect
+  local DownTimeRecovery = managers.player:upgrade_value("first_aid_kit", "downs_restore_chance", 0)
+  if DownTimeRecovery == 0 then return end
+
+  local NewDowns = Application:digest_value(self._revives, false) + DownTimeRecovery
+  CrimDusk.Log(FileIdent, "Used FAK", true)
+  self._revives = Application:digest_value(math.min(NewDowns, self._max_lives), true)
+
+  self._down_time = Application:digest_value(self._revives, false) - 1
+  self:_send_set_revives()
+  self:SetReviveRatio()
 end)
 
 -- On revive
@@ -225,11 +255,7 @@ Hooks:OverrideFunction(PlayerDamage, "revive", function(self, silent)
     self._revives = Application:digest_value(self._down_time + 1, true)
     self:_send_set_revives()
     Global.CrimDusk.data[lives] = self._down_time
-
-    -- Set revive health
-    local ReviveHealth = tweak_data.player.damage.REVIVE_HEALTH_STEPS
-    local ReviveHealthRatio = self._down_time / 60
-    self._revive_health_i = math.lerp(ReviveHealth[2], ReviveHealth[1], ReviveHealthRatio)
+    self:SetReviveRatio()
 
     self._revive_miss = self._dmg_interval -- Revive dodge matches grace period
   end
