@@ -1,6 +1,6 @@
 <mod name="Thievenfall" global_key="thievenfall" author="~/cat/em1/nal/" color="Color(0.734375,0.4921875,0.73828125)" image="dawn">
   <!-- Auto update from latest GitHub release -->
-  <AssetUpdates version="0.11.0-pre2" id="CATEM1NAL/PD2-Thievenfall" provider="github" release="true"/>
+  <AssetUpdates version="0.11.0-pre3" id="CATEM1NAL/PD2-Thievenfall" provider="github" release="true"/>
 
   <AddFiles directory="assets">
     <png path="dawn"/> <!-- mod icon -->

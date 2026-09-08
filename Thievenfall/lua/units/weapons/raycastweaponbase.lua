@@ -2,8 +2,8 @@ local FileIdent = "RaycastWeaponBase"
 
 -- One in chamber
 Hooks:OverrideFunction(RaycastWeaponBase, "get_ammo_max_per_clip", function(self)
-  local chamber = self:ammo_base():weapon_tweak_data().ChamberRounds or 1
-  if self:ammo_base():clip_empty() or chamber == 0 then return self._ammo_max_per_clip end
+  local chamber = self:weapon_tweak_data().ChamberRounds or 1
+  if self:clip_empty() or chamber == 0 then return self._ammo_max_per_clip end
   return self._ammo_max_per_clip + chamber
 end)
 

@@ -21,7 +21,7 @@ Global.CrimDusk.weapon_parts = {
   wpn_fps_upg_fl_ass_smg_sho_surefire = attachments.light,
   wpn_fps_upg_fl_ass_smg_sho_peqbox = attachments.laser,
   wpn_fps_upg_fl_ass_laser = attachments.stealth_laser,
-  wpn_fps_upg_fl_ass_peq15 = attachments.laser,
+  wpn_fps_upg_fl_ass_peq15 = attachments.laser_light,
   wpn_fps_upg_fl_ass_utg = attachments.laser_light,
   wpn_fps_upg_fl_dbal_laser = attachments.stealth_laser,
 

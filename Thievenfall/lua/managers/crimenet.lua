@@ -214,13 +214,14 @@ Hooks:OverrideFunction(CrimeNetManager, "activate_job", function(self)
     while true do
       local heist = math.random(#self._presets)
       if math.random() <= self._presets[heist].chance then
+        log(self._presets[heist].job_id)
 
         -- Reservoir Dogs is a special case; should be the only heist if selected
         if self._presets[heist].job_id == "cd_reservoir" then
           for index, _ in ipairs(self._active_jobs) do self._active_jobs[index] = nil end
           managers.crimenet:set_getting_hacked(0.5)
           self._active_jobs[heist] = { added = false, active_timer = self._active_job_time }
-          HeistsGenerated = { "cd_reservoir" }
+          Global.CrimDusk.data["next_heists" .. CrimDusk.IsPermadeath()] = { "cd_reservoir" }
           CrimDusk:WriteSave(FileIdent, "Reservoir Dogs chosen!")
         return end
 
