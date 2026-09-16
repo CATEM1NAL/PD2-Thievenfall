@@ -1,5 +1,9 @@
 Hooks:OverrideFunction(PlayerMaskOff, "_check_action_run", function() return end)
 
+Hooks:PostHook(PlayerMaskOff, "_enter", "CrimDusk_EnterMaskOffState", function(self)
+  self._unit:mover():set_gravity(Vector3(0, 0, -1800))
+end)
+
 -- Allow interactions
 Hooks:OverrideFunction(PlayerMaskOff, "_check_action_interact", function(self, t, input)
   local pressed, released, holding
@@ -42,4 +46,9 @@ end)
 Hooks:PostHook(PlayerMaskOff, "_interupt_action_interact", "CrimDusk_MaskOffInteract", function(self)
   self._unit:base():set_suspicion_multiplier("interacting", 1)
   self._unit:base():set_detection_multiplier("interacting", 1)
+end)
+
+Hooks:PostHook(PlayerMaskOff, "exit", "CrimDusk_ForceLoudMaskup", function()
+  if NetworkHelper:IsClient() then NetworkHelper:SendToPeer(1, "CrimDusk_MaskedUp", true) return end
+  CrimDusk.GoLoud()
 end)

@@ -116,7 +116,8 @@ function CrimDusk:Init()
 
   function self.GoLoud()
     NetworkHelper:RemoveReceiveHook("CrimDusk_ForceLoudNetwork")
-    Hooks:RemovePostHook("CrimDusk_HostForceLoud")
+    Hooks:RemovePostHook("CrimDusk_ForceLoudMaskup")
+    Hooks:RemovePostHook("CrimDusk_GoLoudImmediate")
 
     local LevelID = Global.game_settings.level_id
     local heist = Global.CrimDusk.heists[LevelID]

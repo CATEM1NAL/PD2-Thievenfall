@@ -13,6 +13,12 @@ Hooks:PostHook(PlayerStandard, "init", "CrimDusk_InitPlayerStandard", function(s
   self._slotmask_bullet_impact_targets = managers.slot:get_mask("bullet_impact_targets") + 3
 end)
 
+if NetworkHelper:IsHost() then
+  Hooks:PostHook(PlayerStandard, "enter", "CrimDusk_GoLoudImmediate", function(self)
+    CrimDusk.GoLoud()
+  end)
+end
+
 -- Melee is treated as its own weapon slot
 Hooks:OverrideFunction(PlayerStandard, "_check_action_melee", function(self, t, input)
   local CanMelee = not self._state_data.melee_attack_allowed_t and not self._state_data.melee_repeat_expire_t
