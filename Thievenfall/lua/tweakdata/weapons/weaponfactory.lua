@@ -21,6 +21,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "CrimDusk_InitModTweakData", func
     wpn_fps_sho_basset_m_extended = { MagChange = 5, ReloadSpeed = -4 },
     wpn_fps_sho_aa12_mag_drum = { MagChange = 12, ReloadSpeed = -4 },
     wpn_fps_m4_uupg_m_std = { MagChange = 10, ReloadSpeed = -1 },
+    wpn_fps_sho_bleckert_magazine_horse = { MagChange = 2, ReloadSpeed = -1 },
   
     -- Quadstacks
     wpn_fps_upg_m4_m_quad = Quadstack,
@@ -96,7 +97,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "CrimDusk_InitModTweakData", func
   local shotguns = { "wpn_fps_shot_saiga", "wpn_fps_shot_r870", "wpn_fps_shot_huntsman", "wpn_fps_shot_serbu", "wpn_fps_sho_ben", "wpn_fps_sho_striker",
     "wpn_fps_sho_ksg", "wpn_fps_pis_judge", "wpn_fps_sho_spas12", "wpn_fps_shot_b682", "wpn_fps_sho_aa12", "wpn_fps_sho_boot", "wpn_fps_shot_m37",
     "wpn_fps_shot_m1897", "wpn_fps_sho_m590", "wpn_fps_sho_rota", "wpn_fps_sho_basset", "wpn_fps_sho_x_basset", "wpn_fps_pis_x_judge", "wpn_fps_sho_x_rota",
-    "wpn_fps_sho_coach", "wpn_fps_sho_ultima", "wpn_fps_sho_sko12", "wpn_fps_sho_x_sko12", "wpn_fps_sho_supernova" }
+    "wpn_fps_sho_coach", "wpn_fps_sho_ultima", "wpn_fps_sho_sko12", "wpn_fps_sho_x_sko12", "wpn_fps_sho_supernova", "wpn_fps_sho_bleckert" }
   for _, weapon in ipairs(shotguns) do
     for index, ammo in ipairs(self[weapon].uses_parts) do
       if ammo == "wpn_fps_upg_a_custom" then table.remove(self[weapon].uses_parts, index) break end

@@ -194,50 +194,49 @@ Hooks:OverrideFunction(CrimeNetManager, "activate_job", function(self)
     self._active_jobs[1] = { added = false, active_timer = self._active_job_time }
   return end
 
-  local HeistsGenerated = Global.CrimDusk.data["next_heists" .. CrimDusk.IsPermadeath()]
-
-  if next(HeistsGenerated) then
-    for i = 1, #HeistsGenerated do
-      for index, data in ipairs(self._presets) do
-        if data.job_id == HeistsGenerated[i] then
-          if HeistsGenerated[i] == "cd_reservoir" then managers.crimenet:set_getting_hacked(0.5) end
-          self._active_jobs[index] = { added = false, active_timer = self._active_job_time }
-        break end
-      end
-    end
-  return end
-
   math.randomseed(os.time() % math.floor(os.clock() * 1000000))
   math.random() -- *seems* to make the rng more varied??
 
-  for i = 1, math.min(math.random(3), #self._presets) do
-    while true do
-      local heist = math.random(#self._presets)
-      if math.random() <= self._presets[heist].chance then
-        log(self._presets[heist].job_id)
+  local HeistsGenerated = Global.CrimDusk.data["next_heists" .. CrimDusk.IsPermadeath()]
+  if not HeistsGenerated[1] then
+    local NewHeists = {}
 
-        -- Reservoir Dogs is a special case; should be the only heist if selected
-        if self._presets[heist].job_id == "cd_reservoir" then
-          for index, _ in ipairs(self._active_jobs) do self._active_jobs[index] = nil end
-          managers.crimenet:set_getting_hacked(0.5)
-          self._active_jobs[heist] = { added = false, active_timer = self._active_job_time }
-          Global.CrimDusk.data["next_heists" .. CrimDusk.IsPermadeath()] = { "cd_reservoir" }
-          CrimDusk:WriteSave(FileIdent, "Reservoir Dogs chosen!")
-        return end
+    for i = 1, math.min(math.random(3), #self._presets) do
+      if NewHeists[1] == "cd_reservoir" then break end
 
-        -- Regular heists
-        local contact = tweak_data.narrative.jobs[self._presets[heist].job_id].contact
-        if not self._active_jobs[heist] and not table.contains(disabled_contacts, contact) then
-          self._active_jobs[heist] = { added = false, active_timer = self._active_job_time }
-          table.insert(HeistsGenerated, self._presets[heist].job_id)
-        break end
+      while true do
+        local heist = math.random(#self._presets)
+        if math.random() <= self._presets[heist].chance then
+          log(self._presets[heist].job_id)
+
+          -- Reservoir Dogs is a special case; should be the only heist if selected
+          if self._presets[heist].job_id == "cd_reservoir" then NewHeists = { "cd_reservoir" } break end
+
+          -- Regular heists
+          local contact = tweak_data.narrative.jobs[self._presets[heist].job_id].contact
+          if not self._active_jobs[heist] and not table.contains(disabled_contacts, contact) then
+            table.insert(NewHeists, self._presets[heist].job_id)
+          break end
+        end
+
+        CrimDusk.Log(FileIdent, self._presets[heist].job_id .. " failed roll (" .. 100 * self._presets[heist].chance .. "% to be selected), rolling again", true)
       end
+    end
 
-      CrimDusk.Log(FileIdent, self._presets[heist].job_id .. " failed roll (" .. 100 * self._presets[heist].chance .. "% to be selected), rolling again", true)
+    Global.CrimDusk.data["next_heists" .. CrimDusk.IsPermadeath()] = NewHeists
+    HeistsGenerated = NewHeists
+    CrimDusk:WriteSave(FileIdent, "Heists generated!")
+  end
+
+  for i = 1, #HeistsGenerated do
+    for index, data in ipairs(self._presets) do
+      if data.job_id == HeistsGenerated[i] then
+        if HeistsGenerated[i] == "cd_reservoir" then managers.crimenet:set_getting_hacked(0.5) end
+        self._active_jobs[index] = { added = false, active_timer = self._active_job_time }
+      break end
     end
   end
 
-  CrimDusk:WriteSave(FileIdent, "generated random heists")
 end)
 
 function CrimeNetSidebarGui:clbk_new_weekly_holdout()

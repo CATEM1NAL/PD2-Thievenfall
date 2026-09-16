@@ -71,6 +71,7 @@ Global.CrimDusk.weapon_parts = {
   wpn_fps_snp_mosin_iron_sight = attachments.sniper_iron,
   wpn_upg_o_marksmansight_rear = attachments.iron_sight,
   wpn_fps_upg_o_ak_scopemount = { value = 2 }, -- AK scope mount
+  wpn_fps_upg_o_dardar = attachments.no_zoom,
 
   -- Pistol sights
   wpn_fps_upg_o_rmr = { concealment = -1, recoil = 1, value = 6 },

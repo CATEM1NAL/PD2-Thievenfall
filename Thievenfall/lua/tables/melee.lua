@@ -53,7 +53,8 @@ Global.CrimDusk.melee.classes = {
     hockey = { anim = "melee_baseballbat" },
     buck = {},
     dingdong = {},
-    road = { rep = 0.55 }
+    road = { rep = 0.55 },
+    order = {},
   },
 
   Knives = {

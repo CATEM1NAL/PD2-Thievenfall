@@ -4,7 +4,7 @@ Global.CrimDusk.campaign = { -- Main campaign
   "cd_tut1", "cd_tut2", "cd_tut3", "four_stores", "mallcrasher", "branchbank_prof", "ukrainian_job_prof", "nightclub", -- Early Vlad
   "cd_watchdogs1_wrapper", "cd_watchdogs2_wrapper", "cd_frame3", "cd_bigoil", "cd_firestarter1", "cd_firestarter2", "cd_rats", -- Hector/Elephant
   "family", "arm_wrapper", "arm_for", "roberts", "cd_erection_wrapper", "kosugi", -- Post Launch
-  "big", "cd_miami1", "cd_miami2", "gallery", "cd_hox1", "cd_hox2", "pines", "mus", -- Dentist
+  "big", "cd_miami1", "cd_miami2", "gallery", "cd_hox1", "cd_hox2", "auc", "pines", "mus", -- Dentist
   "cd_bomb", "cage", "hox_3", "shoutout_raid", "arena", "kenaz", "jolly", "dinner", "pbr", "pbr2", "cane", -- 2015
   "cd_goat1", "cd_goat2", "dark", "mad", "cd_biker1", "cd_biker2", "moon", "friend", -- 2016
   "spa", "fish", "run", "glace", "wwh", "dah", "cd_reservoir", "brb", "tag", "des", "sah", -- Final Arc
@@ -15,7 +15,7 @@ Global.CrimDusk.campaign = { -- Main campaign
 -- POST-GAME CAMPAIGN DATA
 Global.CrimDusk.custom_campaign_base = {
   "red2", "flat", "pal", "man", "nmh", "dah", "dinner", -- PDTH
-  "branchbank_prof", "family", "arm_wrapper", "arm_for", "roberts", "gallery", "cage", "arena", "cd_reservoir", -- Bain
+  "branchbank_prof", "family", "arm_wrapper", "arm_for", "roberts", "gallery", "cage", "arena", "cd_reservoir", "auc", -- Bain
   "four_stores", "mallcrasher", "ukrainian_job_prof", "nightclub", "cane", "jolly", "pines", "moon", -- Vlad
   "cd_firestarter1", "cd_firestarter2", "cd_rats", -- Hector
   "cd_frame3", "cd_bigoil", "cd_erection_wrapper", -- Elephant
@@ -74,5 +74,5 @@ Global.CrimDusk.heist_dlc = {
   mus = "hope_diamond", cd_bomb = "the_bomb", arena = "arena", kenaz = "kenaz", pbr = "berry", pbr2 = "berry", cd_goat1 = "peta",
   cd_goat2 = "peta", pal = "pal", man = "pal", cd_biker1 = "born", cd_biker2 = "born", friend = "friend", spa = "spa", fish = "spa",
   mex = "mex", bex = "bex", pex = "pex", fex = "fex", chas = "chas", sand = "sand", chca = "chca", pent = "pent", ranc = "ranc",
-  trai = "trai", corp = "corp", deep = "deep"
+  trai = "trai", corp = "corp", deep = "deep", auc = "auc"
 }

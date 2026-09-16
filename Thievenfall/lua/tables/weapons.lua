@@ -81,7 +81,8 @@ Global.CrimDusk.weapons.classes = {
     boot = { dmg = "base", acc = 17 },
     b682 = { dmg = "base", acc = 17, magdump = false, chamber = 0 },
     huntsman = { dmg = "base", acc = 17, chamber = 0 },
-    coach = { dmg = "base", acc = 17, magdump = false, chamber = 0 }
+    coach = { dmg = "base", acc = 17, magdump = false, chamber = 0 },
+    bleckert = { dmg = "base", acc = 5, chamber = 0 },
   },
 
   lmgs = {
@@ -233,6 +234,7 @@ Global.CrimDusk.weapons.classes = {
     gre_m79 = { dmgmult = 2, dmg = "gl", chamber = 0 },
     slap = { dmgmult = 2, dmg = "gl", chamber = 0 },
     m32 = { dmgmult = 2, dmg = "gl", nummags = 1, chamber = 0 },
+    flun = { dmg = 20, pickup = "none", nummags = 10, chamber = 0 },
 
     saw = { chamber = 0 },
     saw_secondary = { chamber = 0 }

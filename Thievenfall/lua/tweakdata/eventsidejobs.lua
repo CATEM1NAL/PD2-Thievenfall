@@ -22,7 +22,7 @@ Hooks:PostHook(EventJobsTweakData, "init", "CrimDusk_InitSideJobTweak", function
     elseif job.id == "cg22_2" then job.objectives = {
       self:_choice({
         tweak_data.safehouse:_progress("cg22_personal_2", 5000, { name_id = "menu_cg22_personal_2", desc_id = "menu_cg22_personal_2_desc" }),
-        tweak_data.safehouse:_progress("cg22_post_objective_2", 50, { name_id = "menu_cg22_post_objective_2", desc_id = "menu_cg22_post_objective_2_desc" })
+        tweak_data.safehouse:_progress("cg22_post_objective_2", 5, { name_id = "menu_cg22_post_objective_2", desc_id = "menu_cg22_post_objective_2_desc" })
       }, 1, { choice_id = "cg22_personal_2", name_id = "menu_cg22_2_choice_obj", desc_id = "menu_cg22_post_objective_2_desc" })
     }
     elseif job.id == "cg22_3" then job.objectives = {
