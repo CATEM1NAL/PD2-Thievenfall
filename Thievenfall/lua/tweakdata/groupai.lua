@@ -155,9 +155,17 @@ Hooks:PostHook(GroupAITweakData, "_init_task_data", "CrimDusk_InitGroupAITaskDat
 
   -- Re-add HRT to assault breaks
   self.besiege.recon.groups = {
-    fbi_hrt = { 0, 0.5, 1 },
+    fbi_hrt = { 1, 1, 1 },
     single_spooc = { 0, 0, 0 },
     Phalanx = { 0, 0, 0 },
     marshal_squad = { 0, 0, 0 }
+  } -- is this actually working???
+
+  -- Re-enable reinforcement groups
+  self.besiege.reenforce.groups = {
+    tac_swat_shotgun_rush = { 0.5, 0.25, 0.1 },
+    tac_swat_shotgun_flank = { 0.25, 0.1, 0.05 },
+    tac_swat_rifle = { 0.5, 0.25, 0.1 },
+    tac_swat_rifle_flank = { 0.25, 0.1, 0.05 }
   }
 end)

@@ -67,6 +67,11 @@ heist_cd_miami2: "Four Floors"
 heist_cd_hox1: "The Breakout"
 heist_cd_hox2: "The Search"
 
+heist_firestarter_1_hl: "Firestarter"
+heist_firestarter_2_hl: "Hornet's Nest"
+
+heist_framing_frame_3_hl: "Political Suicide"
+
 ### STRING OVERRIDES ###
 # PDTH difficulties
 crimdusk_pdth_normal: "Easy"
@@ -82,6 +87,7 @@ cn_menu_pro_job: ""
 dialog_blackmarket_slot_item_sell: "You will not be refunded!"
 dialog_skilltree_reseted: "The skill trees have changed. Your skill sets have been reset."
 menu_skirmish_weekly_reward_end_screen: ""
+menu_lobby_code_hidden: "HIDDEN"
 
 # Crew AI
 menu_crew_motivated_desc: "Armor speed penalty reduced by 50%."
@@ -152,13 +158,13 @@ bm_w_ppk: "Lakner GBK"
 bm_w_p226: "Signature .40"
 bm_w_colt_1911: "Crosskill Operator II" # Written on the gun
 bm_w_b92fs: "Bernetti 92" # Written on the gun
-bm_w_raging_bull: "Tarius Bronco .44" # Tarius derived from Sagittarius, fitting the Zodiac naming of Taurus.
+bm_w_raging_bull: "Tarius Bronco" # Tarius derived from Sagittarius, fitting the Zodiac naming of Taurus.
 bm_w_m1911: "Crosskill 1911"
 bm_w_maxim9: "Gecko Max-9" # Real gun is Maxim-9, better connects the two
 bm_w_sparrow: "IMI Sparrow 941 RPL" # Written on the gun
-bm_w_pl14: "Izhma White Streak"
+bm_w_pl14: "Izhma Streak-14"
 bm_w_legacy: "SG M13" # Written on the gun
-bm_w_korth: "Korth .357"
+bm_w_korth: "Kahn Korth"
 bm_w_g22c: "Chimano Custom"
 
 bm_w_c96: "Übertöten M1916" # Written on the gun.
@@ -168,8 +174,8 @@ bm_w_c96: "Übertöten M1916" # Written on the gun.
 
 bm_w_type54: "Káng Arms TT-54"
 bm_w_breech: "Parabellum P08"
-bm_w_lemming: "Acuto 5.7" # Written on the gun
-bm_w_chinchilla: "J&M Castigo .44" # Based on PAYDAY 3
+bm_w_lemming: "Union Acuto 5.7" # Acuto is implied to be the name of the gun and maybe the company??? But that sucks and makes no sense so fuck you
+bm_w_chinchilla: "J&M Castigo" # Based on PAYDAY 3
 bm_w_packrat: "SG Master 9" # Written on the gun
 bm_w_model3: "J&M Frenchman"
 bm_w_rsh12: "Ketchnov RSh-12" # Written on the gun... in Russian!
@@ -182,9 +188,9 @@ bm_w_czech: "Czech Sport II" # Written on the gun
 bm_w_stech: "Igor Avtomaticheskiy"
 bm_w_holt: "Holt H9"
 bm_w_pmm: "Izhma Strix"
-bm_w_welrod: "Welrod"
+bm_w_welrod: "Pipette Mk.2"
 bm_w_peacemaker: "Peacemaker .45"
-bm_w_mateba: "Matever 521M" # Gun is Mateba 2006M, can't find meaning of 2006M. 521 is the release date of Alesso (05/21/15)
+bm_w_mateba: "Matever 2105M" # Gun is Mateba 2006M, can't find meaning of 2006M. 2105 is the release date of Alesso (05/21/15)
 bm_w_deagle: "IMI Deagle .357"
 
 bm_w_m45: "Swedish K"
@@ -194,9 +200,9 @@ bm_w_vityaz: "Izhma AKS-21U"
 bm_w_cobray: "HIC Jacket's Piece"
 bm_w_mp5: "SG Compact-5"
 bm_w_m1928: "Chicago Typewriter"
-bm_w_fmg9: "Magdrop WASP-DS"
+bm_w_fmg9: "Speedpull WASP-DS"
 bm_w_pm9: "Miyaka PM-9"
-bm_w_scorpion: "TKA Cobra" # OTWD
+bm_w_scorpion: "Czech Cobra 61" # OTWD
 bm_w_mp9: "Bergentrückung MP9" # MP9 is clearly written on the side of the gun
 bm_w_olympic: "Crosskill Para" # all AR-15s say Crosskill Tactical on them
 bm_w_baka: "IMI Micro Uzi"
@@ -207,7 +213,7 @@ bm_w_sr2: "Heather KP-SR2" # Gun has KP-SR2 written on it in Russian
 bm_w_akmsu: "Izhma AKMSU"
 bm_w_speen: "Pathfinder Ballerina"
 bm_w_tec9: "Blaster FT-9" # Taken from OTWD
-bm_w_p90: "Acuto Kobus 90" # Five Seven and P90 were developed side by side irl
+bm_w_p90: "Union Kobus 90"
 bm_w_polymer: "Kross Vertex"
 bm_w_coal: "Izhma Tatonka-2" # PP-19 Bizon-2
 bm_w_sterling: "Patchett L2A3"
@@ -239,7 +245,7 @@ bm_w_akm: "Izhma AK-59"
 bm_w_g36: "PJ G36" # written ON THE GUN BABYYYYYYY
 bm_w_ak12: "Izhma AK-17"
 bm_w_akm_gold: "Golden AK-59"
-bm_w_tecci: "Bootleg SG 416C"
+bm_w_tecci: "SG Bootleg 416C"
 bm_w_l85a2: "Queen's Wrath"
 bm_w_m14: "Simmons Armory M308"
 bm_w_famas: "Clarion"
@@ -249,13 +255,14 @@ bm_w_ak5: "Automatkarbin 5"
 bm_w_galil: "IMI Gecko"
 bm_w_komodo: "IMI Tavor-21" # THIS is the gun that tells us what IWI is called in-universe
 bm_w_m16: "Crosskill Maverick" # CS1.6 - CS:S 
-bm_w_contraband: "SG 417D"
+bm_w_contraband: "SG Friend 417D"
 bm_w_fal: "Union Falcon"
 bm_w_hailstorm: "FTI Hailstorm R-033"
 bm_w_tkb: "Rodion TKB-59"
 bm_w_g3: "SG Gewehr 3"
 bm_w_ching: "Simmons Armory Galant"
 bm_w_hajk: "Czech 805B"
+bm_w_s552: "Signature Commando 553"
 
 bm_w_spas12: "Ferino Predator 12G" # Comes from OTWD
 bm_w_boot: "Rapture Breaker 1887" # Winchester company was originally New Haven Arms; Haven -> Heaven -> Rapture
@@ -276,7 +283,7 @@ bm_w_hk51b: "SG 51D"
 bm_w_kacchainsaw: "KAC Stoner-8" # Back of the gun just straight up says Knights Armament lmao.
 # front calls it a Stoner, but it's actually based on the Chainsaw which was developed in '08.
 
-bm_w_m249: "Kulspruta 90"
+bm_w_m249: "Union M249"
 bm_w_hcar: "Akron HCAR"
 bm_w_mg42: "MG 42"
 bm_w_hk21: "Brenner 21E"
@@ -307,6 +314,7 @@ bm_w_ms3gl: "FTI Basilisk 3GL"
 bm_w_rpg7: "RPG-7"
 bm_w_ray: "Commando M101"
 bm_w_money: "GenSec Money Thrower"
+bm_w_arbiter: "SG Arbiter"
 
 # Some notes here, because there's a LOT to keep track of:
 # SG = H&K
@@ -332,7 +340,7 @@ bm_w_money: "GenSec Money Thrower"
 # Arctic Impact = Accuracy International
 # Ketchnov = TsKIB
 # Lion = KelTec
-# Magdrop = Magpul
+# Speedpull = Magpul
 # Giovanni = Benelli
 # Bergentrückung = B&T
 # HIC = Cobray
@@ -358,24 +366,24 @@ bm_equipment_spy_camera_desc: "Remote camera that continuously marks enemies wit
 # Side Jobs
 menu_tango_key: "Find the key"
 menu_tango_case: "Find the weapon case"
-menu_tango_key_1: "Find the key (Airport)"
+menu_tango_key_1: "Find the key (Firestarter)"
 menu_tango_key_2: "Find the key (FBI Server)"
 menu_tango_1_key_1_desc: "Find the key in 'Cook Off' (Hector)."
 menu_tango_2_case_desc: "Find the weapon case in 'Engine Problem'."
-menu_tango_3_case_desc: "Find the weapon case in 'Framing'."
-menu_tango_4_key_1_desc: "Find the keys in 'Airport' and 'FBI Server'."
+menu_tango_3_case_desc: "Find the weapon case in 'Political Suicide'."
+menu_tango_4_key_1_desc: "Find the keys in 'Firestarter' and 'Hornet's Nest'."
 menu_aru_job_1_reward: "A new weapon, C-Stacks, and a safe house trophy."
 menu_aru_job_2_reward: "A new weapon, C-Stacks, and a safe house trophy."
 menu_aru_job_3_reward: "A new weapon, C-Stacks, and a safe house trophy."
 menu_aru_job_4_reward: "C-Stacks and a safe house trophy."
-menu_jfr_job_1_case_desc: "Finish 'Airport' after taking the briefcase."
-menu_jfr_job_3_wine_desc: "Escape after stealing the wine in 'Framing' without the alarm going off."
+menu_jfr_job_1_case_desc: "Finish 'Firestarter' after taking the briefcase."
+menu_jfr_job_3_wine_desc: "Escape after stealing the wine in 'Political Suicide' without the alarm going off."
 menu_pda8_2_prog_obj_desc: "Collect three different anniversary statues."
 menu_pda8_2_prog_obj: "Statues Found"
 menu_pda8_3_prog_obj_desc: "Collect five different anniversary statues."
 menu_pda8_3_prog_obj: "Statues Found"
 menu_pda8_item_1_desc: "Collect all seven anniversary statues."
-menu_pda8_item_2: "Almir Figurine (Airport & FBI Server)"
+menu_pda8_item_2: "Almir Figurine (Firestarter & Hornet's Nest)"
 menu_pda8_item_3: "SWAT Van (Four Stores)"
 menu_pda8_item_4: "Toothbrush (Nightclub)"
 menu_pda8_item_5: "Medallion (Watchdogs)"
@@ -398,7 +406,7 @@ menu_cg22_post_objective_6_desc: "Secure 250 loot bags."
 menu_cg22_post_objective_8_desc: "Kill 500 bulldozers."
 menu_cg22_post_objective_9_desc: "Secure 500 loot bags."
 menu_pda10_post_objective_3_desc: "Complete 50 heists."
-menu_pda10_post_objective_5_desc: "Perform 50 double kills with the Black Bessy musket or kill 1000 enemies with precision rifles."
+menu_pda10_post_objective_5_desc: "Perform 50 double kills with the Brown Betty musket or kill 1000 enemies with precision rifles."
 menu_pda10_post_objective_2_desc: "Secure 50 loot bags."
 menu_pda10_post_objective_6_desc: "Kill 100 enemies with the HAM-mer or kill 500 enemies with any melee weapon."
 menu_pda10_post_objective_1_desc: "Kill 250 bulldozers."
@@ -421,7 +429,7 @@ trophy_falcogini_objective: "Complete 'Car Shop' on Death Sentence."
 trophy_computer_desc: "Wait, you're NOT supposed to randomly guess?"
 trophy_computer_objective: "Complete 'Engine Problem' while securing the correct engine last."
 trophy_piggy_bank_objective: "Complete 'Big Bank' on Death Sentence in under 8 minutes with all crew members using no skills."
-trophy_framing_frame_objective: "Complete 'Framing' on Death Sentence without the power being cut during the data upload."
+trophy_framing_frame_objective: "Complete 'Political Suicide' on Death Sentence without the power being cut during the data upload."
 trophy_stealth_objective: "Complete all stealthable heists on Death Sentence without the alarm going off."
 trophy_courtesy_objective: "Complete 'Beneath the Mountain' on Death Sentence without killing any medics."
 trophy_bank_heists_objective: "Complete 'Bank Heist: Random' on Death Sentence."

@@ -232,6 +232,9 @@ Hooks:PostHook(WeaponTweakData, "init", "CrimDusk_WeaponTweakInit", function(sel
   self.victor.use_data.selection_index = 2
   self.rpg7.use_data.selection_index = 2
   self.ray.use_data.selection_index = 2
+  self.arbiter.use_data.selection_index = 2
+  self.china.use_data.selection_index = 2
+  self.m37.use_data.selection_index = 2
 
   -- Attribute tweaks
   self.welrod.stats_modifiers = nil
