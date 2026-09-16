@@ -13,12 +13,11 @@ Hooks:PostHook(PlayerStandard, "init", "CrimDusk_InitPlayerStandard", function(s
   self._slotmask_bullet_impact_targets = managers.slot:get_mask("bullet_impact_targets") + 3
 end)
 
-if NetworkHelper:IsHost() then
-  Hooks:PostHook(PlayerStandard, "_enter", "CrimDusk_GoLoudImmediate", function()
-    log("ENTERED STANDARD STATE")
-    CrimDusk.GoLoud()
-  end)
-end
+Hooks:PostHook(PlayerStandard, "_enter", "CrimDusk_GoLoudImmediate", function()
+  if NetworkHelper:IsHost() then CrimDusk.GoLoud() return end
+  NetworkHelper:SendToPeer(1, "CrimDusk_MaskedUp", true)
+  Hooks:RemovePostHook("CrimDusk_GoLoudImmediate")
+end)
 
 -- Melee is treated as its own weapon slot
 Hooks:OverrideFunction(PlayerStandard, "_check_action_melee", function(self, t, input)

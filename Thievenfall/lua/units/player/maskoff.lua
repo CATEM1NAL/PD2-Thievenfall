@@ -48,7 +48,8 @@ Hooks:PostHook(PlayerMaskOff, "_interupt_action_interact", "CrimDusk_EndMaskOffI
   self._unit:base():set_detection_multiplier("interacting", 1)
 end)
 
-Hooks:PostHook(PlayerMaskOff, "exit", "CrimDusk_ForceLoudMaskup", function()
+Hooks:PostHook(PlayerMaskOff, "exit", "CrimDusk_ForceLoudMaskup", function(_, _, new_state_name)
+  if new_state_name == "driving" then return end
   if NetworkHelper:IsHost() then CrimDusk.GoLoud() return end
   NetworkHelper:SendToPeer(1, "CrimDusk_MaskedUp", true)
   Hooks:RemovePostHook("CrimDusk_ForceLoudMaskup")
