@@ -24,7 +24,7 @@ Global.CrimDusk.heists = {
 
   -- PDTH
   red2 = { grading = "color_bhd", suit = "suit" },
-  flat = { stealthable = true, grading = "color_nice", suit = "suit" },
+  flat = { grading = "color_nice", suit = "suit" },
   pal = { stealthable = true, grading = "color_xgen" },
   man = { stealthable = true, grading = "color_xxxgen", suit = "slaughterhouse" },
   nmh = { stealthable = true, bonus = "big", grading = "color_matrix_classic", suit = "suit" },

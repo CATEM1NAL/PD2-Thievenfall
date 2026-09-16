@@ -1,3 +1,5 @@
+if Global.game_settings and Global.game_settings.level_id == "flat" then return end
+
 Hooks:PostHook(InteractionTweakData, "init", "CrimDusk_InteractionTweakInit", function(self)
   for interaction, _ in pairs(self) do
     if type(self[interaction]) == "table" then

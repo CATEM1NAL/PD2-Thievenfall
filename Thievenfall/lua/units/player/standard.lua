@@ -14,7 +14,8 @@ Hooks:PostHook(PlayerStandard, "init", "CrimDusk_InitPlayerStandard", function(s
 end)
 
 if NetworkHelper:IsHost() then
-  Hooks:PostHook(PlayerStandard, "enter", "CrimDusk_GoLoudImmediate", function(self)
+  Hooks:PostHook(PlayerStandard, "_enter", "CrimDusk_GoLoudImmediate", function()
+    log("ENTERED STANDARD STATE")
     CrimDusk.GoLoud()
   end)
 end

@@ -38,17 +38,18 @@ Hooks:OverrideFunction(PlayerMaskOff, "_check_action_interact", function(self, t
 end)
 
 -- Interacting increases detection
-Hooks:PostHook(PlayerMaskOff, "_start_action_interact", "CrimDusk_MaskOffInteract", function(self)
+Hooks:PostHook(PlayerMaskOff, "_start_action_interact", "CrimDusk_StartMaskOffInteract", function(self)
   self._unit:base():set_suspicion_multiplier("interacting", 5)
   self._unit:base():set_detection_multiplier("interacting", 5)
 end)
 
-Hooks:PostHook(PlayerMaskOff, "_interupt_action_interact", "CrimDusk_MaskOffInteract", function(self)
+Hooks:PostHook(PlayerMaskOff, "_interupt_action_interact", "CrimDusk_EndMaskOffInteract", function(self)
   self._unit:base():set_suspicion_multiplier("interacting", 1)
   self._unit:base():set_detection_multiplier("interacting", 1)
 end)
 
 Hooks:PostHook(PlayerMaskOff, "exit", "CrimDusk_ForceLoudMaskup", function()
-  if NetworkHelper:IsClient() then NetworkHelper:SendToPeer(1, "CrimDusk_MaskedUp", true) return end
-  CrimDusk.GoLoud()
+  if NetworkHelper:IsHost() then CrimDusk.GoLoud() return end
+  NetworkHelper:SendToPeer(1, "CrimDusk_MaskedUp", true)
+  Hooks:RemovePostHook("CrimDusk_ForceLoudMaskup")
 end)
