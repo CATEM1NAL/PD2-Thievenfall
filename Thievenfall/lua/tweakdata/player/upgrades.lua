@@ -178,13 +178,13 @@ Hooks:PostHook(UpgradesTweakData, "init", "CrimDusk_InitUpgradeTweakData", funct
   -- Sneaky Bastard
   self.values.player.detection_risk_add_dodge_chance = {
     { 0.01, 1, "below", 35, 0.1 },
-    { 0.02, 1, "below", 35, 0.1 }
+    { 0.02, 1, "below", 35, 0.2 }
   }
 
   -- Low Blow
   self.values.player.detection_risk_add_crit_chance = {
-    { 0.025, 1, "below", 35, 0.3 },
-    { 0.05, 1, "below", 35, 0.3 },
+    { 0.025, 1, "below", 35, 0.25 },
+    { 0.05, 1, "below", 35, 0.5 },
   }
 
   -- Rise Above

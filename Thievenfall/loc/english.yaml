@@ -159,7 +159,7 @@ bm_w_p226: "Signature .40"
 bm_w_colt_1911: "Crosskill Operator II" # Written on the gun
 bm_w_b92fs: "Bernetti 92" # Written on the gun
 bm_w_raging_bull: "Tarius Bronco" # Tarius derived from Sagittarius, fitting the Zodiac naming of Taurus.
-bm_w_m1911: "Crosskill 1911"
+bm_w_m1911: "Crosskill M1911"
 bm_w_maxim9: "Gecko Max-9" # Real gun is Maxim-9, better connects the two
 bm_w_sparrow: "IMI Sparrow 941 RPL" # Written on the gun
 bm_w_pl14: "Izhma Streak-14"
@@ -355,13 +355,13 @@ menu_snp: "Precision"
 # Deployables
 bm_equipment_ammo_bag_desc: "Contains enough ammo to fully refill one weapon and half of another weapon. Can be upgraded with Enforcer skills."
 bm_equipment_bodybags_bag_desc: "Holds three extra body bags. Can bring an additional case with the 'Cleaner' skill."
-bm_equipment_doctor_bag_desc: "Holds one charge which fully restores health and replenishes one down. Can be upgraded with Mastermind skills."
+bm_equipment_doctor_bag_desc: "Holds one charge which fully restores health and replenishes 10 seconds of down time. Can be upgraded with Mastermind skills."
 bm_equipment_ecm_jammer_desc: "Activates upon being placed, jamming all active phone calls for 20 seconds. Can be upgraded with Ghost skills."
 bm_equipment_first_aid_kit_desc: "Single use full heal. Can be upgraded with Mastermind skills."
 bm_equipment_sentry_gun_desc: "Automated weapon that fires at enemies within range. After firing 100 bullets it needs to be picked up to fire again. If the sentry takes too much damage you cannot pick it up. Can be upgraded with Technician skills."
 bm_equipment_trip_mine: "Trip Mine"
 bm_equipment_trip_mine_desc: "Single use trap that can be placed anywhere. Detonates upon taking damage or the laser being broken. Can be upgraded with Technician skills."
-bm_equipment_spy_camera_desc: "Remote camera that continuously marks enemies within its line of sight. Can be picked back up after placement." 
+bm_equipment_spy_camera_desc: "Remote camera that continuously marks special enemies within its line of sight. Can be picked back up after placement." 
 
 # Side Jobs
 menu_tango_key: "Find the key"
@@ -463,8 +463,8 @@ bm_menu_skill_locked_smoke_screen_grenade: "Reach level 40 to unlock!"
 bm_menu_skill_locked_tag_team: "Reach level 80 to unlock!"
 bm_menu_skill_locked_copr_ability: "Reach level 100 to unlock!"
 bm_menu_skill_locked_damage_control: "Requires the 'Virtue' skill!"
-bm_global_value_wild_char_unlock: "Complete 'Lion's Den' heist to unlock!"
-bm_global_value_hoxton_unlock: "Complete 'The Breakout' heist to unlock!"
+bm_global_value_wild_char_unlock: "Complete the 'Lion's Den' heist in your current campaign to unlock!"
+bm_global_value_hoxton_unlock: "Complete 'The Breakout' heist in your current campaign to unlock!"
 
 # Upgrade Requirements
 menu_asset_lock_buy_bodybags_asset: "Requires 'Inside Man' level 2!"
@@ -923,7 +923,7 @@ menu_custody_timer: "Master Trader"
 menu_custody_timer_desc: "$lv1;Custody timer reduced by ##50%##."
 
 menu_crouch_dodge: "Duck and Cover"
-menu_crouch_dodge_desc: "$lv1;Gain ##5## dodge while crouching.\n\n$lv2;Gain ##15## dodge while crouching."
+menu_crouch_dodge_desc: "$lv1;Gain ##10## dodge while crouching.\n\n$lv2;Gain ##15## dodge while crouching."
 
 menu_dominator: "Dominator"
 menu_dominator_desc: "$lv1;Your intimidation against cops is ##100%## more effective.\n\n$lv2;You can intimidate cops during assaults."

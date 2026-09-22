@@ -140,3 +140,12 @@ Hooks:Add("MenuManagerBuildCustomMenus", "CrimDusk_MenuTweaks", function(menu_ma
   end
 end)
 -- MENU CHANGES END HERE --
+
+Hooks:PostHook(MenuManager, "do_clear_progress", "CrimDawn_ResetSave", function(self)
+  Global.CrimDusk.data.weekly_holdout = {}
+  Global.CrimDusk.weapon_levels = {}
+  CrimDusk:Reset()
+
+  io.save_as_json(Global.CrimDusk.holdout_data, CrimDusk.HoldoutData)
+  CrimDusk:WriteSave(FileIdent, "wiped save data")
+end)

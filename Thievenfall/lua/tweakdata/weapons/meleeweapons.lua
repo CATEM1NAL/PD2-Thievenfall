@@ -3,6 +3,9 @@ Hooks:PostHook(BlackMarketTweakData, "_init_melee_weapons", "CrimDusk_InitMeleeT
   self.melee_weapons.weapon.dlc = "crimdusk_hidden_item"
   self.melee_weapons.weapon.repeat_expire_t = 0.5
 
+  self.melee_weapons.toothbrush.dlc = "freed_old_hoxton"
+  self.melee_weapons.toothbrush.locks = nil
+
   -- Main tweakdata changes
   local MeleeClasses = Global.CrimDusk.melee.classes
   local MeleeStats = Global.CrimDusk.melee.stats

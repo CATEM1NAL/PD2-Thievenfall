@@ -131,6 +131,9 @@ Global.CrimDusk.heists = {
   corp = { grading = "color_xgen", suit = "suit" },
   deep = { delay = 15, grading = "color_heat", suit = "slaughterhouse" },
 
+  -- Sidetrack
+  auc = { delay = 2, grading = "color_xxxgen", suit = "suit" },
+
   -- Post-game
   hvh = { stealthable = true, grading = "color_matrix_classic", suit = "haunted" },
   help = { stealthable = true, grading = "color_matrix_classic", suit = "classyske" },
