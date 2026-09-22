@@ -1,6 +1,6 @@
 <mod name="Thievenfall" global_key="thievenfall" author="~/cat/em1/nal/" color="Color(0.734375,0.4921875,0.73828125)" image="dawn">
   <!-- Auto update from latest GitHub release -->
-  <AssetUpdates version="0.11.0-pre4" id="CATEM1NAL/PD2-Thievenfall" provider="github" release="true"/>
+  <AssetUpdates version="0.11.0-pre5" id="CATEM1NAL/PD2-Thievenfall" provider="github" release="true"/>
 
   <AddFiles directory="assets">
     <png path="dawn"/> <!-- mod icon -->
@@ -120,7 +120,6 @@
       </hooks>
 
       <hooks directory="states"> <!-- root/lua/states/ -->
-        <hook source_file="lib/states/ingamestandard" file="ingamestandard.lua"/>
         <hook source_file="lib/states/victorystate" file="victory.lua"/>
         <hook source_file="lib/states/gameoverstate" file="gameover.lua"/>
       </hooks>
@@ -134,6 +133,7 @@
           <hook source_file="lib/units/beings/player/states/playermaskoff" file="maskoff.lua"/>
           <hook source_file="lib/units/beings/player/states/playerstandard" file="standard.lua"/>
           <hook source_file="lib/units/beings/player/states/playercarry" file="carry.lua"/>
+          <hook source_file="lib/units/beings/player/states/playertased" file="tased.lua"/>
           <hook source_file="lib/units/beings/player/playerdamage" file="damage.lua"/>
           <hook source_file="lib/units/beings/player/playermovement" file="movement.lua"/>
           <hook source_file="lib/units/beings/player/playerinventory" file="inventory.lua"/>
