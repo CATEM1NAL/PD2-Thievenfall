@@ -13,12 +13,6 @@ Hooks:PostHook(PlayerStandard, "init", "CrimDusk_InitPlayerStandard", function(s
   self._slotmask_bullet_impact_targets = managers.slot:get_mask("bullet_impact_targets") + 3
 end)
 
-Hooks:PostHook(PlayerStandard, "_enter", "CrimDusk_GoLoudImmediate", function()
-  if NetworkHelper:IsHost() then CrimDusk.GoLoud() return end
-  NetworkHelper:SendToPeer(1, "CrimDusk_MaskedUp", true)
-  Hooks:RemovePostHook("CrimDusk_GoLoudImmediate")
-end)
-
 -- Melee is treated as its own weapon slot
 Hooks:OverrideFunction(PlayerStandard, "_check_action_melee", function(self, t, input)
   local CanMelee = not self._state_data.melee_attack_allowed_t and not self._state_data.melee_repeat_expire_t
@@ -207,6 +201,12 @@ end)
 Hooks:PostHook(PlayerStandard, "_enter", "CrimDawn_PlayerStandardEnter", function(self)
   if self._state_data.on_ladder then self._unit:mover():set_gravity(Vector3(0, 0, 0))
   else self._unit:mover():set_gravity(Vector3(0, 0, -1800)) end
+
+  -- Go loud if we somehow haven't triggered it yet
+  if managers.groupai:state():is_police_called() then return end
+
+  if NetworkHelper:IsHost() then CrimDusk.GoLoud() return end
+  NetworkHelper:SendToPeer(1, "CrimDusk_MaskedUp", true)
 end)
 
 Hooks:OverrideFunction(PlayerStandard, "_activate_mover", function(self, mover, velocity)

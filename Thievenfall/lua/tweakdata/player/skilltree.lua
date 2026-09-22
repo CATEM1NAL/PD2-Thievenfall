@@ -145,8 +145,8 @@ Hooks:PostHook(SkillTreeTweakData, "init", "CrimDusk_SkillTreeTweakInit", functi
     self.trees[11].name_id = "st_menu_ghost_silencer"
     self.trees[11].tiers = {
       { "quick_draw", "hidden_blade", "vest_conceal", "high_value_target" },
-      { "akimbo", "silence_conceal", "silence_expert", "copycat_reload" },
-      { "drop_cloth", "dire_need", "backstab" },
+      { "copycat_reload", "akimbo", "silence_expert" },
+      { "dire_need", "backstab", "silence_conceal" },
       { "pager_snatch", "hypocritical", "silencer_statboost" }
     }
     self.trees[12].name_id = "st_menu_ghost_concealed"
@@ -167,9 +167,9 @@ Hooks:PostHook(SkillTreeTweakData, "init", "CrimDusk_SkillTreeTweakInit", functi
     self.trees[14].name_id = "st_menu_fugitive_berserker"
     self.trees[14].tiers = {
       { "hitman_perk", "steroids", "because_of_training" },
-      { "bloodthirst", "infil_melee", "melee_reload_speed" },
+      { "yakuza_speed", "infil_melee", "melee_reload_speed" },
       { "sharp_damage", "drop_soap", "infil_heal", "berserker" },
-      { "yakuza_speed", "frenzy", "gunserker" }
+      { "bloodthirst", "frenzy", "gunserker" }
     }
     self.trees[15].name_id = "st_menu_fugitive_undead"
     self.trees[15].tiers = {
@@ -742,12 +742,12 @@ Hooks:PostHook(SkillTreeTweakData, "init", "CrimDusk_SkillTreeTweakInit", functi
     self.skills.ex_pres = {
       { upgrades = { "player_armor_health_store_amount_1" }, cost = self.costs.default },
       { upgrades = { "player_armor_health_store_amount_2" }, cost = self.costs.default },
-      { upgrades = { "player_armor_health_store_amount_3" }, cost = self.costs.default },
+      { upgrades = { "player_armor_health_store_amount_3", "player_armor_max_health_store_multiplier" }, cost = self.costs.default },
       name_id = "menu_deck13_1", desc_id = "menu_break_skill", icon_xy = { 0, 0 }
     }
     self.skills.yakuza_speed = {
-      { upgrades = { "player_armor_regen_damage_health_ratio_multiplier_3", "player_armor_regen_damage_health_ratio_threshold_multiplier" }, cost = self.costs.default },
       { upgrades = { "player_movement_speed_damage_health_ratio_multiplier", "player_movement_speed_damage_health_ratio_threshold_multiplier" }, cost = self.costs.default },
+      { upgrades = { "player_armor_regen_damage_health_ratio_multiplier_1", "player_armor_regen_damage_health_ratio_threshold_multiplier" }, cost = self.costs.default },
       name_id = "menu_yakuza_speed", desc_id = "menu_yakuza_speed_desc", icon_xy = { 0, 0 }
     }
     self.skills.maniac_base = {

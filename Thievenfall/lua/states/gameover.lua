@@ -17,23 +17,27 @@ Hooks:PostHook(GameOverState, "at_enter", "CrimDusk_HeistFailed", function(self)
   local checkpoints = { [5] = true, [6] = true, [7] = true, [8] = true }
   Global.CrimDusk.data.lives = 60
 
+  local CurrentHeist = managers.job:current_job_id()
+
   if NetworkHelper:IsClient() then CrimDusk:WriteSave(FileIdent, "heist failed") return
   elseif managers.job:current_job_id() == "vit" then 
     CrimDusk.SoftReset()
     CrimDusk.EndingText(false)
 
-  elseif Global.CrimDusk.data.heists_won < 5 then Global.CrimDusk.data.heists_won = 5
+  elseif Global.CrimDusk.data.heists_won < 5 then
+    local NextHeist = Global.game_settings.single_player and 5 or 8
+    Global.CrimDusk.data.heists_won = 5
 
   elseif Global.CrimDusk.data.heists_won >= #Global.CrimDusk.campaign then
     Global.CrimDusk.data.heist_chain = Global.CrimDusk.data.heist_chain or {}
     Global.CrimDusk.data.heists_skipped = Global.CrimDusk.data.heists_skipped or {}
 
-    local CurrentHeists = Global.CrimDusk.data.next_heists
-    for i = 1, #CurrentHeists do
-      if CurrentHeists[i] == Global.CrimDusk.job_to_wrapper[managers.job:current_job_id()] or managers.job:current_job_id() then
-        table.insert(Global.CrimDusk.data.heist_chain, (Global.CrimDusk.job_to_wrapper[CurrentHeists[i]] or CurrentHeists[i]))
+    local ActiveContracts = Global.CrimDusk.data.next_heists
+    for i = 1, #ActiveContracts do
+      if ActiveContracts[i] == Global.CrimDusk.job_to_wrapper[CurrentHeist] or CurrentHeist then
+        table.insert(Global.CrimDusk.data.heist_chain, (Global.CrimDusk.job_to_wrapper[ActiveContracts[i]] or ActiveContracts[i]))
 
-      else table.insert(Global.CrimDusk.data.heists_skipped, (Global.CrimDusk.job_to_wrapper[CurrentHeists[i]] or CurrentHeists[i])) end
+      else table.insert(Global.CrimDusk.data.heists_skipped, (Global.CrimDusk.job_to_wrapper[ActiveContracts[i]] or ActiveContracts[i])) end
     end
     Global.CrimDusk.data.next_heists = {}
 

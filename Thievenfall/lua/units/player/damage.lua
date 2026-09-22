@@ -174,6 +174,7 @@ Hooks:OverrideFunction(PlayerDamage, "_regenerated", function(self, no_messiah)
   elseif not self._down_time and Global.CrimDusk.data[lives] >= 0 and lives ~= "lives_oneoff" then
     CrimDusk.Log(FileIdent, "Setting initial down time", true)
     self._revives = Application:digest_value(math.min(Global.CrimDusk.data[lives] + 1, self._max_lives), true)
+    Global.CrimDusk.data[lives] = Application:digest_value(self._revives, false) - 1
 
   elseif Global.CrimDusk.data[lives] == -2 then -- Custody carry over
     CrimDusk.Log(FileIdent, "Started in custody!", true)
@@ -192,10 +193,11 @@ Hooks:OverrideFunction(PlayerDamage, "_regenerated", function(self, no_messiah)
   else local NewDowns = Application:digest_value(self._revives, false) + 10
     CrimDusk.Log(FileIdent, "Used doctor bag", true)
     self._revives = Application:digest_value(math.min(NewDowns, self._max_lives), true)
+    Global.CrimDusk.data[lives] = Application:digest_value(self._revives, false) - 1
   end
 
   -- Set down related values
-  self._down_time = Application:digest_value(self._revives, false) - 1
+  self._down_time = Global.CrimDusk.data[lives]
 
   self:set_health(self:_max_health())
   self:_send_set_health()
@@ -221,6 +223,7 @@ Hooks:OverrideFunction(PlayerDamage, "band_aid_health", function(self)
   self._revives = Application:digest_value(math.min(NewDowns, self._max_lives), true)
 
   self._down_time = Application:digest_value(self._revives, false) - 1
+  Global.CrimDusk.data[lives] = self._down_time
   self:_send_set_revives()
   self:SetReviveRatio()
 end)

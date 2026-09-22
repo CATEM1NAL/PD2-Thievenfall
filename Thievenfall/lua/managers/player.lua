@@ -104,6 +104,9 @@ Hooks:OverrideFunction(PlayerManager, "_on_enter_shock_and_awe_event", function(
 end)
 
 Hooks:PostHook(PlayerManager, "on_killshot", "CrimDusk_TrackWeaponKills", function(self, killed_unit, variant, headshot, weapon_id)
-  if CopDamage.is_civilian(killed_unit:base()._tweak_table) then return end
-  Global.CrimDusk.weapon_levels[weapon_id] = (Global.CrimDusk.weapon_levels[weapon_id] or 0) + 1
+  if not weapon_id or CopDamage.is_civilian(killed_unit:base()._tweak_table) then return end
+  local CurrentXP = Global.CrimDusk.weapon_levels[weapon_id] or 0
+  local xp = headshot and 2 or 1
+  log(CurrentXP .. " + " .. xp)
+  Global.CrimDusk.weapon_levels[weapon_id] = CurrentXP + xp
 end)

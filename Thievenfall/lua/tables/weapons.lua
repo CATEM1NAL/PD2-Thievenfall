@@ -327,7 +327,7 @@ local CrossbowExp = Crossbow * 1.5
 Global.CrimDusk.weapons.projectile_damage = {
 
   -- frags
-  frag = Grenade, dynamite = Grenade, dada_com = Grenade, frag_com = Grenade * 0.5, sticky_grenade = Grenade,
+  frag = Grenade, dynamite = Grenade, dada_com = Grenade, frag_com = Grenade * 0.25, sticky_grenade = Grenade,
   -- special grenades
   wpn_gre_electric = ShockLauncher * 2.5, poison_gas_grenade = 0, molotov = 0, fir_com = 0,
   -- thrown

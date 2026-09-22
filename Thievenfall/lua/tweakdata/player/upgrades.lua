@@ -38,7 +38,7 @@ Hooks:PostHook(UpgradesTweakData, "init", "CrimDusk_InitUpgradeTweakData", funct
   self.values.player.pick_up_ammo_multiplier = { 1.25, 1.5 } -- Fully Loaded
   self.values.player.melee_kill_snatch_pager_chance = { 0.25, 0.5, 0.75, 1 } -- Pager Snatch
   self.values.player.melee_sharp_damage_multiplier = { 2, 3, 4 } -- Vicious Warrior
-  self.values.player.critical_hit_chance = { 0.1, 0.2 } -- Hypocritical
+  self.values.player.critical_hit_chance = { 0.1, 0.25 } -- Hypocritical
   self.values.player.assets_cost_multiplier = { 0.1, 0.25, 0.5 } -- Nebula Plus
   self.values.player.revive_damage_reduction = { 0.5 } -- Combat Medic 1
   self.values.temporary.revive_damage_reduction = { { 0.5, 5 } } -- Combat Medic 2
@@ -75,6 +75,14 @@ Hooks:PostHook(UpgradesTweakData, "init", "CrimDusk_InitUpgradeTweakData", funct
   self.values.player.intimidation_multiplier = { 2 } -- Dominator
   self.values.player.bleed_out_health_multiplier = { 1.25, 1.5, 1.75, 2 } -- Bleedout health
   self.values.sentry_gun.extra_ammo_multiplier = { 2, 3 } -- Sentry Ammo
+  self.values.player.armor_regen_damage_health_ratio_multiplier = { 0.5, 0.5, 0.5 } -- Yakuza armour recovery
+  self.values.player.crouch_dodge_chance = { 0.1, 0.15 } -- Duck and Cover
+  self.values.player.drill_alert_rad = { 2000 } -- Silent Drilling 1
+  self.values.player.armor_health_store_amount = { 0.2, 0.5, 0.8 } -- Ex-President
+  self.values.shotgun.steelsight_accuracy_inc = { 0.5 } -- Skeet Shooting
+
+  self.drill_alert_radius = 5000 -- drill alert radius
+  self.enemy_hurt_alert_radius_whisper = 300 -- death alert radius
 
   -- Pocket ECM
   self.values.player.pocket_ecm_jammer_base = {
@@ -167,6 +175,18 @@ Hooks:PostHook(UpgradesTweakData, "init", "CrimDusk_InitUpgradeTweakData", funct
     { 0.1, 7, "above", 40 }
   }
 
+  -- Sneaky Bastard
+  self.values.player.detection_risk_add_dodge_chance = {
+    { 0.01, 1, "below", 35, 0.1 },
+    { 0.02, 1, "below", 35, 0.1 }
+  }
+
+  -- Low Blow
+  self.values.player.detection_risk_add_crit_chance = {
+    { 0.025, 1, "below", 35, 0.3 },
+    { 0.05, 1, "below", 35, 0.3 },
+  }
+
   -- Rise Above
   self.values.player.health_decrease = { 2.5, 5, 7.5 }
   self.values.player.armor_increase = { 2, 4, 6 }
@@ -250,6 +270,7 @@ Hooks:PostHook(UpgradesTweakData, "init", "CrimDusk_InitUpgradeTweakData", funct
   self.values.player.body_armor.concealment = { 30, 30, 26, 21, 18, 12, 1 }
   self.values.player.body_armor.armor = { 0, 0, 2, 4, 6, 8, 10 }
   self.values.player.body_armor.dodge = { 0, 0, -0.10, -0.20, -0.35, -0.5, -1 }
+  self.values.player.body_armor.skill_max_health_store = { 10, 10, 7.5, 5, 2.5, 1, 0.5 }
 
   -- Weapon speed penalties
   self.weapon_movement_penalty.pistol = 0.95
@@ -302,9 +323,7 @@ Hooks:PostHook(UpgradesTweakData, "init", "CrimDusk_InitUpgradeTweakData", funct
     doctor_bag_amount_increase = 3, ammo_bag_ammo_increase = 3, weapon_passive_reload_speed_multiplier = 3,
     temporary_chico_injector = 3, player_additional_lives = 3,
 
-    player_melee_kill_snatch_pager_chance = 4,
-
-    player_bleed_out_health_multiplier = 4
+    player_melee_kill_snatch_pager_chance = 4, player_bleed_out_health_multiplier = 4
   }
 
   for upgrade, count in pairs(NewUpgrades) do

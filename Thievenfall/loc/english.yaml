@@ -210,7 +210,7 @@ bm_w_shepheard: "Signature PC9" # Based on PAYDAY 3
 bm_w_schakal: "SG AMP-45" # Gun has AMP written on it
 bm_w_erma: "MP40"
 bm_w_sr2: "Heather KP-SR2" # Gun has KP-SR2 written on it in Russian
-bm_w_akmsu: "Izhma AKMSU"
+bm_w_akmsu: "Izhma AKS-59U"
 bm_w_speen: "Pathfinder Ballerina"
 bm_w_tec9: "Blaster FT-9" # Taken from OTWD
 bm_w_p90: "Union Kobus 90"
@@ -478,16 +478,17 @@ bm_menu_disables_damage_to_hot: "Dopamine is disabled while wearing this armor!"
 
 # Throwables
 bm_wpn_prj_ace_desc: "When they said to always have an ace up your sleeve, I don't think this is what they meant..."
-bm_grenade_fir_com_desc: "Every historical case of spontaneous combustion can be chalked up to a time travelling heister hitting someone with one of these."
-bm_grenade_frag_desc: "For when you really need to clear a room, and fast."
-bm_grenade_frag_com_desc: "Lower power but bigger boom."
+bm_grenade_fir_com_desc: "Spontaneously combusts, igniting everyone in the vicinity without leaving anything behind."
+bm_grenade_frag_desc: "For when you need to clear a room, and fast."
+bm_grenade_frag_com_desc: "Low power but big boom. Struggles against cops in heavier armor, so it's a good thing you have two of them."
 bm_concussion_desc: "Stuns all enemies in range for several seconds.\n\nBREACH AND CLEAR!"
 bm_grenade_poison_gas_grenade_desc: "Emits a poisonous cloud that dissipates after 15 seconds.\n\nThere is no context in which using this thing could be justified..."
 bm_grenade_molotov_desc: "Creates a flaming pool at the point of impact that burns for 15 seconds.\n\nCheap and effective, just don't drink from the wrong bottle."
 bm_dynamite_desc: "Did you know that dynamite is remarkably stable? It won't detonate upon being shot, but it will still remove your legs all the same."
-bm_grenade_sticky_grenade_desc: "Sticks to surfaces, but takes longer to detonate.\n\nI heard this was first used by some black ops guys who went above and beyond the call of duty."
-bm_grenade_electric: "Pig Tickler"
-bm_grenade_electric_desc: "Stuns all enemies in range for several seconds.\n\nJiu Feng said this was a prototype and he'd like to take it to mass market. There's no way these will catch on, right?"
+bm_grenade_sticky_grenade_desc: "Sticks to surfaces, but takes longer to detonate.\n\nFirst used in modern warfare by some black ops ghosts who went beyond the call of duty."
+bm_grenade_electric: "X1 Pig Tickler"
+bm_grenade_electric_desc: "Stuns all enemies in range for several seconds.\n\nJiu Feng said this was a prototype he'd like to take to mass market. There's no way these will catch on, right?"
+bm_grenade_dada_com_desc: "For when you need to clear a room within a room within a room."
 
 # Perk Consumables
 bm_ability_chico_injector_desc: "Press the throwable key to activate. While active, 25% of all damage taken is converted into healing. This effect lasts 6 seconds."
@@ -606,7 +607,7 @@ menu_shotgun_rof: "Slamfire"
 menu_shotgun_rof_desc: "$lv1;Rate of fire with single-fire shotguns is increased by ##35%## when hipfiring."
 
 menu_shotgun_accuracy: "Skeet Shooting"
-menu_shotgun_accuracy_desc: "$lv1;Shotgun accuracy is increased by ##40%## while aiming down sights."
+menu_shotgun_accuracy_desc: "$lv1;Shotgun accuracy is increased by ##50%## while aiming down sights."
 
 menu_far_away_beta_desc: "$lv1;Shotgun effective range is increased by ##50%## while aiming down sights."
 
@@ -753,9 +754,9 @@ menu_hidden_blade_desc: "$lv1;Melee weapon concealment increased by ##2##."
 menu_vest_conceal: "Hidden Vest"
 menu_vest_conceal_desc: "$lv1;Ballistic vest concealment increased by ##4##."
 
-menu_insulation_beta_desc: "$lv1;Being tased no longer forces you to shoot.\n\n$lv2;You have a ##30%## chance every second to break free from a taser.\n\n$lv3;Interacting with a taser allows you to break free."
+menu_insulation_beta_desc: "$lv1;Being tased no longer forces you to shoot.\n\n$lv2;You have a ##30%## chance every second to break free from a taser.\n\n$lv3;Interacting with a taser while stunned allows you to break free."
 
-menu_jail_diet_beta_desc: "$lv1;Gain ##1## dodge (up to ##10##) for each ##3## points of detection risk below ##35##.\n\n$lv2;Dodge is now granted for each point of detection risk below ##35##."
+menu_jail_diet_beta_desc: "$lv1;Gain ##1## dodge (up to ##10##) for each point of detection risk below ##35##.\n\n$lv2;Gain ##2## dodge (up to ##20##) instead."
 
 menu_optic_illusions_desc: "$lv1;Your target rate is reduced by ##33%##.\n\n$lv2;Your target rate is reduced by ##50%##."
 
@@ -764,7 +765,7 @@ menu_silence_expert_beta_desc: "$lv1;Stability with silenced weapons increased b
 menu_silence_conceal: "Pocket Silencer"
 menu_silence_conceal_desc: "$lv1;Silencers gain ##1## concealment and their concealment penalty is reduced by ##2##."
 
-menu_backstab_beta_desc: "$lv1;Gain ##3%## crit chance (up to ##30%##) for each ##3## points of detection risk below ##35##.\n\n$lv2;Crit chance is now granted for each point of detection risk below ##35##."
+menu_backstab_beta_desc: "$lv1;Gain ##2.5%## crit chance (up to ##25%##) for each point of detection risk below ##35##.\n\n$lv2;Gain ##5%## crit chance (up to ##50%##) instead."
 
 menu_inside_man: "Inside Man"
 menu_inside_man_desc: "$lv1;You can buy additional assets.\n\n$lv2;You can buy all assets."
@@ -852,7 +853,7 @@ menu_armorer_skill: "Impact Plate"
 menu_armorer_skill_desc: "$lv1;Armor increased by ##25%##.\n\n$lv2;Armor increased by ##50%##.\n\n$lv3;Armor increased by ##75%##.\n\n$lv4;Armor increased by ##100%##. Armor recovery is ##50%## less effective and locked at ##50%## slower, but occurs even while in combat."
 
 menu_yakuza_speed: "Adrenaline"
-menu_yakuza_speed_desc: "$lv1;While below ##50%## health your armor recovery speed scales with health lost, to a maximum of ##60%##.\n\n$lv2;Movement speed also increases by up to ##20%## with health lost."
+menu_yakuza_speed_desc: "$lv1;While below ##50%## health your movement speed scales with health lost, to a maximum of ##20%##.\n\n$lv2;Armor recovery speed also increases by up to ##50%## with health lost."
 
 menu_deck4_5_skill: "$lv1;Dodge increased by ##25##.\n\n$lv2;Dodge increased by ##50##.\n\n$lv3;Dodge increased by ##75##.\n\n$lv4;Dodging a bullet damages the enemy that fired it."
 
@@ -860,7 +861,7 @@ menu_rogue_switch: "$lv1;Weapon switch speed is increased by ##80%##.\n\n$lv2;We
 
 menu_hitman_skill_desc: "$lv1;Armor recovers ##15%## faster.\n\n$lv2;Armor recovers ##30%## faster.\n\n$lv3;Armor recovers ##45%## faster.\n\n$lv4;Your armor will always recover after a maximum of ##3## seconds, even while taking damage.\n"
 
-menu_break_skill: "$lv1;While you have armor, store ##4## health per crew kill that is consumed on armor recovery.\n\n$lv2;Store ##8## health per crew kill.\n\n$lv3;Store ##12## health per crew kill."
+menu_break_skill: "$lv1;While you have armor, store ##2## health per crew kill. When armor breaks stored health is consumed on armor recovery.\n\n$lv2;Store ##5## health per crew kill.\n\n$lv3;Store ##8## health per crew kill. Stored health capacity increased by ##50%##."
 
 menu_crook_skill: "Composure"
 menu_crook_skill_desc: "$lv1;Ballistic vests have their armor increased by ##40%## and their dodge increased by ##5##.\n\n$lv2;Armor is now increased by ##80%## and dodge is increased by ##10##.\n\n$lv3;Armor is increased further to ##120%## and dodge is increased by ##15##."
@@ -874,7 +875,7 @@ menu_infil_heal_desc: "$lv1;Heal ##20%## of your max health when dealing melee d
 
 menu_deck14_1_skill: "$lv1;The crew gains ##0.5## damage absorption (up to ##8##) for every ##30## damage you deal, resetting every ##2## seconds. If multiple people have this skill, the highest absorption is used.\n\n$lv2;Damage required is now ##20##, and the max absorption is increased to ##12##.\n\n$lv3;Any damage absorption you apply to yourself is doubled."
 
-menu_anarch_rise: "$lv1;Armor is increased by ##20##, but health is reduced by ##25##.\n\n$lv2;Armor is increased by ##40##, but health is reduced by ##50##.\n\n$lv3;Armor is increased by ##60##, but health is reduced by ##75##."
+menu_anarch_rise: "$lv1;Armor is increased by ##20## but health is reduced by ##25##.\n\n$lv2;Armor is increased by ##40## but health is reduced by ##50##.\n\n$lv3;Armor is increased by ##60## but health is reduced by ##75##."
 
 menu_mag_throw: "Mag Throw"
 menu_mag_throw_desc: "$lv1;Picking up ammo triggers an ammo pickup for the rest of the crew."
@@ -971,7 +972,7 @@ menu_blanks: "Warning Shot"
 menu_blanks_desc: "$lv1;The first time you shoot a civilian they won't die."
 
 menu_loud_and_proud: "Loud And Proud"
-menu_loud_and_proud_desc: "$lv1;Deal an additional ##5%## damage for each ##7## points of detection risk above ##40##, up to ##25%## extra damage.\n\n$lv2;Damage is increased to ##10%## per ##7## points, for a total of ##50%## extra damage."
+menu_loud_and_proud_desc: "$lv1;Gain ##5%## more damage (up to ##25%##) for every ##7## points of detection risk above ##40##.\n\n$lv2;Gain ##10%## more damage (up to ##50%##) per ##7## points instead."
 
 menu_pager_snatch: "Pager Snatch"
 menu_pager_snatch_desc: "$lv1;Killing a guard with melee has a ##25%## chance to not set off their pager.\n\n$lv2;Melee kills now have a ##50%## chance of ignoring pagers.\n\n$lv3;Melee kills now have a ##75%## chance of ignoring pagers.\n\n$lv4;Melee kills will never trigger pagers."
@@ -983,7 +984,7 @@ menu_shell_dimension: "Feeling Lucky"
 menu_shell_dimension_desc: "$lv1;Bullets have a ##10%## chance to not be consumed when fired.\n\n$lv2;Chance is increased to ##25%##."
 
 menu_hypocritical: "Hypocritical"
-menu_hypocritical_desc: "$lv1;Crit chance increased by ##10%##.\n\n$lv2;Crit chance increased by ##20%##."
+menu_hypocritical_desc: "$lv1;Crit chance increased by ##10%##.\n\n$lv2;Crit chance increased by ##25%##."
 
 menu_nebula_plus: "Nebula Plus"
 menu_nebula_plus_desc: "$lv1;Asset cost reduced by ##10%##.\n\n$lv2;Asset cost reduced by ##25%##.\n\n$lv3;Asset cost reduced by ##50%##."
