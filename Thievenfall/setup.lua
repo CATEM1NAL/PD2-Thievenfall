@@ -115,9 +115,10 @@ function CrimDusk:Init()
   end -- Yes, this WILL crash without a FileIdent or SaveReason. This is intentional.
 
   function self.GoLoud()
+    if managers.groupai:state():is_police_called() then return end
+
     NetworkHelper:RemoveReceiveHook("CrimDusk_ForceLoudNetwork")
     Hooks:RemovePostHook("CrimDusk_ForceLoudMaskup")
-    Hooks:RemovePostHook("CrimDusk_GoLoudImmediate")
 
     local LevelID = Global.game_settings.level_id
     local heist = Global.CrimDusk.heists[LevelID]
