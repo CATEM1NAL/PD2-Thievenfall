@@ -282,6 +282,8 @@ function Global.CrimDusk:Init()
 
   -- Load save
   CrimDusk.Log(FileIdent, "Attempting to load save file...")
+  self.weapon_levels = io.load_as_json(CrimDusk.WeaponLevels) or {}
+
   self.data = io.load_as_json(CrimDusk.SaveFile)
   if self.data then
     CrimDusk.Log(FileIdent, "Load successful!")
@@ -323,8 +325,6 @@ function Global.CrimDusk:Init()
   end
 
   self.holdout_data = io.load_as_json(CrimDusk.HoldoutData) or {}
-  self.weapon_levels = io.load_as_json(CrimDusk.WeaponLevels) or {}
-
   CrimDusk.Log(FileIdent, "Global initialisation completed!", true)
 end
 
