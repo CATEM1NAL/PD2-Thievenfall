@@ -5,7 +5,7 @@ Hooks:PostHook(GameOverState, "at_enter", "CrimDusk_HeistFailed", function(self)
   if managers.skirmish:is_skirmish() then -- Weekly Holdout
     Global.CrimDusk.holdout_data = Global.skirmish_manager.active_weekly
     io.save_as_json(Global.CrimDusk.holdout_data, CrimDusk.HoldoutData)
-    CrimDusk.Log(FileIdent, "Holdout failed")
+    CrimDusk.Log(FileIdent, "holdout failed")
   return end
 
   if NetworkHelper:IsHost() and CrimDusk.SettingsData.permadeath then
@@ -20,6 +20,7 @@ Hooks:PostHook(GameOverState, "at_enter", "CrimDusk_HeistFailed", function(self)
   local CurrentHeist = managers.job:current_job_id()
 
   if NetworkHelper:IsClient() then CrimDusk:WriteSave(FileIdent, "heist failed") return
+
   elseif managers.job:current_job_id() == "vit" then 
     CrimDusk.SoftReset()
     CrimDusk.EndingText(false)

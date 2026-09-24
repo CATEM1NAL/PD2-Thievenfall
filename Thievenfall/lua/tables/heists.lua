@@ -133,6 +133,7 @@ Global.CrimDusk.heists = {
 
   -- Sidetrack
   auc = { delay = 2, grading = "color_xxxgen", suit = "suit" },
+  -- Heist can softlock with default delay, 2 seconds prevents it.
 
   -- Post-game
   hvh = { stealthable = true, grading = "color_matrix_classic", suit = "haunted" },

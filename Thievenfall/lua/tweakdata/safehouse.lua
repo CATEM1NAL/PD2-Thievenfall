@@ -32,7 +32,7 @@ Hooks:PostHook(CustomSafehouseTweakData, "_init_trophies", "CrimDusk_InitTrophie
     elseif trophy.id == "trophy_dartboard" then trophy.objectives = { self:_progress("trophy_headshots", 10000, { name_id = "trophy_dartboard_progress" }) }
     elseif trophy.id == "trophy_host" then
       trophy.show_progress = nil
-      objectives = { self:_progress("trophy_host", 1) }
+      trophy.objectives = { self:_progress("trophy_host", 1) }
 
     elseif trophy.id == "trophy_goat" then
       trophy.show_progress = nil
