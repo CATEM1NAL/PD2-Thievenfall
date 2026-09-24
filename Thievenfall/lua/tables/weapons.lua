@@ -198,7 +198,7 @@ Global.CrimDusk.weapons.classes = {
 
     sr2 = { dmg = "med", ap = "basic" },
     speen = { dmg = "med" },
-    sterling = { dmg = "med", mag = 32, chamber = 0 }
+    sterling = { dmg = "med", mag = 32, chamber = 0 },
     schakal = { dmg = "med" },
     olympic = { dmg = "med", reload = 20 },
     erma = { dmg = "med", chamber = 0 },

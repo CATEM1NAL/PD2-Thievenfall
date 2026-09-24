@@ -21,15 +21,16 @@ Hooks:PostHook(GameOverState, "at_enter", "CrimDusk_HeistFailed", function(self)
 
   if NetworkHelper:IsClient() then CrimDusk:WriteSave(FileIdent, "heist failed") return
 
-  elseif managers.job:current_job_id() == "vit" then 
-    CrimDusk.SoftReset()
-    CrimDusk.EndingText(false)
-
   elseif Global.CrimDusk.data.heists_won < 5 then
     local NextHeist = Global.game_settings.single_player and 5 or 8
-    Global.CrimDusk.data.heists_won = 5
+    Global.CrimDusk.data.heists_won = NextHeist
 
   elseif Global.CrimDusk.data.heists_won >= #Global.CrimDusk.campaign then
+    if managers.job:current_job_id() == "vit" then 
+      CrimDusk.SoftReset()
+      CrimDusk.EndingText(false)
+    return end
+
     Global.CrimDusk.data.heist_chain = Global.CrimDusk.data.heist_chain or {}
     Global.CrimDusk.data.heists_skipped = Global.CrimDusk.data.heists_skipped or {}
 
@@ -44,6 +45,7 @@ Hooks:PostHook(GameOverState, "at_enter", "CrimDusk_HeistFailed", function(self)
 
   elseif not checkpoints[Global.CrimDusk.data.heists_won] then
     Global.CrimDusk.data.heists_won = Global.CrimDusk.data.heists_won - 1
+    NetworkHelper:SendToPeers("CrimDusk_SyncCampaignProgress", math.min(Global.CrimDusk.data.heists_won, #Global.CrimDusk.campaign))
   end
 
   CrimDusk:WriteSave(FileIdent, "heist failed")

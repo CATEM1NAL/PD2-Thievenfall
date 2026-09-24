@@ -129,6 +129,10 @@ bm_w_msr_desc: "Penetrates enemies & body armor."
 bm_w_r700_desc: "Penetrates enemies & body armor."
 bm_w_winchester1874_desc: "Penetrates enemies & body armor."
 bm_w_scout_desc: "Penetrates enemies & body armor."
+bm_w_p90_desc: "Penetrates enemies & body armor."
+bm_w_x_p90_desc: "Penetrates enemies & body armor."
+bm_w_sr2_desc: "Penetrates enemies & body armor."
+bm_w_x_sr2_desc: "Penetrates enemies & body armor."
 
 # Shield AP
 bm_w_rsh12_desc: "Penetrates enemies, body armor, & shields."
@@ -1337,6 +1341,8 @@ dialog_upgrade_safehouse: "Upgrading $character;'s room will cost $cost C-Stacks
 
 menu_cn_chill_combat_defend: "Defend"
 menu_cn_chill_combat_ignore_defend: "Ignore"
+
+menu_feature_crimenet_welcome_desc: "From: Ema [contact@stupidcat.uk]\nTo: $player;\nDate: 2026-09-24 21:20 (GMT+1)\nSubject: Welcome to Thievenfall\n\nHey there $player;! Thievenfall doesn't follow the vanilla game's normal progression systems, instead using a structured campaign system. This will take you through all the heists that the crew have pulled in (mostly) chronological order, starting with the PAYDAY: The Heist era.\n\nThe game is generally harder and you don't have much available right now, so don't worry about making it through these early heists; if you fail, you simply skip ahead to the start of the PAYDAY 2 story (starting with the tutorials if you're playing offline or Four Stores if you're playing online).\n\nThis mod doesn't include lobby searching via Crime.net, so get some friends together (or use Fast.net instead!). It's primarily meant to be played with a consistent group, which is why this decision was made.\n\nAs you play through the campaign the difficulty will gradually increase, reaching Death Wish by the end. After finishing White House you enter the post-game where all heists are played on Death Sentence, and the campaign is randomly generated.\n\nThese random campaigns are structured to loosely follow the intended narrative, and you cannot play every heist during these campaigns. Heists that you don't choose will be unplayable until the next campaign, and you get no second chances, so choose wisely and don't fuck up.\n\nThat should be everything you need to know to get started, get out there and start heisting!"
 
 # Lobby Settings
 menu_cn_game_settings: "Settings" # if removed then the "Mods" tab also vanishes when looking at lobbies

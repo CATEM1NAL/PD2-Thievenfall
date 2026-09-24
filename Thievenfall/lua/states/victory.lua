@@ -44,6 +44,7 @@ Hooks:PostHook(VictoryState, "at_enter", "CrimDusk_HeistWon", function(self)
       return CrimDusk:WriteSave(FileIdent, "campaign completed")
     end
 
+    NetworkHelper:SendToPeers("CrimDusk_SyncCampaignProgress", math.min(Global.CrimDusk.data.heists_won, #Global.CrimDusk.campaign))
     if Global.CrimDusk.data[heists_won] == #Global.CrimDusk.campaign and Permadeath == "" then
       CrimDusk:WriteSave(FileIdent, "heist completed (main campaign)")
     return end

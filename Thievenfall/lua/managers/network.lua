@@ -22,7 +22,15 @@ if NetworkHelper:IsClient() then
   end)
   ]]
 
-  -- 
+  -- Sync campaign progress (up to post-game)
+  NetworkHelper:AddReceiveHook("CrimDusk_SyncCampaignProgress", "CrimDusk_ReceiveHeistCount", function(data)
+    -- Only want to sync if we are around the same point in the campaign ourselves
+    -- This means groups can play together and everyone makes the same progress, regardless of host
+    if tonumber(data) == Global.CrimDusk.data.heists_won + 1 or Global.CrimDusk.data.heists_won - 1 then
+      Global.CrimDusk.data.heists_won = tonumber(data)
+      CrimDusk:WriteSave(FileIdent, "synced campaign progress")
+    end
+  end)
 
   -- Change difficulty
   NetworkHelper:AddReceiveHook("CrimDusk_ChangeDifficulty", "CrimDusk_ReceiveDifficultyIncrease", function(data)

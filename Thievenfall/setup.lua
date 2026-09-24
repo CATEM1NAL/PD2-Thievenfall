@@ -57,7 +57,7 @@ function CrimDusk:Init()
     -- Random campaign completed
     if CampaignData.heists_won > #Global.CrimDusk.campaign or perma == "_perma" then
       HeistsPlayed = #CampaignData["heist_chain" .. perma]
-      CampaignLength = HeistsPlayed >= 25 and loc:text("crimdusk_chat_campaign_long") or loc:text("crimdusk_chat_campaign_short")
+      CampaignLength = HeistsPlayed >= 12 and loc:text("crimdusk_chat_campaign_long") or loc:text("crimdusk_chat_campaign_short")
 
     -- Base campaign completed
     else HeistsPlayed = #Global.CrimDusk.campaign
@@ -130,7 +130,8 @@ function CrimDusk:Init()
     end)
   end
 
-  function self.IsPermadeath()
+  function self.IsPermadeath(bool)
+    if bool then return CrimDusk.SettingsData.permadeath end
     return CrimDusk.SettingsData.permadeath and "_perma" or ""
   end
 
