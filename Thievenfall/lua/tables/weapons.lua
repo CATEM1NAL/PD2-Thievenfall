@@ -28,33 +28,33 @@ Global.CrimDusk.weapons.classes = {
 
     famas = { dmg = "low", acc = 19 },
     asval = { dmg = "low", mag = 20 },
-    corgi = { dmg = "low" },
     vhs = { dmg = "low" },
-    galil = { dmg = "low", acc = 19 },
     komodo = { dmg = "low" },
     m16 = { dmg = "low", mag = 20, reload = 20 },
     tkb = { dmg = "low", chamber = 3 },
+    l85a2 = { dmg = "low" },
+    hajk = { dmg = "low" },
+    groza = { dmg = "low" },
 
+    corgi = { dmg = "med" },
     s552 = { dmg = "med", acc = 19 },
-    aug = { dmg = "med" },
-    groza = { dmg = "med" },
     sub2000 = { dmg = "med" },
     g36 = { dmg = "med", acc = 19 },
-    l85a2 = { dmg = "med" },
-    new_m14 = { dmg = "med" },
     ak5 = { dmg = "med" },
     fal = { dmg = "med" },
-    hajk = { dmg = "med" },
+    galil = { dmg = "med", acc = 19 },
+    tecci = { dmg = "med", nummags = 2, acc = 11 },
+    flint = { dmg = "med" },
 
-    scar = { dmg = "high", mag = 20 },
-    ak74 = { dmg = "high", acc = 16 },
     new_m4 = { dmg = "high", acc = 19 },
-    flint = { dmg = "high" },
-    tecci = { dmg = "high", nummags = 2, acc = 11 },
+    aug = { dmg = "high" },
+    ak74 = { dmg = "high", acc = 16 },
     contraband = { dmg = "high" },
     g3 = { dmg = "high", mag = 20 },
+    amcar = { dmg = "high", acc = 16 },
+    new_m14 = { dmg = "high" },
 
-    amcar = { dmg = "vhigh", acc = 16 },
+    scar = { dmg = "vhigh", mag = 20 },
     akm = { dmg = "vhigh" },
     akm_gold = { dmg = "vhigh" },
     shak12 = { dmg = "vhigh", acc = 16 },
@@ -89,12 +89,12 @@ Global.CrimDusk.weapons.classes = {
     mg42 = { dmg = "low", ap = "none", chamber = 0 },
     kacchainsaw = { dmg = "low", ap = "none", chamber = 0 },
     m249 = { dmg = "low", ap = "none", chamber = 0 },
-    par = { dmg = "low", ap = "none", chamber = 0 },
 
-    rpk = { dmg = "med", ap = "none" },
     hk21 = { dmg = "med", ap = "none" },
     hk51b = { dmg = "med", ap = "none" },
+    par = { dmg = "med", ap = "none", chamber = 0 },
 
+    rpk = { dmg = "high", ap = "none" },
     hcar = { dmg = "high", ap = "none" },
     m60 = { dmg = "high", ap = "none", chamber = 0 }
   },
@@ -185,27 +185,27 @@ Global.CrimDusk.weapons.classes = {
     mac10 = { dmg = "vlow", chamber = 0 },
     mp7 = { dmg = "vlow" },
     mp9 = { dmg = "vlow" },
-    p90 = { dmg = "vlow" },
-    tec9 = { dmg = "vlow" },
     scorpion = { dmg = "vlow" },
 
-    akmsu = { dmg = "low" },
+    tec9 = { dmg = "low" },
+    p90 = { dmg = "low", ap = "basic" },
     vityaz = { dmg = "low" },
     new_mp5 = { dmg = "low" },
     x_mp5 = { dmg = "low" },
-    m1928 = { dmg = "low", chamber = 0 },
     shepheard = { dmg = "low" },
-    sr2 = { dmg = "low" },
     uzi = { dmg = "low", chamber = 0 },
+    m45 = { dmg = "low", chamber = 0 },
 
-    m45 = { dmg = "med", chamber = 0 },
+    sr2 = { dmg = "med", ap = "basic" },
+    speen = { dmg = "med" },
+    sterling = { dmg = "med", mag = 32, chamber = 0 }
     schakal = { dmg = "med" },
     olympic = { dmg = "med", reload = 20 },
     erma = { dmg = "med", chamber = 0 },
     coal = { dmg = "med" },
+    m1928 = { dmg = "med", chamber = 0 },
 
-    speen = { dmg = "high" },
-    sterling = { dmg = "high", mag = 32, chamber = 0 }
+    akmsu = { dmg = "high" },
   },
 
   special = {
@@ -242,13 +242,13 @@ Global.CrimDusk.weapons.classes = {
 }
 
 Global.CrimDusk.weapons.damage = {
-  rifles = { low = 24, med = 32, high = 46, vhigh = 92 },
+  rifles = { low = 24, med = 30, high = 45, vhigh = 80 },
   shotguns = { base = 20 },
-  lmgs = { low = 24, med = 32, high = 46 },
+  lmgs = { low = 24, med = 30, high = 45 },
   snipers = { low = 75, high = 50 }, -- low x2, high x4
-  pistols = { auto = 16, low = 32, med = 46, high = 65 },
+  pistols = { auto = 18, low = 30, med = 45, high = 68 },
   revolvers = { low = 80, high = 120 },
-  smgs = { vlow = 16, low = 24, med = 32, high = 46 },
+  smgs = { vlow = 18, low = 24, med = 30, high = 45 },
   special = { flame = 4, xlow = 12, xhigh = 20, rpg = 15, mini = 23, bow = 30, gl = 150 }
 }
 
