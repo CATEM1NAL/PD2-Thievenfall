@@ -332,7 +332,7 @@ Global.CrimDusk.weapons.projectile_damage = {
   -- special grenades
   wpn_gre_electric = ShockLauncher * 2.5, poison_gas_grenade = 0, molotov = 0, fir_com = 0,
   -- thrown
-  wpn_prj_four = 10, wpn_prj_ace = 0.1, wpn_prj_jav = 150, wpn_prj_hur = 50, wpn_prj_target = 50, xmas_snowball = 15,
+  wpn_prj_four = 10, wpn_prj_ace = 0.2, wpn_prj_jav = 150, wpn_prj_hur = 50, wpn_prj_target = 50, xmas_snowball = 15,
 
   -- frag launchers
   launcher_frag = HighLauncher, launcher_frag_slap = HighLauncher,
