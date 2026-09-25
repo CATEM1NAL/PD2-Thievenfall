@@ -25,7 +25,7 @@ Hooks:PostHook(VictoryState, "at_enter", "CrimDusk_HeistWon", function(self)
         end
       end
 
-      if not Global.game_settings.single_player and Global.CrimDusk.data[heists_won] + i == 6 then i = i + 3 end
+      if not Global.game_settings.single_player and Global.CrimDusk.data[heists_won] + i == Global.CrimDusk.PDTHLength then i = i + 3 end
       Global.CrimDusk.data[heists_won] = Global.CrimDusk.data[heists_won] + i
     end
 

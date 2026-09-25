@@ -184,10 +184,10 @@ function CrimDusk:Init()
 
     local permadeath = CrimDusk.IsPermadeath()
     if permadeath == "_perma" or Global.CrimDusk.data.heists_won >= #Global.CrimDusk.campaign then return 8 end
-    if (Global.CrimDusk.data.heists_won or 0) < 6 then return Global.CrimDusk.data.heists_won + 2 end
+    if (Global.CrimDusk.data.heists_won or 0) < Global.CrimDusk.PDTHLength then return Global.CrimDusk.data.heists_won + 2 end
 
-    local HeistsWon = Global.CrimDusk.data["heists_won" .. permadeath] - 6
-    local RawDiff = HeistsWon / (#Global.CrimDusk.campaign - 6) * 5 + 2
+    local HeistsWon = Global.CrimDusk.data["heists_won" .. permadeath] - Global.CrimDusk.PDTHLength
+    local RawDiff = HeistsWon / (#Global.CrimDusk.campaign - Global.CrimDusk.PDTHLength) * 5 + 2
     return math.floor(RawDiff + 0.5)
   end
 
@@ -243,7 +243,7 @@ end
 
 CrimDusk:Init()
 
-if NetworkHelper:IsHost() and not CrimDusk.SettingsData.permadeath and (Global.CrimDusk and (Global.CrimDusk.data.heists_won or 0) < 6) then
+if NetworkHelper:IsHost() and not CrimDusk.SettingsData.permadeath and (Global.CrimDusk and (Global.CrimDusk.data.heists_won or 0) < Global.CrimDusk.PDTHLength) then
   Hooks:Add("LocalizationManagerPostInit", "CrimDusk_PDTHNames", function(loc)
     loc:add_localized_strings({
       ["menu_difficulty_normal"] = loc:text("crimdusk_pdth_normal"),

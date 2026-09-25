@@ -12,6 +12,17 @@ Global.CrimDusk.campaign = { -- Main campaign
   "deep", "vit" -- Conclusion
 }
 
+for i, heist in ipairs(Global.CrimDusk.campaign) do
+  Global.CrimDusk.HeistIndex = {}
+  if heist == "nmh" then Global.CrimDusk.PDTHLength = i
+  elseif heist == "cd_hox1" then Global.CrimDusk.HeistIndex.Breakout = i
+  elseif heist == "cd_biker1" then Global.CrimDusk.HeistIndex.Rust = i
+  elseif heist == "bph" then Global.CrimDusk.HeistIndex.Bain = i 
+  elseif heist == "sand" then Global.CrimDusk.HeistIndex.Vlad = i
+  elseif heist == "pex" then Global.CrimDusk.HeistIndex.Almir = i
+  elseif heist == "hox_3" then Global.CrimDusk.HeistIndex.Hector = i end
+end
+
 -- POST-GAME CAMPAIGN DATA
 Global.CrimDusk.custom_campaign_base = {
   "red2", "flat", "pal", "man", "nmh", "dah", "dinner", -- PDTH

@@ -8,7 +8,7 @@ end)
 -- Unlocked characters
 Hooks:OverrideFunction(GenericDLCManager, "has_freed_old_hoxton", function()
   local permadeath = CrimDusk.IsPermadeath()
-  if permadeath == "" then return Global.CrimDusk.data.heists_won < 5 or Global.CrimDusk.data.free_hoxton > 3
+  if permadeath == "" then return Global.CrimDusk.data.heists_won < Global.CrimDusk.PDTHLength or Global.CrimDusk.data.free_hoxton > 3
   else return Global.CrimDusk.data.free_hoxton_perma > 3 end
 end)
 

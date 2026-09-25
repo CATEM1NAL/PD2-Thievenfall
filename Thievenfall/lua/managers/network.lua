@@ -26,8 +26,18 @@ if NetworkHelper:IsClient() then
   NetworkHelper:AddReceiveHook("CrimDusk_SyncCampaignProgress", "CrimDusk_ReceiveHeistCount", function(data)
     -- Only want to sync if we are around the same point in the campaign ourselves
     -- This means groups can play together and everyone makes the same progress, regardless of host
-    if tonumber(data) == Global.CrimDusk.data.heists_won + 1 or Global.CrimDusk.data.heists_won - 1 then
-      Global.CrimDusk.data.heists_won = tonumber(data)
+    local HeistsWon = tonumber(data)
+    if HeistsWon == Global.CrimDusk.data.heists_won + 1 or Global.CrimDusk.data.heists_won - 1 then
+      Global.CrimDusk.data.heists_won = HeistsWon
+
+      -- Sync campaign events
+      if HeistsWon == Global.CrimDusk.HeistIndex.Breakout then Global.CrimDusk.data.free_hoxton = 4 end
+      if HeistsWon == Global.CrimDusk.HeistIndex.Hector then Global.CrimDusk.data.hector_dead = true end
+      if HeistsWon == Global.CrimDusk.HeistIndex.Rust then Global.CrimDusk.data.rust_recruited = true end
+      if HeistsWon == Global.CrimDusk.HeistIndex.Bain then Global.CrimDusk.data.bain_freed = true end
+      if HeistsWon == Global.CrimDusk.HeistIndex.Vlad then Global.CrimDusk.data.vlad_freed = true end
+      if HeistsWon == Global.CrimDusk.HeistIndex.Almir then Global.CrimDusk.data.almir_freed = true end
+
       CrimDusk:WriteSave(FileIdent, "synced campaign progress")
     end
   end)
