@@ -14,15 +14,15 @@ Hooks:PostHook(GameOverState, "at_enter", "CrimDusk_HeistFailed", function(self)
     CrimDusk.EndingText(false)
   return end
 
-  local checkpoints = { [5] = true, [6] = true, [7] = true, [8] = true }
+  local checkpoints = { [6] = true, [7] = true, [8] = true, [9] = true }
   Global.CrimDusk.data.lives = 60
 
   local CurrentHeist = managers.job:current_job_id()
 
   if NetworkHelper:IsClient() then CrimDusk:WriteSave(FileIdent, "heist failed") return
 
-  elseif Global.CrimDusk.data.heists_won < 5 then
-    local NextHeist = Global.game_settings.single_player and 5 or 8
+  elseif Global.CrimDusk.data.heists_won < 6 then
+    local NextHeist = Global.game_settings.single_player and 6 or 9
     Global.CrimDusk.data.heists_won = NextHeist
 
   elseif Global.CrimDusk.data.heists_won >= #Global.CrimDusk.campaign then

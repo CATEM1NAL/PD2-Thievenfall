@@ -241,14 +241,15 @@ Global.CrimDusk.weapons.classes = {
   }
 }
 
+local DamageType = { Lowest = 18, Low = 24, Medium = 32, High = 48, VeryHigh = 70, Highest = 90 }
 Global.CrimDusk.weapons.damage = {
-  rifles = { low = 24, med = 30, high = 45, vhigh = 80 },
+  rifles = { low = DamageType.Low, med = DamageType.Medium, high = DamageType.High, vhigh = DamageType.VeryHigh },
   shotguns = { base = 20 },
-  lmgs = { low = 24, med = 30, high = 45 },
+  lmgs = { low = DamageType.Low, med = DamageType.Medium, high = DamageType.High },
   snipers = { low = 75, high = 50 }, -- low x2, high x4
-  pistols = { auto = 18, low = 30, med = 45, high = 68 },
-  revolvers = { low = 80, high = 120 },
-  smgs = { vlow = 18, low = 24, med = 30, high = 45 },
+  pistols = { auto = DamageType.Lowest, low = DamageType.Medium, med = DamageType.High, high = DamageType.VeryHigh },
+  revolvers = { low = DamageType.Highest, high = 120 },
+  smgs = { vlow = DamageType.Lowest, low = DamageType.Low, med = DamageType.Medium, high = DamageType.High },
   special = { flame = 4, xlow = 12, xhigh = 20, rpg = 15, mini = 23, bow = 30, gl = 150 }
 }
 
@@ -331,7 +332,7 @@ Global.CrimDusk.weapons.projectile_damage = {
   -- special grenades
   wpn_gre_electric = ShockLauncher * 2.5, poison_gas_grenade = 0, molotov = 0, fir_com = 0,
   -- thrown
-  wpn_prj_four = 7.5, wpn_prj_ace = 0.1, wpn_prj_jav = 50, wpn_prj_hur = 15, wpn_prj_target = 15, xmas_snowball = 10,
+  wpn_prj_four = 10, wpn_prj_ace = 0.1, wpn_prj_jav = 150, wpn_prj_hur = 50, wpn_prj_target = 50, xmas_snowball = 15,
 
   -- frag launchers
   launcher_frag = HighLauncher, launcher_frag_slap = HighLauncher,

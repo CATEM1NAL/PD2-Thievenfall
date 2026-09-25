@@ -19,12 +19,13 @@ Hooks:PostHook(VictoryState, "at_enter", "CrimDusk_HeistWon", function(self)
 
       if Global.CrimDusk.data.heists_won < #Global.CrimDusk.campaign and CrimDusk.IsPermadeath() ~= "_perma" then
         local NextHeist = Global.CrimDusk.campaign[Global.CrimDusk.data[heists_won] + i]
-        while Global.CrimDusk.heist_dlc[NextHeist] and not managers.dlc:_check_dlc_data(Global.CrimDusk.heist_dlc[NextHeist]) do
+        while Global.CrimDusk.heist_dlc[NextHeist] and not managers.dlc:is_dlc_unlocked(Global.CrimDusk.heist_dlc[NextHeist]) do
           i = i + 1
           NextHeist = Global.CrimDusk.campaign[Global.CrimDusk.data[heists_won] + i]
         end
       end
 
+      if not Global.game_settings.single_player and Global.CrimDusk.data[heists_won] + i == 6 then i = i + 3 end
       Global.CrimDusk.data[heists_won] = Global.CrimDusk.data[heists_won] + i
     end
 

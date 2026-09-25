@@ -49,7 +49,7 @@ Hooks:PostHook(UpgradesTweakData, "init", "CrimDusk_InitUpgradeTweakData", funct
   self.values.weapon.passive_reload_speed_multiplier = { 1.25, 1.5, 2 } -- Mag Funnel
   self.values.player.regain_throwable_from_ammo = { 1, 2 } -- Scrounger
   self.values.weapon.passive_damage_multiplier = { 1.1, 1.25 } -- Fast and Furious
-  self.values.weapon.passive_headshot_damage_multiplier = { 1.25, 1.5 } -- Helmet Popping
+  self.values.weapon.passive_headshot_damage_multiplier = { 1.5 } -- Helmet Popping
   self.values.player.intimidate_range_mul = { 1.5, 2 } -- Deep Throat
   self.values.player.weapon_accuracy_increase = { 2, 4 } -- Accuracy increase
   self.values.weapon.fire_rate_multiplier = { 1.5, 2 } -- Illegal Parts

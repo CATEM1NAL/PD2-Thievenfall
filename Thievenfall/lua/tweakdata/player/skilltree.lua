@@ -679,7 +679,6 @@ Hooks:PostHook(SkillTreeTweakData, "init", "CrimDusk_SkillTreeTweakInit", functi
     }
     self.skills.helmet_popping = {
       { upgrades = { "weapon_passive_headshot_damage_multiplier" }, cost = self.costs.default },
-      { upgrades = { "weapon_passive_headshot_damage_multiplier_2" }, cost = self.costs.default },
       name_id = "menu_deckall_2", desc_id = "menu_perk_headshot", icon_xy = { 6, 11 }
     }
     self.skills.muscle_health = {

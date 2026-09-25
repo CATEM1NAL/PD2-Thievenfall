@@ -355,6 +355,8 @@ bm_w_arbiter: "SG Arbiter"
 
 # Categories
 menu_snp: "Precision"
+menu_assault_rifle: "Assault"
+menu_smg: "SMG"
 
 # Deployables
 bm_equipment_ammo_bag_desc: "Contains enough ammo to fully refill one weapon and half of another weapon. Can be upgraded with Enforcer skills."
@@ -492,7 +494,7 @@ bm_dynamite_desc: "Did you know that dynamite is remarkably stable? It won't det
 bm_grenade_sticky_grenade_desc: "Sticks to surfaces, but takes longer to detonate.\n\nFirst used in modern warfare by some black ops ghosts who went beyond the call of duty."
 bm_grenade_electric: "X1 Pig Tickler"
 bm_grenade_electric_desc: "Stuns all enemies in range for several seconds.\n\nJiu Feng said this was a prototype he'd like to take to mass market. There's no way these will catch on, right?"
-bm_grenade_dada_com_desc: "For when you need to clear a room within a room within a room."
+bm_grenade_dada_com_desc: "For when you need to clear a room within a room."
 
 # Perk Consumables
 bm_ability_chico_injector_desc: "Press the throwable key to activate. While active, 25% of all damage taken is converted into healing. This effect lasts 6 seconds."
@@ -847,7 +849,7 @@ menu_frenzy_desc: "$lv1;Gain ##25%## damage reduction, but your health and heali
 
 ## Perk Decks
 menu_perk_dmg: "$lv1;Weapon damage increased by ##10%##.\n\n$lv2;Weapon damage increased by ##25%##."
-menu_perk_headshot: "$lv1;Headshot damage multiplier increased by ##50%##.\n\n$lv2;Headshot damage multiplier increased by ##100%##."
+menu_perk_headshot: "$lv1;Headshot damage multiplier increased by ##100%##."
 
 menu_deck2_1_skill: "$lv1;Max health increased by ##25##.\n\n$lv2;Max health increased by ##50##.\n\n$lv3;Max health increased by ##75##.\n\n$lv4;Max health increased by ##100##.\nRestore ##1## health every ##5## seconds."
 

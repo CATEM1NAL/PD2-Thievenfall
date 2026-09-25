@@ -207,7 +207,7 @@ Hooks:OverrideFunction(CrimeNetManager, "activate_job", function(self)
       while true do
         local heist = math.random(#self._presets)
         if math.random() <= self._presets[heist].chance then
-          log(self._presets[heist].job_id)
+          CrimDusk.Log(FileIdent, "Selected " .. self._presets[heist].job_id, true)
 
           -- Reservoir Dogs is a special case; should be the only heist if selected
           if self._presets[heist].job_id == "cd_reservoir" then NewHeists = { "cd_reservoir" } break end
@@ -252,10 +252,6 @@ end
 
 function CrimeNetSidebarGui:clbk_setup_weekly_holdout()
   local weekly_skirmish = managers.skirmish:active_weekly()
-  local job_data = {
-    difficulty = "normal",
-    weekly_skirmish = true,
-    job_id = weekly_skirmish.id
-  }
+  local job_data = { difficulty = "normal", weekly_skirmish = true, job_id = weekly_skirmish.id }
   MenuCallbackHandler:start_job(job_data)
 end

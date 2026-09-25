@@ -1,13 +1,13 @@
 -- MAIN CAMPAIGN
 Global.CrimDusk.campaign = { -- Main campaign
-  "red2", "flat", "pal", "man", "nmh", -- PDTH Prologue
+  "red2", "flat", "dah", "pal", "man", "nmh", -- PDTH Prologue
   "cd_tut1", "cd_tut2", "cd_tut3", "four_stores", "mallcrasher", "branchbank_prof", "ukrainian_job_prof", "nightclub", -- Early Vlad
   "cd_watchdogs1_wrapper", "cd_watchdogs2_wrapper", "cd_frame3", "cd_bigoil", "cd_firestarter1", "cd_firestarter2", "cd_rats", -- Hector/Elephant
   "family", "arm_wrapper", "arm_for", "roberts", "cd_erection_wrapper", "kosugi", -- Post Launch
   "big", "cd_miami1", "cd_miami2", "gallery", "cd_hox1", "cd_hox2", "auc", "pines", "mus", -- Dentist
   "cd_bomb", "cage", "hox_3", "shoutout_raid", "arena", "kenaz", "jolly", "dinner", "pbr", "pbr2", "cane", -- 2015
   "cd_goat1", "cd_goat2", "dark", "mad", "cd_biker1", "cd_biker2", "moon", "friend", -- 2016
-  "spa", "fish", "run", "glace", "wwh", "dah", "cd_reservoir", "brb", "tag", "des", "sah", -- Final Arc
+  "spa", "fish", "run", "glace", "wwh", "cd_reservoir", "brb", "tag", "des", "sah", -- Final Arc
   "mex", "chas", "bex", "sand", "pex", "chca", "fex", "pent", "bph", "ranc", "trai", "corp", -- Bopocalypse
   "deep", "vit" -- Conclusion
 }
