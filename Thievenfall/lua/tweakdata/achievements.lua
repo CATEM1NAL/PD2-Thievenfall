@@ -122,6 +122,16 @@ Hooks:PostHook(AchievementsTweakData, "init", "CrimDusk_AchievementTweakRequirem
   -- The First Line
   self.enemy_melee_hit_achievements.trophy_hockeykill = { trophy_stat = "trophy_hockeykill", is_not_civilian = true, melee_id = "hockey", result = "death" }
 
+  -- Escape Van
+  complete.trophy_escapes.difficulty = postgame
+  complete.trophy_escapes.levels = {
+    "four_stores", "ukrainian_job", "branchbank", "nightclub", "election_day_2", "election_day_3", "alex_1", "firestarter_1", "firestarter_2",
+    "arm_und", "arm_cro", "arm_par", "family", "kosugi", "gallery", "cage", "rat", "spa", "rvd2", "bex", "chas"
+  }
+
+  -- Golden Grin
+  complete.trophy_golden_grin = { trophy_stat = "trophy_golden_grin", jobs = { "kenaz" }, difficulty = postgame }
+
   -- Side Jobs
   self.grenade_achievements.cg22_personal_1.mutators = nil
   self.enemy_kill_achievements.cg22_personal_2.mutators = nil

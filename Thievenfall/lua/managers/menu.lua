@@ -149,3 +149,7 @@ Hooks:PostHook(MenuManager, "do_clear_progress", "CrimDawn_ResetSave", function(
   io.save_as_json(Global.CrimDusk.holdout_data, CrimDusk.HoldoutData)
   CrimDusk:WriteSave(FileIdent, "wiped save data")
 end)
+
+Hooks:OverrideFunction(MenuCrimeNetGageAssignmentInitiator, "modify_node", function()
+  managers.gage_assignment:dialog_show_completed_assignments()
+end)

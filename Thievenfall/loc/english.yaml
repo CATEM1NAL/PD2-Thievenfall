@@ -61,8 +61,11 @@ heist_bomb_crimenet: "Our girl's no stranger to weapons, and she's got her eyes 
 
 heist_cd_erection_wrapper: "Election Day"
 
-heist_cd_miami1: "Hotline Miami"
-heist_cd_miami2: "Four Floors"
+heist_cd_miami1: "Knock Knock"
+heist_mia_1_hl: "Knock Knock"
+
+heist_cd_miami2: "Showdown"
+heist_mia_2_hl: "Showdown"
 
 heist_cd_hox1: "The Breakout"
 heist_cd_hox2: "The Search"
@@ -71,6 +74,83 @@ heist_firestarter_1_hl: "Firestarter"
 heist_firestarter_2_hl: "Hornet's Nest"
 
 heist_framing_frame_3_hl: "Political Suicide"
+
+heist_kenaz_full: "Bain's 11"
+heist_kenaz_hl: "Bain's 11"
+
+heist_rvd2_hl: "A Simple Job"
+
+heist_nightclub: "Last Dance"
+heist_nightclub_hl: "Last Dance"
+
+heist_sah: "Shadow Over Boston"
+heist_sah_hl: "Shadow Over Boston"
+
+heist_family: "Family Jewels"
+heist_family_hl: "Family Jewels"
+
+heist_branchbank: "Baby Steps"
+heist_branchbank_hl: "Baby Steps"
+
+heist_friend: "The World Is Yours"
+heist_friend_hl: "The World Is Yours"
+
+heist_big: "Initiation"
+heist_big_hl: "Initiation"
+
+heist_cage: "Burning Rubber"
+heist_cage_hl: "Burning Rubber"
+
+heist_brb: "Flower of Brooklyn"
+heist_brb_hl: "Flower of Brooklyn"
+
+heist_vit: "The End"
+heist_vit_hl: "The End"
+
+heist_gallery: "Frame Perfect"
+heist_gallery_hl: "Frame Perfect"
+
+heist_roberts: "Charlie Santa"
+heist_roberts_hl: "Charlie Santa"
+
+heist_mus: "Blood Diamond"
+heist_mus_hl: "Blood Diamond"
+
+heist_crojob1: "Bomb: Docked"
+heist_crojob2_hl: "Bomb: Docked"
+
+heist_crojob2: "Bomb: Derailment"
+heist_crojob3_hl: "Bomb: Derailment"
+
+heist_arena: "Showtime"
+heist_arena_hl: "Showtime"
+
+heist_dinner: "Blood For Gold"
+heist_dinner_hl: "Blood For Gold"
+
+heist_cane: "White Friday"
+heist_cane_hl: "White Friday"
+
+heist_fish: "Continental Coastguard"
+heist_fish_hl: "Continental Coastguard"
+
+heist_dah: "Party Crashers"
+heist_dah_hl: "Party Crashers"
+
+heist_chas: "Triad Trinket"
+heist_chas_hl: "Triad Trinket"
+
+heist_sand: "Vlad Voyage"
+heist_sand_hl: "Vlad Voyage"
+
+heist_ranc: "Texas Heat"
+heist_ranc_hl: "Texas Heat"
+
+heist_bex: "Bancarotta"
+heist_bex_hl: "Bancarotta"
+
+heist_fex: "Murder Masquerade"
+heist_fex_hl: "Murder Masquerade"
 
 ### STRING OVERRIDES ###
 # PDTH difficulties
@@ -421,43 +501,60 @@ menu_pda10_post_objective_4_desc: "Collect 500 Gage packages."
 # Trophies
 trophy_bains_book_completion_objective: "Complete 'No Mercy' on Death Sentence."
 trophy_tiara_objective: "Complete 'Ukrainian Job' on Death Sentence."
-trophy_train_bomb_objective: "Complete 'The Bomb: Forest' on Death Sentence."
+trophy_train_bomb_objective: "Complete 'Butcher's Bomb' (forest variant) on Death Sentence."
 trophy_tfturret_objective: "Complete 'Transport: Train Heist' on Death Sentence."
 trophy_box_3_completion_objective: "Complete 'Henry's Rock' on Death Sentence."
 trophy_transports_objective: "Complete all Armored Transport heists on Death Sentence."
-trophy_black_plate_completion_objective: "Complete 'Shacklethorne Auction' on Death Sentence."
-trophy_brb_1_completion_objective: "Complete 'Brooklyn Bank' on Death Sentence."
-trophy_box_1_completion_objective: "Complete 'Golden Grin Casino' and 'Henry's Rock' on Death Sentence."
+trophy_black_plate_completion_objective: "Complete 'Shadow Over Boston' on Death Sentence."
+trophy_brb_1_completion_objective: "Complete 'Flower of Brooklyn' on Death Sentence."
+trophy_box_1_completion_objective: "Complete 'Bain's 11' and 'Henry's Rock' on Death Sentence."
 trophy_box_2_completion_objective: "Complete 'Breakin' Feds' on Death Sentence."
 trophy_defender_objective: "Successfully defend your safe house on Death Sentence."
 trophy_goat_objective: "Complete 'Dirty Work' on Death Sentence."
-trophy_falcogini_objective: "Complete 'Car Shop' on Death Sentence."
+trophy_falcogini_objective: "Complete 'Burning Rubber' on Death Sentence."
 trophy_computer_desc: "Wait, you're NOT supposed to randomly guess?"
 trophy_computer_objective: "Complete 'Engine Problem' while securing the correct engine last."
-trophy_piggy_bank_objective: "Complete 'Big Bank' on Death Sentence in under 8 minutes with all crew members using no skills."
+trophy_piggy_bank_objective: "Complete 'Initiation' on Death Sentence in under 8 minutes with all crew members using no skills."
 trophy_framing_frame_objective: "Complete 'Political Suicide' on Death Sentence without the power being cut during the data upload."
 trophy_stealth_objective: "Complete all stealthable heists on Death Sentence without the alarm going off."
 trophy_courtesy_objective: "Complete 'Beneath the Mountain' on Death Sentence without personally killing any medics."
-trophy_bank_heists_objective: "Complete 'Bank Heist: Random' on Death Sentence."
-trophy_smwish_objective: "Complete 'White House' in Professional Mode."
+trophy_bank_heists_objective: "Complete 'Baby Steps' on Death Sentence."
+trophy_golden_grin_objective: "Complete 'Bain's 11' on Death Sentence."
+trophy_smwish_objective: "Complete 'The End' on Professional Mode."
 trophy_evolution_objective: "Complete 'Lab Rats' on Death Sentence without anyone in the crew getting any kills."
 trophy_longfellow_objective: "Complete 'Meltdown' on Death Sentence in under 7 minutes."
-trophy_dance_objective: "Complete 'Nightclub' on Death Sentence with all crew members only using trip mines and melee."
+trophy_dance_objective: "Complete 'Last Dance' on Death Sentence with all crew members only using trip mines and melee."
 trophy_fbi_objective: "On Death Sentence:\nComplete 'Breakin' Feds' and 'Hornet's Nest' with all crew members having no skills.\nComplete 'The Search' in under 15 minutes."
 trophy_jfk_objective: "Complete 'Undercover' on Death Sentence with all crew members having a single skill level, only using precision rifles, and wearing the Lightweight Ballistic Vest."
-trophy_discoball_objective: "Complete 'Nightclub' on Death Sentence in under 10 minutes."
-trophy_friendly_car_objective: "Complete 'Scarface Mansion' on Death Sentence with all crew members having a single skill level each."
+trophy_discoball_objective: "Complete 'Last Dance' on Death Sentence in under 10 minutes."
+trophy_friendly_car_objective: "Complete 'The World Is Yours' on Death Sentence with all crew members having a single skill level each."
 trophy_ace_desc: "Is THIS your card?"
 trophy_ace_objective: "Get a single kill with the 'Ace of Spades'."
 trophy_host_objective: "Complete a campaign as the host."
 trophy_flawless_objective: "Complete any heist with at least one other player present without any friendly fire damage being dealt."
 trophy_meth_cookbook_objective: "Complete 'Cook Off' after cooking 25 bags of meth."
-trophy_diamonds_objective: "Complete 'Diamond Store' after destroying the SWAT turret and securing all loot."
+trophy_diamonds_objective: "Complete 'Family Jewels' after destroying the SWAT turret and securing all loot."
 trophy_planmaker_objective: "On 'Shadow Raid', steal the samurai armor before bagging any other loot."
 trophy_pacifier_objective: "Complete the tutorials."
 trophy_hockey_team_objective: "Kill 100 enemies with the hockey stick."
 trophy_dartboard_objective: "Kill 10000 enemies with headshots."
 trophy_dozer_helmet_objective: "Kill 1000 special enemies."
+trophy_escape_van_objective: "Escape using the van 50 times on Death Sentence."
+trophy_fish_trophy_objective: "Complete 'Continental Coastguard' in stealth with all crew members at 75 detection risk."
+trophy_carshop_stealth_objective: "Complete 'Burning Rubber' with a detection risk above 70 and without bringing ECM jammers."
+trophy_sandwich_objective: "Find the half eaten sandwich in 'Initiation'."
+trophy_hobo_knife_objective: "Find the knife in 'Aftershock'."
+trophy_run_turtle_objective: "Find the tortoise in 'Heat Street'."
+trophy_flamingo_objective: "Shoot 20 flamingos in 'The World Is Yours'."
+trophy_watchout_objective: "Complete 'Truck Load' or 'Boat Load' using only precision rifles with an accuracy above 100%."
+trophy_spooky_objective: "Destroy the pumpkin on 'Prison Nightmare'."
+trophy_eng_1_completion_objective: "Find the bullet trophy on 'Baby Steps' five times."
+trophy_eng_4_completion_objective: "Find the cultist trophy on 'Family Jewels' or 'The Breakout' five times."
+trophy_eng_3_completion_objective: "Find the marine trophy on 'Four Stores' or 'Charlie Santa' five times."
+trophy_eng_2_completion_objective: "Find the robot trophy on 'First World Bank' or 'Shadow Raid' five times."
+trophy_tooth_objective: "Secure the toothbrush in 'Panic Room'."
+trophy_coke_objective: "Secure 24 bags of cocaine in 'The World Is Yours'."
+trophy_bex_objective: "Find the tape in 'Bancarotta'."
 trophy_hockeykill_progress: "Melee Kills"
 trophy_boxing_gloves: "Little Mac"
 
@@ -1325,6 +1422,7 @@ dialog_mutators_active_text: "Mutators are enabled. Do you want to play with mut
 menu_challenge_safehouse_daily_reward: "6 C-Stacks."
 menu_challenge_daily_reward: "Money and a weapon mod."
 
+menu_cn_gage_assignment: "Completed Assignments"
 menu_cs_enter_safehouse: "Enter"
 menu_cs_map: "Map"
 menu_cs_change_floor: "Floor"

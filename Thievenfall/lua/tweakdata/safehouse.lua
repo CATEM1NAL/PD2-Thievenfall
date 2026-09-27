@@ -30,6 +30,7 @@ Hooks:PostHook(CustomSafehouseTweakData, "_init_trophies", "CrimDusk_InitTrophie
     elseif trophy.id == "trophy_smwish" then trophy.objectives = { self:_achievement("vit_8") }
     elseif trophy.id == "trophy_dozer_helmet" then trophy.objectives = { self:_progress("trophy_special_kills", 1000, { name_id = "trophy_dozer_helmet_progress" }) }
     elseif trophy.id == "trophy_dartboard" then trophy.objectives = { self:_progress("trophy_headshots", 10000, { name_id = "trophy_dartboard_progress" }) }
+    elseif trophy.id == "trophy_escape_van" then trophy.objectives = { self:_progress("trophy_escapes", 50, { name_id = "trophy_escape_van_progress" }) }
     elseif trophy.id == "trophy_host" then
       trophy.show_progress = nil
       trophy.objectives = { self:_progress("trophy_host", 1) }
@@ -67,22 +68,22 @@ Hooks:PostHook(CustomSafehouseTweakData, "_init_trophies", "CrimDusk_InitTrophie
 
     elseif trophy.id == "trophy_stealth" then
       trophy.objectives = {
-        self:_progress("trophy_stealth_gallery", 1, { name_id = "heist_gallery" }), -- Art Gallery
+        self:_progress("trophy_stealth_kenaz", 1, { name_id = "heist_kenaz_full" }), -- Golden Grin
         self:_progress("trophy_stealth_chca", 1, { name_id = "heist_chca" }), -- Black Cat
         self:_progress("trophy_stealth_crojob1", 1, { name_id = "heist_crojob1" }), -- Bomb: Dockyard
         self:_progress("trophy_stealth_tag", 1, { name_id = "heist_tag" }), -- Breakin' Feds
         self:_progress("trophy_stealth_cage", 1, { name_id = "heist_cage" }), -- Car Shop
-        self:_progress("trophy_stealth_dah", 1, { name_id = "heist_dah" }), -- Diamond Heist
+        self:_progress("trophy_stealth_fish", 1, { name_id = "heist_fish" }), -- Yacht Heist
         self:_progress("trophy_stealth_family", 1, { name_id = "heist_family" }), -- Diamond Store
-        self:_progress("trophy_stealth_cd_firestarter2", 1, { name_id = "heist_firestarter_2_hl" }), -- FBI Server
         self:_progress("trophy_stealth_four_stores", 1, { name_id = "heist_four_stores" }), -- Four Stores
-        self:_progress("trophy_stealth_cd_frame3", 1, { name_id = "heist_framing_frame_3_hl" }), -- Framing
-        self:_progress("trophy_stealth_kenaz", 1, { name_id = "heist_kenaz_full" }), -- Golden Grin
+        self:_progress("trophy_stealth_gallery", 1, { name_id = "heist_gallery" }), -- Art Gallery
+        self:_progress("trophy_stealth_cd_firestarter2", 1, { name_id = "heist_firestarter_2_hl" }), -- FBI Server
         self:_progress("trophy_stealth_dark", 1, { name_id = "heist_dark" }), -- Murky Station
         self:_progress("trophy_stealth_nmh", 1, { name_id = "heist_nmh" }), -- No Mercy
+        self:_progress("trophy_stealth_dah", 1, { name_id = "heist_dah" }), -- Diamond Heist
+        self:_progress("trophy_stealth_cd_frame3", 1, { name_id = "heist_framing_frame_3_hl" }), -- Framing
         self:_progress("trophy_stealth_kosugi", 1, { name_id = "heist_kosugi" }), -- Shadow Raid
         self:_progress("trophy_stealth_cd_erection1", 1, { name_id = "heist_election_day_2_hl" }), -- Swing Vote
-        self:_progress("trophy_stealth_fish", 1, { name_id = "heist_fish" }) -- Yacht Heist
       }
 
     elseif trophy.id == "trophy_transports" then

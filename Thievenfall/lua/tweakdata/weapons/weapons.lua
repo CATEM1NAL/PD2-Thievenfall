@@ -225,8 +225,10 @@ Hooks:PostHook(WeaponTweakData, "init", "CrimDusk_WeaponTweakInit", function(sel
   -- Category changes
   self.hailstorm.categories = { "assault_rifle" }
   self.hajk.categories = { "assault_rifle" }
-  self.x_hajk.categories = {}
   self.ching.categories = { "snp" }
+  self.flun.categories = { "dartgun" }
+  self.x_hajk.categories = {}
+
   self.hajk.use_data.selection_index = 2
   self.scout.use_data.selection_index = 2
   self.victor.use_data.selection_index = 2
