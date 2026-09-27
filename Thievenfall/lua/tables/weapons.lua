@@ -126,6 +126,7 @@ Global.CrimDusk.weapons.classes = {
 
   pistols = {
     glock_18c = { dmg = "auto" },
+    x_g18c = { dmg = "auto" },
     czech = { dmg = "auto" },
     beer = { dmg = "auto" },
 
@@ -303,7 +304,7 @@ Global.CrimDusk.weapons.pickup = {
   none = { 0, 0 }, flame = { 18, 22 }
 }
 
-Global.CrimDusk.weapons.akimbo = { jowi = true, x_g17 = true, x_mp5 = true, x_1911 = true, x_2006m = true, x_rage = true }
+Global.CrimDusk.weapons.akimbo = { jowi = true, x_g17 = true, x_mp5 = true, x_1911 = true, x_2006m = true, x_rage = true, x_g18c = true }
 
 Global.CrimDusk.weapons.crew = {
   new_mp5 = "mp5_crew", new_m4 = "m4_crew", new_m14 = "m14_crew", new_raging_bull = "raging_bull_crew",
