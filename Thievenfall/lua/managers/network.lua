@@ -32,12 +32,12 @@ if NetworkHelper:IsClient() then
       Global.CrimDusk.data.heists_won = HeistsWon
 
       -- Sync campaign events
-      if HeistsWon == Global.CrimDusk.HeistIndex.Breakout then Global.CrimDusk.data.free_hoxton = 4 end
-      if HeistsWon == Global.CrimDusk.HeistIndex.Hector then Global.CrimDusk.data.hector_dead = true end
-      if HeistsWon == Global.CrimDusk.HeistIndex.Rust then Global.CrimDusk.data.rust_recruited = true end
-      if HeistsWon == Global.CrimDusk.HeistIndex.Bain then Global.CrimDusk.data.bain_freed = true end
-      if HeistsWon == Global.CrimDusk.HeistIndex.Vlad then Global.CrimDusk.data.vlad_freed = true end
-      if HeistsWon == Global.CrimDusk.HeistIndex.Almir then Global.CrimDusk.data.almir_freed = true end
+      if HeistsWon == Global.CrimDusk.HeistIndex.Breakout then Global.CrimDusk.data.free_hoxton = 4
+      elseif HeistsWon == Global.CrimDusk.HeistIndex.Hector then Global.CrimDusk.data.hector_dead = true
+      elseif HeistsWon == Global.CrimDusk.HeistIndex.Rust then Global.CrimDusk.data.rust_recruited = true
+      elseif HeistsWon == Global.CrimDusk.HeistIndex.Bain then Global.CrimDusk.data.bain_freed = true
+      elseif HeistsWon == Global.CrimDusk.HeistIndex.Vlad then Global.CrimDusk.data.vlad_freed = true
+      elseif HeistsWon == Global.CrimDusk.HeistIndex.Almir then Global.CrimDusk.data.almir_freed = true end
 
       CrimDusk:WriteSave(FileIdent, "synced campaign progress")
     end

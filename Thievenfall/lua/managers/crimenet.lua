@@ -185,10 +185,10 @@ local disabled_contacts = { "wip", "tests", "escape", "skirmish" }
 
 Hooks:OverrideFunction(CrimeNetManager, "activate_job", function(self)
   if CrimDusk.IsPermadeath() ~= "_perma" and Global.CrimDusk.data.heists_won < #Global.CrimDusk.campaign then
-    if Global.CrimDusk.data.heists_won == 42 then managers.crimenet:set_getting_hacked(0.5) -- full duration = 42.16
+    if Global.CrimDusk.data.heists_won == Global.CrimDusk.HeistIndex.PointBreak then managers.crimenet:set_getting_hacked(0.5) -- full duration = 42.16
     -- Beneath The Mountain; wanted this to trigger the full Locke hack, but the audio doesn't seem to play.
 
-    elseif Global.CrimDusk.data.heists_won == 59 then managers.crimenet:set_getting_hacked(0.5) end
+    elseif Global.CrimDusk.data.heists_won == Global.CrimDusk.HeistIndex.Reservoir then managers.crimenet:set_getting_hacked(0.5) end
     -- Reservoir Dogs; feels thematic.
 
     self._active_jobs[1] = { added = false, active_timer = self._active_job_time }

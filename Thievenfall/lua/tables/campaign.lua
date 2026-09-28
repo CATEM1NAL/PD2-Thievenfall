@@ -20,7 +20,9 @@ for i, heist in ipairs(Global.CrimDusk.campaign) do
   elseif heist == "bph" then Global.CrimDusk.HeistIndex.Bain = i 
   elseif heist == "sand" then Global.CrimDusk.HeistIndex.Vlad = i
   elseif heist == "pex" then Global.CrimDusk.HeistIndex.Almir = i
-  elseif heist == "hox_3" then Global.CrimDusk.HeistIndex.Hector = i end
+  elseif heist == "hox_3" then Global.CrimDusk.HeistIndex.Hector = i
+  elseif heist == "cd_reservoir" then Global.CrimDusk.HeistIndex.Reservoir = i 
+  elseif heist == "pbr" then Global.CrimDusk.HeistIndex.PointBreak = i end
 end
 
 -- POST-GAME CAMPAIGN DATA
