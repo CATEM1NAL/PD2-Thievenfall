@@ -33,6 +33,7 @@ Hooks:PostHook(VictoryState, "at_enter", "CrimDusk_HeistWon", function(self)
 
     local Permadeath = CrimDusk.IsPermadeath()
     local CurrentHeist = managers.job:current_job_id()
+    CurrentHeist = Global.CrimDusk.job_to_wrapper[CurrentHeist] or CurrentHeist
 
     if CurrentHeist == "bph" then Global.CrimDusk.data["bain_freed" .. Permadeath] = true
     elseif CurrentHeist == "sand" then Global.CrimDusk.data["vlad_freed" .. Permadeath] = true
@@ -56,14 +57,11 @@ Hooks:PostHook(VictoryState, "at_enter", "CrimDusk_HeistWon", function(self)
 
     local ActiveContracts = Global.CrimDusk.data["next_heists" .. Permadeath]
     for i = 1, #ActiveContracts do
-
       -- Move played heists to heist chain
-      if ActiveContracts[i] == Global.CrimDusk.job_to_wrapper[CurrentHeist] or CurrentHeist then
-        table.insert(Global.CrimDusk.data["heist_chain" .. Permadeath], (Global.CrimDusk.job_to_wrapper[ActiveContracts[i]] or ActiveContracts[i]))
+      if ActiveContracts[i] == CurrentHeist then table.insert(Global.CrimDusk.data["heist_chain" .. Permadeath], CurrentHeist)
 
       -- Move unplayed heists to heists skipped
-      else table.insert(Global.CrimDusk.data["heists_skipped" .. Permadeath], (Global.CrimDusk.job_to_wrapper[ActiveContracts[i]] or ActiveContracts[i])) end
-
+      else table.insert(Global.CrimDusk.data["heists_skipped" .. Permadeath], CurrentHeist) end
     end
 
     Global.CrimDusk.data["next_heists" .. CrimDusk.IsPermadeath()] = {}

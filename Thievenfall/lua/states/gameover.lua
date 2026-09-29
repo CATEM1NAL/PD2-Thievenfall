@@ -24,6 +24,7 @@ Hooks:PostHook(GameOverState, "at_enter", "CrimDusk_HeistFailed", function(self)
   Global.CrimDusk.data.lives = 60
 
   local CurrentHeist = managers.job:current_job_id()
+  CurrentHeist = Global.CrimDusk.job_to_wrapper[CurrentHeist] or CurrentHeist
 
   if NetworkHelper:IsClient() then CrimDusk:WriteSave(FileIdent, "heist failed") return
 
@@ -32,7 +33,7 @@ Hooks:PostHook(GameOverState, "at_enter", "CrimDusk_HeistFailed", function(self)
     Global.CrimDusk.data.heists_won = NextHeist
 
   elseif Global.CrimDusk.data.heists_won >= #Global.CrimDusk.campaign then
-    if managers.job:current_job_id() == "vit" then 
+    if CurrentHeist == "vit" then 
       CrimDusk.SoftReset()
       CrimDusk.EndingText(false)
     return end
@@ -42,10 +43,8 @@ Hooks:PostHook(GameOverState, "at_enter", "CrimDusk_HeistFailed", function(self)
 
     local ActiveContracts = Global.CrimDusk.data.next_heists
     for i = 1, #ActiveContracts do
-      if ActiveContracts[i] == Global.CrimDusk.job_to_wrapper[CurrentHeist] or CurrentHeist then
-        table.insert(Global.CrimDusk.data.heist_chain, (Global.CrimDusk.job_to_wrapper[ActiveContracts[i]] or ActiveContracts[i]))
-
-      else table.insert(Global.CrimDusk.data.heists_skipped, (Global.CrimDusk.job_to_wrapper[ActiveContracts[i]] or ActiveContracts[i])) end
+      if ActiveContracts[i] == CurrentHeist then table.insert(Global.CrimDusk.data.heist_chain, CurrentHeist)
+      else table.insert(Global.CrimDusk.data.heists_skipped, CurrentHeist) end
     end
     Global.CrimDusk.data.next_heists = {}
 
