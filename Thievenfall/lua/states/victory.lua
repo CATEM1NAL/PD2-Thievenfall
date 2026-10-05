@@ -4,12 +4,6 @@ local FileIdent = "Victory"
 local lives = NetworkHelper:IsClient() and "lives" or "lives" .. CrimDusk.IsPermadeath()
 
 Hooks:PostHook(VictoryState, "at_enter", "CrimDusk_HeistWon", function(self)
-  if managers.skirmish:is_skirmish() then -- Weekly Holdout
-    Global.CrimDusk.holdout_data = Global.skirmish_manager.active_weekly
-    io.save_as_json(Global.CrimDusk.holdout_data, CrimDusk.HoldoutData)
-    CrimDusk.Log(FileIdent, "holdout completed")
-  return end
-
   if Global.CrimDusk.data[lives] == -1 then Global.CrimDusk.data[lives] = -2 end
   if NetworkHelper:IsClient() then CrimDusk:WriteSave(FileIdent, "heist completed (client)") return end
 

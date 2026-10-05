@@ -3,6 +3,8 @@ Hooks:PostHook(PlayerTweakData, "init", "CrimDusk_InitPlayerTweakData", function
   self.damage.LIVES_INIT = 1 + Global.CrimDusk.data["lives" .. CrimDusk.IsPermadeath()]
   self.gravity = -1800
   self.movement_state.standard.movement.jump_velocity.z = 650
+  self.omniscience.start_t = 1
+  self.omniscience.target_resense_t = 5
 end)
 
 Hooks:PostHook(PlayerTweakData, "_set_normal", "CrimDusk_PlayerTweakSetDifficulty", function(self)

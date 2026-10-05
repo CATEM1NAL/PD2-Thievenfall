@@ -242,7 +242,7 @@ Global.CrimDusk.weapons.classes = {
   }
 }
 
-local DamageType = { Lowest = 18, Low = 24, Medium = 32, High = 48, VeryHigh = 70, Highest = 90 }
+local DamageType = { Lowest = 18, Low = 24, Medium = 32, High = 40, VeryHigh = 66, Highest = 80 }
 Global.CrimDusk.weapons.damage = {
   rifles = { low = DamageType.Low, med = DamageType.Medium, high = DamageType.High, vhigh = DamageType.VeryHigh },
   shotguns = { base = 20 },

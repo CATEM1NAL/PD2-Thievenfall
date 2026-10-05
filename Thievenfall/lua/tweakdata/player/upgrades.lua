@@ -48,7 +48,7 @@ Hooks:PostHook(UpgradesTweakData, "init", "CrimDusk_InitUpgradeTweakData", funct
   self.values.player.passive_convert_enemies_health_multiplier = { 0.5, 0.01 } -- Joker DR
   self.values.weapon.passive_reload_speed_multiplier = { 1.25, 1.5, 2 } -- Mag Funnel
   self.values.player.regain_throwable_from_ammo = { 1, 2 } -- Scrounger
-  self.values.weapon.passive_damage_multiplier = { 1.1, 1.25 } -- Fast and Furious
+  self.values.weapon.passive_damage_multiplier = { 1.25 } -- Fast and Furious
   self.values.weapon.passive_headshot_damage_multiplier = { 1.5 } -- Helmet Popping
   self.values.player.intimidate_range_mul = { 1.5, 2 } -- Deep Throat
   self.values.player.weapon_accuracy_increase = { 2, 4 } -- Accuracy increase
@@ -71,7 +71,7 @@ Hooks:PostHook(UpgradesTweakData, "init", "CrimDusk_InitUpgradeTweakData", funct
   self.values.player.melee_damage_stacking = { { melee_multiplier = 1, max_multiplier = 10 } } -- Bloodthirst
   self.values.player.melee_kill_increase_reload_speed = { { 2, 3 } } -- Mag Steal
   self.values.trip_mine.damage_multiplier = { 2, 3 } -- Trip Mine damage
-  self.values.player.marked_enemy_damage_mul = 1.25 -- High Value Target
+  self.values.player.marked_enemy_damage_mul = 1.5 -- High Value Target
   self.values.player.intimidation_multiplier = { 2 } -- Dominator
   self.values.player.bleed_out_health_multiplier = { 1.25, 1.5, 1.75, 2 } -- Bleedout health
   self.values.sentry_gun.extra_ammo_multiplier = { 2, 3 } -- Sentry Ammo
@@ -80,9 +80,15 @@ Hooks:PostHook(UpgradesTweakData, "init", "CrimDusk_InitUpgradeTweakData", funct
   self.values.player.drill_alert_rad = { 2000 } -- Silent Drilling 1
   self.values.player.armor_health_store_amount = { 0.2, 0.5, 0.8 } -- Ex-President
   self.values.shotgun.steelsight_accuracy_inc = { 0.5 } -- Skeet Shooting
-
   self.drill_alert_radius = 5000 -- drill alert radius
   self.enemy_hurt_alert_radius_whisper = 300 -- death alert radius
+
+  -- Sixth Sense 2
+  self.values.player.sixth_sense_non_specials = { true } -- Sixth Sense 2
+  self.definitions.player_sixthsense_nonspecial = {
+    category = "feature",
+    upgrade = { category = "player", upgrade = "sixth_sense_non_specials", value = 1 }
+  }
 
   -- Pocket ECM
   self.values.player.pocket_ecm_jammer_base = {
@@ -313,7 +319,7 @@ Hooks:PostHook(UpgradesTweakData, "init", "CrimDusk_InitUpgradeTweakData", funct
   local NewUpgrades = {
     doctor_bag_quantity = 2, ammo_bag_quantity = 2, first_aid_kit_downs_restore_chance = 2, melee_stacking_hit_expire_t = 2,
     player_detection_risk_damage_multiplier = 2, player_intimidate_range_mul = 2, player_revive_health_boost = 2,
-    weapon_passive_headshot_damage_multiplier = 2, weapon_passive_damage_multiplier = 2, player_regain_throwable_from_ammo = 2,
+    weapon_passive_headshot_damage_multiplier = 2, player_regain_throwable_from_ammo = 2,
     player_weapon_accuracy_increase = 2, weapon_fire_rate_multiplier = 2, pistol_consume_no_ammo_chance = 2,
     assault_rifle_consume_no_ammo_chance = 2, snp_consume_no_ammo_chance = 2, smg_consume_no_ammo_chance = 2,
     lmg_consume_no_ammo_chance = 2, minigun_consume_no_ammo_chance = 2, player_melee_damage_dampener = 2, player_max_health_reduction = 2,

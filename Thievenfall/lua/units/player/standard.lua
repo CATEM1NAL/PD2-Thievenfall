@@ -1,3 +1,12 @@
+local function UnequipMeleeAnimation(self, t, input)
+  if not self._state_data.melee_active then self:_play_unequip_animation()
+  else self._change_weapon_data = { selection_wanted = (Utils:IsCurrentWeaponPrimary() and 2 or 1) }
+    if not self:in_melee() then self:_start_action_melee(t, input) end -- hacky solution to fix anim bugs
+    self:_interupt_action_melee(t)
+    self:_play_unequip_animation()
+  end
+end
+
 Hooks:OverrideFunction(PlayerStandard, "_find_pickups", function(self, t)
   local pickups = World:find_units_quick("sphere", self._unit:movement():m_pos(), self._pickup_area, self._slotmask_pickups)
   for _, pickup in ipairs(pickups) do
@@ -72,6 +81,7 @@ Hooks:PostHook(PlayerStandard, "_start_action_equip_weapon", "CrimDusk_PostEquip
     local PlayerState = managers.player:player_unit():movement():current_state()
     if PlayerState:running() and not PlayerState._equipped_unit:base():run_and_shoot_allowed() then
       PlayerState._ext_camera:play_redirect(PlayerState:get_animation("start_running"))
+      -- TODO; Sometimes gets stuck in the sprinting animation? Needs a fix.
     end
   end)
 end)
@@ -102,6 +112,53 @@ Hooks:OverrideFunction(PlayerStandard, "_check_use_item", function(self, t, inpu
 
   if released then self:_interupt_action_use_item() end
   return new_action
+end)
+
+Hooks:OverrideFunction(PlayerStandard, "_start_action_use_item", function(self, t)
+  self:_interupt_action_reload(t)
+  self:_interupt_action_steelsight(t)
+  self:_interupt_action_running(t)
+  self:_interupt_action_charging_weapon(t)
+
+  local deploy_timer = managers.player:selected_equipment_deploy_timer()
+
+  self._use_item_expire_t = t + deploy_timer
+
+  UnequipMeleeAnimation(self, t)
+  managers.hud:show_progress_timer_bar(0, deploy_timer)
+
+  local text = managers.player:selected_equipment_deploying_text() or managers.localization:text("hud_deploying_equipment", { EQUIPMENT = managers.player:selected_equipment_name() })
+  managers.hud:show_progress_timer({ text = text })
+
+  local post_event = managers.player:selected_equipment_sound_start()
+  if post_event then self._unit:sound_source():post_event(post_event) end
+
+  self:_chk_tap_to_interact_enable(t, deploy_timer)
+
+  local equipment_id = managers.player:selected_equipment_id()
+  managers.network:session():send_to_peers_synched("sync_teammate_progress", 2, true, equipment_id, deploy_timer, false)
+end)
+
+Hooks:OverrideFunction(PlayerStandard, "_interupt_action_use_item", function(self, t, input, complete)
+  if self._use_item_expire_t then
+    self:_clear_tap_to_interact()
+
+    self._use_item_expire_t = nil
+
+    local tweak_data = self._equipped_unit:base():weapon_tweak_data()
+    self._equip_weapon_expire_t = managers.player:player_timer():time() + (tweak_data.timers.equip or 0.7)
+
+    if not self._state_data.melee_active then self:_play_equip_animation() end
+    managers.hud:hide_progress_timer_bar(complete)
+    managers.hud:remove_progress_timer()
+
+    local post_event = managers.player:selected_equipment_sound_interupt()
+
+    if not complete and post_event then self._unit:sound_source():post_event(post_event) end
+
+    self._unit:equipment():on_deploy_interupted()
+    managers.network:session():send_to_peers_synched("sync_teammate_progress", 2, false, "", 0, complete and true or false)
+  end
 end)
 
 -- Movement tweaks
@@ -143,6 +200,50 @@ Hooks:OverrideFunction(PlayerStandard, "_start_action_melee", function(self, t, 
   self._ext_camera:play_redirect(self:get_animation("melee_enter"), nil, offset)
 end)
 
+-- Throwing grenades
+Hooks:OverrideFunction(PlayerStandard, "_check_action_throw_grenade", function(self, t, input)
+  local action_wanted = input.btn_throw_grenade_press
+  if not action_wanted then return end
+  if not managers.player:can_throw_grenade() then return end
+
+  local action_forbidden = not PlayerBase.USE_GRENADES or self:chk_action_forbidden("interact") or self._unit:base():stats_screen_visible() or
+    self:_is_throwing_grenade() or self:_interacting() or self:is_deploying() or self:_changing_weapon() or self:_is_using_bipod()
+
+  if action_forbidden then return end
+
+  self:_start_action_throw_grenade(t, input)
+  return action_wanted
+end)
+
+Hooks:OverrideFunction(PlayerStandard, "_start_action_throw_grenade", function(self, t, input)
+  self:_interupt_action_reload(t)
+  self:_interupt_action_steelsight(t)
+  self:_interupt_action_charging_weapon(t)
+  self:_interupt_action_melee(t)
+
+  local equipped_grenade = managers.blackmarket:equipped_grenade()
+  local projectile_tweak = tweak_data.blackmarket.projectiles[equipped_grenade]
+
+  if self._projectile_global_value then
+    self._camera_unit:anim_state_machine():set_global(self._projectile_global_value, 0)
+    self._projectile_global_value = nil
+  end
+
+  if projectile_tweak.anim_global_param then
+    self._projectile_global_value = projectile_tweak.anim_global_param
+    self._camera_unit:anim_state_machine():set_global(self._projectile_global_value, 1)
+  end
+
+  local delay = self:_get_projectile_throw_offset()
+
+  managers.network:session():send_to_peers_synched("play_distance_interact_redirect_delay", self._unit, "throw_grenade", delay)
+  self._ext_camera:play_redirect(Idstring(projectile_tweak.animation or "throw_grenade"))
+
+  local projectile_data = tweak_data.blackmarket.projectiles[equipped_grenade]
+  self._state_data.throw_grenade_expire_t = t + (projectile_data.expire_t or 1.1)
+  self:_stance_entered()
+end)
+
 Hooks:OverrideFunction(PlayerStandard, "_start_action_running", function(self, t)
   if self._slowdown_run_prevent then self._running_wanted = false return end
   if not self._move_dir then self._running_wanted = true return end
@@ -176,7 +277,6 @@ Hooks:OverrideFunction(PlayerStandard, "_start_action_running", function(self, t
   end
 
   if not self.RUN_AND_RELOAD then self:_interupt_action_reload(t) end
-
   self:_interupt_action_steelsight(t)
   self:_interupt_action_ducking(t)
 end)
@@ -188,7 +288,7 @@ Hooks:OverrideFunction(PlayerStandard, "_end_action_running", function(self, t)
     if self:_is_meleeing() or self:_is_throwing_projectile() then return end
 
     local stop_running = not self._equipped_unit:base():run_and_shoot_allowed() and (not self.RUN_AND_RELOAD or not self:_is_reloading())
-    if stop_running then self._ext_camera:play_redirect(self:get_animation("stop_running"), speed_multiplier) end
+    if stop_running then self._ext_camera:play_redirect(self:get_animation("stop_running")) end
   end
 end)
 
@@ -230,6 +330,66 @@ Hooks:OverrideFunction(PlayerStandard, "_end_action_ladder", function(self, t, i
   self._unit:movement():on_exit_ladder()
 end)
 
+-- Sixth Sense rework
+Hooks:OverrideFunction(PlayerStandard, "_update_omniscience", function(self, t, dt)
+  local omniscience_settings = tweak_data.player.omniscience
+  if not omniscience_settings then return end
+
+  local action_forbidden = not managers.player:has_category_upgrade("player", "standstill_omniscience") or managers.player:current_state() == "civilian" or
+    self:_interacting() or self._ext_movement:has_carry_restriction() or self:is_deploying() or self:_is_throwing_projectile() or self:_is_meleeing() or
+    self:_on_zipline() or self:running() or self:in_air() or self:shooting()
+
+  if action_forbidden then
+    if self._state_data.omniscience_t then
+      self._state_data.omniscience_t = nil
+      self._state_data.omniscience_pos = nil
+    end
+  return end
+
+  local player_m_pos = self._unit:movement():m_pos()
+  if not player_m_pos then return end
+
+  if self._moving then
+    if self._state_data.omniscience_pos and mvector3.distance_sq(player_m_pos, self._state_data.omniscience_pos) > omniscience_settings.sense_exit_sq then
+      self._state_data.omniscience_t = nil
+      self._state_data.omniscience_pos = nil
+      self._state_data.omniscience_units_detected = nil
+    return end
+
+    if not self._state_data.omniscience_pos then return end
+  end
+
+  if not self._moving and not self._state_data.omniscience_pos then
+    self._state_data.omniscience_pos = self._state_data.omniscience_pos or Vector3()
+    mvector3.set(self._state_data.omniscience_pos, player_m_pos)
+  end
+
+  if not self._state_data.omniscience_t then self._state_data.omniscience_t = t + omniscience_settings.start_t end
+
+  if self._state_data.omniscience_pos and t >= self._state_data.omniscience_t then
+    -- Sixth Sense 2 allows it to apply to non-special enemies
+    local SenseSlot = managers.player:has_category_upgrade("player", "sixthsense_nonspecial") and managers.slot:get_mask("enemies") or managers.slot:get_mask("trip_mine_targets")
+    local sensed_targets = World:find_units_quick("sphere", player_m_pos, omniscience_settings.sense_radius, SenseSlot)
+
+    for _, unit in ipairs(sensed_targets) do
+      if alive(unit) and not unit:base():char_tweak().is_escort then
+        self._state_data.omniscience_units_detected = self._state_data.omniscience_units_detected or {}
+
+        local unit_detected = self._state_data.omniscience_units_detected[unit:key()]
+
+        if not unit_detected or unit_detected <= t then
+          unit_detected = t + omniscience_settings.target_resense_t
+          self._state_data.omniscience_units_detected[unit:key()] = unit_detected
+          managers.game_play_central:auto_highlight_enemy(unit, true)
+        break end
+      end
+    end
+
+    self._state_data.omniscience_t = t + omniscience_settings.interval_t
+    if self._state_data.omniscience_pos then mvector3.set(self._state_data.omniscience_pos, player_m_pos) end
+  end
+end)
+
 Hooks:OverrideFunction(PlayerStandard, "_action_interact_forbidden", function(self)
   local action_forbidden = self:chk_action_forbidden("interact") or self._unit:base():stats_screen_visible() or
     self:_interacting() or self._ext_movement:has_carry_restriction() or self:is_deploying() or
@@ -252,12 +412,7 @@ Hooks:OverrideFunction(PlayerStandard, "_start_action_interact", function(self, 
 
   self._interact_params = { object = interact_object, timer = final_timer, tweak_data = interact_object:interaction().tweak_data }
 
-  if not self._state_data.melee_active then self:_play_unequip_animation()
-  else self._change_weapon_data = { selection_wanted = (Utils:IsCurrentWeaponPrimary() and 2 or 1) }
-    if not self:in_melee() then self:_start_action_melee(t, input) end -- hacky solution to fix anim bugs
-    self:_interupt_action_melee(t)
-    self:_play_unequip_animation()
-  end
+  UnequipMeleeAnimation(self, t, input)
 
   managers.hud:show_interaction_bar(start_timer, final_timer)
   managers.network:session():send_to_peers_synched("sync_teammate_progress", 1, true, self._interact_params.tweak_data, final_timer, false)

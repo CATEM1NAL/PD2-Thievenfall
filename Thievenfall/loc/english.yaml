@@ -767,7 +767,7 @@ menu_scrounger_desc: "$lv1;Picking up an ammo box reduces your grenade recharge 
 menu_max_ammo_inc: "Big Game Hunter"
 menu_max_ammo_inc_desc: "$lv1;Ammo capacity increased by ##25%##."
 
-menu_spotter_teamwork_beta_desc: "$lv1;Special enemies that you aim at are marked.\n\n$lv2;Enemies that you mark take ##25%## more damage."
+menu_spotter_teamwork_beta_desc: "$lv1;Special enemies that you aim at are marked.\n\n$lv2;Enemies that you mark take ##50%## more damage."
 
 ## Technician
 menu_toolkit: "Toolkit"
@@ -838,7 +838,7 @@ menu_tower_defense_beta_desc: "$lv1;Carry ##1## extra sentry gun.\n\n$lv2;Carry 
 ## Ghost
 menu_scavenger_beta_desc: "$lv1;Movement speed is increased by ##30%## for ##5## seconds on armor break.\n\n$lv2;Also applies to the crew when triggered."
 
-menu_dire_need_beta_desc: "$lv1;Your first shot on an enemy inflicts stagger while your armor is broken.\n\n$lv2;Effect lasts for ##6## seconds after armor recovers."
+menu_dire_need_beta_desc: "$lv1;Your first shot on an enemy inflicts stagger while your armor is broken.\n\n$lv2;Remains active for ##6## seconds after armor recovers."
 
 menu_moving_target_desc: "$lv1;You can sprint while strafing.\n\n$lv2;You can sprint in any direction."
 
@@ -873,7 +873,7 @@ menu_backstab_beta_desc: "$lv1;Gain ##2.5%## crit chance (up to ##25%##) for eac
 menu_inside_man: "Inside Man"
 menu_inside_man_desc: "$lv1;You can buy additional assets.\n\n$lv2;You can buy all assets."
 
-menu_chameleon_beta_desc: "$lv1;In stealth, standing still for ##3.5s## will automatically mark everyone within ##10m##."
+menu_chameleon_beta_desc: "$lv1;Standing still will mark the five closest people within ##10m##. After going loud, only specials will be marked.\n\n$lv2;Everyone will be marked, even after going loud."
 
 menu_cam_loop: "Secure Loop"
 menu_cam_loop_desc: "$lv1;You can interact with a single camera to disable it for ##7.5## seconds.\n\n$lv2;Duration is extended to ##15## seconds.\n\n$lv3;You can disable cameras from ##50%## further away."
@@ -890,7 +890,7 @@ menu_ecm_duration: "Lithium-ion"
 menu_ecm_duration_desc: "$lv1;Your ECM effects last ##25%## longer.\n\n$lv2;Your ECM effects last ##50%## longer."
 
 menu_ecm_booster_beta: "Appliance Breach"
-menu_ecm_overdrive_desc: "$lv1;Your ECMs block cameras.\n\n$lv2;Your ECMs block pagers.\n\n$lv3;You can use ECMs to open security doors."
+menu_ecm_overdrive_desc: "$lv1;Your ECMs block cameras and can be used to open ATMs.\n\n$lv2;Your ECMs block pagers.\n\n$lv3;You can use ECMs to open security doors."
 
 menu_ecm_quantity: "Cyber Warfare"
 menu_ecm_quantity_desc: "$lv1;Carry ##1## extra ECM.\n\n$lv2;Carry ##3## extra ECMs."
@@ -926,7 +926,7 @@ menu_coup_de_grace_desc: "$lv1;The final bullet in your magazine deals triple da
 menu_trigger_happy_beta_desc: "$lv1;Damage is doubled for ##2## seconds after landing a pistol shot.\n\n$lv2;Damage bonus lasts ##5## seconds."
 
 menu_because_of_training: "Because Of Training"
-menu_because_of_training_desc: "$lv1;Incoming melee damage is reduced by ##50%##.\n\n$lv2;Charging your melee allows you to block incoming melee attacks."
+menu_because_of_training_desc: "$lv1;Incoming melee damage is reduced by ##50%##.\n\n$lv2;Holding your melee weapon allows you to block incoming melee attacks."
 
 menu_steroids_beta_desc: "$lv1;Deal ##100%## more melee damage against non-special enemies.\n\n$lv2;Bonus damage also applies to specials."
 
@@ -935,7 +935,7 @@ menu_bloodthirst_desc: "$lv1;Weapon kills increase your melee damage by ##100%##
 menu_melee_reload_speed: "Mag Steal"
 menu_melee_reload_speed_desc: "$lv1;Reload speed is ##100%## faster for ##3## seconds after a melee kill."
 
-menu_drop_soap_beta_desc: "$lv1;Charging your melee allows you to block cloaker kicks."
+menu_drop_soap_beta_desc: "$lv1;Holding your melee weapon allows you to block cloaker kicks."
 
 menu_wolverine_beta_desc: "$lv1;While below ##50%## health your melee/saw damage scales with health lost, up to ##250%## more damage. Healing is disabled while this skill is active."
 
@@ -945,7 +945,7 @@ menu_gunserker_desc: "$lv1;While below ##50%## health your weapon damage scales 
 menu_frenzy_desc: "$lv1;Gain ##25%## damage reduction, but your health and healing are capped at ##25%##.\n\n$lv2;Damage reduction is increased to ##50%## and health is capped at ##1%##."
 
 ## Perk Decks
-menu_perk_dmg: "$lv1;Weapon damage increased by ##10%##.\n\n$lv2;Weapon damage increased by ##25%##."
+menu_perk_dmg: "$lv1;You can hipfire while sprinting.\n\n$lv2;Weapon damage increased by ##25%##."
 menu_perk_headshot: "$lv1;Headshot damage multiplier increased by ##100%##."
 
 menu_deck2_1_skill: "$lv1;Max health increased by ##25##.\n\n$lv2;Max health increased by ##50##.\n\n$lv3;Max health increased by ##75##.\n\n$lv4;Max health increased by ##100##.\nRestore ##1## health every ##5## seconds."
@@ -1314,10 +1314,10 @@ loading_trivia_35: "Prior to December 2025, almost all of Wolf's lines were reus
 loading_trivia_36: "Wolf once had to GTFO from a den of wolves. That has nothing to do with his name, though."
 loading_trivia_37: "Wolf once willingly spent an extended period of time in a psych ward. He's still crazy though."
 loading_trivia_38: "Wolf once committed a massacre in a nightclub."
-loading_trivia_39: "Bodhi complains about Nintendo but bought a Switch 2 on launch day."
+loading_trivia_39: "Bodhi's favorite fictional character is Johnny Silverhand."
 loading_trivia_40: "Bodhi hates corporations and would gladly crash his car into an Amazon warehouse. Hoxton keeps daring him to do it."
 loading_trivia_41: "Bodhi wants to fight. Who wants to fight?"
-loading_trivia_42: "Bodhi's mother named him after Bodhi's Pool Repair, her favourite local plumbing company."
+loading_trivia_42: "Bodhi hates women."
 loading_trivia_43: "Damion Poitier was originally cast as Thanos in Marvel's Cinematic Universe."
 loading_trivia_44: "Chains often talks in third person."
 loading_trivia_45: "Chains was killed between PAYDAY: The Heist and PAYDAY 2. The current Chains is not who he claims he is."
@@ -1806,6 +1806,8 @@ hud_int_equipment_ecm_feedback: "$BTN_INTERACT ECM Feedback"
 debug_interact_bodybags_bag_take_bodybag: "$BTN_INTERACT Take Body Bag"
 hud_interact_pickup_sentry_gun: "$BTN_INTERACT Pickup Sentry Gun"
 hud_interact_sentry_gun_switch_fire_mode: "$BTN_INTERACT Change Ammo Type ($AMMO_LEFT%)"
+hud_interact_pickup_spy_camera: "$BTN_INTERACT Pickup Camera"
+hud_interact_enter_spy_camera: "$BTN_INTERACT Use Camera"
 
 # Golden Grin, AKA "How Many Interactions Can We Shove In One Heist"
 hud_cas_take_gear: "$BTN_INTERACT Take Gear"

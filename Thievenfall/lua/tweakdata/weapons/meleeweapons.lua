@@ -21,6 +21,7 @@ Hooks:PostHook(BlackMarketTweakData, "_init_melee_weapons", "CrimDusk_InitMeleeT
       self.melee_weapons[MeleeWeapon].stats.range = Range
       self.melee_weapons[MeleeWeapon].stats.concealment = Conceal
       self.melee_weapons[MeleeWeapon].stats.remove_weapon_movement_penalty = true
+      self.melee_weapons[MeleeWeapon].melee_charge_shaker = "player_melee_charge_wing"
 
       local RepTimeChanged, EquipTimeChanged
       for Stat, Value in pairs(MeleeData) do

@@ -103,7 +103,7 @@ Hooks:PostHook(SkillTreeTweakData, "init", "CrimDusk_SkillTreeTweakInit", functi
       { "heavy_impact", "mobile", "threat_inc", "downed_ads" },
       { "perk_dmg", "fire_control", "shotgun_accuracy", "loud_and_proud" },
       { "lock_load", "shotgun_range", "muscle_panic", "shell_dimension" },
-      { "body_expertise", "sprint_shoot", "overkill" }
+      { "body_expertise", "overkill" }
     }
     self.trees[6].name_id = "st_menu_enforcer_armor"
     self.trees[6].tiers = {
@@ -495,7 +495,7 @@ Hooks:PostHook(SkillTreeTweakData, "init", "CrimDusk_SkillTreeTweakInit", functi
     }
     self.skills.lock_load = {
       { upgrades = { "player_automatic_faster_reload_1" }, cost = self.costs.default },
-      name_id = "menu_shock_and_awe_beta", desc_id = "menu_shock_and_awe_beta_desc", icon_xy = { 10, 0 }
+      name_id = "menu_shock_and_awe_beta", desc_id = "menu_shock_and_awe_beta_desc", icon_xy = { 5, 1 }
     }
     self.skills.sprint_shoot = {
       { upgrades = { "player_run_and_shoot_1" }, cost = self.costs.default },
@@ -508,6 +508,7 @@ Hooks:PostHook(SkillTreeTweakData, "init", "CrimDusk_SkillTreeTweakInit", functi
     }
     self.skills.chameleon = {
       { upgrades = { "player_standstill_omniscience" }, cost = self.costs.default },
+      { upgrades = { "player_sixthsense_nonspecial" }, cost = self.costs.default },
       name_id = "menu_chameleon_beta", desc_id = "menu_chameleon_beta_desc", icon_xy = { 6, 10 }
     }
     self.skills.cam_loop = {
@@ -673,9 +674,9 @@ Hooks:PostHook(SkillTreeTweakData, "init", "CrimDusk_SkillTreeTweakInit", functi
       name_id = "menu_frenzy", desc_id = "menu_frenzy_desc", icon_xy = { 11, 8 }
     }
     self.skills.perk_dmg = {
+      { upgrades = { "player_run_and_shoot_1" }, cost = self.costs.default },
       { upgrades = { "weapon_passive_damage_multiplier" }, cost = self.costs.default },
-      { upgrades = { "weapon_passive_damage_multiplier_2" }, cost = self.costs.default },
-      name_id = "menu_deckall_8", desc_id = "menu_perk_dmg", icon_xy = { 7, 11 }
+      name_id = "menu_deckall_8", desc_id = "menu_perk_dmg", icon_xy = { 10, 0 }
     }
     self.skills.helmet_popping = {
       { upgrades = { "weapon_passive_headshot_damage_multiplier" }, cost = self.costs.default },

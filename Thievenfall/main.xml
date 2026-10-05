@@ -1,6 +1,6 @@
 <mod name="Thievenfall" global_key="thievenfall" author="~/cat/em1/nal/" color="Color(0.734375,0.4921875,0.73828125)" image="dawn">
   <!-- Auto update from latest GitHub release -->
-  <AssetUpdates version="0.11.5" id="CATEM1NAL/PD2-Thievenfall" provider="github" release="true"/>
+  <AssetUpdates version="0.12.0" id="CATEM1NAL/PD2-Thievenfall" provider="github" release="true"/>
 
   <AddFiles directory="assets">
     <png path="dawn"/> <!-- mod icon -->
@@ -122,6 +122,7 @@
       <hooks directory="states"> <!-- root/lua/states/ -->
         <hook source_file="lib/states/victorystate" file="victory.lua"/>
         <hook source_file="lib/states/gameoverstate" file="gameover.lua"/>
+        <hook source_file="lib/states/ingameaccesscamera" file="camera.lua"/>
       </hooks>
 
       <hooks directory="units"> <!-- root/lua/units/ -->

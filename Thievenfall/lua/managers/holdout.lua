@@ -10,6 +10,7 @@ if not Global.skirmish_manager or not Global.skirmish_manager.active_weekly then
   end)
 end
 
+-- Used by host
 Hooks:OverrideFunction(SkirmishManager, "on_start_assault", function(self)
   local wave_number = managers.groupai:state():get_assault_number()
 
@@ -20,6 +21,7 @@ Hooks:OverrideFunction(SkirmishManager, "on_start_assault", function(self)
   self:update_matchmake_attributes()
 end)
 
+-- Used by clients
 Hooks:OverrideFunction(SkirmishManager, "sync_start_assault", function(self, wave)
   if not self:is_skirmish() or not Global.CrimDusk.holdout_difficulty[wave] then return end
 
@@ -29,3 +31,23 @@ Hooks:OverrideFunction(SkirmishManager, "sync_start_assault", function(self, wav
 
   self._synced_wave_number = wave
 end)
+
+-- Stop Holdout rewards from being given multiple times
+Hooks:PostHook(SkirmishManager, "get_mass_drop_data", "CrimDusk_DisableHoldoutDrops", function(self)
+  local LastWeekly = Global.CrimDusk.holdout_data
+
+  local AlreadyCompleted = true
+  for key, value in pairs(Global.skirmish_manager.active_weekly) do
+    if LastWeekly[key] ~= value then AlreadyCompleted = false break end
+  end
+
+  if AlreadyCompleted then return { coins = 0, special_rewards = {}, additional_lootdrops = 1 }
+  else Global.CrimDusk.holdout_data = Global.skirmish_manager.active_weekly
+    io.save_as_json(Global.CrimDusk.holdout_data, CrimDusk.HoldoutData)
+    CrimDusk.Log(FileIdent, "holdout completed")
+  end
+end)
+
+--[[ Could be nice to expand this to also save the highest wave you reached, and if you
+play with someone else and beat your previous highest wave it gives you the missing rewards
+(previous record 5, play again and reach 7, gain two waves worth of rewards) ]]
