@@ -6,7 +6,8 @@ local StealthBlocked = {
   red_diamond_pickup = true, bex_prop_faberge_egg = true, bex_pku_treasure = true, chas_tea_set = true, pent_gnome_carry = true,
   corp_pickup_prototype = true, corp_hold_pku_paperpile_bag = true, driving_drive = true, hold_take_painting = true,
   gen_pku_cocaine = true, gen_pku_jewelry = true, hold_pickup_lance = true, ranc_take_weapons = true, take_weapons = true,
-  gen_pku_artifact_statue = true, taking_meth = true, chas_pku_dragon_statue = true, player_zipline = true,
+  gen_pku_artifact_statue = true, taking_meth = true, chas_pku_dragon_statue = true, player_zipline = true, auc_pku_statue = true,
+  auc_pku_statue_special = true, auc_search_clues = true, auc_search_clues_tablet = true,
 }
 
 Hooks:PostHook(InteractionTweakData, "init", "CrimDusk_InteractionTweakInit", function(self)

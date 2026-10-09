@@ -20,12 +20,29 @@ CrimDusk = {}
 
 function CrimDusk:Init()
   self.ModPath = ModPath
-  self.SavePath = SavePath
+  self.SavePath = SavePath .. "Thievenfall/"
 
-  self.SaveFile = self.SavePath .. "thievenfall_save.txt"
-  self.SettingsFile = self.SavePath .. "thievenfall_settings.txt"
-  self.HoldoutData = self.SavePath .. "thievenfall_holdout.txt"
-  self.WeaponLevels = self.SavePath .. "thievenfall_kills.txt"
+  self.SaveFile = self.SavePath .. "campaign.txt"
+  self.SettingsFile = self.SavePath .. "settings.txt"
+  self.HoldoutData = self.SavePath .. "holdout.txt"
+  self.WeaponLevels = self.SavePath .. "kills.txt"
+
+  -- Validate directory and move files if data from older versions exist
+  if not file.DirectoryExists(self.SavePath) then
+    file.CreateDirectory(self.SavePath)
+
+    local OldPath = SavePath .. "thievenfall_"
+    local PathMap = { save = "SaveFile", settings = "SettingsFile", kills = "WeaponLevels", holdout = "HoldoutData" }
+
+    for FileName, PathVar in pairs(PathMap) do
+      if io.file_is_readable(OldPath .. FileName .. ".txt") then
+        local OldData = io.load_as_json(OldPath .. FileName .. ".txt")
+        io.save_as_json(OldData, self[PathVar])
+        os.remove(OldPath .. FileName .. ".txt")
+        log("Moved " .. OldPath .. FileName .. " to new save directory!")
+      end
+    end
+  end
 
   self.SettingsData = io.load_as_json(CrimDusk.SettingsFile) or {}
   if type(self.SettingsData.greyscreen) ~= "boolean" then self.SettingsData.greyscreen = true end

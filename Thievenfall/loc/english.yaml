@@ -873,7 +873,7 @@ menu_backstab_beta_desc: "$lv1;Gain ##2.5%## crit chance (up to ##25%##) for eac
 menu_inside_man: "Inside Man"
 menu_inside_man_desc: "$lv1;You can buy additional assets.\n\n$lv2;You can buy all assets."
 
-menu_chameleon_beta_desc: "$lv1;Standing still will mark the five closest people within ##10m##. After going loud, only specials will be marked.\n\n$lv2;Everyone will be marked, even after going loud."
+menu_chameleon_beta_desc: "$lv1;Standing still will mark the five closest people within ##10m##. After going loud, only specials will be marked.\n\n$lv2;Non-special enemies can be marked after going loud."
 
 menu_cam_loop: "Secure Loop"
 menu_cam_loop_desc: "$lv1;You can interact with a single camera to disable it for ##7.5## seconds.\n\n$lv2;Duration is extended to ##15## seconds.\n\n$lv3;You can disable cameras from ##50%## further away."
