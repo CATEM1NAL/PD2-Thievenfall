@@ -56,7 +56,7 @@ Hooks:OverrideFunction(IngameAccessCamera, "update", function(self, t, dt)
     managers.hud:set_access_camera_destroyed(access_camera:value("destroyed"))
   end
 
-  local units = World:find_units_quick("all", 3, 16, 21, managers.slot:get_mask("enemies"))
+  local units = World:find_units_quick("all", 21, managers.slot:get_mask("enemies"))
   local amount = 0
 
   for i, unit in ipairs(units) do
