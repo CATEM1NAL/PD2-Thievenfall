@@ -94,19 +94,19 @@ Global.CrimDusk.melee.classes = {
   SmallBlades = {
     tiger = {},
     cs = { rep = 0.75, dismember = true },
-    pitchfork = {  },
+    pitchfork = {},
     sandsteel = { dismember = true },
     machete = { dismember = true },
     gator = { dismember = true },
     oxide = { dismember = true },
     agave = { rep = 0.3, dismember = true },
-    bullseye = {  },
+    bullseye = {},
     scalper = { dismember = true },
     meat_cleaver = { dismember = true },
     cleaver = { dismember = true },
     tomahawk = { dismember = true },
     becker = { dismember = true },
-    iceaxe = {  }
+    iceaxe = {}
   },
 
   LargeBlades = {
