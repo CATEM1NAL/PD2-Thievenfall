@@ -492,8 +492,8 @@ bm_w_arbiter: "SG Arbiter"
 # Bergentrückung = B&T
 # HIC = Cobray
 # Crosskill = Colt but they just kinda show up in random places, so eh
-# Standard Manufacturing = Variable Design
-# MPS = Army Acquisitions
+# Variable Design = Standard Manufacturing
+# AA = MPS
 
 # Other companies are used if they show up on the gun, regardless of whether that makes real-world sense
 # (e.g. the Five Seven has Acuto written on it, despite being made by FN Herstal irl)

@@ -138,4 +138,9 @@ Hooks:PostHook(AchievementsTweakData, "init", "CrimDusk_AchievementTweakRequirem
   self.enemy_kill_achievements.cg22_personal_2.weapons = nil
   self.enemy_kill_achievements.cg22_personal_3.mutators = nil
   self.enemy_kill_achievements.cg22_personal_3.difficulty = nil
+
+  -- Daily Jobs
+  complete.daily_spacetime.jobs = { "cd_hox1", "cd_hox2" }
+  complete.daily_naked.equipped_team = { num_skills = 1 }
+  complete.daily_ninja.job = nil
 end)
