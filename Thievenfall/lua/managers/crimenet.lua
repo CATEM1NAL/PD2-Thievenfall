@@ -246,7 +246,7 @@ function CrimeNetSidebarGui:clbk_new_weekly_holdout()
   if (LastWeekly.end_timestamp or 0) > os.time() then return false
   elseif not Global.skirmish_manager then return false
   elseif Global.skirmish_manager.active_weekly.key == LastWeekly.key then return false
-  else Utils.PrintTable(Global.skirmish_manager.active_weekly) return true
+  else return true
   end
 end
 
