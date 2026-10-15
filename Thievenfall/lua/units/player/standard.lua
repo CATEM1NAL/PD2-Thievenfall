@@ -336,8 +336,7 @@ Hooks:OverrideFunction(PlayerStandard, "_update_omniscience", function(self, t, 
   if not omniscience_settings then return end
 
   local action_forbidden = not managers.player:has_category_upgrade("player", "standstill_omniscience") or managers.player:current_state() == "civilian" or
-    self:_interacting() or self._ext_movement:has_carry_restriction() or self:is_deploying() or self:_is_throwing_projectile() or self:_is_meleeing() or
-    self:_on_zipline() or self:running() or self:in_air() or self:shooting()
+    self._ext_movement:has_carry_restriction() or self:_on_zipline() or self:running() or self:in_air()
 
   if action_forbidden then
     if self._state_data.omniscience_t then
