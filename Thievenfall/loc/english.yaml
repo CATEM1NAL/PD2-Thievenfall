@@ -501,7 +501,7 @@ menu_pda10_post_objective_4_desc: "Collect 500 Gage packages."
 # Trophies
 trophy_bains_book_completion_objective: "Complete 'No Mercy' on Death Sentence."
 trophy_tiara_objective: "Complete 'Ukrainian Job' on Death Sentence."
-trophy_train_bomb_objective: "Complete 'Butcher's Bomb' (forest variant) on Death Sentence."
+trophy_train_bomb_objective: "Complete 'Bomb: Derailment' on Death Sentence."
 trophy_tfturret_objective: "Complete 'Transport: Train Heist' on Death Sentence."
 trophy_box_3_completion_objective: "Complete 'Henry's Rock' on Death Sentence."
 trophy_transports_objective: "Complete all Armored Transport heists on Death Sentence."
@@ -515,7 +515,7 @@ trophy_falcogini_objective: "Complete 'Burning Rubber' on Death Sentence."
 trophy_computer_desc: "Wait, you're NOT supposed to randomly guess?"
 trophy_computer_objective: "Complete 'Engine Problem' while securing the correct engine last."
 trophy_piggy_bank_objective: "Complete 'Initiation' on Death Sentence in under 8 minutes with all crew members using no skills."
-trophy_framing_frame_objective: "Complete 'Political Suicide' on Death Sentence without the power being cut during the data upload."
+trophy_framing_frame_objective: "Complete 'Political Suicide' after going loud without the power being cut during the data upload."
 trophy_stealth_objective: "Complete all stealthable heists on Death Sentence without the alarm going off."
 trophy_courtesy_objective: "Complete 'Beneath the Mountain' on Death Sentence without personally killing any medics."
 trophy_bank_heists_objective: "Complete 'Baby Steps' on Death Sentence."
@@ -607,6 +607,7 @@ menu_bm_total_cost: ""
 
 # Infamy
 menu_infamy_go_infamous_error_money: "You need $200,000,000 in offshore."
+menu_infamy_prestige_error_rank: ""
 
 ### SKILLS ###
 # Description Changes

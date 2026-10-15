@@ -343,6 +343,7 @@ function Global.CrimDusk:Init()
   end
 
   self.holdout_data = io.load_as_json(CrimDusk.HoldoutData) or {}
+  Utils.PrintTable(self.holdout_data)
   CrimDusk.Log(FileIdent, "Global initialisation completed!", true)
 end
 

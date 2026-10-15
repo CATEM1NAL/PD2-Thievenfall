@@ -242,11 +242,11 @@ end)
 function CrimeNetSidebarGui:clbk_new_weekly_holdout()
   if Global.game_settings.single_player then return false end
   local LastWeekly = Global.CrimDusk.holdout_data
+
   if (LastWeekly.end_timestamp or 0) > os.time() then return false
   elseif not Global.skirmish_manager then return false
-  else for key, value in pairs(Global.skirmish_manager.active_weekly) do
-      if LastWeekly[key] ~= value then return true end
-    end
+  elseif Global.skirmish_manager.active_weekly.key == LastWeekly.key then return false
+  else Utils.PrintTable(Global.skirmish_manager.active_weekly) return true
   end
 end
 

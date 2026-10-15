@@ -36,10 +36,8 @@ end)
 Hooks:PostHook(SkirmishManager, "get_mass_drop_data", "CrimDusk_DisableHoldoutDrops", function(self)
   local LastWeekly = Global.CrimDusk.holdout_data
 
-  local AlreadyCompleted = true
-  for key, value in pairs(Global.skirmish_manager.active_weekly) do
-    if LastWeekly[key] ~= value then AlreadyCompleted = false break end
-  end
+  local AlreadyCompleted
+  if Global.skirmish_manager.active_weekly.key == LastWeekly.key then AlreadyCompleted = true end
 
   if AlreadyCompleted then return { coins = 0, special_rewards = {}, additional_lootdrops = 1 }
   else Global.CrimDusk.holdout_data = Global.skirmish_manager.active_weekly

@@ -31,6 +31,7 @@ Hooks:PostHook(CustomSafehouseTweakData, "_init_trophies", "CrimDusk_InitTrophie
     elseif trophy.id == "trophy_dozer_helmet" then trophy.objectives = { self:_progress("trophy_special_kills", 1000, { name_id = "trophy_dozer_helmet_progress" }) }
     elseif trophy.id == "trophy_dartboard" then trophy.objectives = { self:_progress("trophy_headshots", 10000, { name_id = "trophy_dartboard_progress" }) }
     elseif trophy.id == "trophy_escape_van" then trophy.objectives = { self:_progress("trophy_escapes", 50, { name_id = "trophy_escape_van_progress" }) }
+    elseif trophy.id == "trophy_framing_frame" then trophy.objectives = { self:_achievement("halloween_3") }
     elseif trophy.id == "trophy_host" then
       trophy.show_progress = nil
       trophy.objectives = { self:_progress("trophy_host", 1) }
