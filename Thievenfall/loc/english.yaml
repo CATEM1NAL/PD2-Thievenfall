@@ -237,78 +237,134 @@ bm_wp_uupg_o_schmidt: "Orbit Scope  x2.5  /"
 
 # Weapon names
 bm_w_usp: "SG Interceptor" # Starts as a Tactical, can be turned into a Match. Better to stay generic I think
+bm_w_x_usp: "Akimbo SG Interceptor"
 bm_w_glock_17: "Chimano 88"
+bm_w_x_g17: "Akimbo Chimano 88"
 bm_w_ppk: "Lakner GBK"
+bm_w_x_ppk: "Akimbo Lakner GBK"
 bm_w_p226: "Signature .40"
+bm_w_x_p226: "Akimbo Signature .40"
 bm_w_colt_1911: "Crosskill Operator II" # Written on the gun
+bm_w_x_1911: "Akimbo Crosskill Operator II"
 bm_w_b92fs: "Bernetti 92" # Written on the gun
+bm_w_x_b92fs: "Akimbo Bernetti 92"
 bm_w_raging_bull: "Tarius Bronco" # Tarius derived from Sagittarius, fitting the Zodiac naming of Taurus.
+bm_w_x_rage: "Akimbo Tarius Bronco"
 bm_w_m1911: "Crosskill M1911"
+bm_w_x_m1911: "Akimbo Crosskill M1911"
 bm_w_maxim9: "Gecko Max-9" # Real gun is Maxim-9, better connects the two
+bm_w_x_maxim9: "Akimbo Gecko Max-9"
 bm_w_sparrow: "IMI Sparrow 941 RPL" # Written on the gun
+bm_w_x_sparrow: "Akimbo IMI Sparrow 941 RPL"
 bm_w_pl14: "Izhma Streak-14"
+bm_w_x_pl14: "Akimbo Izhma Streak-14"
 bm_w_legacy: "SG M13" # Written on the gun
-bm_w_korth: "Kahn Korth"
+bm_w_x_legacy: "Akimbo SG M13"
+bm_w_korth: "Kahn Korth .357"
+bm_w_x_korth: "Akimbo Kahn Korth .357"
 bm_w_g22c: "Chimano Custom"
+bm_w_x_g22c: "Akimbo Chimano Custom"
 
 bm_w_c96: "Übertöten M1916" # Written on the gun.
+bm_w_x_c96: "Akimbo Übertöten M1916"
 # DLC site says it's made by Schnauser instead, and in the same paragraph says it loads Mauser rounds.
 # Seems like a glaring mistake and implies to me that whoever wrote the site didn't put much thought into it,
 # so I'm going to take the text on the actual model itself as proof of intent.
 
 bm_w_type54: "Káng Arms TT-54"
+bm_w_x_type54: "Akimbo Káng Arms TT-54"
 bm_w_breech: "Parabellum P08"
+bm_w_x_breech: "Akimbo Parabellum P08"
 bm_w_lemming: "Union Acuto 5.7" # Acuto is implied to be the name of the gun and maybe the company??? But that sucks and makes no sense so fuck you
 bm_w_chinchilla: "J&M Castigo" # Based on PAYDAY 3
+bm_w_x_chinchilla: "Akimbo J&M Castigo"
 bm_w_packrat: "SG Master 9" # Written on the gun
+bm_w_x_packrat: "Akimbo SG Master 9"
 bm_w_model3: "J&M Frenchman"
+bm_w_x_model3: "Akimbo J&M Frenchman"
 bm_w_rsh12: "Ketchnov RSh-12" # Written on the gun... in Russian!
 bm_w_shrew: "Crosskill Guard"
+bm_w_x_shrew: "Akimbo Crosskill Guard"
 bm_wp_pis_g26: "Chimano 26" # Written on the gun
+bm_w_jowi: "Akimbo Chimano 26"
 bm_w_hs2000: "HS Firearms LEO-40" # Written on the gun
+bm_w_x_hs2000: "Akimbo HS Firearms LEO-40"
 bm_w_glock_18c: "Chimano 18C" # Written on the gun
+bm_w_x_g18c: "Akimbo Chimano 18C"
 bm_w_beer: "Bernetti Automatico" # Written on the gun in Italian
+bm_w_x_beer: "Akimbo Bernetti Automatico"
 bm_w_czech: "Czech Sport II" # Written on the gun
+bm_w_x_czech: "Akimbo Czech Sport II"
 bm_w_stech: "Igor Avtomaticheskiy"
+bm_w_x_stech: "Akimbo Igor Avtomaticheskiy"
 bm_w_holt: "Holt H9"
+bm_w_x_holt: "Akimbo Holt H9"
 bm_w_pmm: "Izhma Strix"
+bm_w_x_pmm: "Akimbo Izhma Strix"
 bm_w_welrod: "Pipette Mk.2"
 bm_w_peacemaker: "Peacemaker .45"
 bm_w_mateba: "Matever 2105M" # Gun is Mateba 2006M, can't find meaning of 2006M. 2105 is the release date of Alesso (05/21/15)
+bm_w_x_2006m: "Akimbo Matever 2105M"
 bm_w_deagle: "IMI Deagle .357"
+bm_w_x_deagle: "Akimbo IMI Deagle .357"
 
 bm_w_m45: "Swedish K"
+bm_w_x_m45: "Akimbo Swedish K"
 bm_w_mp7: "SG Compact-7" # More in-line with the MP5, matches with PAYDAY 3
+bm_w_x_mp7: "Akimbo SG Compact-7"
 bm_w_mac10: "Ingrid Mark-11"
+bm_w_x_mac10: "Akimbo Ingrid Mark-11"
 bm_w_vityaz: "Izhma AKS-21U"
+bm_w_x_vityaz: "Akimbo Izhma AKS-21U"
 bm_w_cobray: "HIC Jacket's Piece"
+bm_w_x_cobray: "Akimbo HIC Jacket's Piece"
 bm_w_mp5: "SG Compact-5"
+bm_w_x_mp5: "Akimbo SG Compact-5"
 bm_w_m1928: "Chicago Typewriter"
+bm_w_x_m1928: "Akimbo Chicago Typewriter"
 bm_w_fmg9: "Speedpull WASP-DS"
 bm_w_pm9: "Miyaka PM-9"
+bm_w_x_pm9: "Akimbo Miyaka PM-9"
 bm_w_scorpion: "Czech Cobra 61" # OTWD
+bm_w_x_scorpion: "Akimbo Czech Cobra 61"
 bm_w_mp9: "Bergentrückung MP9" # MP9 is clearly written on the side of the gun
+bm_w_x_mp9: "Akimbo Bergentrückung MP9"
 bm_w_olympic: "Crosskill Para" # all AR-15s say Crosskill Tactical on them
+bm_w_x_olympic: "Akimbo Crosskill Para"
 bm_w_baka: "IMI Micro Uzi"
+bm_w_x_baka: "Akimbo IMI Micro Uzi"
 bm_w_shepheard: "Signature PC9" # Based on PAYDAY 3
+bm_w_x_shepheard: "Akimbo Signature PC9"
 bm_w_schakal: "SG AMP-45" # Gun has AMP written on it
+bm_w_x_schakal: "Akimbo SG AMP-45"
 bm_w_erma: "MP40"
+bm_w_x_erma: "Akimbo MP40"
 bm_w_sr2: "Heather KP-SR2" # Gun has KP-SR2 written on it in Russian
+bm_w_x_sr2: "Akimbo Heather KP-SR2"
 bm_w_akmsu: "Izhma AKS-59U"
+bm_w_x_akmsu: "Akimbo Izhma AKS-59U"
 bm_w_speen: "Pathfinder Ballerina"
 bm_w_tec9: "Blaster FT-9" # Taken from OTWD
+bm_w_x_tec9: "Akimbo Blaster FT-9"
 bm_w_p90: "Union Kobus 90"
+bm_w_x_p90: "Akimbo Union Kobus 90"
 bm_w_polymer: "Kross Vertex"
-bm_w_coal: "Izhma Tatonka-2" # PP-19 Bizon-2
+bm_w_x_polymer: "Akimbo Kross Vertex"
+bm_w_x_coal: "Akimbo Izhma Tatonka-2" # PP-19 Bizon-2
 bm_w_sterling: "Patchett L2A3"
+bm_w_x_sterling: "Akimbo Patchett L2A3"
 bm_w_uzi: "IMI Uzi"
+bm_w_x_uzi: "Akimbo IMI Uzi"
 
 bm_w_serbu: "Reinbeck Shorty"
 bm_w_m37: "GSPS Model 37"
 bm_w_rota: "Goliath SIX12"
+bm_w_x_rota: "Akimbo Goliath SIX12"
 bm_w_basset: "Pike X12K" # Grimm is a Saiga-12K with a CBRPS Spike X1S conversion kit, according to the wiki
+bm_w_x_basset: "Akimbo Pike X12K"
 bm_w_striker: "HIC Street Sweeper"
 bm_w_judge: "Tarius Public Defender" # PAYDAY 3 has markings for the manufacturer as "Swanwood"/"SwanWood". I hate this name.
+bm_w_x_judge: "Akimbo Tarius Public Defender"
 bm_w_ultima: "Izhma MP-3 Argos"
 bm_w_coach: "Reinbeck Claire 1889"
 
@@ -339,7 +395,7 @@ bm_w_ak5: "Automatkarbin 5"
 bm_w_galil: "IMI Gecko"
 bm_w_komodo: "IMI Tavor-21" # THIS is the gun that tells us what IWI is called in-universe
 bm_w_m16: "Crosskill Maverick" # CS1.6 - CS:S 
-bm_w_contraband: "SG Friend 417D"
+bm_w_contraband: "SG 'Friend' 417D"
 bm_w_fal: "Union Falcon"
 bm_w_hailstorm: "FTI Hailstorm R-033"
 bm_w_tkb: "Rodion TKB-59"
@@ -359,6 +415,10 @@ bm_w_m1897: "Rapture Trap 1897" # Trap Gun is written on ejection port
 bm_w_supernova: "Giovanni Deimos"
 bm_w_huntsman: "Mosconi Classic"
 bm_w_b682: "Bernetti Joceline O/U"
+bm_w_sko12: "Variable Design VD-12"
+bm_w_x_sko12: "Akimbo Variable Design VD-12"
+bm_w_aa12: "AA Stakeout-12"
+bm_w_bleckert: "Karussell Revolving"
 
 bm_w_rpk: "Izhma RPK"
 bm_w_par: "Kulspruta 58"
@@ -385,6 +445,8 @@ bm_w_bessy: "Brown Betty"
 bm_w_siltstone: "Izhma Grom"
 bm_w_mosin: "Three-Line Nagant"
 bm_w_m95: "Thanatos M95"
+bm_w_sbl: "Bernetti Rangehitter"
+bm_w_qbu88: "Káng Arms X8"
 
 bm_w_m134: "Vulcan M135 Arges"
 bm_w_shuno: "XL556 Microgun"
@@ -392,7 +454,7 @@ bm_w_frankish: "Frankish Crossbow"
 bm_w_arblast: "Arbalest"
 bm_w_slap: "SG Compact 40mm"
 bm_w_m32: "Marcom Piglet MGL"
-bm_w_gre_m79: "Simmons Armory GL40"
+bm_w_gre_m79: "Moonbase Armory GL40"
 bm_w_china: "China Puff"
 bm_w_ms3gl: "FTI Basilisk 3GL"
 bm_w_rpg7: "RPG-7"
@@ -403,7 +465,8 @@ bm_w_arbiter: "SG Arbiter"
 # Some notes here, because there's a LOT to keep track of:
 # SG = H&K
 # Signature = SIG Sauer
-# Simmons Armory = Springfield Armory
+# Simmons Armory = Springfield Armory (New)
+# Moonbase Armory = Springfield Armory (Old)
 # Izhma = Kalashnikov Concern and subsidiaries
 # Bernetti = Beretta
 # Reinbeck = Remington
@@ -429,6 +492,8 @@ bm_w_arbiter: "SG Arbiter"
 # Bergentrückung = B&T
 # HIC = Cobray
 # Crosskill = Colt but they just kinda show up in random places, so eh
+# Standard Manufacturing = Variable Design
+# MPS = Army Acquisitions
 
 # Other companies are used if they show up on the gun, regardless of whether that makes real-world sense
 # (e.g. the Five Seven has Acuto written on it, despite being made by FN Herstal irl)
@@ -514,7 +579,7 @@ trophy_goat_objective: "Complete 'Dirty Work' on Death Sentence."
 trophy_falcogini_objective: "Complete 'Burning Rubber' on Death Sentence."
 trophy_computer_desc: "Wait, you're NOT supposed to randomly guess?"
 trophy_computer_objective: "Complete 'Engine Problem' while securing the correct engine last."
-trophy_piggy_bank_objective: "Complete 'Initiation' on Death Sentence in under 8 minutes with all crew members using no skills."
+trophy_piggy_bank_objective: "Complete 'Initiation' on Death Sentence in under 8 minutes with all crew members having no skills."
 trophy_framing_frame_objective: "Complete 'Political Suicide' after going loud without the power being cut during the data upload."
 trophy_stealth_objective: "Complete all stealthable heists on Death Sentence without the alarm going off."
 trophy_courtesy_objective: "Complete 'Beneath the Mountain' on Death Sentence without personally killing any medics."
@@ -541,7 +606,7 @@ trophy_dartboard_objective: "Kill 10000 enemies with headshots."
 trophy_dozer_helmet_objective: "Kill 1000 special enemies."
 trophy_escape_van_objective: "Escape using the van 50 times on Death Sentence."
 trophy_fish_trophy_objective: "Complete 'Continental Coastguard' in stealth with all crew members at 75 detection risk."
-trophy_carshop_stealth_objective: "Complete 'Burning Rubber' with a detection risk above 70 and without bringing ECM jammers."
+trophy_carshop_stealth_objective: "Complete 'Burning Rubber' with all crew members at 75 detection risk without bringing ECM jammers."
 trophy_sandwich_objective: "Find the half eaten sandwich in 'Initiation'."
 trophy_hobo_knife_objective: "Find the knife in 'Aftershock'."
 trophy_run_turtle_objective: "Find the tortoise in 'Heat Street'."
