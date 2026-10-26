@@ -12,6 +12,8 @@ Global.CrimDusk.campaign = { -- Main campaign
   "deep", "vit" -- Conclusion
 }
 
+Global.CrimDusk.levels_no_diff_increase = { shoutout_raid = true, arena = true, peta = true, peta2 = true }
+
 for i, heist in ipairs(Global.CrimDusk.campaign) do
   Global.CrimDusk.HeistIndex = {}
   if heist == "nmh" then Global.CrimDusk.PDTHLength = i

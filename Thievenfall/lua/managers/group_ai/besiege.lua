@@ -88,7 +88,7 @@ Hooks:OverrideFunction(GroupAIStateBesiege, "phalanx_damage_reduction_disable", 
 end)
 
 -- The heists in this table are problematic and softlock if the difficulty increments mid-heist
-local BrokenHeists = { shoutout_raid = true, arena = true, peta = true, peta2 = true }
+local BrokenHeists = Global.CrimDusk.levels_no_diff_increase
 
 Hooks:OverrideFunction(GroupAIStateBesiege, "_begin_assault_task", function(self, assault_areas)
   local assault_task = self._task_data.assault

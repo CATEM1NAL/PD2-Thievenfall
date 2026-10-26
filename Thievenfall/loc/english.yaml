@@ -840,7 +840,7 @@ menu_toolkit: "Toolkit"
 menu_toolkit_desc: "$lv1;You repair broken drills and saws ##25%## faster."
 
 menu_silent_drilling: "Silent Drilling"
-menu_silent_drilling_desc: "$lv1;Guards will only move to investigate drills or saws that you placed or upgraded within ##9m##.\n\n$lv2;Guards will not move to investigate drills or saws that you placed or upgraded."
+menu_silent_drilling_desc: "$lv1;Guards will only move to investigate drills or saws that you placed or upgraded within ##10m##.\n\n$lv2;Guards will not move to investigate drills or saws that you placed or upgraded."
 
 menu_drill_restart: "Repair System"
 menu_drill_restart_desc: "$lv1;Drills or saws that you placed or upgraded have a ##50%## chance to automatically restart ##5## to ##15## seconds after breaking.\n\n$lv2;Drills or saws that you placed or upgraded will always restart ##5## to ##15## seconds after breaking."
@@ -1144,7 +1144,7 @@ menu_loud_and_proud: "Loud And Proud"
 menu_loud_and_proud_desc: "$lv1;Gain ##5%## more damage (up to ##25%##) for every ##7## points of detection risk above ##40##.\n\n$lv2;Gain ##10%## more damage (up to ##50%##) per ##7## points instead."
 
 menu_pager_snatch: "Pager Snatch"
-menu_pager_snatch_desc: "$lv1;Killing a guard with melee has a ##25%## chance to not set off their pager.\n\n$lv2;Melee kills now have a ##50%## chance of ignoring pagers.\n\n$lv3;Melee kills now have a ##75%## chance of ignoring pagers.\n\n$lv4;Melee kills will never trigger pagers."
+menu_pager_snatch_desc: "$lv1;Killing a guard with melee automatically answers their pager.\n\n$lv2;Melee kills now have a ##25%## chance of ignoring pagers.\n\n$lv3;Melee kills now have a ##50%## chance of ignoring pagers."
 
 menu_sharp_damage: "Vicious Warrior"
 menu_sharp_damage_desc: "$lv1;Damage and knockdown of ##sharp## melee weapons increased by ##100%##.\n\n$lv2;Damage and knockdown of ##sharp## melee weapons increased by ##200%##.\n\n$lv3;Damage and knockdown of ##sharp## melee weapons increased by ##300%##."

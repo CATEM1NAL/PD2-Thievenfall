@@ -130,9 +130,9 @@ Hooks:PostHook(SkillTreeTweakData, "init", "CrimDusk_SkillTreeTweakInit", functi
     self.trees[9].name_id = "st_menu_technician_breaching"
     self.trees[9].tiers = {
       { "toolkit", "silent_drilling", "trip_mine_radius" },
-      { "drill_expert", "trip_mine_damage", "trip_mine_quantity" },
-      { "kick_starter", "fire_trap", "sensor_mines" },
-      { "drill_restart", "shaped_charge" }
+      { "drill_expert", "trip_mine_damage", "shaped_charge" },
+      { "kick_starter", "fire_trap", "trip_mine_quantity" },
+      { "drill_restart", "sensor_mines" }
     }
 
     -- Ghost
@@ -965,7 +965,6 @@ Hooks:PostHook(SkillTreeTweakData, "init", "CrimDusk_SkillTreeTweakInit", functi
       { upgrades = { "player_melee_kill_snatch_pager_chance" }, cost = self.costs.default },
       { upgrades = { "player_melee_kill_snatch_pager_chance_2" }, cost = self.costs.default },
       { upgrades = { "player_melee_kill_snatch_pager_chance_3" }, cost = self.costs.default },
-      { upgrades = { "player_melee_kill_snatch_pager_chance_4" }, cost = self.costs.default },
       name_id = "menu_pager_snatch", desc_id = "menu_pager_snatch_desc", icon_xy = { 0, 0 }
     }
     self.skills.blanks = {

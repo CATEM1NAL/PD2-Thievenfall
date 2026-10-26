@@ -36,7 +36,7 @@ Hooks:PostHook(UpgradesTweakData, "init", "CrimDusk_InitUpgradeTweakData", funct
   self.values.player.suppression_multiplier = { 1.25 } -- Oppressor
   self.values.temporary.overkill_damage_multiplier = { { 1.5, 5 } } -- Overkill
   self.values.player.pick_up_ammo_multiplier = { 1.25, 1.5 } -- Fully Loaded
-  self.values.player.melee_kill_snatch_pager_chance = { 0.25, 0.5, 0.75, 1 } -- Pager Snatch
+  self.values.player.melee_kill_snatch_pager_chance = { 0.01, 0.25, 0.5, 1 } -- Pager Snatch
   self.values.player.melee_sharp_damage_multiplier = { 2, 3, 4 } -- Vicious Warrior
   self.values.player.critical_hit_chance = { 0.1, 0.25 } -- Hypocritical
   self.values.player.assets_cost_multiplier = { 0.1, 0.25, 0.5 } -- Nebula Plus
