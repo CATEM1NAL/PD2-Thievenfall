@@ -10,10 +10,11 @@ Hooks:PostHook(PlayerTweakData, "init", "CrimDusk_InitPlayerTweakData", function
   self.omniscience.start_t = 1
   self.omniscience.target_resense_t = 5
 
-  -- Camera heights
+  --[[ Camera heights
   self.stances.default.standard.head.translation = Vector3(0, 0, 160)
   self.stances.default.mask_off.head.translation = Vector3(0, 0, 170)
   self.stances.default.crouched.head.translation = Vector3(0, 0, 100)
+  ]]
 
   -- Pager settings
   self.alarm_pager = {

@@ -111,4 +111,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "CrimDusk_InitModTweakData", func
     min_damage_effect = 0.5, max_damage_effect = 0.5,
     value = 1
   }
+
+  --[[ for index, mod in ipairs(self.wpn_fps_ass_contraband.default_blueprint) do
+    if mod == "wpn_fps_ass_contraband_gl_m203" then table.remove(self.wpn_fps_ass_contraband.default_blueprint, index) break end
+  end ]]
 end)

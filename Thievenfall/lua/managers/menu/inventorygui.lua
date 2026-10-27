@@ -34,37 +34,38 @@ Hooks:OverrideFunction(PlayerInventoryGui, "_update_player_stats", function(self
 end)
 
 Hooks:OverrideFunction(PlayerInventoryGui, "_get_armor_stats", function(self, name)
-	local base_stats, mods_stats, skill_stats = {}, {}, {}
-	local detection_risk = managers.blackmarket:get_suspicion_offset_from_custom_data({ armors = name}, tweak_data.player.SUSPICION_OFFSET_LERP or 0.75)
-	detection_risk = math.round(detection_risk * 100)
-	local bm_armor_tweak = tweak_data.blackmarket.armors[name]
-	local upgrade_level = bm_armor_tweak.upgrade_level
+  local base_stats, mods_stats, skill_stats = {}, {}, {}
+  local detection_risk = managers.blackmarket:get_suspicion_offset_from_custom_data({ armors = name}, tweak_data.player.SUSPICION_OFFSET_LERP or 0.75)
+  detection_risk = math.round(detection_risk * 100)
+  local bm_armor_tweak = tweak_data.blackmarket.armors[name]
+  local upgrade_level = bm_armor_tweak.upgrade_level
+  local PresentMult = tweak_data.gui.stats_present_multiplier -- Converts values to be more presentable
 
-	for i, stat in ipairs(self._player_stats_shown) do
-		base_stats[stat.name] = { value = 0 }
-		mods_stats[stat.name] = { value = 0 }
-		skill_stats[stat.name] = { value = 0 }
+  for i, stat in ipairs(self._player_stats_shown) do
+    base_stats[stat.name] = { value = 0 }
+    mods_stats[stat.name] = { value = 0 }
+    skill_stats[stat.name] = { value = 0 }
 
-		if stat.name == "armor" then
-			local base = tweak_data.player.damage.ARMOR_INIT
-			local mod = managers.player:body_armor_value("armor", upgrade_level)
-			base_stats[stat.name] = { value = (base + mod) * tweak_data.gui.stats_present_multiplier }
-			skill_stats[stat.name] = {
-			  value = (base_stats[stat.name].value + managers.player:body_armor_skill_addend(name) * tweak_data.gui.stats_present_multiplier) * managers.player:body_armor_skill_multiplier(name) - base_stats[stat.name].value
-			}
+    if stat.name == "armor" then
+      local base = (tweak_data.player.damage.ARMOR_INIT + managers.player:body_armor_value("armor", upgrade_level)) * PresentMult
+      local addend = managers.player:body_armor_skill_addend(name) * PresentMult
 
-		elseif stat.name == "health" then
-			local base = tweak_data.player.damage.HEALTH_INIT
-			local mod = managers.player:health_skill_addend() * tweak_data.gui.stats_present_multiplier
-			base_stats[stat.name] = { value = base * tweak_data.gui.stats_present_multiplier }
-			skill_stats[stat.name] = { value = base_stats[stat.name].value * managers.player:health_skill_multiplier() + mod - base_stats[stat.name].value }
+      base_stats[stat.name] = { value = base }
+      skill_stats[stat.name] = { value = (base * managers.player:body_armor_skill_multiplier(name)) + addend - base }
 
-		elseif stat.name == "concealment" then
-			base_stats[stat.name] = { value = managers.player:body_armor_value("concealment", upgrade_level) }
-			skill_stats[stat.name] = { value = managers.blackmarket:concealment_modifier("armors", upgrade_level) }
+    elseif stat.name == "health" then
+      local base = tweak_data.player.damage.HEALTH_INIT * PresentMult
+      local addend = managers.player:health_skill_addend() * PresentMult
+
+      base_stats[stat.name] = { value = base }
+      skill_stats[stat.name] = { value = (base * managers.player:health_skill_multiplier()) + addend - base }
+
+    elseif stat.name == "concealment" then
+      base_stats[stat.name] = { value = managers.player:body_armor_value("concealment", upgrade_level) }
+      skill_stats[stat.name] = { value = managers.blackmarket:concealment_modifier("armors", upgrade_level) }
 
 		elseif stat.name == "movement" then
-			local base = tweak_data.player.movement_state.standard.movement.speed.STANDARD_MAX / 100 * tweak_data.gui.stats_present_multiplier
+			local base = tweak_data.player.movement_state.standard.movement.speed.STANDARD_MAX / 100 * PresentMult
 			local movement_penalty = managers.player:body_armor_value("movement", upgrade_level)
 			local base_value = movement_penalty * base
 			base_stats[stat.name] = { value = base_value }
@@ -94,8 +95,8 @@ Hooks:OverrideFunction(PlayerInventoryGui, "_get_armor_stats", function(self, na
 			local base_value = base
 			local mod_value = base / mod - base_value
 			local skill_value = base / mod / skill - base_value - mod_value + managers.player:upgrade_value("player", "damage_shake_addend", 0)
-			base_stats[stat.name] = { value = (base_value + mod_value) * tweak_data.gui.stats_present_multiplier }
-			skill_stats[stat.name] = { value = skill_value * tweak_data.gui.stats_present_multiplier }
+			base_stats[stat.name] = { value = (base_value + mod_value) * PresentMult }
+			skill_stats[stat.name] = { value = skill_value * PresentMult }
 
     elseif stat.name == "stamina" then -- ARMOUR REGEN SPEED
       local base_value = Global.CrimDusk.regen_time[upgrade_level]

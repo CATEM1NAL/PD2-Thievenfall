@@ -128,8 +128,8 @@ heist_arena_hl: "Showtime"
 heist_dinner: "Blood For Gold"
 heist_dinner_hl: "Blood For Gold"
 
-heist_cane: "White Friday"
-heist_cane_hl: "White Friday"
+heist_moon: "White Friday"
+heist_moon_hl: "White Friday"
 
 heist_fish: "Continental Coastguard"
 heist_fish_hl: "Continental Coastguard"
@@ -495,9 +495,6 @@ bm_w_arbiter: "SG Arbiter"
 # Variable Design = Standard Manufacturing
 # AA = MPS
 
-# Other companies are used if they show up on the gun, regardless of whether that makes real-world sense
-# (e.g. the Five Seven has Acuto written on it, despite being made by FN Herstal irl)
-
 # Categories
 menu_snp: "Precision"
 menu_assault_rifle: "Assault"
@@ -673,6 +670,8 @@ menu_bm_total_cost: ""
 # Infamy
 menu_infamy_go_infamous_error_money: "You need $200,000,000 in offshore."
 menu_infamy_prestige_error_rank: ""
+menu_infamy_go_infamous: "Become Infamous"
+menu_infamy_go_inf_prestige: "Use Infamy Pool"
 
 ### SKILLS ###
 # Description Changes

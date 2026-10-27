@@ -107,6 +107,5 @@ Hooks:PostHook(PlayerManager, "on_killshot", "CrimDusk_TrackWeaponKills", functi
   if not weapon_id or CopDamage.is_civilian(killed_unit:base()._tweak_table) then return end
   local CurrentXP = Global.CrimDusk.weapon_levels[weapon_id] or 0
   local xp = headshot and 2 or 1
-  log(CurrentXP .. " + " .. xp)
   Global.CrimDusk.weapon_levels[weapon_id] = CurrentXP + xp
 end)

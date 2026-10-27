@@ -60,6 +60,12 @@ Hooks:OverrideFunction(PlayerDamage, "_update_armor_grinding", function(self, t,
   end
 end)
 
+-- Make addend actually added at the end
+Hooks:OverrideFunction(PlayerDamage, "_raw_max_armor", function(self)
+  local base_max_armor = self._ARMOR_INIT + managers.player:body_armor_value("armor")
+  return (base_max_armor * managers.player:body_armor_skill_multiplier()) + managers.player:body_armor_skill_addend()
+end)
+
 -- Suppression changes
 Hooks:OverrideFunction(PlayerDamage, "build_suppression", function(self, amount)
   local armour = tweak_data.blackmarket.armors[managers.blackmarket:equipped_armor()].upgrade_level
