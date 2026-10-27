@@ -1018,7 +1018,7 @@ menu_deck2_1_skill: "$lv1;Max health increased by ##25##.\n\n$lv2;Max health inc
 menu_deck2_7_skill: "$lv1;Suppressed enemies can panic. Your target rate is increased by ##15%##.\n\n$lv2;Kills within ##10m## have a ##50%## chance to cause panic."
 
 menu_armorer_skill: "Impact Plate"
-menu_armorer_skill_desc: "$lv1;Armor increased by ##25%##.\n\n$lv2;Armor increased by ##50%##.\n\n$lv3;Armor increased by ##75%##.\n\n$lv4;Armor increased by ##100%##. Armor recovery is ##50%## less effective and locked at ##50%## slower, but occurs even while in combat."
+menu_armorer_skill_desc: "$lv1;Tactical vests have their armor increased by ##25%##.\n\n$lv2;Armor is now increased by ##50%##.\n\n$lv3;Armor is now increased by ##75%##.\n\n$lv4;Armor is now increased by ##100%##. Armor recovery is ##50%## less effective and locked at ##50%## slower, but occurs even while in combat."
 
 menu_yakuza_speed: "Adrenaline"
 menu_yakuza_speed_desc: "$lv1;While below ##50%## health your movement speed scales with health lost, to a maximum of ##20%##.\n\n$lv2;Armor recovery speed also increases by up to ##50%## with health lost."
@@ -2985,7 +2985,7 @@ bm_menu_btn_clear_preferred: "Reset"
 bm_menu_btn_swap_preferred_slots: "Swap"
 bm_menu_btn_set_preferred_to_slot: "Select"
 
-bm_armor_level_1: "Suit"
+bm_armor_level_5: "Improvised Tactical Vest"
 bm_armor_level_6: "Tactical Vest"
 bm_armor_level_7: "Advanced Tactical Vest"
 

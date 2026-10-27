@@ -57,7 +57,7 @@ Hooks:PostHook(UpgradesTweakData, "init", "CrimDusk_InitUpgradeTweakData", funct
   self.values.weapon.armor_piercing_chance = { 0.5 } -- Black Tip
   self.close_combat_distance = 1000 -- Distance for Close Combat/panic on kill
   self.killshot_close_panic_range = 1000 -- Distance that panic on kill spreads
-  self.values.player.tier_armor_multiplier = { 1.25, 1.5, 1.75, 2, 0, 0 } -- Armorer (armour)
+  self.values.player.tier_armor_multiplier = { 1.25, 1.5, 1.75, 2, 0, 0 } -- Bulletproof (OLD)
   self.values.player.camouflage_bonus = { 0.667, 0.5 } -- Optical Illusions
   self.values.player.cheat_death_chance = { 0.5, 1 } -- Feign Death
   self.values.weapon.automatic_head_shot_add = { 0.5, 1 } -- Body Expertise
@@ -82,6 +82,20 @@ Hooks:PostHook(UpgradesTweakData, "init", "CrimDusk_InitUpgradeTweakData", funct
   self.values.shotgun.steelsight_accuracy_inc = { 0.5 } -- Skeet Shooting
   self.drill_alert_radius = 5000 -- drill alert radius
   self.enemy_hurt_alert_radius_whisper = 300 -- death alert radius
+
+  -- Bulletproof rework
+  for i = 5, 7 do
+    self.values.player["level_" .. i .. "_armor_multiplier"] = { 1.25, 1.5, 1.75, 2 }
+
+    for j = 1, 4 do
+      self.definitions["player_level_" .. i .. "_armor_multiplier_" .. j] = {
+        category = "feature",
+        incremental = true,
+        name_id = "menu_player_level_" .. i .. "_armor_multiplier",
+        upgrade = { category = "player", upgrade = "level_" .. i .. "_armor_multiplier", value = j }
+      }
+    end
+  end
 
   -- Sixth Sense 2
   self.values.player.sixth_sense_non_specials = { true } -- Sixth Sense 2

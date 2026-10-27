@@ -695,10 +695,10 @@ Hooks:PostHook(SkillTreeTweakData, "init", "CrimDusk_SkillTreeTweakInit", functi
       name_id = "menu_deck2_7", desc_id = "menu_deck2_7_skill", icon_xy = { 7, 0 }
     }
     self.skills.armorer_perk = {
-      { upgrades = { "player_tier_armor_multiplier_1" }, cost = self.costs.default },
-      { upgrades = { "player_tier_armor_multiplier_2" }, cost = self.costs.default },
-      { upgrades = { "player_tier_armor_multiplier_3" }, cost = self.costs.default },
-      { upgrades = { "player_tier_armor_multiplier_4", "player_armor_grinding_1" }, cost = self.costs.default },
+      { upgrades = { "player_level_5_armor_multiplier_1", "player_level_6_armor_multiplier_1", "player_level_7_armor_multiplier_1" }, cost = self.costs.default },
+      { upgrades = { "player_level_5_armor_multiplier_2", "player_level_6_armor_multiplier_2", "player_level_7_armor_multiplier_2" }, cost = self.costs.default },
+      { upgrades = { "player_level_5_armor_multiplier_3", "player_level_6_armor_multiplier_3", "player_level_7_armor_multiplier_3" }, cost = self.costs.default },
+      { upgrades = { "player_level_5_armor_multiplier_4", "player_level_6_armor_multiplier_4", "player_level_7_armor_multiplier_4", "player_armor_grinding_1" }, cost = self.costs.default },
       name_id = "menu_bulletproof_name", desc_id = "menu_armorer_skill_desc", icon_xy = { 6, 4 }
     }
     self.skills.rogue_dodge = {
