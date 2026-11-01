@@ -50,11 +50,11 @@ crimdusk_campaign_active: "The next heist is $HEIST."
 crimdusk_campaign_inactive: "Select the next heist on Crime.net."
 
 crimdusk_safehouse_desc: "Upgrade your safe house, view trophies, or simply take a break."
-crimdusk_holdout_desc: "Survive for nine increasingly difficult waves.\nNew holdout in $DAYS days!"
+crimdusk_new_holdout: "New Weekly Holdout"
 
 # Heists
 heist_arm_temp: "Armored Transport"
-heist_arm_crimenet: "I managed to dig up some info on a few GenSec truck routes. If we act fast enough we'll be gone before they have time to process what happened.\n\n» Break into the immobilized trucks\n» Crack open the strongboxes\n» Get the loot to the getaway vehicle"
+heist_arm_crimenet: "I managed to dig up some info on a few GenSec truck routes. If we act fast enough we'll be gone before they even know what happened.\n\n» Break into the immobilized trucks\n» Crack open the strongboxes\n» Get the loot to the getaway vehicle"
 
 heist_bomb: "The Bomb"
 heist_bomb_crimenet: "Our girl's no stranger to weapons, and she's got her eyes on something very special. A high yield explosive is currently being transported through D.C. and the Butcher wants to get her hands on it before it's decommissioned. Our best bet is to either hit it while it's docked, or intercept it in transit - we'll let you know which when we're ready.\n\n» Locate and steal the bomb"
@@ -70,6 +70,9 @@ heist_mia_2_hl: "Showdown"
 heist_cd_hox1: "The Breakout"
 heist_cd_hox2: "The Search"
 
+heist_hox_3: "Revenge"
+heist_hox_3_hl: "Revenge"
+
 heist_firestarter_1_hl: "Firestarter"
 heist_firestarter_2_hl: "Hornet's Nest"
 
@@ -77,6 +80,9 @@ heist_framing_frame_3_hl: "Political Suicide"
 
 heist_kenaz_full: "Bain's 11"
 heist_kenaz_hl: "Bain's 11"
+
+heist_skm_cas: "Locke's 21"
+heist_skm_cas_h1: "Locke's 21"
 
 heist_rvd2_hl: "A Simple Job"
 
@@ -89,14 +95,18 @@ heist_sah_hl: "Shadow Over Boston"
 heist_family: "Family Jewels"
 heist_family_hl: "Family Jewels"
 
-heist_branchbank: "Baby Steps"
-heist_branchbank_hl: "Baby Steps"
+heist_branchbank: "First Harvest"
+heist_branchbank_hl: "First Harvest"
 
 heist_friend: "The World Is Yours"
 heist_friend_hl: "The World Is Yours"
 
 heist_big: "Initiation"
 heist_big_hl: "Initiation"
+
+heist_skm_big2: "Benevolence"
+heist_skm_big2_h1: "Benevolence"
+heist_skm_big2_crimenet: "We're returning to the Benevolent Bank, but not for the vault."
 
 heist_cage: "Burning Rubber"
 heist_cage_hl: "Burning Rubber"
@@ -116,6 +126,9 @@ heist_roberts_hl: "Charlie Santa"
 heist_mus: "Blood Diamond"
 heist_mus_hl: "Blood Diamond"
 
+heist_skm_mus: "Blood Diamond"
+heist_skm_mus_h1: "Blood Diamond"
+
 heist_crojob1: "Bomb: Docked"
 heist_crojob2_hl: "Bomb: Docked"
 
@@ -124,6 +137,9 @@ heist_crojob3_hl: "Bomb: Derailment"
 
 heist_arena: "Showtime"
 heist_arena_hl: "Showtime"
+
+heist_skm_arena: "Showtime"
+heist_skm_arena_h1: "Showtime"
 
 heist_dinner: "Blood For Gold"
 heist_dinner_hl: "Blood For Gold"
@@ -151,6 +167,11 @@ heist_bex_hl: "Bancarotta"
 
 heist_fex: "Murder Masquerade"
 heist_fex_hl: "Murder Masquerade"
+
+# Unchanged from original names, but show up bugged on main menu otherwise
+heist_cd_biker1: "Lion's Den"
+heist_cd_biker2: "Interception"
+
 
 ### STRING OVERRIDES ###
 # PDTH difficulties
@@ -229,6 +250,8 @@ bm_w_m95_desc: "Penetrates all surfaces."
 # Integral suppressors
 bm_w_maxim9_desc: "Weapon is integrally suppressed."
 bm_w_asval_desc: "Weapon is integrally suppressed."
+
+# Special
 bm_w_bessy_desc: "Penetrates enemies & insta-kills specials."
 
 # Weapon mods
@@ -368,7 +391,7 @@ bm_w_x_judge: "Akimbo Tarius Public Defender"
 bm_w_ultima: "Izhma MP-3 Argos"
 bm_w_coach: "Reinbeck Claire 1889"
 
-bm_w_scout: "Stefan Pronghorn" # they named their version of Steyr Mannlicher "Stefan Menschenlecker". I'm NOT fucking calling it Stefan.
+bm_w_scout: "Stefan Pronghorn" # they named their version of Steyr Mannlicher "Stefan Menschenlecker"
 bm_w_contender: "J&M Law G2" # J&M is mentioned in this game I'm gonna vomit (it says LaW on the barrel so I'm assuming that's the name of the gun)
 bm_w_victor: "Simmons Armory North Star"
 
@@ -516,7 +539,7 @@ menu_tango_key: "Find the key"
 menu_tango_case: "Find the weapon case"
 menu_tango_key_1: "Find the key (Firestarter)"
 menu_tango_key_2: "Find the key (Hornet's Nest)"
-menu_tango_1_key_1_desc: "Find the key in 'Cook Off' (Hector)."
+menu_tango_1_key_1_desc: "Find the key in 'Cook Off'."
 menu_tango_2_case_desc: "Find the weapon case in 'Engine Problem'."
 menu_tango_3_case_desc: "Find the weapon case in 'Political Suicide'."
 menu_tango_4_key_1_desc: "Find the keys in 'Firestarter' and 'Hornet's Nest'."
@@ -535,11 +558,11 @@ menu_pda8_item_2: "Almir Figurine (Firestarter & Hornet's Nest)"
 menu_pda8_item_3: "SWAT Van (Four Stores)"
 menu_pda8_item_4: "Toothbrush (Last Dance)"
 menu_pda8_item_5: "Medallion (Watchdogs)"
-menu_pda8_item_6: "Cocktail (Hector: Cook Off)"
-menu_pda8_item_7: "DEAD GAME T-Shirt (Baby Steps)"
+menu_pda8_item_6: "Cocktail (Cook Off)"
+menu_pda8_item_7: "DEAD GAME T-Shirt (First Harvest)"
 menu_pda8_item_8: "Mariachi Figurine (Mallcrasher)"
 menu_pda9_item_n1_desc: "Secure 9 bags of gold in 'Blood For Gold'."
-menu_pda9_item_n2_desc: "Perform 99 double kills with any penetrating weapon."
+menu_pda9_item_n2_desc: "Perform 99 penetration double kills."
 menu_pda9_item_n3_desc: "Steal 9999 pieces of loose cash."
 menu_pda9_item_n4_desc: "Kill 99 enemies with the money bundle."
 menu_pda9_item_n4: "Money Bundle Kills"
@@ -547,18 +570,22 @@ menu_pda9_item_n5_desc: "Secure Almir's Toast 9 times."
 menu_pda9_item_n5: "Toast Secured"
 menu_cg22_post_objective_1_desc: "Kill 50 enemies with snowballs or kill 500 enemies with precision rifles."
 menu_cg22_post_objective_2_desc: "Kill 5000 enemies with any weapon or kill 5 cloakers with the North Star."
-menu_cg22_post_objective_3_desc: "Using the North Star, kill 500 special enemies or perform 1000 double kills."
+menu_cg22_post_objective_3_desc: "Using the North Star, kill 500 special enemies or perform 50 penetration kills."
 menu_cg22_post_objective_4_desc: "Secure 100 loot bags."
 menu_cg22_post_objective_5_desc: "Kill 100 bulldozers."
 menu_cg22_post_objective_6_desc: "Secure 250 loot bags."
 menu_cg22_post_objective_8_desc: "Kill 500 bulldozers."
 menu_cg22_post_objective_9_desc: "Secure 500 loot bags."
 menu_pda10_post_objective_3_desc: "Complete 50 heists."
-menu_pda10_post_objective_5_desc: "Perform 50 double kills with the Brown Betty musket or kill 1000 enemies with precision rifles."
+menu_pda10_post_objective_5_desc: "Perform 50 penetration double kills with the Brown Betty musket or kill 1000 enemies with precision rifles."
 menu_pda10_post_objective_2_desc: "Secure 50 loot bags."
 menu_pda10_post_objective_6_desc: "Kill 100 enemies with the HAM-mer or kill 500 enemies with any melee weapon."
 menu_pda10_post_objective_1_desc: "Kill 250 bulldozers."
 menu_pda10_post_objective_4_desc: "Collect 500 Gage packages."
+
+# Daily Jobs
+menu_cs_div_safehouse_daily: "Daily Job"
+daily_art_objective: "Steal all 9 paintings in 'Frame Perfect'."
 
 # Trophies
 trophy_bains_book_completion_objective: "Complete 'No Mercy' on Death Sentence."
@@ -580,7 +607,7 @@ trophy_piggy_bank_objective: "Complete 'Initiation' on Death Sentence in under 8
 trophy_framing_frame_objective: "Complete 'Political Suicide' after going loud without the power being cut during the data upload."
 trophy_stealth_objective: "Complete all stealthable heists on Death Sentence without the alarm going off."
 trophy_courtesy_objective: "Complete 'Beneath the Mountain' on Death Sentence without personally killing any medics."
-trophy_bank_heists_objective: "Complete 'Baby Steps' on Death Sentence."
+trophy_bank_heists_objective: "Complete 'First Harvest' on Death Sentence."
 trophy_golden_grin_objective: "Complete 'Bain's 11' on Death Sentence."
 trophy_smwish_objective: "Complete 'The End' on Professional Mode."
 trophy_evolution_objective: "Complete 'Lab Rats' on Death Sentence without anyone in the crew getting any kills."
@@ -610,7 +637,7 @@ trophy_run_turtle_objective: "Find the tortoise in 'Heat Street'."
 trophy_flamingo_objective: "Shoot 20 flamingos in 'The World Is Yours'."
 trophy_watchout_objective: "Complete 'Truck Load' or 'Boat Load' using only precision rifles with an accuracy above 100%."
 trophy_spooky_objective: "Destroy the pumpkin on 'Prison Nightmare'."
-trophy_eng_1_completion_objective: "Find the bullet trophy on 'Baby Steps' five times."
+trophy_eng_1_completion_objective: "Find the bullet trophy on 'First Harvest' five times."
 trophy_eng_4_completion_objective: "Find the cultist trophy on 'Family Jewels' or 'The Breakout' five times."
 trophy_eng_3_completion_objective: "Find the marine trophy on 'Four Stores' or 'Charlie Santa' five times."
 trophy_eng_2_completion_objective: "Find the robot trophy on 'First World Bank' or 'Shadow Raid' five times."
