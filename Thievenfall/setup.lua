@@ -24,7 +24,6 @@ function CrimDusk:Init()
 
   self.SaveFile = self.SavePath .. "campaign.txt"
   self.SettingsFile = self.SavePath .. "settings.txt"
-  self.HoldoutData = self.SavePath .. "holdout.txt"
   self.WeaponLevels = self.SavePath .. "kills.txt"
 
   -- Validate directory and move files if data from older versions exist
@@ -32,7 +31,7 @@ function CrimDusk:Init()
     file.CreateDirectory(self.SavePath)
 
     local OldPath = SavePath .. "thievenfall_"
-    local PathMap = { save = "SaveFile", settings = "SettingsFile", kills = "WeaponLevels", holdout = "HoldoutData" }
+    local PathMap = { save = "SaveFile", settings = "SettingsFile", kills = "WeaponLevels" }
 
     for FileName, PathVar in pairs(PathMap) do
       if io.file_is_readable(OldPath .. FileName .. ".txt") then
@@ -187,11 +186,8 @@ function CrimDusk:Init()
       ["crimdusk_play_offline"] = managers.localization:text("crimdusk_play_offline_title", { HEIST_NUM = HeistNumText })
     })
 
-    if Global.skirmish_manager and Global.skirmish_manager.active_weekly then
-      local days = math.floor(math.max(Global.skirmish_manager.active_weekly.end_timestamp - os.time(), 0) / 86400)
-      managers.localization:add_localized_strings({
-        ["crimdusk_play_holdout_desc"] = managers.localization:text("crimdusk_holdout_desc", { DAYS = days })
-      })
+    if Global.skirmish_manager and (Global.skirmish_manager.last_weekly or 0) < math.floor((os.time() + 259200) / 604800) then
+      managers.localization:add_localized_strings({ ["menu_weekly_skirmish"] = managers.localization:text("crimdusk_new_holdout") })
     end
   end
 
@@ -338,11 +334,9 @@ function Global.CrimDusk:Init()
 
   else
     CrimDusk:Reset()
-    self.data.weekly_holdout = {}
     CrimDusk:WriteSave(FileIdent, "save created")
   end
 
-  self.holdout_data = io.load_as_json(CrimDusk.HoldoutData) or {}
   CrimDusk.Log(FileIdent, "Global initialisation completed!", true)
 end
 

@@ -22,6 +22,11 @@ if NetworkHelper:IsClient() then
   end)
   ]]
 
+  -- Sync holdout week (accounts for edge cases where holdout starts right before new week)
+  NetworkHelper:AddReceiveHook("CrimDusk_SyncHoldoutWeek", "CrimDusk_ReceiveHoldoutWeek", function(data)
+    if tonumber(data) < Global.skirmish_manager.last_weekly then Global.skirmish_manager.last_weekly = tonumber(data) end
+  end)
+
   -- Sync campaign progress (up to post-game)
   NetworkHelper:AddReceiveHook("CrimDusk_SyncCampaignProgress", "CrimDusk_ReceiveHeistCount", function(data)
     local HeistsWon = tonumber(data)

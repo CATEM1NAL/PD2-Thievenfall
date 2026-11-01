@@ -10,7 +10,7 @@ Hooks:PostHook(GuiTweakData, "init", "CrimDusk_InitGuiTweak", function(self)
     { item_class = "CrimeNetSidebarSeparator" },
 
     { id = "safehouse", name_id = "menu_cn_chill", icon = "sidebar_safehouse", callback = "clbk_safehouse", item_class = "CrimeNetSidebarSafehouseItem" },
-    { id = "skirmish", name_id = "menu_weekly_skirmish", icon = "sidebar_skirmish", callback = "clbk_setup_weekly_holdout", item_class = "CrimeNetSidebarSkirmishItem", visible_callback = "clbk_new_weekly_holdout" },
+    { id = "skirmish", name_id = "menu_weekly_skirmish", icon = "sidebar_skirmish", callback = "clbk_setup_weekly_holdout", item_class = "CrimeNetSidebarSkirmishItem" },
 
     { item_class = "CrimeNetSidebarSeparator" },
 

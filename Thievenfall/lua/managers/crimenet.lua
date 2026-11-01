@@ -239,19 +239,10 @@ Hooks:OverrideFunction(CrimeNetManager, "activate_job", function(self)
 
 end)
 
-function CrimeNetSidebarGui:clbk_new_weekly_holdout()
-  if Global.game_settings.single_player then return false end
-  local LastWeekly = Global.CrimDusk.holdout_data
-
-  if (LastWeekly.end_timestamp or 0) > os.time() then return false
-  elseif not Global.skirmish_manager then return false
-  elseif Global.skirmish_manager.active_weekly.key == LastWeekly.key then return false
-  else return true
-  end
-end
-
 function CrimeNetSidebarGui:clbk_setup_weekly_holdout()
-  local weekly_skirmish = managers.skirmish:active_weekly()
-  local job_data = { difficulty = "normal", weekly_skirmish = true, job_id = weekly_skirmish.id }
+  local CurrentWeek = math.floor((os.time() + 259200) / 604800)
+  local jobs = { "skm_mus", "skm_red2", "skm_run", "skm_watchdogs_stage2", "skm_cas", "skm_big2", "skm_mallcrasher", "skm_arena" }
+  local job_data = { difficulty = "normal", weekly_skirmish = true, job_id = jobs[(CurrentWeek % #jobs) + 1] }
   MenuCallbackHandler:start_job(job_data)
+  if Global.game_settings.single_player then MenuCallbackHandler:start_the_game() end
 end

@@ -1,14 +1,55 @@
 local FileIdent = "HoldoutManager"
 
--- Set tooltip for menu button
-if not Global.skirmish_manager or not Global.skirmish_manager.active_weekly then
-  Hooks:PostHook(SkirmishManager, "activate_weekly_skirmish", "CrimDusk_InitHoldoutManager", function()
-    local days = math.floor(math.max(Global.skirmish_manager.active_weekly.end_timestamp - os.time(), 0) / 86400)
-    managers.localization:add_localized_strings({
-      ["crimdusk_play_holdout_desc"] = managers.localization:text("crimdusk_holdout_desc", { DAYS = days })
-    })
-  end)
-end
+-- Add weekly number to save data
+Hooks:OverrideFunction(SkirmishManager, "save", function(self, data)
+  data.skirmish = {
+    last_weekly = self._global.last_weekly,
+    claimed_rewards = self._global.claimed_rewards,
+    special_rewards = self._global.special_rewards
+  }
+end)
+
+-- Load last weekly played
+Hooks:PostHook(SkirmishManager, "load", "CrimDusk_LoadLastHoldoutNum", function(self, data)
+  self._global.last_weekly = data.last_weekly
+
+  if (self._global.last_weekly or 0) < math.floor((os.time() + 259200) / 604800) then
+    managers.localization:add_localized_strings({ ["menu_weekly_skirmish"] = managers.localization:text("crimdusk_new_holdout") })
+  end
+end)
+
+-- Weekly modifiers
+Hooks:OverrideFunction(SkirmishManager, "_apply_weekly_modifiers", function(self)
+  if NetworkHelper:IsHost() then
+    self._global.active_weekly.modifiers = {}
+
+    -- Choose 1 to 7 modifiers
+    local ModCount = math.random(1, 7)
+
+    local WeeklyMods = {}
+    for i = 1, 10 do
+      if i < 10 then i = "0" .. i end
+      table.insert(WeeklyMods, "wsm" .. i)
+    end
+
+    for i = 1, ModCount do -- Add random modifiers to active list
+      local WeeklyModIndex = math.random(#WeeklyMods)
+      table.insert(self._global.active_weekly.modifiers, WeeklyMods[WeeklyModIndex])
+      table.remove(WeeklyMods, WeeklyModIndex)
+    end
+  end
+  Utils.PrintTable(self._global.active_weekly.modifiers)
+
+  -- Apply modifiers
+  for _, modifier_name in ipairs(self:weekly_modifiers()) do
+    local modifier_data = tweak_data.skirmish.weekly_modifiers[modifier_name]
+    local modifier_class = _G[modifier_data.class]
+    local modifier_opts = modifier_data.data
+    local modifier = modifier_class:new(modifier_opts)
+
+    managers.modifiers:add_modifier(modifier, "skirmish_weekly")
+  end
+end)
 
 -- Used by host
 Hooks:OverrideFunction(SkirmishManager, "on_start_assault", function(self)
@@ -34,16 +75,12 @@ end)
 
 -- Stop Holdout rewards from being given multiple times
 Hooks:PostHook(SkirmishManager, "get_mass_drop_data", "CrimDusk_DisableHoldoutDrops", function(self)
-  local LastWeekly = Global.CrimDusk.holdout_data
-
-  local AlreadyCompleted
-  if Global.skirmish_manager.active_weekly.key == LastWeekly.key then AlreadyCompleted = true end
-
-  if AlreadyCompleted then return { coins = 0, special_rewards = {}, additional_lootdrops = 1 }
-  else Global.CrimDusk.holdout_data = Global.skirmish_manager.active_weekly
-    io.save_as_json(Global.CrimDusk.holdout_data, CrimDusk.HoldoutData)
+  local NotCompleted = (self._global.last_weekly or 0) < math.floor((os.time() + 259200) / 604800)
+  if NotCompleted then
+    Global.skirmish_manager.last_weekly = math.floor((os.time() - TimerManager:game():time() + 259200) / 604800) -- Current week number
     CrimDusk.Log(FileIdent, "holdout completed")
-  end
+
+  else return { coins = 0, special_rewards = {}, additional_lootdrops = 1 } end
 end)
 
 --[[ Could be nice to expand this to also save the highest wave you reached, and if you
