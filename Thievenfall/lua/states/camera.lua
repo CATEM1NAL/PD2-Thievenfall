@@ -16,10 +16,8 @@ Hooks:OverrideFunction(IngameAccessCamera, "update", function(self, t, dt)
   if access_camera and access_camera.is_moving and access_camera:is_moving() then
     local m_rot = self._cam_unit:camera():get_original_rotation()
     if m_rot then access_camera:m_camera_rotation(m_rot) end
-
     access_camera:m_camera_position(tmp_vec1)
     self._cam_unit:set_position(tmp_vec1)
-
     roll = mrotation.roll(m_rot)
   end
 
@@ -32,12 +30,11 @@ Hooks:OverrideFunction(IngameAccessCamera, "update", function(self, t, dt)
   end
 
   local zoomed_value = self._cam_unit:camera():zoomed_value()
-  self._target_yaw = self._target_yaw - look_d.x * zoomed_value
 
+  self._target_yaw = self._target_yaw - look_d.x * zoomed_value
   if self._yaw_limit ~= -1 then self._target_yaw = math.clamp(self._target_yaw, -self._yaw_limit, self._yaw_limit) end
 
   self._target_pitch = self._target_pitch + look_d.y * zoomed_value
-
   if self._pitch_limit ~= -1 then self._target_pitch = math.clamp(self._target_pitch + look_d.y * zoomed_value, -self._pitch_limit, self._pitch_limit) end
 
   self._yaw = math.step(self._yaw, self._target_yaw, dt * 10)
@@ -56,24 +53,28 @@ Hooks:OverrideFunction(IngameAccessCamera, "update", function(self, t, dt)
     managers.hud:set_access_camera_destroyed(access_camera:value("destroyed"))
   end
 
-  local units = World:find_units_quick("all", 21, managers.slot:get_mask("enemies"))
+  -- Checks aren't being run for every enemy anymore
+  local CamExists = self._last_access_camera and self._last_access_camera:has_camera_unit()
+  local CamNotDestroyed = self._last_access_camera and not self._last_access_camera:value("destroyed")
+
+  local units = World:find_units_quick("all", 3, 16, 21, managers.slot:get_mask("enemies"))
   local amount = 0
 
   for i, unit in ipairs(units) do
     if World:in_view_with_options(unit:movement():m_head_pos(), 0, 0, 4000) then
       local ray
 
-      if self._last_access_camera and self._last_access_camera:has_camera_unit() then
-        ray = self._cam_unit:raycast("ray", unit:movement():m_head_pos(), self._cam_unit:position(), "ray_type", "ai_vision", "slot_mask", managers.slot:get_mask("world_geometry"), "ignore_unit", self._last_access_camera:camera_unit(), "report")
-      else ray = self._cam_unit:raycast("ray", unit:movement():m_head_pos(), self._cam_unit:position(), "ray_type", "ai_vision", "slot_mask", managers.slot:get_mask("world_geometry"), "report")
-      end
+      if CamExists then ray = self._cam_unit:raycast("ray", unit:movement():m_head_pos(), self._cam_unit:position(), "ray_type", "ai_vision", "slot_mask", managers.slot:get_mask("world_geometry"), "ignore_unit", self._last_access_camera:camera_unit(), "report")
+      else ray = self._cam_unit:raycast("ray", unit:movement():m_head_pos(), self._cam_unit:position(), "ray_type", "ai_vision", "slot_mask", managers.slot:get_mask("world_geometry"), "report") end
 
       if not ray then
         amount = amount + 1
         managers.hud:access_camera_track(amount, self._cam_unit:camera()._camera, unit:movement():m_head_pos())
-        if self._last_access_camera and not self._last_access_camera:value("destroyed") and managers.player:upgrade_value("player", "sec_camera_highlight", false) then
-          managers.game_play_central:auto_highlight_enemy(unit, true)
-        end
+
+        -- Apply mark to all characters that AREN'T teammates or converts, because otherwise we're gonna have issues
+        local CharTweakData = unit:base()._tweak_table and tweak_data.character[unit:base()._tweak_table]
+        local Markable = not unit:brain():converted() and CharTweakData and CharTweakData.access ~= "teamAI1" and CharTweakData.access ~= "teamAI4"
+        if CamNotDestroyed and Markable then managers.game_play_central:auto_highlight_enemy(unit, true) end
       end
     end
   end
