@@ -125,12 +125,12 @@ Hooks:PostHook(UpgradesTweakData, "init", "CrimDusk_InitUpgradeTweakData", funct
   self.values.player.max_health_reduction = { 0.25, 0.01 }
 
   -- Crook
-  self.values.player.level_2_armor_multiplier = { 1.4, 1.8, 2.2 }
-  self.values.player.level_2_dodge_addend = { 0.05, 0.1, 0.15 }
-  self.values.player.level_3_armor_multiplier = { 1.4, 1.8, 2.2 }
-  self.values.player.level_3_dodge_addend = { 0.05, 0.1, 0.15 }
-  self.values.player.level_4_armor_multiplier = { 1.4, 1.8, 2.2 }
-  self.values.player.level_4_dodge_addend = { 0.05, 0.1, 0.15 }
+  self.values.player.level_2_armor_multiplier = { 1.4, 1.8, 2.2 } -- LBV
+  self.values.player.level_2_dodge_addend = { 0.05, 0.1, 0.15 } -- LBV
+  self.values.player.level_3_armor_multiplier = { 1.4, 1.8, 2.2 } -- BV
+  self.values.player.level_3_dodge_addend = { 0.05, 0.1, 0.15 } -- BV
+  self.values.player.level_4_armor_multiplier = { 1.4, 1.8, 2.2 } -- HBV
+  self.values.player.level_4_dodge_addend = { 0.05, 0.1, 0.15 } -- HBV
 
   -- Trigger Happy
   self.values.pistol.stacking_hit_damage_multiplier = {
@@ -269,9 +269,9 @@ Hooks:PostHook(UpgradesTweakData, "init", "CrimDusk_InitUpgradeTweakData", funct
 
   -- Kingpin
   self.values.temporary.chico_injector = {
-    { 0.25, 6 },
-    { 0.5, 6 },
-    { 0.75, 6 }
+    { 0.25, 6 }, -- Lv1
+    { 0.5, 6 }, -- Lv2
+    { 0.75, 6 } -- Lv3
   }
 
   -- Health mult to flat

@@ -34,7 +34,7 @@ Hooks:PostHook(EventJobsTweakData, "init", "CrimDusk_InitSideJobTweak", function
     elseif job.id == "cg22_community_1" then job.objectives = { tweak_data.safehouse:_progress("cg22_post_objective_4", 100, { name_id = "menu_cg22_post_objective_4", desc_id = "menu_cg22_post_objective_4_desc" }) }
     elseif job.id == "cg22_community_2" then job.objectives = { tweak_data.safehouse:_progress("cg22_post_objective_5", 100, { name_id = "menu_cg22_post_objective_5", desc_id = "menu_cg22_post_objective_5_desc" }) }
     elseif job.id == "cg22_community_3" then job.objectives = { tweak_data.safehouse:_progress("cg22_post_objective_4", 250, { name_id = "menu_cg22_post_objective_6", desc_id = "menu_cg22_post_objective_6_desc" }) }
-    elseif job.id == "cg22_community_4" then CopyCat = i
+    elseif job.id == "cg22_community_4" then CopyCat = i -- Store index to delete this job later
     elseif job.id == "cg22_community_5" then job.objectives = { tweak_data.safehouse:_progress("cg22_post_objective_5", 500, { name_id = "menu_cg22_post_objective_8", desc_id = "menu_cg22_post_objective_8_desc" }) }
     elseif job.id == "cg22_community_6" then job.objectives = { tweak_data.safehouse:_progress("cg22_post_objective_4", 500, { name_id = "menu_cg22_post_objective_9", desc_id = "menu_cg22_post_objective_9_desc" }) }
     elseif job.id == "pda10_3" then job.objectives = { tweak_data.safehouse:_progress("pda10_heist_post_objective", 50, { name_id = "menu_pda10_post_objective_3", desc_id = "menu_pda10_post_objective_3_desc" }) }
