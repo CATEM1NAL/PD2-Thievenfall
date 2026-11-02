@@ -11,7 +11,7 @@ end)
 
 -- Load last weekly played
 Hooks:PostHook(SkirmishManager, "load", "CrimDusk_LoadLastHoldoutNum", function(self, data)
-  self._global.last_weekly = data.last_weekly
+  self._global.last_weekly = data.skirmish.last_weekly
 
   if (self._global.last_weekly or 0) < math.floor((os.time() + 259200) / 604800) then
     managers.localization:add_localized_strings({ ["menu_weekly_skirmish"] = managers.localization:text("crimdusk_new_holdout") })
@@ -38,7 +38,6 @@ Hooks:OverrideFunction(SkirmishManager, "_apply_weekly_modifiers", function(self
       table.remove(WeeklyMods, WeeklyModIndex)
     end
   end
-  Utils.PrintTable(self._global.active_weekly.modifiers)
 
   -- Apply modifiers
   for _, modifier_name in ipairs(self:weekly_modifiers()) do
