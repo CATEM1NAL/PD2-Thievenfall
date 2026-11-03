@@ -1116,13 +1116,13 @@ menu_smg_rof: "SMG Specialist"
 menu_smg_rof_desc: "$lv1;Fire rate with SMGs increased by ##20%##."
 
 menu_custody_timer: "Master Trader"
-menu_custody_timer_desc: "$lv1;Custody timer reduced by ##50%##."
+menu_custody_timer_desc: "$lv1;Your custody timer is reduced by ##50%##."
 
 menu_crouch_dodge: "Duck and Cover"
 menu_crouch_dodge_desc: "$lv1;Gain ##10## dodge while crouching.\n\n$lv2;Gain ##15## dodge while crouching."
 
 menu_dominator: "Dominator"
-menu_dominator_desc: "$lv1;Your intimidation against cops is ##100%## more effective.\n\n$lv2;You can intimidate cops during assaults."
+menu_dominator_desc: "$lv1;You can intimidate cops during assaults."
 
 menu_oppressor_name: "Oppressor"
 menu_oppressor_desc: "$lv1;Threat is increased by ##10%##.\n\n$lv2;Threat is increased by ##20%##.\n\n$lv3;Threat is increased by ##50%##."
@@ -1165,7 +1165,7 @@ menu_silencer_statboost_desc: "$lv1;Silenced weapons gain ##50%## more stability
 
 # Unused skills
 menu_blanks: "Warning Shot"
-menu_blanks_desc: "$lv1;The first time you shoot a civilian they won't die."
+menu_blanks_desc: "$lv1;The first time you melee a civ they will be intimidated.\n\n$lv2;The first time you shoot a civilian they will be intimidated."
 
 menu_loud_and_proud: "Loud And Proud"
 menu_loud_and_proud_desc: "$lv1;Gain ##5%## more damage (up to ##25%##) for every ##7## points of detection risk above ##40##.\n\n$lv2;Gain ##10%## more damage (up to ##50%##) per ##7## points instead."
