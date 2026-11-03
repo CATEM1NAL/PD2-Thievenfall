@@ -11,6 +11,7 @@ Hooks:PostHook(VictoryState, "at_enter", "CrimDusk_HeistWon", function(self)
   if managers.job:on_last_stage() then
     do local i = 1
 
+      -- Increment next heist for campaign, skipping DLC locked heists
       if Global.CrimDusk.data.heists_won < #Global.CrimDusk.campaign and CrimDusk.IsPermadeath() ~= "_perma" then
         local NextHeist = Global.CrimDusk.campaign[Global.CrimDusk.data[heists_won] + i]
         while Global.CrimDusk.heist_dlc[NextHeist] and not managers.dlc:is_dlc_unlocked(Global.CrimDusk.heist_dlc[NextHeist]) do
@@ -19,6 +20,7 @@ Hooks:PostHook(VictoryState, "at_enter", "CrimDusk_HeistWon", function(self)
         end
       end
 
+      -- Skip tutorial heists if we're playing online (they're jank af)
       if not Global.game_settings.single_player and Global.CrimDusk.data[heists_won] + i == Global.CrimDusk.PDTHLength then i = i + 3 end
       Global.CrimDusk.data[heists_won] = Global.CrimDusk.data[heists_won] + i
     end
@@ -29,6 +31,7 @@ Hooks:PostHook(VictoryState, "at_enter", "CrimDusk_HeistWon", function(self)
     local CurrentHeist = managers.job:current_job_id()
     CurrentHeist = Global.CrimDusk.job_to_wrapper[CurrentHeist] or CurrentHeist
 
+    -- Heists with special flags
     if CurrentHeist == "bph" then Global.CrimDusk.data["bain_freed" .. Permadeath] = true
     elseif CurrentHeist == "sand" then Global.CrimDusk.data["vlad_freed" .. Permadeath] = true
     elseif CurrentHeist == "pex" then Global.CrimDusk.data["almir_freed" .. Permadeath] = true

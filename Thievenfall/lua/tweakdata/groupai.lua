@@ -141,12 +141,14 @@ Hooks:PostHook(GroupAITweakData, "_init_task_data", "CrimDusk_InitGroupAITaskDat
   self.besiege.assault.sustain_duration_balance_mul = { 1, 1.2, 1.4, 1.6 }
 
   self.besiege.assault.force = { 10, 12, 14 }
-  self.besiege.assault.force_pool = { 50, 100, 100 }
+  self.besiege.assault.force_pool = { 50, 75, 100 }
   self.besiege.assault.delay = { 60, 60, 30 }
   self.besiege.assault.hostage_hesitation_delay = { 15, 10, 5 }
 
   self.besiege.assault.force_balance_mul = { 1, 2, 3, 4 }
   self.besiege.assault.force_pool_balance_mul = { 1, 2, 3, 4 }
+
+  self.besiege.recon.force = { 8, 10, 12 }
 
   -- Winters rework
   if difficulty >= 6 then self.phalanx.spawn_chance = { start = 0, increase = 0.25, max = 1, decrease = 1, respawn_delay = 120 }

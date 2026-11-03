@@ -6,8 +6,8 @@ Hooks:PostHook(SkillTreeTweakData, "init", "CrimDusk_SkillTreeTweakInit", functi
     self.tier_unlocks = { digest(0), digest(0), digest(0), digest(0) }
     self.tier_cost = { { 1, 1, 1, 1 }, { 2, 2, 2, 2 }, { 3, 3, 3, 3 }, { 4, 4, 4, 4 } }
 
-    -- Default upgrades
     self.default_upgrades = {
+      -- Skills
       "player_fall_health_damage_multiplier",
       "player_hostage_trade",
       "player_intimidate_enemies",
@@ -26,6 +26,8 @@ Hooks:PostHook(SkillTreeTweakData, "init", "CrimDusk_SkillTreeTweakInit", functi
       "temporary_first_aid_damage_reduction",
       "temporary_passive_revive_damage_reduction_2",
       "akimbo_recoil_index_addend_1",
+
+      -- Unlocks
       "body_armor1",
       "cable_tie_quantity_unlimited",
       "doctor_bag",
@@ -61,14 +63,14 @@ Hooks:PostHook(SkillTreeTweakData, "init", "CrimDusk_SkillTreeTweakInit", functi
     table.insert(self.default_upgrades, "player_copr_static_damage_ratio_1")
     table.insert(self.default_upgrades, "player_copr_kill_life_leech_1")
 
-    -- Disable perk decks
+    -- Fully disable perk decks
     for i = 1, #self.specializations do
       for _, data in ipairs(self.specializations[i]) do
         if data.upgrades and next(data.upgrades) then data.upgrades = {} end
       end
     end
 
-    -- Mastermind
+    -- Mastermind trees
     self.trees[1].tiers = {
       { "healing_damage_reduction", "revived_bonus_heal", "healing_deploy_speed" },
       { "fak_capacity", "revived_player_reduction", "docbag_capacity" },
@@ -84,13 +86,13 @@ Hooks:PostHook(SkillTreeTweakData, "init", "CrimDusk_SkillTreeTweakInit", functi
     }
     self.trees[3].name_id = "st_menu_mastermind_dominate"
     self.trees[3].tiers = {
-      { "cable_guy", "blanks", "deep_throat" },
-      { "oldholm_syndrome", "crowd_control", "custody_timer" },
-      { "stockholm_syndrome", "joker", "dominator" },
-      { "joker_dr", "joker_player_stats", "joker_damage" }
+      { "cable_guy", "blanks", "custody_timer", "deep_throat" },
+      { "oldholm_syndrome", "joker", "crowd_control" },
+      { "stockholm_syndrome", "joker_player_stats", "dominator" },
+      { "joker_dr", "joker_damage" }
     }
 
-    -- Enforcer
+    -- Enforcer trees
     self.trees[4].name_id = "st_menu_enforcer_ammo"
     self.trees[4].tiers = {
       { "scavenger", "max_ammo_increase", "extra_ammo_box", "portable_saw" },
@@ -113,7 +115,7 @@ Hooks:PostHook(SkillTreeTweakData, "init", "CrimDusk_SkillTreeTweakInit", functi
       { "crew_recovery", "maniac_base" }
     }
 
-    -- Technician
+    -- Technician trees
     self.trees[7].tiers = {
       { "sentry_rotation", "sentry_accuracy" },
       { "sentry_ammo", "sentry_health" },
@@ -135,7 +137,7 @@ Hooks:PostHook(SkillTreeTweakData, "init", "CrimDusk_SkillTreeTweakInit", functi
       { "drill_restart", "sensor_mines" }
     }
 
-    -- Ghost
+    -- Ghost trees
     self.trees[10].tiers = {
       { "cleaner", "burglar_stealth", "ecm_duration" },
       { "chameleon", "cam_loop", "ecm_overdrive" },
@@ -157,7 +159,7 @@ Hooks:PostHook(SkillTreeTweakData, "init", "CrimDusk_SkillTreeTweakInit", functi
       { "anarch_rise", "sprint_loaded" }
     }
 
-    -- Convict
+    -- Convict trees
     self.trees[13].tiers = {
       { "h3h3_cooldown", "kingpin_cooldown", "leech_duration" },
       { "stoic_base", "kingpin_prio", "leech_healing" },
@@ -180,7 +182,7 @@ Hooks:PostHook(SkillTreeTweakData, "init", "CrimDusk_SkillTreeTweakInit", functi
     }
 
     -- Skill definitions
-    self.skills.temp_skill = {
+    self.skills.temp_skill = { -- UNUSED
       name_id = "temp_skill_name", desc_id = "temp_desc", icon_xy = { 0, 0 }
     }
     self.skills.revive_reduction = {
@@ -299,7 +301,7 @@ Hooks:PostHook(SkillTreeTweakData, "init", "CrimDusk_SkillTreeTweakInit", functi
       { upgrades = { "player_marked_inc_dmg_distance_1" }, cost = self.costs.default },
       name_id = "menu_long_shot", desc_id = "menu_long_shot_desc", icon_xy = { 8, 2 }
     }
-    self.skills.overdog = {
+    self.skills.overdog = { -- REMOVED
       { upgrades = { "player_damage_dampener_close_contact_1" }, cost = self.costs.default },
       { upgrades = { "player_damage_dampener_close_contact_2" }, cost = self.costs.default },
       { upgrades = { "player_damage_dampener_close_contact_3" }, cost = self.costs.default },
@@ -365,7 +367,7 @@ Hooks:PostHook(SkillTreeTweakData, "init", "CrimDusk_SkillTreeTweakInit", functi
       { upgrades = { "player_flashbang_multiplier_2" }, cost = self.costs.default },
       name_id = "menu_stun_resistance", desc_id = "menu_stun_resistance_desc", icon_xy = { 6, 1 }
     }
-    self.skills.juggernaut = {
+    self.skills.juggernaut = { -- Iron Man
       { upgrades = { "body_armor6" }, cost = self.costs.default },
       name_id = "menu_juggernaut_beta", desc_id = "menu_juggernaut_beta_desc", icon_xy = { 3, 1 }
     }
@@ -501,7 +503,7 @@ Hooks:PostHook(SkillTreeTweakData, "init", "CrimDusk_SkillTreeTweakInit", functi
       { upgrades = { "player_run_and_shoot_1" }, cost = self.costs.default },
       name_id = "menu_sprint_shoot", desc_id = "menu_sprint_shoot_desc", icon_xy = { 10, 0 }
     }
-    self.skills.inside_man = {
+    self.skills.inside_man = { -- REMOVED
       { upgrades = { "player_additional_assets" }, cost = self.costs.default },
       { upgrades = { "player_buy_bodybags_asset", "player_buy_spotter_asset" }, cost = self.costs.default },
       name_id = "menu_inside_man", desc_id = "menu_inside_man_desc", icon_xy = { 0, 8 }
@@ -614,11 +616,11 @@ Hooks:PostHook(SkillTreeTweakData, "init", "CrimDusk_SkillTreeTweakInit", functi
       { upgrades = { "player_additional_lives_3" }, cost = self.costs.default },
       name_id = "menu_bleedout_timer_skill", desc_id = "menu_bleedout_timer_skill_desc", icon_xy = { 5, 2 }
     }
-    self.skills.bleedout_health = {
+    self.skills.bleedout_health = { -- REMOVED; MERGED INTO BRUTE STRENGTH
       { upgrades = { "player_bleed_out_health_multiplier" }, cost = self.costs.default },
       name_id = "menu_bleedout_health", desc_id = "menu_bleedout_health_desc", icon_xy = { 1, 2 }
     }
-    self.skills.bleedout_timer = {
+    self.skills.bleedout_timer = { -- REMOVED; REPLACED BY FOUR_LIVES
       { upgrades = { "player_bleedout_timer_1" }, cost = self.costs.default },
       { upgrades = { "player_bleedout_timer_2" }, cost = self.costs.default },
       { upgrades = { "player_bleedout_timer_3" }, cost = self.costs.default },
@@ -787,7 +789,7 @@ Hooks:PostHook(SkillTreeTweakData, "init", "CrimDusk_SkillTreeTweakInit", functi
       { upgrades = { "player_damage_control_healing" }, cost = self.costs.default },
       name_id = "menu_deck19_9", desc_id = "menu_stoic_regen", icon_xy = { 0, 0 }
     }
-    self.skills.sicario_stack = {
+    self.skills.sicario_stack = { -- REMOVED
       { upgrades = { "player_dodge_shot_gain" }, cost = self.costs.default },
       name_id = "menu_deck18_3", desc_id = "menu_sicario_stack_desc", icon_xy = { 0, 0 }
     }
@@ -811,7 +813,7 @@ Hooks:PostHook(SkillTreeTweakData, "init", "CrimDusk_SkillTreeTweakInit", functi
       { upgrades = { "temporary_loose_ammo_give_team" }, cost = self.costs.default },
       name_id = "menu_mag_throw", desc_id = "menu_mag_throw_desc", icon_xy = { 8, 3 }
     }
-    self.skills.biker_perk = {
+    self.skills.biker_perk = { -- REMOVED
       { upgrades = { "player_wild_health_amount_1" }, cost = self.costs.default },
       { upgrades = { "player_less_health_wild_cooldown_1" }, cost = self.costs.default },
       { upgrades = { "player_less_armor_wild_health_1" }, cost = self.costs.default },
@@ -881,7 +883,7 @@ Hooks:PostHook(SkillTreeTweakData, "init", "CrimDusk_SkillTreeTweakInit", functi
       { upgrades = { "weapon_clip_ammo_increase_2" }, cost = self.costs.default },
       name_id = "menu_mag_plus", desc_id = "menu_mag_plus_desc", icon_xy = { 2, 0 }
     }
-    self.skills.smg_rof = {
+    self.skills.smg_rof = { -- REMOVED; REPLACED BY ILLEGAL PARTS
       { upgrades = { "smg_fire_rate_multiplier" }, cost = self.costs.default },
       name_id = "menu_smg_rof", desc_id = "menu_smg_rof_desc", icon_xy = { 3, 3 }
     }
@@ -895,8 +897,7 @@ Hooks:PostHook(SkillTreeTweakData, "init", "CrimDusk_SkillTreeTweakInit", functi
       name_id = "menu_crouch_dodge", desc_id = "menu_crouch_dodge_desc", icon_xy = { 0, 11 }
     }
     self.skills.dominator = {
-      { upgrades = { "player_intimidation_multiplier" }, cost = self.costs.default },
-      { upgrades = { "player_assault_intimidate" }, cost = self.costs.default },
+      { upgrades = { "player_intimidation_multiplier", "player_assault_intimidate" }, cost = self.costs.default },
       name_id = "menu_dominator", desc_id = "menu_dominator_desc", icon_xy = { 2, 8 }
     }
     self.skills.threat_inc = {
@@ -915,7 +916,7 @@ Hooks:PostHook(SkillTreeTweakData, "init", "CrimDusk_SkillTreeTweakInit", functi
       { upgrades = { "player_steelsight_when_downed" }, cost = self.costs.default },
       name_id = "menu_downed_ads", desc_id = "menu_downed_ads_desc", icon_xy = { 1, 2 }
     }
-    self.skills.drop_cloth = {
+    self.skills.drop_cloth = { -- REMOVED; SKILL DOESN'T DO ANYTHING
       { upgrades = { "player_silent_kill" }, cost = self.costs.default },
       name_id = "menu_drop_cloth", desc_id = "menu_drop_cloth_desc", icon_xy = { 0, 0 }
     }
@@ -968,6 +969,7 @@ Hooks:PostHook(SkillTreeTweakData, "init", "CrimDusk_SkillTreeTweakInit", functi
       name_id = "menu_pager_snatch", desc_id = "menu_pager_snatch_desc", icon_xy = { 0, 0 }
     }
     self.skills.blanks = {
+      { upgrades = { "player_civ_harmless_melee" }, cost = self.costs.default },
       { upgrades = { "player_civ_harmless_bullets" }, cost = self.costs.default },
       name_id = "menu_blanks", desc_id = "menu_blanks_desc", icon_xy = { 6, 7 }
     }
@@ -989,7 +991,7 @@ Hooks:PostHook(SkillTreeTweakData, "init", "CrimDusk_SkillTreeTweakInit", functi
       { upgrades = { "player_critical_hit_chance_2" }, cost = self.costs.default },
       name_id = "menu_hypocritical", desc_id = "menu_hypocritical_desc", icon_xy = { 6, 11 }
     }
-    self.skills.nebula_plus = {
+    self.skills.nebula_plus = { -- REMOVED
       { upgrades = { "player_assets_cost_multiplier" }, cost = self.costs.default },
       { upgrades = { "player_assets_cost_multiplier_2" }, cost = self.costs.default },
       { upgrades = { "player_assets_cost_multiplier_3" }, cost = self.costs.default },

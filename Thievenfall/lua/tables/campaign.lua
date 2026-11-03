@@ -1,19 +1,37 @@
 -- MAIN CAMPAIGN
-Global.CrimDusk.campaign = { -- Main campaign
-  "red2", "flat", "dah", "pal", "man", "nmh", -- PDTH Prologue
-  "cd_tut1", "cd_tut2", "cd_tut3", "four_stores", "mallcrasher", "branchbank_prof", "ukrainian_job_prof", "nightclub", -- Early Vlad
-  "cd_watchdogs1_wrapper", "cd_watchdogs2_wrapper", "cd_frame3", "cd_bigoil", "cd_firestarter1", "cd_firestarter2", "cd_rats", -- Hector/Elephant
-  "family", "arm_wrapper", "arm_for", "roberts", "cd_erection_wrapper", "kosugi", -- Post Launch
-  "big", "cd_miami1", "cd_miami2", "gallery", "cd_hox1", "cd_hox2", "auc", "pines", "mus", -- Dentist
-  "cd_bomb", "cage", "hox_3", "shoutout_raid", "arena", "kenaz", "jolly", "dinner", "pbr", "pbr2", "cane", -- 2015
-  "cd_goat1", "cd_goat2", "dark", "mad", "cd_biker1", "cd_biker2", "moon", "friend", -- 2016
-  "spa", "fish", "run", "glace", "wwh", "cd_reservoir", "brb", "tag", "des", "sah", -- Final Arc
-  "mex", "chas", "bex", "sand", "pex", "chca", "fex", "pent", "bph", "ranc", "trai", "corp", -- Bopocalypse
-  "deep", "vit" -- Conclusion
+Global.CrimDusk.campaign = {
+  -- PDTH Prologue
+  "red2", "flat", "dah", "pal", "man", "nmh",
+
+  -- Tutorials
+  "cd_tut1", "cd_tut2", "cd_tut3",
+
+  -- Launch heists
+  "four_stores", "mallcrasher", "branchbank_prof", "ukrainian_job_prof", "nightclub",
+  "cd_watchdogs1_wrapper", "cd_watchdogs2_wrapper", "cd_frame3", "cd_bigoil", "cd_firestarter1", "cd_firestarter2", "cd_rats",
+
+  -- Post Launch
+  "family", "arm_wrapper", "arm_for", "roberts", "cd_erection_wrapper", "kosugi", 
+  "big", "cd_miami1", "cd_miami2", "gallery", "cd_hox1", "cd_hox2", "auc", "pines", "mus",
+  "cd_bomb", "cage", "hox_3", "shoutout_raid", "arena", "kenaz", "jolly", "dinner", "pbr", "pbr2", "cane",
+  "cd_goat1", "cd_goat2", "dark", "mad", "cd_biker1", "cd_biker2", "moon", "friend",
+  "spa", "fish", "run", "glace",
+
+  -- Bain captured
+  "wwh", "cd_reservoir", "brb", "tag", "des", "sah",
+
+  -- Bopocalypse
+  "mex", "chas", "bex", "sand", "pex", "chca", "fex", "pent", "bph", "ranc", "trai", "corp",
+
+  -- Finale
+  "deep", "vit"
 }
 
+-- Mid-heist diff scaling causes softlocks on these heists, needs to be disabled
 Global.CrimDusk.levels_no_diff_increase = { shoutout_raid = true, arena = true, peta = true, peta2 = true }
 
+--[[ Set indices for specific event heists - doing it programmatically instead of via hardcoded values
+     in case the campaign order changes in future (e.g. more Sidetrack heists, or a heist gets moved) ]]
 for i, heist in ipairs(Global.CrimDusk.campaign) do
   Global.CrimDusk.HeistIndex = {}
   if heist == "nmh" then Global.CrimDusk.PDTHLength = i
@@ -83,7 +101,7 @@ Global.CrimDusk.job_to_wrapper = {
   arm_cro = "arm_wrapper", arm_und = "arm_wrapper", arm_hcm = "arm_wrapper", arm_par = "arm_wrapper", arm_fac = "arm_wrapper"
 }
 
--- Which heists require which DLCs. Used to prevent random campaigns from softlocking; owning all heists is highly recommended!
+-- Which heists require which DLCs. Used to prevent campaigns from softlocking; owning all heists is highly recommended!
 Global.CrimDusk.heist_dlc = {
   arm_wrapper = "armored_transport", arm_for = "armored_transport", big = "big_bank", cd_miami1 = "hl_miami", cd_miami2 = "hl_miami",
   mus = "hope_diamond", cd_bomb = "the_bomb", arena = "arena", kenaz = "kenaz", pbr = "berry", pbr2 = "berry", cd_goat1 = "peta",
