@@ -27,6 +27,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "CrimDusk_InitModTweakData", func
   self.wpn_fps_ass_74.override.wpn_fps_upg_ass_ak_b_zastava.stats.damage = 50
   self.wpn_fps_ass_74.override.wpn_fps_upg_ass_ak_b_zastava.custom_stats = { fire_rate_multiplier = 0.8, ammo_pickup_min_mul = 0.5, ammo_pickup_max_mul = 0.5 }
 
+  -- M16 DMR kit
+  self.wpn_fps_ass_m16.override.wpn_fps_upg_ass_m4_b_beowulf.stats.damage = 51
+  self.wpn_fps_ass_m16.override.wpn_fps_upg_ass_m4_b_beowulf.stats.total_ammo_mod = -8
+  self.wpn_fps_ass_m16.override.wpn_fps_upg_ass_m4_b_beowulf.custom_stats = { fire_rate_multiplier = 0.667, ammo_pickup_min_mul = 0.5, ammo_pickup_max_mul = 0.5 }
+
   -- Sting grenades
   local HighDamage = -133
   local LowDamage = -126
