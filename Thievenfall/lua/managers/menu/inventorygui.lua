@@ -5,7 +5,7 @@ Hooks:PreHook(PlayerInventoryGui, "sort_boxes_by_matrix", "CrimDusk_DeletePerksI
 end)
 
 local function format_round(num, round_value)
-	return round_value and tostring(math.round(num)) or string.format("%.1f", num):gsub("%.?0+$", "")
+  return round_value and tostring(math.round(num)) or string.format("%.1f", num):gsub("%.?0+$", "")
 end
 
 -- The original function does a bunch of unneccessary shit, so I got annoyed and replaced it.
@@ -30,6 +30,28 @@ Hooks:OverrideFunction(PlayerInventoryGui, "_update_player_stats", function(self
       self._player_stats_texts[stat.name].total:set_color(colour)
 
     else self._player_stats_texts[stat.name].total:set_color(tweak_data.screen_colors.text) end
+  end
+end)
+
+-- Infamy in lobby
+Hooks:OverrideFunction(PlayerInventoryGui, "_update_info_infamy", function(self, name)
+  local rank = managers.infamy:points()
+  local xp_boost = string.format("%0.1f", (managers.player:get_infamy_exp_multiplier() - 1) * 100)
+  local text_string = managers.localization:to_upper_text("menu_infamy_rank", { rank = tostring(managers.experience:current_rank()) }) .. "\n"
+
+  text_string = text_string .. "\n" ..
+    managers.localization:to_upper_text("menu_infamy_total_xp", { xpboost = xp_boost }) .. "\n\n" ..
+    managers.localization:text("menu_infamy_help")
+
+  self:set_info_text(text_string)
+end)
+
+Hooks:PostHook(PlayerInventoryGui, "create_box", "CrimDusk_InvGUIPostCreateBox", function(self, params)
+  if params.name == "infamy" then
+    local panel, box = Hooks:GetReturn()
+    box.clbks.left = callback(self, self, "open_infamy_menu")
+    box.params.alpha = 1 -- doesn't apply, needs fixing
+    return panel, box
   end
 end)
 
@@ -64,39 +86,39 @@ Hooks:OverrideFunction(PlayerInventoryGui, "_get_armor_stats", function(self, na
       base_stats[stat.name] = { value = managers.player:body_armor_value("concealment", upgrade_level) }
       skill_stats[stat.name] = { value = managers.blackmarket:concealment_modifier("armors", upgrade_level) }
 
-		elseif stat.name == "movement" then
-			local base = tweak_data.player.movement_state.standard.movement.speed.STANDARD_MAX / 100 * PresentMult
-			local movement_penalty = managers.player:body_armor_value("movement", upgrade_level)
-			local base_value = movement_penalty * base
-			base_stats[stat.name] = { value = base_value }
-			local skill_mod = managers.player:movement_speed_multiplier(false, false, upgrade_level, 1)
-			local val = base * skill_mod
-			val = Utl.round(val, 2)
-			base_value = Utl.round(base_value, 2)
-			local skill_value = val - base_value
-			skill_stats[stat.name] = { value = skill_value, skill_in_effect = skill_value > 0 }
+    elseif stat.name == "movement" then
+      local base = tweak_data.player.movement_state.standard.movement.speed.STANDARD_MAX / 100 * PresentMult
+      local movement_penalty = managers.player:body_armor_value("movement", upgrade_level)
+      local base_value = movement_penalty * base
+      base_stats[stat.name] = { value = base_value }
+      local skill_mod = managers.player:movement_speed_multiplier(false, false, upgrade_level, 1)
+      local val = base * skill_mod
+      val = Utl.round(val, 2)
+      base_value = Utl.round(base_value, 2)
+      local skill_value = val - base_value
+      skill_stats[stat.name] = { value = skill_value, skill_in_effect = skill_value > 0 }
 
-		elseif stat.name == "dodge" then
-			local base = 0
-			local mod = managers.player:body_armor_value("dodge", upgrade_level)
-			base_stats[stat.name] = { value = (base + mod) * 100 }
-			skill_stats[stat.name] = { value = managers.player:skill_dodge_chance(false, false, false, name, detection_risk) * 100 }
+    elseif stat.name == "dodge" then
+      local base = 0
+      local mod = managers.player:body_armor_value("dodge", upgrade_level)
+      base_stats[stat.name] = { value = (base + mod) * 100 }
+      skill_stats[stat.name] = { value = managers.player:skill_dodge_chance(false, false, false, name, detection_risk) * 100 }
 
-		elseif stat.name == "crit" then
-			local base = 0
-			local mod = managers.player:body_armor_value("crit", upgrade_level)
-			base_stats[stat.name] = { value = (base + mod) * 100 }
-			skill_stats[stat.name] = { value = managers.player:critical_hit_chance(detection_risk) * 100 }
+    elseif stat.name == "crit" then
+      local base = 0
+      local mod = managers.player:body_armor_value("crit", upgrade_level)
+      base_stats[stat.name] = { value = (base + mod) * 100 }
+      skill_stats[stat.name] = { value = managers.player:critical_hit_chance(detection_risk) * 100 }
 
-		elseif stat.name == "damage_shake" then
-			local base = tweak_data.gui.armor_damage_shake_base
-			local mod = math.max(managers.player:body_armor_value("damage_shake", upgrade_level, nil, 1), 0.01)
-			local skill = math.max(managers.player:upgrade_value("player", "damage_shake_multiplier", 1), 0.01)
-			local base_value = base
-			local mod_value = base / mod - base_value
-			local skill_value = base / mod / skill - base_value - mod_value + managers.player:upgrade_value("player", "damage_shake_addend", 0)
-			base_stats[stat.name] = { value = (base_value + mod_value) * PresentMult }
-			skill_stats[stat.name] = { value = skill_value * PresentMult }
+    elseif stat.name == "damage_shake" then
+      local base = tweak_data.gui.armor_damage_shake_base
+      local mod = math.max(managers.player:body_armor_value("damage_shake", upgrade_level, nil, 1), 0.01)
+      local skill = math.max(managers.player:upgrade_value("player", "damage_shake_multiplier", 1), 0.01)
+      local base_value = base
+      local mod_value = base / mod - base_value
+      local skill_value = base / mod / skill - base_value - mod_value + managers.player:upgrade_value("player", "damage_shake_addend", 0)
+      base_stats[stat.name] = { value = (base_value + mod_value) * PresentMult }
+      skill_stats[stat.name] = { value = skill_value * PresentMult }
 
     elseif stat.name == "stamina" then -- ARMOUR REGEN SPEED
       local base_value = Global.CrimDusk.regen_time[upgrade_level]
@@ -120,18 +142,18 @@ Hooks:OverrideFunction(PlayerInventoryGui, "_get_armor_stats", function(self, na
       skill_stats[stat.name] = { value = skill_value - base_value }
     end
 
-		skill_stats[stat.name].skill_in_effect = skill_stats[stat.name].skill_in_effect or skill_stats[stat.name].value ~= 0
-	end
+    skill_stats[stat.name].skill_in_effect = skill_stats[stat.name].skill_in_effect or skill_stats[stat.name].value ~= 0
+  end
 
-	if managers.player:has_category_upgrade("player", "armor_to_health_conversion") then
-		local conversion_ratio = managers.player:upgrade_value("player", "armor_to_health_conversion") * 0.01
-		local converted_armor = (base_stats.armor.value + skill_stats.armor.value) * conversion_ratio
-		local skill_in_effect = converted_armor ~= 0
-		skill_stats.armor.value = skill_stats.armor.value - converted_armor
-		skill_stats.health.value = skill_stats.health.value + converted_armor
-		skill_stats.armor.skill_in_effect = skill_in_effect
-		skill_stats.health.skill_in_effect = skill_in_effect
-	end
+  if managers.player:has_category_upgrade("player", "armor_to_health_conversion") then
+    local conversion_ratio = managers.player:upgrade_value("player", "armor_to_health_conversion") * 0.01
+    local converted_armor = (base_stats.armor.value + skill_stats.armor.value) * conversion_ratio
+    local skill_in_effect = converted_armor ~= 0
+    skill_stats.armor.value = skill_stats.armor.value - converted_armor
+    skill_stats.health.value = skill_stats.health.value + converted_armor
+    skill_stats.armor.skill_in_effect = skill_in_effect
+    skill_stats.health.skill_in_effect = skill_in_effect
+  end
 
-	return base_stats, mods_stats, skill_stats
+  return base_stats, mods_stats, skill_stats
 end)

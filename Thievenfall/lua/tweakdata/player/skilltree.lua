@@ -26,6 +26,7 @@ Hooks:PostHook(SkillTreeTweakData, "init", "CrimDusk_SkillTreeTweakInit", functi
       "temporary_first_aid_damage_reduction",
       "temporary_passive_revive_damage_reduction_2",
       "akimbo_recoil_index_addend_1",
+      "player_passive_suspicion_bonus",
 
       -- Unlocks
       "body_armor1",
@@ -156,7 +157,7 @@ Hooks:PostHook(SkillTreeTweakData, "init", "CrimDusk_SkillTreeTweakInit", functi
       { "rogue_dodge", "moving_target", "daredevil", "move_speed" },
       { "crook_skill", "crouch_dodge", "shockproof", "jail_diet" },
       { "ex_pres", "optical_illusion", "second_wind" },
-      { "anarch_rise", "sprint_loaded" }
+      { "anarch_rise", }
     }
 
     -- Convict trees
@@ -169,7 +170,7 @@ Hooks:PostHook(SkillTreeTweakData, "init", "CrimDusk_SkillTreeTweakInit", functi
     self.trees[14].name_id = "st_menu_fugitive_berserker"
     self.trees[14].tiers = {
       { "hitman_perk", "steroids", "because_of_training" },
-      { "yakuza_speed", "infil_melee", "melee_reload_speed" },
+      { "infil_melee", "melee_reload_speed", "yakuza_speed" },
       { "sharp_damage", "drop_soap", "infil_heal", "berserker" },
       { "bloodthirst", "frenzy", "gunserker" }
     }
@@ -201,7 +202,7 @@ Hooks:PostHook(SkillTreeTweakData, "init", "CrimDusk_SkillTreeTweakInit", functi
       name_id = "menu_reviver_bonus_heal", desc_id = "menu_reviver_bonus_heal_desc", icon_xy = { 5, 7 }
     }
     self.skills.healing_deploy_speed = {
-      { upgrades = { "first_aid_kit_deploy_time_multiplier" }, cost = self.costs.default },
+      { upgrades = { "first_aid_kit_deploy_time_multiplier", "passive_doctor_bag_interaction_speed_multiplier" }, cost = self.costs.default },
       name_id = "menu_tea_time_beta", desc_id = "menu_tea_time_beta_desc", icon_xy = { 1, 11 }
     }
     self.skills.healing_damage_reduction = {
@@ -368,7 +369,8 @@ Hooks:PostHook(SkillTreeTweakData, "init", "CrimDusk_SkillTreeTweakInit", functi
       name_id = "menu_stun_resistance", desc_id = "menu_stun_resistance_desc", icon_xy = { 6, 1 }
     }
     self.skills.juggernaut = { -- Iron Man
-      { upgrades = { "body_armor6" }, cost = self.costs.default },
+      { upgrades = { "player_passive_armor_movement_penalty_multiplier" }, cost = self.costs.default },
+      { upgrades = { "player_passive_armor_movement_penalty_multiplier_2" }, cost = self.costs.default },
       name_id = "menu_juggernaut_beta", desc_id = "menu_juggernaut_beta_desc", icon_xy = { 3, 1 }
     }
     self.skills.extra_ammo_box = {
@@ -552,8 +554,8 @@ Hooks:PostHook(SkillTreeTweakData, "init", "CrimDusk_SkillTreeTweakInit", functi
       name_id = "menu_move_speed", desc_id = "menu_move_speed_desc", icon_xy = { 1, 8 }
     }
     self.skills.moving_target = {
-      { upgrades = { "player_can_strafe_run" }, cost = self.costs.default },
       { upgrades = { "player_can_free_run" }, cost = self.costs.default },
+      { upgrades = { "player_run_and_reload" }, cost = self.costs.default },
       name_id = "menu_moving_target", desc_id = "menu_moving_target_desc", icon_xy = { 2, 4 }
     }
     self.skills.sprint_loaded = {

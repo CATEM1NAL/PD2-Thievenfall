@@ -4,7 +4,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "CrimDusk_InitModTweakData", func
   for _, data in pairs(self.parts) do data.is_a_unlockable = true end -- All weapon mods are infinite
 
   -- Apply weapon part stat changes
-  for Part, StatTable in pairs(Global.CrimDusk.weapon_parts) do
+  for Part, StatTable in pairs(Global.CrimDusk.weapon_parts.stats) do
     local OriginalZoom = StatTable.increase_zoom and self.parts[Part].stats.zoom + 2 or self.parts[Part].stats.zoom
     local GadgetZoom = self.parts[Part].stats.gadget_zoom
     self.parts[Part].stats = StatTable
@@ -12,41 +12,20 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "CrimDusk_InitModTweakData", func
     if not StatTable.gadget_zoom then self.parts[Part].stats.gadget_zoom = GadgetZoom end
   end
 
+  for Part, StatTable in pairs(Global.CrimDusk.weapon_parts.custom_stats) do self.parts[Part].custom_stats = StatTable end
+
   -- Magazine capacities
-  local Quadstack = { MagChange = 30, ReloadSpeed = -2 }
-  local LowCapacity = { MagChange = -10, ReloadSpeed = 10 }
-  local QuickPull = { ReloadSpeed = 4 }
-
-  local MagTweaks = {
-    wpn_fps_sho_basset_m_extended = { MagChange = 5, ReloadSpeed = -4 },
-    wpn_fps_sho_aa12_mag_drum = { MagChange = 12, ReloadSpeed = -4 },
-    wpn_fps_m4_uupg_m_std = { MagChange = 10, ReloadSpeed = -1 },
-    wpn_fps_sho_bleckert_magazine_horse = { MagChange = 2, ReloadSpeed = -1 },
-  
-    -- Quadstacks
-    wpn_fps_upg_m4_m_quad = Quadstack,
-    wpn_fps_upg_ak_m_quad = Quadstack,
-
-    -- Speedpulls
-    wpn_fps_smg_p90_m_strap = QuickPull,
-    wpn_fps_ass_aug_m_quick = QuickPull,
-    wpn_fps_m4_upg_m_quick = QuickPull,
-    wpn_fps_upg_ak_m_quick = QuickPull,
-    wpn_fps_ass_g36_m_quick = QuickPull,
-    wpn_fps_smg_mac10_m_quick = QuickPull,
-    wpn_fps_smg_sr2_m_quick = QuickPull,
-
-    -- Small mags
-    wpn_fps_upg_m4_m_straight = LowCapacity,
-  }
-  for magazine, data in pairs(MagTweaks) do
-    for stat, value in pairs(data) do
-      if stat == "MagChange" then self.parts[magazine].stats.extra_ammo = value end
-      if stat == "ReloadSpeed" then self.parts[magazine].stats.reload = value end
-    end
+  for magazine, data in pairs(Global.CrimDusk.weapon_parts.mags) do
+    if data.extra_ammo then self.parts[magazine].stats.extra_ammo = data.extra_ammo end
+    if data.reload then self.parts[magazine].stats.reload = data.reload end
   end
 
+  -- Overrides
   self.wpn_fps_sho_x_basset.override.wpn_fps_sho_basset_m_extended.stats.extra_ammo = 10 -- Grimm/Izhma extended mag
+
+  -- AK74 DMR kit
+  self.wpn_fps_ass_74.override.wpn_fps_upg_ass_ak_b_zastava.stats.damage = 50
+  self.wpn_fps_ass_74.override.wpn_fps_upg_ass_ak_b_zastava.custom_stats = { fire_rate_multiplier = 0.8, ammo_pickup_min_mul = 0.5, ammo_pickup_max_mul = 0.5 }
 
   -- Sting grenades
   local HighDamage = -133

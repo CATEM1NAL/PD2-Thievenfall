@@ -102,8 +102,8 @@ local function ModifyStats(self, WeaponClassName, WeaponClassData)
     self[Weapon].stats.extra_ammo = self[Weapon].stats.extra_ammo + 50
     if Akimbo then Akimbo.stats.extra_ammo = Akimbo.stats.extra_ammo + 50 end
 
-    self[Weapon].stats.reload = self[Weapon].stats.reload + 5
-    if Akimbo then Akimbo.stats.reload = Akimbo.stats.reload + 5 end
+    self[Weapon].stats.reload = self[Weapon].stats.reload + 10
+    if Akimbo then Akimbo.stats.reload = Akimbo.stats.reload + 10 end
 
     -- Custom stat initialisation
     self[Weapon].MagDump = Data.magdump == nil and true or Data.magdump
@@ -207,7 +207,7 @@ end
 Hooks:PostHook(WeaponTweakData, "init", "CrimDusk_WeaponTweakInit", function(self)
   -- Update stat indexes
   self.stats.reload = {}
-  for i = -5, 20 do table.insert(self.stats.reload, i / 10) end
+  for i = -10, 20 do table.insert(self.stats.reload, i / 10) end
 
   self.stats.extra_ammo = {}
   for i = -100, 100 do table.insert(self.stats.extra_ammo, i) end

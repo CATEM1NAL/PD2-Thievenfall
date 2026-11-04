@@ -125,8 +125,9 @@ Hooks:OverrideFunction(CopDamage, "damage_melee", function(self, attack_data)
       elseif IsStealth and SnatchChance > 0 then
         snatch_pager = true
         self._unit:unit_data().has_alarm_pager = false
+        log(self._unit:id())
 
-        if SnatchChance < math.random() then
+        if SnatchChance <= ((self._unit:id() % 4) + 1) / 4 then
           managers.groupai:state():on_successful_alarm_pager_bluff()
           if managers.groupai:state():get_nr_successful_alarm_pager_bluffs() >= #tweak_data.player.alarm_pager.bluff_success_chance then
             managers.groupai:state():on_police_called("alarm_pager_bluff_failed")

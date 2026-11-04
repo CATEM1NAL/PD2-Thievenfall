@@ -31,7 +31,7 @@ Global.CrimDusk.weapons.classes = {
     vhs = { dmg = "low" },
     komodo = { dmg = "low" },
     m16 = { dmg = "low", mag = 20, reload = 20 },
-    tkb = { dmg = "low", chamber = 3 },
+    tkb = { dmg = "low", nummags = 2, chamber = 3 },
     l85a2 = { dmg = "low" },
     hajk = { dmg = "low" },
     groza = { dmg = "low" },

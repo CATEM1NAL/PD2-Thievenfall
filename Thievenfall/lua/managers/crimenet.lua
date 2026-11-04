@@ -242,6 +242,28 @@ end)
 function CrimeNetSidebarGui:clbk_setup_weekly_holdout()
   local CurrentWeek = math.floor((os.time() + 259200) / 604800)
   local jobs = { "skm_mus", "skm_red2", "skm_run", "skm_watchdogs_stage2", "skm_cas", "skm_big2", "skm_mallcrasher", "skm_arena" }
+
+  -- Setup modifiers
+  if NetworkHelper:IsHost() then
+    Global.skirmish_manager.active_weekly.modifiers = {}
+
+    -- Choose 1 to 7 modifiers
+    local ModCount = math.random(1, 7)
+
+    local WeeklyMods = {}
+    for i = 1, 9 do
+      if i >= 7 then i = i + 1 end
+      if i < 10 then i = "0" .. i end
+      table.insert(WeeklyMods, "wsm" .. i)
+    end
+
+    for i = 1, ModCount do -- Add random modifiers to active list
+      local WeeklyModIndex = math.random(#WeeklyMods)
+      table.insert(Global.skirmish_manager.active_weekly.modifiers, WeeklyMods[WeeklyModIndex])
+      table.remove(WeeklyMods, WeeklyModIndex)
+    end
+  end
+
   local job_data = { difficulty = "normal", weekly_skirmish = true, job_id = jobs[(CurrentWeek % #jobs) + 1] }
   MenuCallbackHandler:start_job(job_data)
   if Global.game_settings.single_player then MenuCallbackHandler:start_the_game() end

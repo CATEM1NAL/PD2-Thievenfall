@@ -18,38 +18,6 @@ Hooks:PostHook(SkirmishManager, "load", "CrimDusk_LoadLastHoldoutNum", function(
   end
 end)
 
--- Weekly modifiers
-Hooks:OverrideFunction(SkirmishManager, "_apply_weekly_modifiers", function(self)
-  if NetworkHelper:IsHost() then
-    self._global.active_weekly.modifiers = {}
-
-    -- Choose 1 to 7 modifiers
-    local ModCount = math.random(1, 7)
-
-    local WeeklyMods = {}
-    for i = 1, 10 do
-      if i < 10 then i = "0" .. i end
-      table.insert(WeeklyMods, "wsm" .. i)
-    end
-
-    for i = 1, ModCount do -- Add random modifiers to active list
-      local WeeklyModIndex = math.random(#WeeklyMods)
-      table.insert(self._global.active_weekly.modifiers, WeeklyMods[WeeklyModIndex])
-      table.remove(WeeklyMods, WeeklyModIndex)
-    end
-  end
-
-  -- Apply modifiers
-  for _, modifier_name in ipairs(self:weekly_modifiers()) do
-    local modifier_data = tweak_data.skirmish.weekly_modifiers[modifier_name]
-    local modifier_class = _G[modifier_data.class]
-    local modifier_opts = modifier_data.data
-    local modifier = modifier_class:new(modifier_opts)
-
-    managers.modifiers:add_modifier(modifier, "skirmish_weekly")
-  end
-end)
-
 -- Used by host
 Hooks:OverrideFunction(SkirmishManager, "on_start_assault", function(self)
   local wave_number = managers.groupai:state():get_assault_number()

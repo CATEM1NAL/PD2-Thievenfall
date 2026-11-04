@@ -27,6 +27,8 @@ Hooks:PostHook(UpgradesTweakData, "init", "CrimDusk_InitUpgradeTweakData", funct
     if upgrade == "body_armor1" then table.remove(self.level_tree[7].upgrades, index) end
   end
 
+  table.insert(self.level_tree[41].upgrades, "body_armor6")
+
   -- Skills
   self.values.player.additional_lives = { 10, 20, 30 } -- Nine Lives
   self.values.weapon.passive_swap_speed_multiplier = { 1.8, 2.6 } -- Swap Speed
@@ -62,7 +64,7 @@ Hooks:PostHook(UpgradesTweakData, "init", "CrimDusk_InitUpgradeTweakData", funct
   self.values.player.cheat_death_chance = { 0.5, 1 } -- Feign Death
   self.values.weapon.automatic_head_shot_add = { 0.5, 1 } -- Body Expertise
   self.values.player.perk_armor_regen_timer_multiplier = { 0.85, 0.7, 0.55, 1, 1 } -- Hitman (regen speed)
-  self.values.player.passive_dodge_chance = { 0.25, 0.5, 0.75 } -- Evasive (rogue dodge)
+  self.values.player.passive_dodge_chance = { 0.2, 0.4, 0.6 } -- Evasive (rogue dodge)
   self.values.weapon.modded_damage_multiplier = { 1.25 } -- Tinkerer (damage)
   self.values.player.tape_loop_duration = { 2.5, 10 } -- Cam Loop
   self.values.player.tape_loop_interact_distance_mul = { 1.5 } -- Cam Loop distance
@@ -80,6 +82,9 @@ Hooks:PostHook(UpgradesTweakData, "init", "CrimDusk_InitUpgradeTweakData", funct
   self.values.player.drill_alert_rad = { 2000 } -- Silent Drilling 1
   self.values.player.armor_health_store_amount = { 0.2, 0.5, 0.8 } -- Ex-President
   self.values.shotgun.steelsight_accuracy_inc = { 0.5 } -- Skeet Shooting
+  self.values.doctor_bag.interaction_speed_multiplier = { 0.5 }
+  self.values.player.passive_armor_movement_penalty_multiplier = { 0.75, 0.5 }
+
   self.drill_alert_radius = 5000 -- drill alert radius
   self.enemy_hurt_alert_radius_whisper = 300 -- death alert radius
 
@@ -337,7 +342,7 @@ Hooks:PostHook(UpgradesTweakData, "init", "CrimDusk_InitUpgradeTweakData", funct
     player_weapon_accuracy_increase = 2, weapon_fire_rate_multiplier = 2, pistol_consume_no_ammo_chance = 2,
     assault_rifle_consume_no_ammo_chance = 2, snp_consume_no_ammo_chance = 2, smg_consume_no_ammo_chance = 2,
     lmg_consume_no_ammo_chance = 2, minigun_consume_no_ammo_chance = 2, player_melee_damage_dampener = 2, player_max_health_reduction = 2,
-    trip_mine_damage_multiplier = 2, sentry_gun_extra_ammo_multiplier = 2,
+    trip_mine_damage_multiplier = 2, sentry_gun_extra_ammo_multiplier = 2, player_passive_armor_movement_penalty_multiplier = 2,
 
     player_health_decrease = 3, player_melee_sharp_damage_multiplier = 3, player_assets_cost_multiplier = 3,
     doctor_bag_amount_increase = 3, ammo_bag_ammo_increase = 3, weapon_passive_reload_speed_multiplier = 3,
