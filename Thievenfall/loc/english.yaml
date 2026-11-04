@@ -85,6 +85,7 @@ heist_skm_cas: "Locke's 21"
 heist_skm_cas_h1: "Locke's 21"
 
 heist_rvd2_hl: "A Simple Job"
+heist_cd_reservoir: "A Simple Job"
 
 heist_nightclub: "Last Dance"
 heist_nightclub_hl: "Last Dance"
@@ -711,12 +712,12 @@ st_menu_enforce_shotgun: "Mercenary"
 st_menu_enforcer_armor: "Muscle"
 st_menu_technician_auto: "Gunsmith"
 st_menu_ghost_stealth: "Infiltrator"
-st_menu_ghost_concealed: "Agent"
+st_menu_ghost_concealed: "Escapist"
 st_menu_ghost_silencer: "Hitman"
 st_menu_fugitive_pistol_akimbo: "Substance Abuser"
 
 ## Mastermind
-menu_tea_time_beta_desc: "$lv1;Place doctor bags and first aid kits ##50%## faster."
+menu_tea_time_beta_desc: "$lv1;Place and use doctor bags and first aid kits ##50%## faster."
 
 menu_fast_learner_beta_desc: "$lv1;Crewmates that you revive take ##50%## less damage for ##5## seconds.\n\n$lv2;Damage reduction is increased to ##100%##."
 
@@ -784,23 +785,23 @@ menu_long_shot: "Long Shot"
 menu_long_shot_desc: "$lv1;Marked enemies further than ##10m## away take ##50%## more damage."
 
 ## Enforcer
-menu_underdog_beta_desc: "$lv1;Deal ##15%## more damage while three enemies are within ##18m## of you."
+#menu_underdog_beta_desc: "$lv1;Deal ##15%## more damage while three enemies are within ##18m## of you."
 
-menu_overdog: "Overdog"
-menu_overdog_desc: "$lv1;Take ##10%## less damage while three enemies are within ##18m## of you."
+#menu_overdog: "Overdog"
+#menu_overdog_desc: "$lv1;Take ##10%## less damage while three enemies are within ##18m## of you."
 
-menu_shotgun_impact_beta_desc: "$lv1;Shotguns deal ##10%## more damage.\n\n$lv2;Shotguns deal ##25%## more damage."
+#menu_shotgun_impact_beta_desc: "$lv1;Shotguns deal ##10%## more damage.\n\n$lv2;Shotguns deal ##25%## more damage."
 
-menu_shotgun_stability_desc: "$lv1;Stability with shotguns increased by ##8##."
+#menu_shotgun_stability_desc: "$lv1;Stability with shotguns increased by ##8##."
 
-menu_shotgun_cqb_beta_desc: "$lv1;Reload shotguns ##15%## faster.\n\n$lv2;Reload shotguns ##35%## faster."
+#menu_shotgun_cqb_beta_desc: "$lv1;Reload shotguns ##15%## faster.\n\n$lv2;Reload shotguns ##35%## faster."
 
-menu_shotgun_ads_speed_desc: "$lv1;Aim down sights with shotguns ##125%## faster."
+#menu_shotgun_ads_speed_desc: "$lv1;Aim down sights with shotguns ##125%## faster."
 
-menu_close_by_beta_desc: "$lv1;Hipfire shotguns while sprinting."
+#menu_close_by_beta_desc: "$lv1;Hipfire shotguns while sprinting."
 
-menu_shotgun_rof: "Slamfire"
-menu_shotgun_rof_desc: "$lv1;Rate of fire with single-fire shotguns is increased by ##35%## when hipfiring."
+#menu_shotgun_rof: "Slamfire"
+#menu_shotgun_rof_desc: "$lv1;Rate of fire with single-fire shotguns is increased by ##35%## when hipfiring."
 
 menu_shotgun_accuracy: "Skeet Shooting"
 menu_shotgun_accuracy_desc: "$lv1;Shotgun accuracy is increased by ##50%## while aiming down sights."
@@ -817,7 +818,7 @@ menu_iron_man_beta_desc: "$lv1;Hitting a shield can cause it to stagger. Meleein
 menu_nerves_of_steel_name: "Nerves of Steel"
 menu_nerves_of_steel_desc: "$lv1;Damage taken is reduced by ##50%## while performing an interaction."
 
-menu_show_of_force_beta_desc: "$lv1;Armor of the three ballistic vests is increased by ##20##."
+#menu_show_of_force_beta_desc: "$lv1;Armor of the three ballistic vests is increased by ##20##."
 
 menu_pack_mule_beta: "Catapult"
 menu_pack_mule_beta_desc: "$lv1;Bag throwing distance is increased by ##50%##."
@@ -832,7 +833,7 @@ menu_stun_resistance_desc: "$lv1;Recover from flashbangs slightly faster.\n\n$lv
 
 menu_bulletproof_name: "Bulletproof"
 
-menu_juggernaut_beta_desc: "$lv1;Unlocks the ##Advanced Tactical Vest##."
+menu_juggernaut_beta_desc: "$lv1;Armor speed penalty reduced by ##25%##.\n\n$lv2;Armor speed penalty reduced by ##50%##."
 
 menu_extra_ammo_box: "Double Dip"
 menu_extra_ammo_box_desc: "$lv1;Every 6th enemy killed drops an extra ammo box."
@@ -893,7 +894,7 @@ menu_shaped_charge_desc: "$lv1;In addition to trip mines, you gain ##4## shaped 
 
 menu_fire_trap_beta_desc: "$lv1;Upon detonation trip mines create ##4m## of fire for ##10## seconds.\n\n$lv2;Fire now reaches ##6m## and lasts ##20## seconds."
 
-menu_heavy_impact_beta_desc: "$lv1;Bullets have a ##10%## chance to stagger enemies (does not apply to Captain Winters).\n\n$lv2;Chance increased to ##20%##."
+menu_heavy_impact_beta_desc: "$lv1;Bullets have a ##10%## chance to stagger enemies.\n\n$lv2;Chance increased to ##20%##."
 
 menu_fire_control_beta_desc: "$lv1;Hipfire accuracy increased by ##12##."
 
@@ -901,8 +902,8 @@ menu_shock_and_awe_beta_desc: "$lv1;Killing ##3## enemies with a full-auto weapo
 
 menu_body_expertise_beta_desc: "$lv1;Body shots apply ##50%## of the headshot damage bonus.\n\n$lv2;Body shots apply ##100%## of the headshot damage bonus."
 
-menu_sprint_shoot: "Close By"
-menu_sprint_shoot_desc: "$lv1;You can hipfire while sprinting."
+#menu_sprint_shoot: "Close By"
+#menu_sprint_shoot_desc: "$lv1;You can hipfire while sprinting."
 
 menu_hollow_point: "Black Tip"
 menu_hollow_point_desc: "$lv1;Bullets have a ##50%## chance to ignore body armor.\n\n$lv2;Bullets will always ignore body armor."
@@ -933,16 +934,16 @@ menu_scavenger_beta_desc: "$lv1;Movement speed is increased by ##30%## for ##5##
 
 menu_dire_need_beta_desc: "$lv1;Your first shot on an enemy inflicts stagger while your armor is broken.\n\n$lv2;Remains active for ##6## seconds after armor recovers."
 
-menu_moving_target_desc: "$lv1;You can sprint while strafing.\n\n$lv2;You can sprint in any direction."
+menu_moving_target_desc: "$lv1;You can sprint in any direction.\n\n$lv2;You can reload while sprinting."
 
-menu_sprinter: "Sprinter"
-menu_sprinter_desc: "$lv1;Sprint speed increased by ##25%##.\n\n$lv2;Dodge is increased by ##10## while sprinting."
+#menu_sprinter: "Sprinter"
+#menu_sprinter_desc: "$lv1;Sprint speed increased by ##25%##.\n\n$lv2;Dodge is increased by ##10## while sprinting."
 
 menu_move_speed: "Endurance"
 menu_move_speed_desc: "$lv1;Move ##25%## faster while walking and ##10%## faster while crouching.\n\n$lv2;Sprint speed increased by ##25%##. Dodge increased by ##10## while sprinting.\n\n$lv3;Movement speed increased by ##10%##."
 
-menu_sprint_loaded: "Sprint Loaded"
-menu_sprint_loaded_desc: "$lv1;You can reload while sprinting."
+#menu_sprint_loaded: "Sprint Loaded"
+#menu_sprint_loaded_desc: "$lv1;You can reload while sprinting."
 
 menu_hidden_blade: "Hidden Blade"
 menu_hidden_blade_desc: "$lv1;Melee weapon concealment increased by ##2##."
@@ -990,7 +991,7 @@ menu_ecm_quantity_desc: "$lv1;Carry ##1## extra ECM.\n\n$lv2;Carry ##3## extra E
 
 ## Fugitive
 menu_quick_draw: "Quick Draw"
-menu_quick_draw_desc: "$lv1;Weapon switch speed is ##33%## faster with pistols."
+#menu_quick_draw_desc: "$lv1;Weapon switch speed is ##33%## faster with pistols."
 
 menu_akimbo_skill_beta_desc: "$lv1;Akimbo stability penalty reduced by ##8##.\n\n$lv2;Akimbo stability penalty reduced by ##16##.\n\n$lv3;Akimbo stability penalty reduced by ##24##."
 
@@ -999,7 +1000,7 @@ menu_expert_handling_desc: "$lv1;Successful pistol hits grant a stacking ##10%##
 menu_bleedout_timer_skill: "More Blood To Bleed"
 menu_bleedout_timer_skill_desc: "$lv1;Max bleedout time increased by ##10## seconds.\n\n$lv2;Max bleedout time increased by ##20## seconds.\n\n$lv3;Max bleedout time increased by ##30## seconds."
 
-menu_revive_swap_speed: "Revive Swap Speed"
+menu_revive_swap_speed: "Back For Blood"
 menu_revive_swap_speed_desc: "$lv1;Switch weapons ##100%## faster for ##10## seconds after being revived.\n\n$lv2;Reload ##100%## faster for 10 seconds after being revived."
 
 menu_running_from_death_beta_desc: "$lv1;Move ##30%## faster for ##10## seconds after being revived."
@@ -1051,7 +1052,7 @@ menu_armorer_skill_desc: "$lv1;Tactical vests have their armor increased by ##25
 menu_yakuza_speed: "Adrenaline"
 menu_yakuza_speed_desc: "$lv1;While below ##50%## health your movement speed scales with health lost, to a maximum of ##20%##.\n\n$lv2;Armor recovery speed also increases by up to ##50%## with health lost."
 
-menu_deck4_5_skill: "$lv1;Dodge increased by ##25##.\n\n$lv2;Dodge increased by ##50##.\n\n$lv3;Dodge increased by ##75##.\n\n$lv4;Dodging a bullet damages the enemy that fired it."
+menu_deck4_5_skill: "$lv1;Dodge increased by ##20##.\n\n$lv2;Dodge increased by ##40##.\n\n$lv3;Dodge increased by ##60##.\n\n$lv4;Dodging a bullet damages the enemy that fired it."
 
 menu_rogue_switch: "$lv1;Weapon switch speed is increased by ##80%##.\n\n$lv2;Weapon switch speed is increased by ##160%##.\n\n$lv3;Weapon switch speed is increased by ##320%##."
 
@@ -1103,17 +1104,17 @@ menu_tac_reload_desc: "$lv1;Your unequipped weapon is reloaded after ##10## kill
 menu_oldholm_syndrome: "Helsinki Syndrome"
 menu_oldholm_syndrome_desc: "$lv1;Untied civilians may revive you when shouting at them.\n\n$lv2;Potentially receive an ammo pickup when revived by a civilian."
 
-menu_tough_guy: "Tough Guy"
-menu_tough_guy_desc: "$lv1;Screen shake from damage reduced by ##50%##."
+#menu_tough_guy: "Tough Guy"
+#menu_tough_guy_desc: "$lv1;Screen shake from damage reduced by ##50%##."
 
-menu_hip_accuracy: "From The Hip"
-menu_hip_accuracy_desc: "$lv1;Hipfire spread reduced by ##50%##."
+#menu_hip_accuracy: "From The Hip"
+#menu_hip_accuracy_desc: "$lv1;Hipfire spread reduced by ##50%##."
 
 menu_mag_plus: "Mag Plus"
 menu_mag_plus_desc: "$lv1;Magazine capacity increased by ##50%## for all weapons.\n\n$lv2;Magazine capacity increased by ##100%## for all weapons."
 
-menu_smg_rof: "SMG Specialist"
-menu_smg_rof_desc: "$lv1;Fire rate with SMGs increased by ##20%##."
+#menu_smg_rof: "SMG Specialist"
+#menu_smg_rof_desc: "$lv1;Fire rate with SMGs increased by ##20%##."
 
 menu_custody_timer: "Master Trader"
 menu_custody_timer_desc: "$lv1;Your custody timer is reduced by ##50%##."
@@ -1130,11 +1131,11 @@ menu_oppressor_desc: "$lv1;Threat is increased by ##10%##.\n\n$lv2;Threat is inc
 menu_downed_ads: "Last Stand"
 menu_downed_ads_desc: "$lv1;You can use your primary weapon while down.\n\n$lv2;You can ADS while down."
 
-menu_shinobi: "Shinobi"
-menu_shinobi_desc: "$lv1;Walk ##25%## faster and move ##10%## faster while crouched."
+#menu_shinobi: "Shinobi"
+#menu_shinobi_desc: "$lv1;Walk ##25%## faster and move ##10%## faster while crouched."
 
-menu_drop_cloth: "Drop Cloth"
-menu_drop_cloth_desc: "$lv1;Enemy death alert radius reduced by ##95%##."
+#menu_drop_cloth: "Drop Cloth"
+#menu_drop_cloth_desc: "$lv1;Enemy death alert radius reduced by ##95%##."
 
 menu_daredevil: "Thrill Seeker"
 menu_daredevil_desc: "$lv1;Ladder climbing speed increased by ##20%##.\n\n$lv2;Ladder climbing speed increased by ##75%##."
@@ -1148,8 +1149,8 @@ menu_stable_shot_beta_desc: "$lv1;Accuracy increased by ##16## while stationary.
 menu_lmg_stability: "Heat Shield"
 menu_lmg_stability_desc: "$lv1;Stability increased by ##8## for all weapons.\n\n$lv2;Stability bonus is increased to ##16##."
 
-menu_single_shot_acc: "Barrel Crown"
-menu_single_shot_acc_desc: "$lv1;Single fire weapons have their spread reduced by ##20%##."
+#menu_single_shot_acc: "Barrel Crown"
+#menu_single_shot_acc_desc: "$lv1;Single fire weapons have their spread reduced by ##20%##."
 
 menu_reload_speed: "Magazine Funnel"
 menu_reload_speed_desc: "$lv1;All weapons reload ##25%## faster.\n\n$lv2;Reload speed is now ##50%## faster.\n\n$lv3;Reload speed is now ##100%## faster."
@@ -1165,7 +1166,7 @@ menu_silencer_statboost_desc: "$lv1;Silenced weapons gain ##50%## more stability
 
 # Unused skills
 menu_blanks: "Warning Shot"
-menu_blanks_desc: "$lv1;The first time you melee a civ they will be intimidated.\n\n$lv2;The first time you shoot a civilian they will be intimidated."
+menu_blanks_desc: "$lv1;The first time you melee a civilian they will be intimidated.\n\n$lv2;The first time you shoot a civilian they will be intimidated."
 
 menu_loud_and_proud: "Loud And Proud"
 menu_loud_and_proud_desc: "$lv1;Gain ##5%## more damage (up to ##25%##) for every ##7## points of detection risk above ##40##.\n\n$lv2;Gain ##10%## more damage (up to ##50%##) per ##7## points instead."
@@ -1182,8 +1183,8 @@ menu_shell_dimension_desc: "$lv1;Bullets have a ##10%## chance to not be consume
 menu_hypocritical: "Hypocritical"
 menu_hypocritical_desc: "$lv1;Crit chance increased by ##10%##.\n\n$lv2;Crit chance increased by ##25%##."
 
-menu_nebula_plus: "Nebula Plus"
-menu_nebula_plus_desc: "$lv1;Asset cost reduced by ##10%##.\n\n$lv2;Asset cost reduced by ##25%##.\n\n$lv3;Asset cost reduced by ##50%##."
+#menu_nebula_plus: "Nebula Plus"
+#menu_nebula_plus_desc: "$lv1;Asset cost reduced by ##10%##.\n\n$lv2;Asset cost reduced by ##25%##.\n\n$lv3;Asset cost reduced by ##50%##."
 
 ### VARIOUS TEXT CHANGES ###
 # Based on VTC 6.11.2 with some backported fixes #
@@ -1297,16 +1298,16 @@ loading_gameplay_20: "The 'Medic' subtree aims to keep the crew alive."
 loading_gameplay_21: "The 'Marksman' subtree rewards hitting your shots with semi-auto weapons."
 loading_gameplay_22: "The 'Controller' subtree helps keep hostages in check."
 loading_gameplay_23: "The 'Ammo Specialist' subtree keeps the crew's weapons loaded."
-loading_gameplay_24: "The 'Mercenary' subtree lets you dish it out."
+loading_gameplay_24: "The 'Mercenary' subtree increases your combat potential."
 loading_gameplay_25: "The 'Muscle' subtree lets you stay in the fight for extended periods of time."
 loading_gameplay_26: "The 'Engineer' subtree grants your sentries superior area denial."
 loading_gameplay_27: "The 'Gunsmith' subtree gives your weapons powerful bonuses."
 loading_gameplay_28: "The 'Breacher' subtree improves the reliability of drills."
 loading_gameplay_29: "The 'Infiltrator' subtree increases your stealth potential."
 loading_gameplay_30: "The 'Hitman' subtree rewards concealment."
-loading_gameplay_31: "The 'Agent' subtree enhances your mobility."
+loading_gameplay_31: "The 'Escapist' subtree enhances your mobility."
 loading_gameplay_32: "The 'Substance Abuser' subtree boosts the power of consumables."
-loading_gameplay_33: "The 'Brawler' subtree allows your melee weapons to kill bulldozers."
+loading_gameplay_33: "The 'Brawler' subtree allows you to get close and personal."
 loading_gameplay_34: "The 'Revenant' subtree helps you get back on your feet."
 loading_gameplay_35: "Don't be afraid to leave bags alone - cops don't tamper with evidence."
 loading_gameplay_37: "Making effective use of both your weapons is necessary to survive. Don't forget to switch weapons if needed!"
@@ -1315,7 +1316,7 @@ loading_gameplay_40: "Cloakers won't try to cuff you if you're the last one stan
 loading_gameplay_41: "Cops are more easily intimidated if you are behind them and they are alone."
 loading_gameplay_42: "Headshots deal double damage."
 loading_gameplay_45: "Being incapacitated by a taser might not take away your health, but it will drain your remaining down time."
-loading_gameplay_46: "Snipers hurt - they can take out all your armor in a single shot, or if your armor is broken, instantly down you."
+loading_gameplay_46: "Snipers hurt - they can take out all your armor in a single shot, or if your armor is already broken, instantly down you."
 loading_gameplay_51: "Just because a camera can't see you now doesn't mean it won't see you in a few seconds. Keep your eye on which direction they're facing!"
 loading_gameplay_53: "Cops aren't easily afraid - you can always take them as hostages between assaults, but need the 'Dominator' skill to take hostages during an assault."
 loading_gameplay_55: "Doctor bags restore 10 seconds of down time per charge. First aid kits only restore health, but can restore down time with the 'Amphetamine' skill (Mastermind)."
@@ -1355,7 +1356,7 @@ loading_heister_7: "Trophies are a good source of C-Stacks, if you can unlock th
 loading_heister_9: "It is important that you get downed crew mates back up as soon as possible. Every second counts!"
 loading_heister_11: "Don't have a crosshair? Use a laser!"
 loading_heister_12: "Some mutators have been turned into default features. Be careful around cloakers!"
-loading_heister_13: "I bite my elbows - I am a bad motherfucker."
+loading_heister_13: "I bite my elbows. I am a bad motherfucker."
 loading_heister_15: "Friendly fire is enabled by default. The damage scales with difficulty, up to full damage on Death Sentence."
 loading_heister_16: "Offshore can be used to unlock new skill sets or infamy. Choose wisely!"
 loading_heister_18: "New to Thievenfall? Join the Discord server to ask for help!"
@@ -1380,7 +1381,7 @@ loading_trivia_2: "Jimmy owns a theme park. It was closed due to an active shoot
 loading_trivia_3: "Jimmy is the head of a very successful corporation."
 loading_trivia_4: "Jimmy claims that if he saw a block of cocaine he would ignore it. He's lying."
 loading_trivia_5: "THAT WAS FUCKING LOUD!"
-loading_trivia_6: "Jimmy."
+loading_trivia_6: "Jimmy!"
 loading_trivia_7: "Jacket is very unlikely to be the real Jacket. The arcade machine in his room supports this, implying Hotline Miami never happened and he is merely a fan of the game."
 loading_trivia_8: "Jacket's position in the crew is questionable as he doesn't seem to care about money, rather craving violence."
 loading_trivia_9: "Jacket's Piece never appeared in Hotline Miami, and only appears as his signature weapon in PAYDAY."
@@ -1405,7 +1406,7 @@ loading_trivia_33: "Dallas was originally going to become a contractor and be re
 loading_trivia_34: "Dallas doesn't like going to the proctologist."
 loading_trivia_35: "Prior to December 2025, almost all of Wolf's lines were reused from PAYDAY: The Heist. Only his masking up and pager lines were new."
 loading_trivia_36: "Wolf once had to GTFO from a den of wolves. That has nothing to do with his name, though."
-loading_trivia_37: "Wolf once willingly spent an extended period of time in a psych ward. He's still crazy though."
+loading_trivia_37: "Wolf once willingly spent an extended period of time in a psych ward."
 loading_trivia_38: "Wolf once committed a massacre in a nightclub."
 loading_trivia_39: "Bodhi's favorite fictional character is Johnny Silverhand."
 loading_trivia_40: "Bodhi hates corporations and would gladly crash his car into an Amazon warehouse. Hoxton keeps daring him to do it."
@@ -1424,7 +1425,7 @@ loading_trivia_52: "Houston refuses to drink alcohol out of fear that he may pos
 loading_trivia_53: "Houston occasionally plays Roblox. The rest of the crew mocks him for this."
 loading_trivia_54: "Despite having enough money to buy any car he wants, Houston still drives around in a Honda Civic."
 loading_trivia_55: "Bonnie sleeps in a dog bed."
-loading_trivia_56: "Bonnie constantly leaves a dehumidifier running in the safe house, despite Dallas' asthma."
+loading_trivia_56: "Bonnie leaves a dehumidifier running in the safe house, despite Dallas' asthma."
 loading_trivia_57: "Bonnie occasionally cries herself to sleep, and then asks the crew if they heard her crying the next morning."
 loading_trivia_58: "Bonnie is a crippling alcoholic, and refuses to seek help for her drinking problem."
 loading_trivia_59: "Captain Winters is part of GenSec's elite force, being brought in to help take down the clowns on Mayhem and above."
@@ -1452,7 +1453,7 @@ loading_trivia_92: "Jiro has a katana. Try using it while playing as him!"
 loading_trivia_93: "Bodhi hates tasers. Try killing one with a weapon that deals at least 100 base damage!"
 loading_trivia_94: "Many, MANY goats were harmed during the making of the Goat Simulator heist. Call PETA. We dare you."
 loading_trivia_95: "Hector is the one that moved the Mayan gold from OVERDRILL. Seems like a standout guy, really..."
-loading_trivia_96: "The event heists are not part of the main campaign, but can be randomly chosen in the post-game."
+loading_trivia_96: "The event heists are not part of the main campaign, but can be chosen in the post-game."
 loading_trivia_97: "The Dentist is an immortal eldritch being that can destroy planets."
 loading_trivia_98: "The classic heists returned from PAYDAY: The Heist, but due to gameplay changes they do not play the same. Try the original game if you haven't!"
 loading_trivia_99: "He's a hacker, not a planner dammit."
