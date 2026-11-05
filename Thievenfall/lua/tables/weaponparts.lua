@@ -2,17 +2,17 @@ local attachments = {
   -- Gadgets
   light = { concealment = -1, recoil = 2, value = 3 },
   stealth_light = { recoil = 1, value = 3 },
-  laser = { concealment = -1, spread = 2, spread_moving = 2, value = 5 },
-  stealth_laser = { spread = 1, spread_moving = 1, value = 5 },
-  laser_light = { concealment = -2, spread = 1, spread_moving = 1, recoil = 1, value = 8 },
+  laser = { concealment = -1, spread = 2, value = 5 },
+  stealth_laser = { spread = 1, value = 5 },
+  laser_light = { concealment = -2, spread = 1, recoil = 1, value = 8 },
 
   -- Sights
   no_zoom = { concealment = -1, recoil = 1, value = 6 },
   low_zoom = { concealment = -2, recoil = 2, value = 6, increase_zoom = true },
-  high_zoom = { concealment = -2, spread = 2, spread_moving = 2, value = 6 },
-  piggyback = { concealment = -3, recoil = 1, spread = 1, spread_moving = 1, value = 8 },
-  scope = { concealment = -1, recoil = 1, spread = 2, spread_moving = 2, value = 9 },
-  iron_sight = { spread = 1, spread_moving = 1, value = 4 },
+  high_zoom = { concealment = -2, spread = 2, value = 6 },
+  piggyback = { concealment = -3, recoil = 1, spread = 1, value = 8 },
+  scope = { concealment = -1, recoil = 1, spread = 2, value = 9 },
+  iron_sight = { spread = 1, value = 4 },
   sniper_iron = { concealment = 2, value = 4 },
 
   -- Mags
@@ -21,8 +21,15 @@ local attachments = {
   quickpull = { reload = 4 },
 
   -- Barrels
-  dmr_kit = { fire_rate_multiplier = 0.8, ammo_pickup_min_mul = 0.5, ammo_pickup_max_mul = 0.5, movement_speed = 0.95 },
-  short_barrel = { fire_rate_multiplier = 1.1, ammo_pickup_min_mul = 1.05, ammo_pickup_max_mul = 1.05, movement_speed = 1.05 }
+  dmr_kit = { fire_rate_multiplier = 0.75, ammo_pickup_min_mul = 0.5, ammo_pickup_max_mul = 0.5, movement_speed = 0.95 },
+  short_barrel = { fire_rate_multiplier = 1.1, ammo_pickup_min_mul = 1.05, ammo_pickup_max_mul = 1.05, movement_speed = 1.05 },
+
+  -- Barrel ext.
+  muzzle_brake = { concealment = -1, recoil = 2, suppression = -2, value = 5 },
+  flash_hider = { concealment = -1, recoil = 1, spread = 1, value = 5 },
+  suppressor_small = { concealment = -2, alert_size = 6, damage = -1, spread = 2, suppression = 5, value = 2 },
+  suppressor_med = { concealment = -3, alert_size = 9, damage = -3, spread = 3, suppression = 10, value = 2 },
+  suppressor_large = { concealment = -4, alert_size = 12, damage = -5, spread = 4, suppression = 15, value = 2 },
 }
 
 Global.CrimDusk.weapon_parts = {
@@ -64,6 +71,10 @@ Global.CrimDusk.weapon_parts = {
 
     wpn_fps_lmg_m134_barrel_short = { movement_speed = 1.25 },
     wpn_fps_lmg_m134_body_upper_light = { movement_speed = 1.25 },
+
+    wpn_fps_upg_i_singlefire = { fire_rate_multiplier = 0.5 },
+    wpn_fps_upg_i_autofire = { fire_rate_multiplier = 1.1 },
+    wpn_fps_upg_i_burstfire = { fire_rate_multiplier = 1.25 }
   },
 
   stats = {
@@ -109,7 +120,7 @@ Global.CrimDusk.weapon_parts = {
     wpn_fps_upg_o_leupold = attachments.scope,
     wpn_fps_upg_o_box = attachments.scope,
     wpn_fps_upg_o_northtac = attachments.scope,
-    wpn_fps_upg_o_schmidt = { concealment = -1, recoil = 1, spread = 2, spread_moving = 2, zoom = 8, value = 9 },
+    wpn_fps_upg_o_schmidt = { concealment = -1, recoil = 1, spread = 2, zoom = 8, value = 9 },
     wpn_fps_upg_o_schmidt_magnified = { gadget_zoom = 5, value = 1 },
     wpn_fps_upg_winchester_o_classic = attachments.scope,
     wpn_fps_upg_o_mbus_pro = attachments.sniper_iron,
@@ -129,32 +140,77 @@ Global.CrimDusk.weapon_parts = {
     wpn_fps_upg_o_rms = { value = 4 },
 
     -- Secondary sights
-    wpn_fps_upg_o_45rds = { concealment = -2, recoil = 1, spread = -1, spread_moving = -1, value = 4 },
-    wpn_fps_upg_o_45rds_v2 = { concealment = -2, recoil = 1, spread = -1, spread_moving = -1, value = 4 },
-    wpn_fps_upg_o_xpsg33_magnifier = { concealment = -2, recoil = -1, spread = 1, spread_moving = 1, value = 4 },
+    wpn_fps_upg_o_45rds = { concealment = -2, recoil = 1, spread = -1, value = 4 },
+    wpn_fps_upg_o_45rds_v2 = { concealment = -2, recoil = 1, spread = -1, value = 4 },
+    wpn_fps_upg_o_xpsg33_magnifier = { concealment = -2, recoil = -1, spread = 1, value = 4 },
     wpn_fps_upg_o_45iron = { value = 4 },
     wpn_fps_upg_o_45steel = { value = 4 },
-    wpn_fps_upg_o_sig = { concealment = -2, recoil = -1, spread = 1, spread_moving = 1, value = 4 },
+    wpn_fps_upg_o_sig = { concealment = -2, recoil = -1, spread = 1, value = 4 },
 
     -- Upper receiver
-    wpn_fps_upg_ak_body_upperreceiver_zenitco = { recoil = 1, spread = -1, spread_moving = -1, value = 1 },
+    wpn_fps_upg_ak_body_upperreceiver_zenitco = { recoil = 1, spread = -1, value = 1 },
 
     -- Lower receiver
     wpn_fps_ass_tkb_body_pouch = { concealment = -2, recoil = 1, spread = -1, total_ammo_mod = 5, value = 1 },
     wpn_fps_lmg_m134_body_upper_light = { total_ammo_mod = -10, recoil = 3, spread = -3, value = 1 },
 
-    -- Barrels
-    wpn_fps_upg_ass_m4_b_beowulf = { concealment = -4, damage = 50, recoil = -10, spread = 4, total_ammo_mod = -12, value = 1 }, -- DMR kit
-    wpn_fps_upg_ass_ak_b_zastava = { concealment = -4, damage = 49, coil = -3, spread = 2, total_ammo_mod = -12, value = 1 }, -- DMR kit
-    wpn_fps_ass_g3_b_sniper = { concealment = -2, damage = 50, extra_ammo = -10, recoil = -1, spread = 2, total_ammo_mod = -8, value = 2 }, -- DMR kit
-    wpn_fps_ass_shak12_body_vks = { concealment = -4, damage = 49, coil = -3, spread = 2, total_ammo_mod = -12, value = 1 }, -- DMR kit
-    wpn_fps_ass_famas_b_sniper = { concealment = -4, damage = 51, recoil = -10, spread = 4, total_ammo_mod = -12, value = 1 }, -- DMR kit
-    wpn_fps_ass_vhs_b_sniper = { concealment = -4, damage = 51, recoil = -10, spread = 4, total_ammo_mod = -12, value = 1 }, -- DMR kit
-    wpn_fps_ass_galil_fg_sniper = { concealment = -4, damage = 43, recoil = -10, spread = 4, total_ammo_mod = -12, value = 1 }, -- DMR kit
+    -- DMR kits
+    wpn_fps_upg_ass_m4_b_beowulf = { concealment = -4, damage = 50, recoil = -10, spread = 4, total_ammo_mod = -12, value = 1 },
+    wpn_fps_upg_ass_ak_b_zastava = { concealment = -4, damage = 49, coil = -3, spread = 2, total_ammo_mod = -12, value = 1 },
+    wpn_fps_ass_g3_b_sniper = { concealment = -2, damage = 50, extra_ammo = -10, recoil = -1, spread = 2, total_ammo_mod = -8, value = 2 },
+    wpn_fps_ass_shak12_body_vks = { damage = 49, coil = -3, spread = 2, total_ammo_mod = -12, value = 1 },
+    wpn_fps_ass_famas_b_sniper = { concealment = -4, damage = 51, recoil = -10, spread = 4, total_ammo_mod = -12, value = 1 },
+    wpn_fps_ass_vhs_b_sniper = { concealment = -4, damage = 51, recoil = -10, spread = 4, total_ammo_mod = -12, value = 1 },
+    wpn_fps_ass_galil_fg_sniper = { concealment = -4, damage = 43, recoil = -10, spread = 4, total_ammo_mod = -12, value = 1 },
 
-    wpn_fps_ass_g3_b_short = { concealment = 4, damage = -8, recoil = 5, spread = -4, total_ammo_mod = 4, value = 2 }, -- Short barrel
-    wpn_fps_lmg_m134_barrel_short = { concealment = 3, recoil = 3, spread = -3, value = 1 }, -- Short barrel
+    -- Short barrels
+    wpn_fps_ass_g3_b_short = { concealment = 4, damage = -8, recoil = 5, spread = -4, total_ammo_mod = 4, value = 2 },
+    wpn_fps_lmg_m134_barrel_short = { concealment = 3, recoil = 3, spread = -3, value = 1 },
+    wpn_fps_ass_galil_fg_mar = { concealment = 4, damage = -8, recoil = 2, spread = -4, value = 2 },
+    wpn_fps_ass_famas_b_short = { concealment = 2, damage = -6, recoil = 2, spread = -4, value = 2 },
 
-    wpn_fps_lmg_m134_barrel_extreme = { concealment = -1, recoil = -3, spread = 3, value = 1 }, -- Long barrel
+    -- Long barrels
+    wpn_fps_lmg_m134_barrel_extreme = { concealment = -1, recoil = -3, spread = 3, value = 1 },
+
+    -- Fire mode
+    wpn_fps_upg_i_singlefire = { recoil = -3, spread = 2, value = 5 },
+    wpn_fps_upg_i_autofire = { recoil = 2, spread = -1, value = 8 },
+    wpn_fps_upg_i_burstfire = { recoil = -2, spread = 1, value = 8 },
+
+    -- Barrel Extensions
+    wpn_fps_upg_ns_ass_smg_stubby = attachments.flash_hider,
+    wpn_fps_upg_ns_ass_smg_tank = attachments.muzzle_brake,
+    wpn_fps_upg_ns_ass_smg_firepig = attachments.flash_hider,
+    wpn_fps_upg_ass_ns_jprifles = attachments.muzzle_brake,
+    wpn_fps_upg_ass_ns_linear = attachments.flash_hider,
+    wpn_fps_upg_ass_ns_surefire = attachments.muzzle_brake,
+    wpn_fps_upg_ass_ns_battle = attachments.flash_hider,
+    wpn_fps_upg_ns_ass_smg_v6 = attachments.muzzle_brake,
+    wpn_fps_lmg_hk51b_ns_jcomp = attachments.muzzle_brake,
+    wpn_fps_ass_shak12_ns_muzzle = attachments.muzzle_brake,
+    wpn_fps_lmg_kacchainsaw_ns_muzzle = attachments.flash_hider,
+    wpn_fps_upg_pis_ns_flash = attachments.flash_hider,
+    wpn_fps_upg_ns_pis_ipsccomp = attachments.flash_hider,
+    wpn_fps_upg_ns_pis_meatgrinder = attachments.flash_hider,
+    wpn_fps_upg_ns_pis_typhoon = attachments.muzzle_brake,
+
+    wpn_fps_upg_ns_ass_smg_small = attachments.suppressor_small,
+    wpn_fps_upg_ns_pis_small = attachments.suppressor_small,
+    wpn_fps_lmg_kacchainsaw_ns_suppressor = attachments.suppressor_small,
+    wpn_fps_upg_ns_shot_thick = attachments.suppressor_small,
+    wpn_fps_upg_ns_ass_filter = attachments.suppressor_small,
+
+    wpn_fps_upg_ns_ass_smg_medium = attachments.suppressor_med,
+    wpn_fps_upg_ns_pis_medium = attachments.suppressor_med,
+    wpn_fps_upg_ns_sho_salvo_large = attachments.suppressor_med,
+    wpn_fps_upg_ns_pis_medium_slim = attachments.suppressor_med,
+    wpn_fps_upg_ns_pis_medium_gem = attachments.suppressor_med,
+    wpn_fps_upg_ns_pis_putnik = attachments.suppressor_med,
+
+    wpn_fps_upg_ns_ass_smg_large = attachments.suppressor_large,
+    wpn_fps_upg_ns_pis_large = attachments.suppressor_large,
+    wpn_fps_ass_shak12_ns_suppressor = attachments.suppressor_large,
+    wpn_fps_upg_ns_pis_large_kac = attachments.suppressor_large,
+    wpn_fps_upg_ns_pis_jungle = attachments.suppressor_large,
   }
 }

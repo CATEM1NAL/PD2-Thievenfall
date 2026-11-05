@@ -219,6 +219,7 @@ bm_w_wa2000_desc: "Penetrates enemies."
 bm_w_siltstone_desc: "Penetrates enemies."
 bm_w_victor_desc: "Penetrates enemies."
 bm_w_ching_desc: "Penetrates enemies."
+bm_w_m134_desc: "Penetrates enemies."
 
 # Basic AP
 bm_w_lemming_desc: "Penetrates enemies & body armor."
@@ -402,7 +403,7 @@ bm_w_scar: "Union Eagle Mk17"
 bm_w_corgi: "Union G2000"
 bm_w_shak12: "Ketchnov ASh-12" # written on the gun in Russian
 bm_w_ak74: "Izhma AK-74"
-bm_w_m4: "Crosskill Tactical" # it's what it says on the gun idk man
+bm_w_m4: "Crosskill Tactical Mk 4" # it's what it says on the gun idk man
 bm_w_aug: "Stefan UAR"
 bm_w_groza: "Ketchnov Bull-1"
 bm_w_sub2000: "Lion LGL15" # say it with me, written on the gun
@@ -410,7 +411,7 @@ bm_w_akm: "Izhma AK-59"
 bm_w_g36: "PJ G36" # written ON THE GUN BABYYYYYYY
 bm_w_ak12: "Izhma AK-17"
 bm_w_akm_gold: "Golden AK-59"
-bm_w_tecci: "SG Bootleg 416C"
+bm_w_tecci: "Bootleg SG 416C"
 bm_w_l85a2: "Queen's Wrath"
 bm_w_m14: "Simmons Armory M308"
 bm_w_famas: "Clarion"
@@ -419,7 +420,7 @@ bm_w_asval: "Ketchnov Valkyria"
 bm_w_ak5: "Automatkarbin 5"
 bm_w_galil: "IMI Gecko"
 bm_w_komodo: "IMI Tavor-21" # THIS is the gun that tells us what IWI is called in-universe
-bm_w_m16: "Crosskill Maverick" # CS1.6 - CS:S 
+bm_w_m16: "Crosskill Maverick-16" # CS1.6 - CS:S 
 bm_w_contraband: "SG 'Friend' 417D"
 bm_w_fal: "Union Falcon"
 bm_w_hailstorm: "FTI Hailstorm R-033"
@@ -524,6 +525,22 @@ bm_w_arbiter: "SG Arbiter"
 menu_snp: "Precision"
 menu_assault_rifle: "Assault"
 menu_smg: "SMG"
+
+# Weapon mods
+bm_wp_upg_ns_ass_smg_stubby: "Stubby Flash Hider"
+bm_wp_upg_ns_ass_smg_tank: "Tank Brake"
+bm_wp_upg_ns_ass_smg_firepig: "Fire Breather Flash Hider"
+bm_wp_upg_ass_ns_jprifles: "Competitor's Brake"
+bm_wp_upg_ass_ns_linear: "Funnel of Fun Compensator"
+bm_wp_upg_ass_ns_surefire: "Tactical Brake"
+bm_wp_ns_battle: "Ported Flash Hider"
+bm_wp_upg_ns_ass_smg_v6: "Marmon Brake"
+bm_wp_hk51b_ns_jcomp: "Verdunkeln Brake"
+bm_wp_shak12_ns_muzzle: "ASh-12 Burst Muzzle"
+bm_wp_kacchainsaw_muzzle: "Dourif Brake"
+bm_wp_upg_pis_ns_flash: "Poseidon Flash Hider"
+bm_wp_upg_ns_meatgrinder: "CQB Compensator"
+bm_wp_upg_ns_typhoon: "Hurricane Brake"
 
 # Deployables
 bm_equipment_ammo_bag_desc: "Contains enough ammo to fully refill one weapon and half of another weapon. Can be upgraded with Enforcer skills."

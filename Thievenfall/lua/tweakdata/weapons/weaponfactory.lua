@@ -8,6 +8,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "CrimDusk_InitModTweakData", func
     local OriginalZoom = StatTable.increase_zoom and self.parts[Part].stats.zoom + 2 or self.parts[Part].stats.zoom
     local GadgetZoom = self.parts[Part].stats.gadget_zoom
     self.parts[Part].stats = StatTable
+    self.parts[Part].stats.spread_moving = StatTable.spread
     if not StatTable.zoom then self.parts[Part].stats.zoom = OriginalZoom end
     if not StatTable.gadget_zoom then self.parts[Part].stats.gadget_zoom = GadgetZoom end
   end

@@ -247,7 +247,7 @@ Hooks:OverrideFunction(PlayerDamage, "revive", function(self, silent)
   self._bleed_out = false
   self._incapacitated = nil
 
-  local DownTime = math.ceil(self._downed_timer)
+  local EndDownTime = math.ceil(self._downed_timer)
   self._downed_timer = nil
   self._downed_start_time = nil
 
@@ -260,8 +260,9 @@ Hooks:OverrideFunction(PlayerDamage, "revive", function(self, silent)
     end
 
     -- Set down time related values
-    local DiffMod = tweak_data:difficulty_to_index(Global.game_settings.difficulty or "normal") - 2
-    self._down_time = math.max(DownTime - DiffMod, 1)
+    local DiffPenalty = tweak_data:difficulty_to_index(Global.game_settings.difficulty or "normal") - 2
+    local RevivePenalty = math.max(self._down_time - EndDownTime, DiffPenalty)
+    self._down_time = math.max(self._down_time - RevivePenalty, 1)
     self._revives = Application:digest_value(self._down_time + 1, true)
     self:_send_set_revives()
     Global.CrimDusk.data[lives] = self._down_time
