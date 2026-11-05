@@ -1,6 +1,6 @@
 local FileIdent = "HoldoutManager"
 
-Hooks:OverrideFunction(SkirmishManager, "activate_weekly_skirmish")
+Hooks:OverrideFunction(SkirmishManager, "activate_weekly_skirmish", function() end)
 
 -- Add weekly number to save data
 Hooks:OverrideFunction(SkirmishManager, "save", function(self, data)

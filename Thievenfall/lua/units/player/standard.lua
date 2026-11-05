@@ -20,6 +20,8 @@ end)
 
 Hooks:PostHook(PlayerStandard, "init", "CrimDusk_InitPlayerStandard", function(self)
   self._slotmask_bullet_impact_targets = managers.slot:get_mask("bullet_impact_targets") + 3
+  if managers.player:has_category_upgrade("player", "sixth_sense_non_specials") then self._sixth_sense_level = 2
+  elseif managers.player:has_category_upgrade("player", "standstill_omniscience") then self._sixth_sense_level = 1 end
 end)
 
 -- Melee is treated as its own weapon slot
@@ -332,11 +334,12 @@ end)
 
 -- Sixth Sense rework
 Hooks:OverrideFunction(PlayerStandard, "_update_omniscience", function(self, t, dt)
+  if not self._sixth_sense_level then return end
+
   local omniscience_settings = tweak_data.player.omniscience
   if not omniscience_settings then return end
 
-  local action_forbidden = not managers.player:has_category_upgrade("player", "standstill_omniscience") or managers.player:current_state() == "civilian" or
-    self._ext_movement:has_carry_restriction() or self:_on_zipline() or self:running() or self:in_air()
+  local action_forbidden = managers.player:current_state() == "civilian" or self._ext_movement:has_carry_restriction() or self:_on_zipline() or self:running() or self:in_air()
 
   if action_forbidden then
     if self._state_data.omniscience_t then
@@ -366,17 +369,17 @@ Hooks:OverrideFunction(PlayerStandard, "_update_omniscience", function(self, t, 
   if not self._state_data.omniscience_t then self._state_data.omniscience_t = t + omniscience_settings.start_t end
 
   if self._state_data.omniscience_pos and t >= self._state_data.omniscience_t then
-    -- Sixth Sense 2 allows it to apply to non-special enemies
-    local SenseSlot = managers.player:has_category_upgrade("player", "sixthsense_nonspecial") and managers.slot:get_mask("enemies") or managers.slot:get_mask("trip_mine_targets")
-    local sensed_targets = World:find_units_quick("sphere", player_m_pos, omniscience_settings.sense_radius, SenseSlot)
+    local sensed_targets = World:find_units_quick("sphere", player_m_pos, omniscience_settings.sense_radius, managers.slot:get_mask("trip_mine_targets"))
 
     for _, unit in ipairs(sensed_targets) do
       if alive(unit) and not unit:base():char_tweak().is_escort then
         self._state_data.omniscience_units_detected = self._state_data.omniscience_units_detected or {}
 
         local unit_detected = self._state_data.omniscience_units_detected[unit:key()]
+        local unit_markable = (self._sixth_sense_level == 2 and unit:base():char_tweak().challenges.type ~= "civilians") or
+          (managers.groupai:state():whisper_mode() and unit:base():char_tweak().silent_priority_shout or unit:base():char_tweak().priority_shout)
 
-        if not unit_detected or unit_detected <= t then
+        if (not unit_detected or unit_detected <= t) and unit_markable then
           unit_detected = t + omniscience_settings.target_resense_t
           self._state_data.omniscience_units_detected[unit:key()] = unit_detected
           managers.game_play_central:auto_highlight_enemy(unit, true)

@@ -95,7 +95,7 @@ Global.CrimDusk.weapons.classes = {
     par = { dmg = "med", ap = "none", chamber = 0 },
 
     rpk = { dmg = "high", ap = "none" },
-    hcar = { dmg = "high", ap = "none" },
+    hcar = { dmg = "high", ap = "none", nummags = 6 },
     m60 = { dmg = "high", ap = "none", chamber = 0 }
   },
 
@@ -227,7 +227,7 @@ Global.CrimDusk.weapons.classes = {
     ray = { dmgmult = 25, dmg = "rpg", pickup = "none", chamber = 0 },
 
     shuno = { dmg = "mini", chamber = 0 },
-    m134 = { dmg = "mini", chamber = 0 },
+    m134 = { dmg = "mini", ap = "none", chamber = 0 },
 
     china = { dmgmult = 1, dmg = "gl", nummags = 1, chamber = 0 },
     ms3gl = { dmgmult = 1, dmg = "gl", chamber = 0 },

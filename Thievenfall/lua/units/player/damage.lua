@@ -88,7 +88,7 @@ end)
 
 -- Feign Death
 Hooks:PostHook(PlayerDamage, "_chk_cheat_death", "CrimDusk_CheckFeignDeath", function(self)
-  if self._auto_revive_timer then self._down_time = self._down_time - 10 end
+  if self._auto_revive_timer then self._down_time = math.max(self._down_time - 10, 1) end
 end)
 
 -- Stoic damage tick
@@ -266,7 +266,7 @@ Hooks:OverrideFunction(PlayerDamage, "revive", function(self, silent)
     Global.CrimDusk.data[lives] = self._down_time
     self:SetReviveRatio()
 
-    self._revive_miss = self._dmg_interval -- Revive dodge matches grace period
+    self._revive_miss = math.max(self._dmg_interval, 1)
   end
 
   self:_regenerate_armor()

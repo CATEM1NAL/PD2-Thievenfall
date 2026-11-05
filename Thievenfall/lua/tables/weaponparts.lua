@@ -21,8 +21,8 @@ local attachments = {
   quickpull = { reload = 4 },
 
   -- Barrels
-  dmr_kit = { fire_rate_multiplier = 0.8, ammo_pickup_min_mul = 0.5, ammo_pickup_max_mul = 0.5 },
-  short_barrel = { fire_rate_multiplier = 1.1, ammo_pickup_min_mul = 1.05, ammo_pickup_max_mul = 1.05 }
+  dmr_kit = { fire_rate_multiplier = 0.8, ammo_pickup_min_mul = 0.5, ammo_pickup_max_mul = 0.5, movement_speed = 0.95 },
+  short_barrel = { fire_rate_multiplier = 1.1, ammo_pickup_min_mul = 1.05, ammo_pickup_max_mul = 1.05, movement_speed = 1.05 }
 }
 
 Global.CrimDusk.weapon_parts = {
@@ -51,8 +51,8 @@ Global.CrimDusk.weapon_parts = {
     wpn_fps_upg_ass_ak_b_zastava = attachments.dmr_kit,
     wpn_fps_ass_g3_b_sniper = attachments.dmr_kit,
     wpn_fps_ass_shak12_body_vks = attachments.dmr_kit,
-    wpn_fps_ass_famas_b_sniper = { fire_rate_multiplier = 0.5, ammo_pickup_min_mul = 0.34, ammo_pickup_max_mul = 0.34 },
-    wpn_fps_ass_vhs_b_sniper = { fire_rate_multiplier = 0.5, ammo_pickup_min_mul = 0.34, ammo_pickup_max_mul = 0.34 },
+    wpn_fps_ass_famas_b_sniper = { fire_rate_multiplier = 0.5, ammo_pickup_min_mul = 0.34, ammo_pickup_max_mul = 0.34, movement_speed = 0.95 },
+    wpn_fps_ass_vhs_b_sniper = { fire_rate_multiplier = 0.5, ammo_pickup_min_mul = 0.34, ammo_pickup_max_mul = 0.34, movement_speed = 0.95 },
     wpn_fps_ass_galil_fg_sniper = attachments.dmr_kit,
 
     wpn_fps_ass_g3_b_short = attachments.short_barrel,
@@ -61,6 +61,9 @@ Global.CrimDusk.weapon_parts = {
     wpn_fps_ass_asval_b_proto = attachments.short_barrel,
     wpn_fps_ass_galil_fg_mar = attachments.short_barrel,
     wpn_fps_ass_fal_body_standard = attachments.short_barrel,
+
+    wpn_fps_lmg_m134_barrel_short = { movement_speed = 1.25 },
+    wpn_fps_lmg_m134_body_upper_light = { movement_speed = 1.25 },
   },
 
   stats = {
@@ -138,6 +141,7 @@ Global.CrimDusk.weapon_parts = {
 
     -- Lower receiver
     wpn_fps_ass_tkb_body_pouch = { concealment = -2, recoil = 1, spread = -1, total_ammo_mod = 5, value = 1 },
+    wpn_fps_lmg_m134_body_upper_light = { total_ammo_mod = -10, recoil = 3, spread = -3, value = 1 },
 
     -- Barrels
     wpn_fps_upg_ass_m4_b_beowulf = { concealment = -4, damage = 50, recoil = -10, spread = 4, total_ammo_mod = -12, value = 1 }, -- DMR kit
@@ -149,5 +153,8 @@ Global.CrimDusk.weapon_parts = {
     wpn_fps_ass_galil_fg_sniper = { concealment = -4, damage = 43, recoil = -10, spread = 4, total_ammo_mod = -12, value = 1 }, -- DMR kit
 
     wpn_fps_ass_g3_b_short = { concealment = 4, damage = -8, recoil = 5, spread = -4, total_ammo_mod = 4, value = 2 }, -- Short barrel
+    wpn_fps_lmg_m134_barrel_short = { concealment = 3, recoil = 3, spread = -3, value = 1 }, -- Short barrel
+
+    wpn_fps_lmg_m134_barrel_extreme = { concealment = -1, recoil = -3, spread = 3, value = 1 }, -- Long barrel
   }
 }
