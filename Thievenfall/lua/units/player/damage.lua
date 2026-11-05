@@ -260,7 +260,8 @@ Hooks:OverrideFunction(PlayerDamage, "revive", function(self, silent)
     end
 
     -- Set down time related values
-    self._down_time = DownTime
+    local DiffMod = tweak_data:difficulty_to_index(Global.game_settings.difficulty or "normal") - 2
+    self._down_time = math.max(DownTime - DiffMod, 1)
     self._revives = Application:digest_value(self._down_time + 1, true)
     self:_send_set_revives()
     Global.CrimDusk.data[lives] = self._down_time
