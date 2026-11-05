@@ -1,5 +1,5 @@
 -- Unit replacements & new definitions
-Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "CrimDusk_InitGroupAIT", function(self, difficulty)
+Hooks:PostHook(GroupAITweakData, "_init_unit_categories", "CrimDusk_InitGroupAICategories", function(self, difficulty)
   -- Pistol/M4 HRT is Pistol/MP5 instead
   self.unit_categories.FBI_suit_C45_M4.unit_types = {
     america = {
@@ -145,8 +145,8 @@ Hooks:PostHook(GroupAITweakData, "_init_task_data", "CrimDusk_InitGroupAITaskDat
   self.besiege.assault.delay = { 60, 60, 30 }
   self.besiege.assault.hostage_hesitation_delay = { 15, 10, 5 }
 
-  self.besiege.assault.force_balance_mul = { 1, 2, 3, 4 }
-  self.besiege.assault.force_pool_balance_mul = { 1, 2, 3, 4 }
+  self.besiege.assault.force_balance_mul = { 1, 1.5, 2, 3 }
+  self.besiege.assault.force_pool_balance_mul = { 1, 1.5, 2, 3 }
 
   self.besiege.recon.force = { 8, 10, 12 }
 
