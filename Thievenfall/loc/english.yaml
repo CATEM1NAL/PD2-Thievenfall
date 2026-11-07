@@ -256,10 +256,8 @@ bm_w_asval_desc: "Weapon is integrally suppressed."
 
 # Special
 bm_w_bessy_desc: "Penetrates enemies & insta-kills specials."
-
-# Weapon mods
-bm_wp_upg_a_grenade_launcher_hornet_desc: "Fire a burst of armor penetrating rounds."
-bm_wp_uupg_o_schmidt: "Orbit Scope  x2.5  /"
+bm_w_ksg_desc: "Fires in two round bursts."
+bm_w_huntsman_desc: "Fires both barrels at once."
 
 # Weapon names
 bm_w_usp: "SG Interceptor" # Starts as a Tactical, can be turned into a Match. Better to stay generic I think
@@ -536,11 +534,22 @@ bm_wp_upg_ass_ns_surefire: "Tactical Brake"
 bm_wp_ns_battle: "Ported Flash Hider"
 bm_wp_upg_ns_ass_smg_v6: "Marmon Brake"
 bm_wp_hk51b_ns_jcomp: "Verdunkeln Brake"
-bm_wp_shak12_ns_muzzle: "ASh-12 Burst Muzzle"
+bm_wp_shak12_ns_muzzle: "Yusupov Muzzle"
 bm_wp_kacchainsaw_muzzle: "Dourif Brake"
 bm_wp_upg_pis_ns_flash: "Poseidon Flash Hider"
 bm_wp_upg_ns_meatgrinder: "CQB Compensator"
 bm_wp_upg_ns_typhoon: "Hurricane Brake"
+bm_wp_ak_upg_ns_zenitco: "Taktika Brake"
+bm_wp_upg_ak_ns_jmac: "Fyodor Compensator"
+bm_wp_upg_ns_shot_shark: "Shark Brake"
+bm_wp_upg_shot_ns_king: "King Flash Hider"
+
+bm_wp_shak12_ns_suppressor: "Yefimovich Suppressor"
+
+bm_wp_shak12_o_carry_dummy: "Carry Handle"
+
+bm_wp_upg_a_grenade_launcher_hornet_desc: "Fire a burst of armor penetrating rounds."
+bm_wp_uupg_o_schmidt: "Orbit Scope  x2.5  /"
 
 # Deployables
 bm_equipment_ammo_bag_desc: "Contains enough ammo to fully refill one weapon and half of another weapon. Can be upgraded with Enforcer skills."
@@ -664,7 +673,7 @@ trophy_tooth_objective: "Secure the toothbrush in 'Panic Room'."
 trophy_coke_objective: "Secure 24 bags of cocaine in 'The World Is Yours'."
 trophy_bex_objective: "Find the tape in 'Bancarotta'."
 trophy_hockeykill_progress: "Melee Kills"
-trophy_boxing_gloves: "Little Mac"
+trophy_boxing_gloves: "Little Hox"
 
 # Locked Items
 bm_global_value_gage_pack_jobs_unlock: "Buy the Gage Mod Courier DLC to unlock!"
@@ -2925,6 +2934,7 @@ bm_menu_btn_remove_mod: "Remove Mod"
 bm_menu_btn_buy_mod: "Unlock Mod"
 dialog_bm_purchase_mod: "You are about to unlock $item."
 dialog_bm_purchase_coins: "This will cost $money C-Stacks!"
+dialog_bm_purchase_mod_cant_afford: "You need $money C-Stacks to unlock $name!"
 bm_menu_btn_preview_with_mod: "Preview Mod"
 bm_menu_btn_preview_no_mod: "Preview Without Mod"
 bm_menu_btn_clear_mod_preview: "Reset Preview"
