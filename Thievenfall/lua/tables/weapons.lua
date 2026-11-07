@@ -9,6 +9,7 @@ The following values exist:
 **dmg**: can be a direct damage value, but should be a lookup string to find the correct damage subclass.
 **dmgmult**: allows overriding the damage multiplier that exists for some weapons (snipers, etc).
 **ap**: lookup string to determine the type of penetration the weapon uses.
+**pellets**: overrides the number of shots the weapon fires (shotguns, etc).
 
 **mag:** overrides base magazine capacity.
 **nummags**: overrides max number of magazines.
@@ -20,6 +21,10 @@ The following values exist:
 
 **chamber**: number of rounds this weapon can chamber. defaults to 1 if not assigned.
 **magdump**: whether this weapon should lose unfired & unchambered rounds on reload. no effect on hand-loaded weapons.
+
+**mode**: overrides default fire mode.
+**burst**: shots per burst. defaults to 3 if not assigned.
+**burst_cd**: time between bursts. default is derived from fire rate, otherwise.
 ]]
 
 Global.CrimDusk.weapons.classes = {
@@ -73,14 +78,14 @@ Global.CrimDusk.weapons.classes = {
     spas12 = { dmg = "base", acc = 5 },
     r870 = { dmg = "base", acc = 9 },
     benelli = { dmg = "base", acc = 5 },
-    ksg = { dmg = "base", acc = 9 },
+    ksg = { dmg = "base", pellets = 6, acc = 9, rof = 400, mode = "burst", burst = 2, burst_cd = 0.575 },
     m1897 = { dmg = "base", acc = 9 },
     supernova = { dmg = "base", acc = 9 },
     m37 = { dmg = "base", acc = 9 },
     m590 = { dmg = "base", acc = 5 },
     boot = { dmg = "base", acc = 17 },
     b682 = { dmg = "base", acc = 17, magdump = false, chamber = 0 },
-    huntsman = { dmg = "base", acc = 17, chamber = 0 },
+    huntsman = { dmg = "base", acc = 17, stab = 5, nummags = 5, chamber = 0, rof = 2000, mode = "burst", burst = 2 },
     coach = { dmg = "base", acc = 17, magdump = false, chamber = 0 },
     bleckert = { dmg = "base", acc = 5, chamber = 0 },
   },
@@ -297,7 +302,7 @@ Global.CrimDusk.weapons.spread = {
 }
 
 Global.CrimDusk.weapons.magazines = {
-  rifles = 5, shotguns = 4, lmgs = 2, snipers = 3, pistols = 4, revolvers = 2, smgs = 5, special = 2
+  rifles = 4, shotguns = 3, lmgs = 2, snipers = 3, pistols = 3, revolvers = 2, smgs = 4, special = 2
 }
 
 Global.CrimDusk.weapons.pickup = {

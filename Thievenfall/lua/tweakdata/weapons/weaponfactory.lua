@@ -5,7 +5,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "CrimDusk_InitModTweakData", func
 
   -- Apply weapon part stat changes
   for Part, StatTable in pairs(Global.CrimDusk.weapon_parts.stats) do
-    local OriginalZoom = StatTable.increase_zoom and self.parts[Part].stats.zoom + 2 or self.parts[Part].stats.zoom
+    local OriginalZoom = self.parts[Part].stats.zoom
     local GadgetZoom = self.parts[Part].stats.gadget_zoom
     self.parts[Part].stats = StatTable
     self.parts[Part].stats.spread_moving = StatTable.spread
@@ -17,6 +17,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "CrimDusk_InitModTweakData", func
 
   -- Magazine capacities
   for magazine, data in pairs(Global.CrimDusk.weapon_parts.mags) do
+    if not self.parts[magazine].stats then self.parts[magazine].stats = {} end
     if data.extra_ammo then self.parts[magazine].stats.extra_ammo = data.extra_ammo end
     if data.reload then self.parts[magazine].stats.reload = data.reload end
   end

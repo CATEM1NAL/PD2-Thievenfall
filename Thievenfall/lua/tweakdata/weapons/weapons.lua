@@ -125,6 +125,11 @@ local function ModifyStats(self, WeaponClassName, WeaponClassData)
       PickupChanged = true
     end
 
+    if Data.mode then self[Weapon].FIRE_MODE = Data.mode end -- fire mode
+    if Data.burst then self[Weapon].BURST_COUNT = Data.burst end -- shots per burst
+    if Data.burst_cd then self[Weapon].fire_mode_data.burst_cooldown = Data.burst_cd end -- burst cooldown
+    if Data.pellets then self[Weapon].rays = Data.pellets end -- pellets per shot
+
     for Stat, Value in pairs(Data) do -- Apply custom stat overrides
 
       if Stat == "dmg" then -- Damage
@@ -237,9 +242,12 @@ Hooks:PostHook(WeaponTweakData, "init", "CrimDusk_WeaponTweakInit", function(sel
   self.arbiter.use_data.selection_index = 2
   self.china.use_data.selection_index = 2
   self.m37.use_data.selection_index = 2
+  self.coach.use_data.selection_index = 2
 
   -- Attribute tweaks
   self.welrod.stats_modifiers = nil
   self.maxim9.do_shotgun_push = nil
   self.bessy.special_damage_multiplier = 60
+  self.huntsman.has_description = true
+  self.ksg.has_description = true
 end)
