@@ -52,10 +52,11 @@ Hooks:PostHook(GameOverState, "at_enter", "CrimDusk_HeistFailed", function(self)
     end
     Global.CrimDusk.data.next_heists = {}
 
-  -- Go back, do not pass go (main campaign only)
+  --[[ Go back, do not pass go (main campaign only)
   elseif not checkpoints[Global.CrimDusk.data.heists_won] then
     Global.CrimDusk.data.heists_won = Global.CrimDusk.data.heists_won - 1
     NetworkHelper:SendToPeers("CrimDusk_SyncCampaignProgress", math.min(Global.CrimDusk.data.heists_won, #Global.CrimDusk.campaign))
+  ]]
   end
 
   CrimDusk:WriteSave(FileIdent, "heist failed")
