@@ -291,7 +291,7 @@ Hooks:PostHook(UpgradesTweakData, "init", "CrimDusk_InitUpgradeTweakData", funct
   self.values.player.hostage_health_regen_addend = { 0.2, 0.5 }
 
   -- Armour stats
-  self.values.player.body_armor.movement = { 1.05, 1.05, 1, 0.95, 0.85, 0.75, 0.6 }
+  self.values.player.body_armor.movement = { 1.05, 1.05, 1, 0.95, 0.85, 0.75, 0.55 }
   self.values.player.body_armor.concealment = { 30, 30, 26, 21, 18, 12, 1 }
   self.values.player.body_armor.armor = { 0, 0, 2, 4, 6, 8, 10 }
   self.values.player.body_armor.dodge = { 0, 0, -0.10, -0.20, -0.35, -0.5, -1 }
