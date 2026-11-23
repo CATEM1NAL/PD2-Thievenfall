@@ -28,6 +28,13 @@
     },
     {
       "type" : "button",
+      "id" : "crimdusk_play_tutorial",
+      "title" : "crimdusk_play_tutorial_name",
+      "description" : "crimdusk_play_tutorial_desc",
+      "callback" : "CrimDusk_PlayTutorial"
+    },
+    {
+      "type" : "button",
       "id" : "crimdusk_reset_campaign",
       "title" : "crimdusk_reset_campaign_name",
       "description" : "crimdusk_reset_campaign_desc",

@@ -10,6 +10,8 @@ crimdusk_instantmelee_title: "Quick Melee"
 crimdusk_instantmelee_desc: "Press this key to use weapon butt."
 crimdusk_greyscreen_name: "Custody Timer Effect"
 crimdusk_greyscreen_desc: "Toggles the grayscale effect when your custody timer is low."
+crimdusk_play_tutorial_name: "Play Tutorials"
+crimdusk_play_tutorial_desc: "Allows you to replay the tutorial heists without wiping your progress."
 
 ## CAMPAIGN
 crimdusk_chat_campaign_short: "It might feel like you were just getting started,"
@@ -53,6 +55,9 @@ crimdusk_safehouse_desc: "Upgrade your safe house, view trophies, or simply take
 crimdusk_new_holdout: "New Weekly Holdout"
 
 # Heists
+heist_cd_tutorial: "Back To Basics"
+heist_cd_tutorial_briefing: "It's been a while since you guys took on a job so I figured we'd start off easy. Wipe your records, and then we'll hit a club out of hours."
+
 heist_arm_temp: "Armored Transport"
 heist_arm_crimenet: "I managed to dig up some info on a few GenSec truck routes. If we act fast enough we'll be gone before they even know what happened.\n\n» Break into the immobilized trucks\n» Crack open the strongboxes\n» Get the loot to the getaway vehicle"
 

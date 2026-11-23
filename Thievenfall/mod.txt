@@ -1,7 +1,7 @@
 {
   "name" : "Thievenfall"
   "description" : "Gameplay rework that aims to make the game play more like a mix of PAYDAY: The Heist and early PAYDAY 3. If you're trying to disable the mod, go to the BeardLib mod manager to do so.",
-	"author" : "~/cat/em1/nal/",
+	"author" : "C@:\\EM1NAL\\",
 	"contact" : "https://discord.com/invite/gzWsWNA",
   "undisablable" : true,
   "color" : "0.734375 0.4921875 0.73828125",

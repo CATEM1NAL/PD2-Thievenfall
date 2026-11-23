@@ -1,5 +1,5 @@
 Programming & Design:
-- ~/cat/em1/nal/
+- C@:\EM1NAL\
 
 Playtesting:
 - eddieboy94
