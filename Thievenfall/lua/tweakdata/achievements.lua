@@ -57,9 +57,11 @@ Hooks:PostHook(AchievementsTweakData, "init", "CrimDusk_AchievementTweakRequirem
   complete.trophy_defender.difficulty = postgame
 
   -- First Steps
-  complete.trophy_basics_stealth.job = "cd_tut1"
-  complete.trophy_basics_stealth_2 = { job = "cd_tut2", trophy_stat = "trophy_basics_stealth_2" }
-  complete.trophy_basics_loud.job = "cd_tut3"
+  complete.trophy_basics_stealth.job = nil
+  complete.trophy_basics_stealth.level_id = "short1_stage1"
+  complete.trophy_basics_stealth_2 = { level_id = "short1_stage2", trophy_stat = "trophy_basics_stealth_2" }
+  complete.trophy_basics_loud.job = nil
+  complete.trophy_basics_loud.level_id = "short2_stage1"
 
   -- Falcogini
   complete.trophy_car_shop.difficulty = postgame

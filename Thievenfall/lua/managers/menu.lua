@@ -30,6 +30,11 @@ function MenuCallbackHandler:CrimDusk_SaveChoiceSettings(item)
   io.save_as_json(CrimDusk.SettingsData, CrimDusk.SettingsFile)
 end
 
+function MenuCallbackHandler:CrimDusk_PlayTutorial()
+  self:play_single_player()
+  MenuCallbackHandler:start_single_player_job({ difficulty = "normal", job_id = "cd_tutorial" })
+end
+
 function MenuCallbackHandler:CrimDusk_ResetCampaign()
   if Utils:IsInGameState() then CrimDusk.Log(FileIdent, "Can't change settings in-game!") return end
   CrimDusk.Reset()

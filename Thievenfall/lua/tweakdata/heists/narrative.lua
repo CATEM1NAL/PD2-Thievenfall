@@ -21,6 +21,11 @@ Hooks:PostHook(NarrativeTweakData, "init", "CrimDusk_NarrativeTweakInit", functi
   self.jobs.cd_tut3.briefing_id = "heist_short2_stage1_briefing"
   self.jobs.cd_tut3.chain = { self.stages.short_2_1 }
 
+  self.jobs.cd_tutorial = deep_clone(self.jobs.short1)
+  self.jobs.cd_tutorial.name_id = "heist_cd_tutorial"
+  self.jobs.cd_tutorial.briefing_id = "heist_cd_tutorial_briefing"
+  self.jobs.cd_tutorial.chain = { self.stages.short_1_1, self.stages.short_1_2, self.stages.short_2_1 }
+
   -- Standalone days
   self.jobs.cd_hox1 = deep_clone(self.jobs.hox)
   self.jobs.cd_hox1.name_id = "heist_hox_1_hl"
@@ -98,6 +103,16 @@ Hooks:PostHook(NarrativeTweakData, "init", "CrimDusk_NarrativeTweakInit", functi
   self.jobs.cd_rats.chain = { self.stages.alex_1 }
 
   -- Wrappers
+  self.jobs.arm_wrapper = { -- I can't believe Sidetrack removed this completely unused contract :(
+    name_id = "heist_arm_temp", briefing_id = "heist_arm_crimenet", contact = "bain",
+    chain = { {} }, job_wrapper = { "arm_cro", "arm_und", "arm_hcm", "arm_par", "arm_fac" },
+    payout = { 8500, 11000, 30000, 32000, 44000, 44000, 44000 },
+
+    jc = 30, briefing_event = "pln_at1_brf_01",
+    crimenet_callouts = { "pln_at1_cnc_01" }, crimenet_videos = { "cn_branchbank1", "cn_branchbank3" },
+    experience_mul = { 1, 1, 1, 1.2, 1.2 }, contract_cost = { 16000, 32000, 80000, 160000, 200000, 200000, 200000 }
+  }
+
   self.jobs.cd_erection1 = deep_clone(self.jobs.election_day)
   self.jobs.cd_erection1.name_id = "heist_election_day_2_hl"
   self.jobs.cd_erection1.briefing_id = "eday2_brief"
@@ -181,6 +196,7 @@ Hooks:PostHook(NarrativeTweakData, "init", "CrimDusk_NarrativeTweakInit", functi
   table.insert(self._jobs_index, "cd_tut1")
   table.insert(self._jobs_index, "cd_tut2")
   table.insert(self._jobs_index, "cd_tut3")
+  table.insert(self._jobs_index, "cd_tutorial")
   table.insert(self._jobs_index, "cd_hox1")
   table.insert(self._jobs_index, "cd_hox2")
   table.insert(self._jobs_index, "cd_frame3")

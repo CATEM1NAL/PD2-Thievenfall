@@ -2,6 +2,8 @@ if Global.game_settings and Global.game_settings.level_id == "chill_combat" then
 local FileIdent = "Gameover"
 
 Hooks:PostHook(GameOverState, "at_enter", "CrimDusk_HeistFailed", function(self)
+  if managers.job:current_job_id() == "cd_tutorial" then return end
+
   -- Weekly Holdout
   if managers.skirmish:is_skirmish() then
     Global.skirmish_manager.last_weekly = math.floor((os.time() - TimerManager:game():time() + 259200) / 604800) -- Current week number
