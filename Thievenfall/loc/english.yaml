@@ -791,7 +791,7 @@ menu_joker_damage: "Punisher"
 menu_joker_damage_desc: "THIS SKILL REQUIRES ##JOKER##!\n\n$lv1;Your converts deal ##50%## more damage.\n\n$lv2;Your converts deal ##100%## more damage."
 
 menu_joker_dr: "Kevlar"
-menu_joker_dr_desc: "THIS SKILL REQUIRES ##JOKER##!\n\n$lv1;Your converts take ##50%## less damage.\n\n$lv2;Your converts take ##99%## less damage."
+menu_joker_dr_desc: "THIS SKILL REQUIRES ##JOKER##!\n\n$lv1;Your converts take ##50%## less damage.\n\n$lv2;Your converts take ##90%## less damage."
 
 menu_control_freak_beta_desc: "THIS SKILL REQUIRES ##JOKER##!\n\n$lv1;Your movement speed is increased by ##10%## while you have a convert.\n\n$lv2;Your max health is increased by ##50## while you have a convert."
 
@@ -890,7 +890,7 @@ menu_scrounger_name: "Scrounger"
 menu_scrounger_desc: "$lv1;Picking up an ammo box reduces your grenade recharge time by ##1## second.\n\n$lv2;Time reduction is now ##2## seconds per ammo box."
 
 menu_max_ammo_inc: "Big Game Hunter"
-menu_max_ammo_inc_desc: "$lv1;Ammo capacity increased by ##25%##."
+menu_max_ammo_inc_desc: "$lv1;You carry ##1## extra magazine.\n\n$lv2;You carry ##2## extra magazines."
 
 menu_spotter_teamwork_beta_desc: "$lv1;Special enemies that you aim at are marked.\n\n$lv2;Enemies that you mark take ##50%## more damage."
 
