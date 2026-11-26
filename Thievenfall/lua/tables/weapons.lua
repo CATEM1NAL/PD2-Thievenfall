@@ -31,14 +31,14 @@ Global.CrimDusk.weapons.classes = {
   rifles = {
     hailstorm = { dmg = 12, chamber = 0 },
 
-    famas = { dmg = "low", acc = 19 },
-    asval = { dmg = "low", mag = 20 },
+    famas = { dmg = "low", acc = 19, magdump = true },
+    asval = { dmg = "low", mag = 20, magdump = true },
     vhs = { dmg = "low" },
-    komodo = { dmg = "low" },
+    komodo = { dmg = "low", magdump = true },
     m16 = { dmg = "low", mag = 20, reload = 20 },
     tkb = { dmg = "low", nummags = 2, chamber = 3 },
     l85a2 = { dmg = "low" },
-    hajk = { dmg = "low" },
+    hajk = { dmg = "low", magdump = true },
     groza = { dmg = "low" },
 
     corgi = { dmg = "med" },
@@ -47,47 +47,47 @@ Global.CrimDusk.weapons.classes = {
     g36 = { dmg = "med", acc = 19 },
     ak5 = { dmg = "med" },
     fal = { dmg = "med" },
-    galil = { dmg = "med", acc = 19 },
+    galil = { dmg = "med", acc = 19, magdump = true },
     tecci = { dmg = "med", nummags = 2, acc = 11 },
     flint = { dmg = "med" },
 
     new_m4 = { dmg = "high", acc = 19 },
-    aug = { dmg = "high" },
-    ak74 = { dmg = "high", acc = 16 },
+    aug = { dmg = "high", magdump = true },
+    ak74 = { dmg = "high", acc = 16, magdump = true },
     contraband = { dmg = "high" },
     g3 = { dmg = "high", mag = 20 },
     amcar = { dmg = "high", acc = 16 },
     new_m14 = { dmg = "high" },
 
-    scar = { dmg = "vhigh", mag = 20 },
+    scar = { dmg = "vhigh", mag = 20, magdump = true },
     akm = { dmg = "vhigh" },
     akm_gold = { dmg = "vhigh" },
-    shak12 = { dmg = "vhigh", acc = 16 },
+    shak12 = { dmg = "vhigh", acc = 16, magdump = true },
   },
 
   shotguns = {
-    striker = { dmg = "base", acc = 5, chamber = 0 },
+    striker = { dmg = "base", nummags = 1, acc = 5, chamber = 0 },
     basset = { dmg = "base", acc = 3 },
-    rota = { dmg = "base", acc = 5, chamber = 0 },
+    rota = { dmg = "base", nummags = 1, acc = 5, chamber = 0 },
     sko12 = { dmg = "base", acc = 3 },
     saiga = { dmg = "base", acc = 3, mag = 5, reload = 20 },
     aa12 = { dmg = "base", acc = 3, reload = 20 },
-    serbu = { dmg = "base", acc = 5 },
-    ultima = { dmg = "base", acc = 5 },
-    judge = { dmg = "base", acc = 5, chamber = 0 },
-    spas12 = { dmg = "base", acc = 5 },
-    r870 = { dmg = "base", acc = 9 },
-    benelli = { dmg = "base", acc = 5 },
-    ksg = { dmg = "base", pellets = 6, acc = 9, rof = 400, mode = "burst", burst = 2, burst_cd = 0.575 },
-    m1897 = { dmg = "base", acc = 9 },
-    supernova = { dmg = "base", acc = 9 },
-    m37 = { dmg = "base", acc = 9 },
-    m590 = { dmg = "base", acc = 5 },
-    boot = { dmg = "base", acc = 17 },
-    b682 = { dmg = "base", acc = 17, magdump = false, chamber = 0 },
-    huntsman = { dmg = "base", acc = 17, stab = 5, nummags = 5, chamber = 0, rof = 2000, mode = "burst", burst = 2 },
-    coach = { dmg = "base", acc = 17, magdump = false, chamber = 0 },
-    bleckert = { dmg = "base", acc = 5, chamber = 0 },
+    serbu = { dmg = "base", nummags = 1, acc = 5 },
+    ultima = { dmg = "base", nummags = 1, acc = 5 },
+    judge = { dmg = "base", nummags = 1, acc = 5, chamber = 0 },
+    spas12 = { dmg = "base", nummags = 1, acc = 5 },
+    r870 = { dmg = "base", nummags = 1, acc = 9 },
+    benelli = { dmg = "base", nummags = 1, acc = 5 },
+    ksg = { dmg = "base", pellets = 6, nummags = 1, acc = 9, rof = 400, mode = "burst", burst = 2, burst_cd = 0.575 },
+    m1897 = { dmg = "base", nummags = 1, acc = 9 },
+    supernova = { dmg = "base", nummags = 1, acc = 9 },
+    m37 = { dmg = "base", nummags = 1, acc = 9 },
+    m590 = { dmg = "base", nummags = 1, acc = 5 },
+    boot = { dmg = "base", nummags = 1, acc = 17 },
+    b682 = { dmg = "base", nummags = 5, acc = 17, chamber = 0 },
+    huntsman = { dmg = "base", acc = 17, stab = 5, magdump = true, nummags = 5, chamber = 0, rof = 2000, mode = "burst", burst = 2 },
+    coach = { dmg = "base", nummags = 5, acc = 17, chamber = 0 },
+    bleckert = { dmg = "base", nummags = 1, acc = 5, chamber = 0 },
   },
 
   lmgs = {
@@ -136,50 +136,50 @@ Global.CrimDusk.weapons.classes = {
     beer = { dmg = "auto" },
 
     stech = { dmg = "low" },
-    b92fs = { dmg = "low" },
-    glock_17 = { dmg = "low" },
-    ppk = { dmg = "low" },
-    legacy = { dmg = "low" },
+    b92fs = { dmg = "low", magdump = true },
+    glock_17 = { dmg = "low", magdump = true },
+    ppk = { dmg = "low", magdump = true },
+    legacy = { dmg = "low", magdump = true },
     g22c = { dmg = "low" },
     shrew = { dmg = "low" },
     g26 = { dmg = "low" },
     holt = { dmg = "low" },
-    maxim9 = { dmg = "low" },
-    pl14 = { dmg = "low" },
+    maxim9 = { dmg = "low", magdump = true },
+    pl14 = { dmg = "low", magdump = true },
     packrat = { dmg = "low" },
     welrod = { dmg = "low" },
     jowi = { dmg = "low" },
     x_g17 = { dmg = "low" },
 
-    p226 = { dmg = "med" },
-    colt_1911 = { dmg = "med" },
-    x_1911 = { dmg = "med" },
-    m1911 = { dmg = "med" },
+    p226 = { dmg = "med", magdump = true },
+    colt_1911 = { dmg = "med", magdump = true },
+    x_1911 = { dmg = "med", magdump = true },
+    m1911 = { dmg = "med", magdump = true },
     c96 = { dmg = "med" },
     type54 = { dmg = "med" },
     breech = { dmg = "med" },
     hs2000 = { dmg = "med" },
     pmm = { dmg = "med" },
-    usp = { dmg = "med" },
-    sparrow = { dmg = "med" },
+    usp = { dmg = "med", magdump = true },
+    sparrow = { dmg = "med", magdump = true },
 
     lemming = { dmg = "high", ap = "basic" },
     model3 = { dmg = "high", chamber = 0 }
   },
 
   revolvers = {
-    deagle = { dmg = "low", mag = 9 },
-    mateba = { dmg = "low", ap = "none", chamber = 0 },
-    x_2006m = { dmg = "low", ap = "none", chamber = 0 },
-    korth = { dmg = "low", ap = "none", chamber = 0 },
+    deagle = { dmg = "low", mag = 9, magdump = true },
+    mateba = { dmg = "low", ap = "none", magdump = true, chamber = 0 },
+    x_2006m = { dmg = "low", ap = "none", magdump = true, chamber = 0 },
+    korth = { dmg = "low", ap = "none", magdump = true, chamber = 0 },
 
     peacemaker = { dmgmult = 1, dmg = 100, ap = "basic", chamber = 0 },
 
-    new_raging_bull = { dmg = "high", ap = "basic", rof = 120, acc = 21, stab = 1, chamber = 0 },
-    x_rage = { dmg = "high", ap = "basic", rof = 120, acc = 11, stab = 1, chamber = 0 },
-    chinchilla = { dmg = "high", ap = "basic", rof = 240, acc = 9, stab = 21, chamber = 0 },
+    new_raging_bull = { dmg = "high", ap = "basic", rof = 120, acc = 21, stab = 1, magdump = true, chamber = 0 },
+    x_rage = { dmg = "high", ap = "basic", rof = 120, acc = 11, stab = 1, magdump = true, chamber = 0 },
+    chinchilla = { dmg = "high", ap = "basic", rof = 240, acc = 9, stab = 21, magdump = true, chamber = 0 },
 
-    rsh12 = { dmg = 75, ap = "shields", rof = 90, chamber = 0 }
+    rsh12 = { dmg = 75, ap = "shields", rof = 90, magdump = true, chamber = 0 }
   },
 
   smgs = {
@@ -211,13 +211,13 @@ Global.CrimDusk.weapons.classes = {
     coal = { dmg = "med" },
     m1928 = { dmg = "med", chamber = 0 },
 
-    akmsu = { dmg = "high" },
+    akmsu = { dmg = "high", magdump = true },
   },
 
   special = {
-    flamethrower_mk2 = { dmg = "flame", pickup = "flame", chamber = 0 },
-    system = { dmg = "flame", pickup = "flame", chamber = 0 },
-    money = { dmg = "flame", pickup = "flame", chamber = 0 },
+    flamethrower_mk2 = { dmg = "flame", pickup = "none", chamber = 0 },
+    system = { dmg = "flame", pickup = "none", chamber = 0 },
+    money = { dmg = "flame", pickup = "none", chamber = 0 },
 
     hunter = { dmg = "xlow", pickup = "none", nummags = 15, chamber = 0 },
     ecp = { dmg = "xlow", pickup = "none", magdump = false, chamber = 0 },
@@ -229,17 +229,17 @@ Global.CrimDusk.weapons.classes = {
     elastic = { dmgmult = 10, dmg = "bow", pickup = "none", nummags = 10, chamber = 0 },
 
     rpg7 = { dmg = "rpg", pickup = "none", nummags = 3, chamber = 0 },
-    ray = { dmgmult = 25, dmg = "rpg", pickup = "none", chamber = 0 },
+    ray = { dmgmult = 25, dmg = "rpg", pickup = "none", nummags = 1, chamber = 0 },
 
-    shuno = { dmg = "mini", chamber = 0 },
-    m134 = { dmg = "mini", ap = "none", chamber = 0 },
+    shuno = { dmg = "mini", pickup = "none", nummags = 1, chamber = 0 },
+    m134 = { dmg = "mini", ap = "none", pickup = "none", chamber = 0 },
 
-    china = { dmgmult = 1, dmg = "gl", nummags = 1, chamber = 0 },
-    ms3gl = { dmgmult = 1, dmg = "gl", chamber = 0 },
-    arbiter = { dmgmult = 1, dmg = "gl", chamber = 0 },
-    gre_m79 = { dmgmult = 2, dmg = "gl", chamber = 0 },
-    slap = { dmgmult = 2, dmg = "gl", chamber = 0 },
-    m32 = { dmgmult = 2, dmg = "gl", nummags = 1, chamber = 0 },
+    china = { dmgmult = 1, dmg = "gl", pickup = "none", nummags = 1, chamber = 0 },
+    ms3gl = { dmgmult = 1, dmg = "gl", pickup = "none", chamber = 0 },
+    arbiter = { dmgmult = 1, dmg = "gl", pickup = "none", nummags = 1, chamber = 0 },
+    gre_m79 = { dmgmult = 2, dmg = "gl", pickup = "none", nummags = 3, chamber = 0 },
+    slap = { dmgmult = 2, dmg = "gl", pickup = "none", nummags = 3, chamber = 0 },
+    m32 = { dmgmult = 2, dmg = "gl", pickup = "none", nummags = 1, chamber = 0 },
     flun = { dmg = 20, pickup = "none", nummags = 10, chamber = 0 },
 
     saw = { chamber = 0 },
@@ -302,7 +302,7 @@ Global.CrimDusk.weapons.spread = {
 }
 
 Global.CrimDusk.weapons.magazines = {
-  rifles = 4, shotguns = 3, lmgs = 2, snipers = 3, pistols = 3, revolvers = 2, smgs = 4, special = 2
+  rifles = 4, shotguns = 2, lmgs = 2, snipers = 3, pistols = 3, revolvers = 2, smgs = 4, special = 2
 }
 
 Global.CrimDusk.weapons.pickup = {

@@ -13,6 +13,7 @@ end)
 
 -- Load last weekly played
 Hooks:PostHook(SkirmishManager, "load", "CrimDusk_LoadLastHoldoutNum", function(self, data)
+  self._global.active_weekly = { modifiers = {} }
   self._global.last_weekly = data.skirmish.last_weekly
 
   if (self._global.last_weekly or 0) < math.floor((os.time() + 259200) / 604800) then

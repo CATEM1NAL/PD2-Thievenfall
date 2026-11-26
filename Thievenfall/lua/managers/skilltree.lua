@@ -1,4 +1,4 @@
-SkillTreeManager.VERSION = 25
+SkillTreeManager.VERSION = 26
 
 Hooks:PreHook(SkillTreeManager, "_setup", "CrimDusk_SkillTreeManagerSetup", function(self)
   self.StartingPoints = 1 -- How many points the player has at Level 0

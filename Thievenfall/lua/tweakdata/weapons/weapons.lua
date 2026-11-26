@@ -106,7 +106,7 @@ local function ModifyStats(self, WeaponClassName, WeaponClassData)
     if Akimbo then Akimbo.stats.reload = Akimbo.stats.reload + 10 end
 
     -- Custom stat initialisation
-    self[Weapon].MagDump = Data.magdump == nil and true or Data.magdump
+    self[Weapon].MagDump = Data.magdump and Data.magdump or false
     if Akimbo then Akimbo.MagDump = Data.magdump == nil and true or Data.magdump end
 
     self[Weapon].ChamberRounds = Data.chamber or 1
@@ -203,6 +203,7 @@ local function ModifyStats(self, WeaponClassName, WeaponClassData)
 
     -- Stats derived from weapon class
     local NumMagazines = Data.nummags or MaxMagazines[WeaponClassName]
+    self[Weapon].NR_CLIPS_MAX = NumMagazines
     self[Weapon].AMMO_MAX = self[Weapon].CLIP_AMMO_MAX * NumMagazines
     if Akimbo then Akimbo.AMMO_MAX = Akimbo.CLIP_AMMO_MAX * NumMagazines end
     self[Weapon].spread = SpreadMults[WeaponClassName]

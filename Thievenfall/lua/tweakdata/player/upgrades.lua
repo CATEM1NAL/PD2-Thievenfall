@@ -47,7 +47,7 @@ Hooks:PostHook(UpgradesTweakData, "init", "CrimDusk_InitUpgradeTweakData", funct
   self.values.cooldown.long_dis_revive = { { 0.5, 1 } } -- Inspire
   self.first_aid_kit.revived_damage_reduction = { {0.5, 5}, {0, 5} } -- Painkillers
   self.values.player.convert_enemies_damage_multiplier = { 1.5, 2 } -- Joker damage
-  self.values.player.passive_convert_enemies_health_multiplier = { 0.5, 0.01 } -- Joker DR
+  self.values.player.passive_convert_enemies_health_multiplier = { 0.5, 0.1 } -- Joker DR
   self.values.weapon.passive_reload_speed_multiplier = { 1.25, 1.5, 2 } -- Mag Funnel
   self.values.player.regain_throwable_from_ammo = { 1, 2 } -- Scrounger
   self.values.weapon.passive_damage_multiplier = { 1.25 } -- Fast and Furious
@@ -84,9 +84,18 @@ Hooks:PostHook(UpgradesTweakData, "init", "CrimDusk_InitUpgradeTweakData", funct
   self.values.shotgun.steelsight_accuracy_inc = { 0.5 } -- Skeet Shooting
   self.values.doctor_bag.interaction_speed_multiplier = { 0.5 }
   self.values.player.passive_armor_movement_penalty_multiplier = { 0.75, 0.5 }
+  self.values.player.extra_ammo_multiplier = { 1.5, 2 } -- Starting Ammo
 
   self.drill_alert_radius = 5000 -- drill alert radius
   self.enemy_hurt_alert_radius_whisper = 300 -- death alert radius
+
+  -- Big Game Hunter
+  self.values.weapon.extra_magazines = { 1, 2 }
+  for i = 1, 2 do
+    self.definitions["weapon_extra_mag_" .. i] = {
+      category = "feature", upgrade = { category = "weapon", upgrade = "extra_magazines", value = i }
+    }
+  end
 
   -- Bulletproof rework
   for i = 5, 7 do

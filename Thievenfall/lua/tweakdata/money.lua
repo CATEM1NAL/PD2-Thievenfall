@@ -7,6 +7,7 @@ Hooks:PostHook(MoneyTweakData, "init", "CrimDusk_MoneyTweakInit", function(self,
   local DiffIndex = tweak_data:difficulty_to_index(difficulty)
   local SafehouseMult = Global.CrimDusk.money_multiplier or 1
 
+  self.weapon_cost = 0
   self.sell_weapon_multiplier = 0
   self.sell_mask_multiplier = 0
 

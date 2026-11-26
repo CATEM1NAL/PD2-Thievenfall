@@ -96,9 +96,9 @@ Hooks:PostHook(SkillTreeTweakData, "init", "CrimDusk_SkillTreeTweakInit", functi
     -- Enforcer trees
     self.trees[4].name_id = "st_menu_enforcer_ammo"
     self.trees[4].tiers = {
-      { "scavenger", "max_ammo_increase", "extra_ammo_box", "portable_saw" },
-      { "ammobag_capacity", "gambler_heal", "carbon_blade" },
-      { "ammobag_quantity", "ammo_reservoir" },
+      { "scavenger", "extra_ammo_box", "portable_saw" },
+      { "ammobag_capacity", "max_ammo_increase", "carbon_blade" },
+      { "ammobag_quantity", "gambler_heal", "ammo_reservoir" },
       { "fully_loaded", "gambler_mag_throw", "scrounger" }
     }
     self.trees[5].name_id = "st_menu_enforce_shotgun"
@@ -413,7 +413,8 @@ Hooks:PostHook(SkillTreeTweakData, "init", "CrimDusk_SkillTreeTweakInit", functi
       name_id = "menu_scrounger_name", desc_id = "menu_scrounger_desc", icon_xy = { 3, 0 }
     }
     self.skills.max_ammo_increase = {
-      { upgrades = { "extra_ammo_multiplier1" }, cost = self.costs.default },
+      { upgrades = { "weapon_extra_mag_1" }, cost = self.costs.default },
+      { upgrades = { "weapon_extra_mag_2" }, cost = self.costs.default },
       name_id = "menu_max_ammo_inc", desc_id = "menu_max_ammo_inc_desc", icon_xy = { 3, 0 }
     }
     self.skills.high_value_target = {
@@ -881,8 +882,8 @@ Hooks:PostHook(SkillTreeTweakData, "init", "CrimDusk_SkillTreeTweakInit", functi
       name_id = "menu_hip_accuracy", desc_id = "menu_hip_accuracy_desc", icon_xy = { 7, 10 }
     }
     self.skills.mag_plus = {
-      { upgrades = { "weapon_clip_ammo_increase_1" }, cost = self.costs.default },
-      { upgrades = { "weapon_clip_ammo_increase_2" }, cost = self.costs.default },
+      { upgrades = { "weapon_clip_ammo_increase_1", "extra_ammo_multiplier1" }, cost = self.costs.default },
+      { upgrades = { "weapon_clip_ammo_increase_2", "extra_ammo_multiplier2" }, cost = self.costs.default },
       name_id = "menu_mag_plus", desc_id = "menu_mag_plus_desc", icon_xy = { 2, 0 }
     }
     self.skills.smg_rof = { -- REMOVED; REPLACED BY ILLEGAL PARTS
