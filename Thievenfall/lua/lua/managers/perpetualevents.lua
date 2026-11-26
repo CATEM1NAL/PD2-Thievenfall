@@ -1,0 +1,1 @@
+Hooks:OverrideFunction(PerpetualEventManager, "has_event_upgrade", function() return true end)

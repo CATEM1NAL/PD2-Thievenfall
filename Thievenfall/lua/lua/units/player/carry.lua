@@ -1,0 +1,1 @@
+PlayerCarry.throw_limit_t = 0.25
