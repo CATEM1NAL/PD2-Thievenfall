@@ -80,7 +80,8 @@ Hooks:PostHook(PlayerStandard, "_start_action_equip_weapon", "CrimDusk_PostEquip
   -- Could do with cleaning up a bit
   local tweak = self._equipped_unit:base():weapon_tweak_data()
   DelayedCalls:Add("CrimDusk_MeleeToSprintAnim", tweak.timers.equip or 0.7, function()
-    local PlayerState = managers.player:player_unit():movement():current_state()
+    local PlayerState = managers.player:player_unit() and managers.player:player_unit():movement():current_state() or nil
+    if not PlayerState then return end
     if PlayerState:running() and not PlayerState._equipped_unit:base():run_and_shoot_allowed() then
       PlayerState._ext_camera:play_redirect(PlayerState:get_animation("start_running"))
       -- TODO; Sometimes gets stuck in the sprinting animation? Needs a fix.

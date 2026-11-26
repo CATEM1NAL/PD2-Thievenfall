@@ -87,7 +87,8 @@ end)
 
 -- Calculate ammo for reload
 Hooks:OverrideFunction(RaycastWeaponBase, "get_ammo_max_per_clip", function(self)
-  if not self._magazines then return self._ammo_max_per_clip end
+  if self._name_id:sub(-4) == "_npc" or self._name_id:sub(-5) == "_crew" or not self._magazines then return self._ammo_max_per_clip end
+
   local ammo_base = self._reload_ammo_base or self:ammo_base()
   local ammo_remaining = ammo_base:get_ammo_remaining_in_clip()
 
@@ -102,7 +103,7 @@ Hooks:OverrideFunction(RaycastWeaponBase, "get_ammo_max_per_clip", function(self
 end)
 
 Hooks:OverrideFunction(RaycastWeaponBase, "set_ammo_total", function(self, ammo_total)
-  if not self._magazines then self._ammo_total = ammo_total return end
+  if self._name_id:sub(-4) == "_npc" or self._name_id:sub(-5) == "_crew" or not self._magazines then self._ammo_total = ammo_total return end
   local ammo_base = self._reload_ammo_base or self:ammo_base()
 
   ammo_total = ammo_base:get_ammo_remaining_in_clip()
