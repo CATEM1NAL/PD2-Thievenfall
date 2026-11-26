@@ -66,28 +66,28 @@ Global.CrimDusk.weapons.classes = {
   },
 
   shotguns = {
-    striker = { dmg = "base", nummags = 1, acc = 5, chamber = 0 },
+    striker = { dmg = "base", nummags = 2, acc = 5, chamber = 0 },
     basset = { dmg = "base", acc = 3 },
-    rota = { dmg = "base", nummags = 1, acc = 5, chamber = 0 },
+    rota = { dmg = "base", nummags = 2, acc = 5, chamber = 0 },
     sko12 = { dmg = "base", acc = 3 },
     saiga = { dmg = "base", acc = 3, mag = 5, reload = 20 },
     aa12 = { dmg = "base", acc = 3, reload = 20 },
-    serbu = { dmg = "base", nummags = 1, acc = 5 },
-    ultima = { dmg = "base", nummags = 1, acc = 5 },
-    judge = { dmg = "base", nummags = 1, acc = 5, chamber = 0 },
-    spas12 = { dmg = "base", nummags = 1, acc = 5 },
-    r870 = { dmg = "base", nummags = 1, acc = 9 },
-    benelli = { dmg = "base", nummags = 1, acc = 5 },
-    ksg = { dmg = "base", pellets = 6, nummags = 1, acc = 9, rof = 400, mode = "burst", burst = 2, burst_cd = 0.575 },
-    m1897 = { dmg = "base", nummags = 1, acc = 9 },
-    supernova = { dmg = "base", nummags = 1, acc = 9 },
-    m37 = { dmg = "base", nummags = 1, acc = 9 },
-    m590 = { dmg = "base", nummags = 1, acc = 5 },
-    boot = { dmg = "base", nummags = 1, acc = 17 },
+    serbu = { dmg = "base", nummags = 2, acc = 5 },
+    ultima = { dmg = "base", nummags = 2, acc = 5 },
+    judge = { dmg = "base", nummags = 2, acc = 5, chamber = 0 },
+    spas12 = { dmg = "base", nummags = 2, acc = 5 },
+    r870 = { dmg = "base", nummags = 2, acc = 9 },
+    benelli = { dmg = "base", nummags = 2, acc = 5 },
+    ksg = { dmg = "base", pellets = 6, nummags = 2, acc = 9, rof = 400, mode = "burst", burst = 2, burst_cd = 0.575 },
+    m1897 = { dmg = "base", nummags = 2, acc = 9 },
+    supernova = { dmg = "base", nummags = 2, acc = 9 },
+    m37 = { dmg = "base", nummags = 2, acc = 9 },
+    m590 = { dmg = "base", nummags = 2, acc = 5 },
+    boot = { dmg = "base", nummags = 2, acc = 17 },
     b682 = { dmg = "base", nummags = 5, acc = 17, chamber = 0 },
     huntsman = { dmg = "base", acc = 17, stab = 5, magdump = true, nummags = 5, chamber = 0, rof = 2000, mode = "burst", burst = 2 },
     coach = { dmg = "base", nummags = 5, acc = 17, chamber = 0 },
-    bleckert = { dmg = "base", nummags = 1, acc = 5, chamber = 0 },
+    bleckert = { dmg = "base", nummags = 2, acc = 5, chamber = 0 },
   },
 
   lmgs = {
@@ -302,7 +302,7 @@ Global.CrimDusk.weapons.spread = {
 }
 
 Global.CrimDusk.weapons.magazines = {
-  rifles = 4, shotguns = 2, lmgs = 2, snipers = 3, pistols = 3, revolvers = 2, smgs = 4, special = 2
+  rifles = 4, shotguns = 3, lmgs = 2, snipers = 3, pistols = 3, revolvers = 2, smgs = 4, special = 2
 }
 
 Global.CrimDusk.weapons.pickup = {
